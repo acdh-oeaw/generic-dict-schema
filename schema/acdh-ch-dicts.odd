@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -18,6 +18,9 @@
             <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries produced at ACDH-CH.</p>
          </sourceDesc>
       </fileDesc>
+      <revisionDesc>
+         <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure; incorporating most definitions from the VICAV dicts ODD, except for the prose part and the fvLib – TODO discuss if that is general enough to be included here or if it should be kept as a project/dictionary-specific vocabulary.</change>
+      </revisionDesc>
    </teiHeader>
    <text>
       <body>
@@ -35,8 +38,323 @@
             <moduleRef key="textstructure"/>
             <moduleRef key="transcr"/>
             
-            <!-- Additionally, we need the feature structure module. -->
-            <moduleRef key="iso-fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            
+            <!-- Additionally needed elements -->
+            <!--<moduleRef key="iso-fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" include="fs f symbol"/>
+            -->
+            <elementRef key="list" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="item" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="f" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="symbol" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="change" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="ptr" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="interpretation" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
+
+            <!-- 
+               TODO We should have a finer-grained definition for <ust type="corpusFrequency">
+               For the time being, I'm simply adding <q> and <val>.
+               DS 2021-12-02
+            -->
+            <elementRef key="q" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
+            <elementRef key="val" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
+
+            <!-- TODO are we sure we want <mentioned> and <lb/> ? DS 2021-12-02-->
+            <elementRef key="mentioned" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="lb" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            
+            <!-- 
+               for some reason I had to explicitly add model.featureVal
+               and make <symbol> a member of it. We should find out why. 
+               DS 2021-12-02 
+            -->
+            <classRef key="model.featureVal" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementSpec ident="symbol" mode="change">
+               <classes mode="change">
+                  <memberOf key="model.featureVal"/>
+               </classes>
+            </elementSpec>
+            
+            <classRef key="att.measurement" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            
+            <!-- refining specific elements -->
+            <elementSpec ident="ptr" mode="change" module="core">
+               
+               <constraintSpec ident="example-target" scheme="schematron">
+                  <desc>assert referenced dictionary example exists</desc>
+                  <constraint>
+                     <s:rule context="tei:ptr[@type = 'example']">
+                        <s:assert test="root()//tei:cit[@type = 'example'][@xml:id = current()/@target]">unknown example with id "<s:value-of select="current()/@target"/>"</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="seg" mode="change" module="linking">
+               <constraintSpec ident="seg-context" scheme="schematron">
+                  <desc>assert correct context of seg</desc>
+                  <constraint>
+                     <s:rule context="tei:seg[@type = 'hint']">
+                        <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a hint segment must be inside a translation equivalent</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <attList>
+                  <attDef ident="type" mode="replace" usage="req">
+                     <valList type="closed">
+                        <valItem ident="hint">
+                           <desc>a hint in a translation to narrow down the semantic scope of the particular item.</desc>  
+                        </valItem>
+                        <valItem ident="constrPart">
+                           <desc>TODO add description ???</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            
+            <elementSpec ident="gram" mode="change" module="dictionaries">
+               <attList>
+                  <attDef ident="type" mode="replace" usage="req">
+                     <valList type="closed">
+                        <valItem ident="arguments">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="constr">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="derivedVerbClass">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="aspect">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="extension">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="constraint">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="gender">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="keys">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="mood">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="morph">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="morphType">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="number">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="pos">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="reg">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="root">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="roots">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="semCat">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="subc">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="usg">
+                           <desc>hint on usage</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>            
+            
+            
+            <elementSpec ident="cit" mode="change" module="core">
+               <content>
+                  <alternate minOccurs="1" maxOccurs="unbounded">
+                     <!-- both examples or translations have their textual content enclosed in quote elements -->
+                     <elementRef key="quote" minOccurs="1" maxOccurs="1"/>
+                     <!-- example entries may have 1–n nested translations -->
+                     <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
+                     <!-- change history of example entries  -->
+                     <elementRef key="fs"/>
+                     <!-- only  -->
+                     <elementRef key="bibl"/>
+                     <elementRef key="note"/>
+                     <elementRef key="sense"/>
+                     <elementRef key="usg"/>
+                     <elementRef key="xr"/>
+                     <elementRef key="def"/>
+                     <elementRef key="ptr"/>
+                     <elementRef key="ref"/>
+                     <elementRef key="gramGrp"/>
+                  </alternate>
+               </content>
+               <constraintSpec ident="cit-context" scheme="schematron">
+                  <desc>assert correct context of cit types</desc>
+                  <constraint>
+                     <s:rule context="tei:cit[@type = 'translation']">
+                        <s:report test="* except (tei:quote|tei:usg[@type = 'hint'])">a translation equivalent must only contain of the translated text in a single quote element</s:report>
+                     </s:rule>
+                     <s:rule context="tei:entry//tei:cit[@type = 'translation']">
+                        <s:assert test="parent::tei:sense">a translation equivalent in a headword or MWU entry must be a direct child of a sense element</s:assert>
+                     </s:rule>
+                     <s:rule context="tei:cit[@subtype = 'proverb']">
+                        <s:assert test="@type = 'example'">unexpected value "<s:value-of select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <attList>
+                  <attDef ident="type" mode="replace" usage="req">
+                     <valList type="closed">
+                        <valItem ident="example">
+                           <desc>A dictionary example. Ideally, examples should consist in complete sentences. Examples should be concise, but can also contain several sentences. If dialogical models are involved, sentences are to be separated by a dash.</desc>
+                        </valItem>
+                        <valItem ident="translation">
+                           <desc>A translation equivalent.</desc>
+                        </valItem>
+                        <valItem ident="literalTranslation">
+                           <!-- IS THIS THE SAME AS cit type="translation" subtype="verbatim" in dc_arz_eng_007 ? -->
+                           <desc>TODO add difference to translation – or would’t that be a subtype="literal"? </desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+                  <attDef ident="subtype" mode="replace" usage="opt">
+                     <valList type="closed">
+                        <valItem ident="proverb">
+                           <desc>Proverbs are a subtype of example.</desc>
+                        </valItem>
+                        <valItem ident="verbatim">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="scientificName">
+                           <desc>TODO descripion missing</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <elementSpec ident="form" mode="change" module="dictionaries">
+               <constraintSpec ident="form-type" scheme="schematron">
+                  <desc>assert content of correct context of @type values</desc>
+                  <constraint>
+                     <s:rule context="tei:form[@type = 'variant']">
+                        <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]">a variant must be a direct child of the main form (type = "lemma", "multiWordUnit" or "inflected").</s:assert>
+                     </s:rule>
+                     <s:rule context="tei:form[@type = 'lemma']">
+                        <s:assert test="parent::tei:entry">a headword must be a direct child of an entry element. </s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <attList>
+                  <attDef ident="type" mode="replace" usage="req">
+                     <valList type="closed">
+                        <valItem ident="lemma">
+                           <desc>the headword of a lemma entry</desc>
+                        </valItem>
+                        <valItem ident="multiWordUnit">
+                           <desc>the headword of a MWU entry</desc>
+                        </valItem>
+                        
+                        <valItem ident="inflected">
+                           <desc>inflected form</desc>
+                        </valItem>
+                        <!-- WHAT IS @type='infl' ? 
+                    121 in baghdad dict, many empty orth elements
+                    112 in apc
+                -->
+                        <!--<valItem ident="infl">
+                    <desc>????</desc>
+                </valItem>-->
+                        
+                        
+                        <!-- WHEN IS THIS USED ? 16 instances in damascus dict  -->
+                        <valItem ident="example">
+                           <desc>???</desc>
+                        </valItem>
+                        
+                        <valItem ident="variant">
+                           <desc>A variant form of the lemma. Only headwords may have variants. All other variants – e.g. competing morphological forms – are simply listed but not classified. Variants can be assigned usage labels indicating e.g. a particular register. The more frequent variant should precede less frequent ones. </desc>
+                        </valItem>
+                        
+                        <valItem ident="stem">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="derived">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <!-- in how far is @type = "lemmaVariant" different from @type = 'variant'? -->
+                        <valItem ident="lemmaVariant">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <!-- WHEN IS THIS USED ?? -->
+                        <valItem ident="construction">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="VN">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="infinitive">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                        <valItem ident="adverbial">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                       
+                        <valItem ident="abbreviation">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                       
+                        <!-- TODO DS 2021-12-02 
+                           These @types look complex – we should describe why 
+                           they are different from the other "flat" values -->
+                        <valItem ident="lexicalType:adverb">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="lexicalType:infinitive">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="lexicalType:infinitiveLocative">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="grammaticalCase:genitive">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="grammaticalCase:vocative">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
          </schemaSpec>
       </body>
    </text>

@@ -3,9 +3,9 @@
 Charly Mörth, Daniel Schopper    
 [ACDH-CH](https://www.oeaw.ac.at/acdh), 2021
 
-This repository contains a basic TEI customization commonly used in all dictionaries produced at ACDH-CH. The most important files are:
+This repository contains a basic TEI customization commonly used in many dictionaries produced at ACDH-CH. The most important files are:
 
-* the [acdh-ch-dicts Schema Defintion (ODD)](schema/acdh-ch-dicts.odd) itslef
+* the [acdh-ch-dicts Schema Defintion (ODD)](schema/acdh-ch-dicts.odd) itself
 * a [HTML documentation](schema/acdh-ch-dicts.html)
 * the [RNG Schema, Schematron rules included](schema/out/acdh-ch-dicts.rng) derived from the ODD
 * and the [XML Schema](schema/out/acdh-ch-dicts.xml)
