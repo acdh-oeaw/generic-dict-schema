@@ -1,0 +1,6 @@
+[submodule "lexicalresources"]
+	path = lexicalresources
+	url = git@github.com:DARIAH-ERIC/lexicalresources.git
+[submodule "Stylesheets"]
+	path = Stylesheets
+	url = git@github.com:TEIC/Stylesheets.git
