@@ -41,6 +41,10 @@ Lou Bernhard. unpublished discussion draft: ODD chaining for Beginners. <http://
 
 How to automatically update your TEI framework in oXygen. <https://github.com/TEIC/oxygen-tei/blob/master/oxygen-tei-plugin.md>
 
+## License
+
+The content of this repository is licensed under CC BY 4.0. Please check the included submodules for other licenses to consider.
+
 ## Want to know more? 
 
 Contact us at <acdh-helpdesk@oeaw.ac.at>
