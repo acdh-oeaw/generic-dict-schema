@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>TEI customization for ACDH-CH dictionaries</title>
+            <author>Charly Mörth</author>
+            <author>Daniel Schopper</author>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
+            <date>2021</date>
+         </publicationStmt>
+         <sourceDesc>
+            <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries produced at ACDH-CH.</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <schemaSpec ident="acdh-ch-dicts" source="tmp/TEI-Lex0.compiled.odd">
+            <!-- We copy all modules from TEI Lex0  -->
+            <moduleRef key="analysis"/>
+            <moduleRef key="core"/>
+            <moduleRef key="dictionaries"/>
+            <moduleRef key="figures"/>
+            <moduleRef key="gaiji"/>
+            <moduleRef key="header"/>
+            <moduleRef key="linking"/>
+            <moduleRef key="namesdates"/>
+            <moduleRef key="tei"/>
+            <moduleRef key="textstructure"/>
+            <moduleRef key="transcr"/>
+            
+            <!-- Additionally, we need the feature structure module. -->
+            <moduleRef key="iso-fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+         </schemaSpec>
+      </body>
+   </text>
+</TEI>

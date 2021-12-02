@@ -4,3 +4,6 @@
 [submodule "Stylesheets"]
 	path = Stylesheets
 	url = git@github.com:TEIC/Stylesheets.git
+[submodule "TEI-Stylesheets"]
+	path = TEI-Stylesheets
+	url = git@github.com:TEIC/Stylesheets.git
