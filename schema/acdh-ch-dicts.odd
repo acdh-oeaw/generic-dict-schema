@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>TEI customization for ACDH-CH dictionaries</title>
+            <title>ACDH-CH Dictionary Schema</title>
             <author>Charly Mörth</author>
             <author>Daniel Schopper</author>
          </titleStmt>
@@ -23,7 +23,81 @@
       </revisionDesc>
    </teiHeader>
    <text>
+      <front>
+         <argument>
+            <p>This TEI customization is a baseline schema all dictionaries encoded at the ACDH-CH should conform with. </p>
+         </argument>
+      </front>
       <body>
+         <head>Part 1: Encoder Documentation</head>
+         <div>
+            <head>Basic Dictionary Structure</head>
+            <p>The dictionaries covered by this schema are encoded according to the Guidelines of the Text Encoding Initiative (P5). They are conceptualised as a specific type of text and are therefore encoded with <gi>text</gi> elements. Each dictionary starts with a <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
+            
+            <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI dictionaries basically look like this:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+               <TEI version="5.0">
+                  <teiHeader>
+                     ...
+                  </teiHeader>
+                  <text>
+                     <body>
+                        <div type="entries">
+                           <entry>...</entry>
+                           <entry>...</entry>
+                           <entry>...</entry>
+                        </div>
+                     </body>
+                  </text>
+               </TEI>
+            </egXML>
+            
+            <p>The <gi>body</gi> of a dictionary which conforms to this specification may not only contain a flat series of entries but also examples (which are encoded as <gi>cit</gi>/<gi>quote</gi> constructs). The rationale behind keeping example sentences outside the entries is to be able to reuse them in different parts of the dictionary (See below: <ref target="#examples">Examples and Creating examples</ref>).</p>
+            
+            <elementSpec ident="body" mode="change">
+               <desc>The main body of the dictionary. MUST include a <gi>div</gi> of type <val>entries</val> and MAY include a <gi>div</gi> of type <val>examples</val>.</desc>
+               <content>
+                  <elementRef key="div" minOccurs="1" maxOccurs="2"/>
+               </content>
+               <constraintSpec ident="body-children" scheme="schematron">
+                  <desc>assert typed div elements at the top of body</desc>
+                  <constraint>
+                     <s:rule context="tei:body">
+                        <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a div of type "entries".</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="div" module="core" mode="change">
+               <constraintSpec ident="div-example-children" scheme="schematron">
+                  <desc>assert content of top-level divisions</desc>
+                  <constraint>
+                     <s:rule context="tei:div[@type = 'examples']">
+                        <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div type="examples" may only contain cit type="example"</s:assert>
+                     </s:rule>
+                     <s:rule context="tei:div[@type = 'entries']">
+                        <s:assert test="every $e in * satisfies $e/self::tei:entry">div type="entries" may only contain entry elements</s:assert>
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+               <attList>
+                  <attDef ident="type" mode="replace" usage="req">
+                     <valList type="closed">
+                        <valItem ident="entries">
+                           <desc>contains all entries in a dictionary</desc>
+                        </valItem>
+                        <valItem ident="examples">
+                           <desc>contains examples used in the dictionary</desc>
+                        </valItem>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+         </div>
+         <div>
+            <head>Part 2: Formal Specification</head>
+            
          <schemaSpec ident="acdh-ch-dicts" source="tmp/TEI-Lex0.compiled.odd">
             <!-- We copy all modules from TEI Lex0  -->
             <moduleRef key="analysis"/>
@@ -40,8 +114,6 @@
             
             
             <!-- Additionally needed elements -->
-            <!--<moduleRef key="iso-fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" include="fs f symbol"/>
-            -->
             <elementRef key="list" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="item" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
@@ -78,14 +150,16 @@
             
             <classRef key="att.measurement" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             
-            <!-- refining specific elements -->
             <elementSpec ident="ptr" mode="change" module="core">
-               
                <constraintSpec ident="example-target" scheme="schematron">
-                  <desc>assert referenced dictionary example exists</desc>
+                  <desc>rules that govern ptr elements</desc>
                   <constraint>
-                     <s:rule context="tei:ptr[@type = 'example']">
-                        <s:assert test="root()//tei:cit[@type = 'example'][@xml:id = current()/@target]">unknown example with id "<s:value-of select="current()/@target"/>"</s:assert>
+                     <s:rule context="tei:ptr[@type = 'example'][matches(@target,'^#') and not(contains(@target,' '))]">
+                        <s:assert test="exists(root()//tei:cit[@type = 'example'][@xml:id = current()/substring-after(@target,'#')])">unknown example with id "<s:value-of select="current()/substring-after(@target,'#')"/>"</s:assert>
+                     </s:rule>
+                     <s:rule context="tei:ptr[@type = 'example'][not(matches(@target,'^#')) or contains(@target,' ')]">
+                        <s:report test="count(tokenize(@target,'\s')[.!='']) > 1">only one pointer allowed in @target</s:report>
+                        <s:report test="not(starts-with(normalize-space(@target),'#'))">unexpected value "<s:value-of select="current()/@target"/>": the value of @target must be a fragment identifier pointing to an xml:id of a dictionary example (tei:cit[@type='example'])</s:report>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -93,7 +167,7 @@
             
             <elementSpec ident="seg" mode="change" module="linking">
                <constraintSpec ident="seg-context" scheme="schematron">
-                  <desc>assert correct context of seg</desc>
+                  <desc> assert correct context of seg</desc>
                   <constraint>
                      <s:rule context="tei:seg[@type = 'hint']">
                         <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a hint segment must be inside a translation equivalent</s:assert>
@@ -117,6 +191,10 @@
             
             <elementSpec ident="gram" mode="change" module="dictionaries">
                <attList>
+                  <!-- TODO 2021-12-03 
+                     Vocabularies should be moved to specific implementations. 
+                     Also this one? 
+                  -->
                   <attDef ident="type" mode="replace" usage="req">
                      <valList type="closed">
                         <valItem ident="arguments">
@@ -211,7 +289,7 @@
                   <desc>assert correct context of cit types</desc>
                   <constraint>
                      <s:rule context="tei:cit[@type = 'translation']">
-                        <s:report test="* except (tei:quote|tei:usg[@type = 'hint'])">a translation equivalent must only contain of the translated text in a single quote element</s:report>
+                        <s:report test="* except (tei:quote|tei:usg[@type = 'hint']|tei:bibl)">a translation equivalent may only contain 1) the translated text in a quote element, 2) a usage hint and/or 3) a bibliographic reference to the source of the translation.</s:report>
                      </s:rule>
                      <s:rule context="tei:entry//tei:cit[@type = 'translation']">
                         <s:assert test="parent::tei:sense">a translation equivalent in a headword or MWU entry must be a direct child of a sense element</s:assert>
@@ -354,8 +432,8 @@
                   </attDef>
                </attList>
             </elementSpec>
-            
          </schemaSpec>
+         </div>
       </body>
    </text>
 </TEI>
