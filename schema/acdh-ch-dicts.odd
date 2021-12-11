@@ -359,6 +359,10 @@
                   </constraint>
                </constraintSpec>
                <attList>
+                  <!-- TODO In Zulu , there are <form>s without @type inside 
+                     of cit type translation 
+                     HOW TO treat? 2021-12-11 DS
+                  -->
                   <attDef ident="type" mode="replace" usage="req">
                      <valList type="closed">
                         <valItem ident="lemma">
