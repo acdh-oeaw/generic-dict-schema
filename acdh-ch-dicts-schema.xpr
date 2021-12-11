@@ -10,6 +10,26 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>lexicalresources/Schemas/TEILex0/TEILex0.odd</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>compile LEX0 ODD</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>schema/acdh-ch-dicts-schema.odd</String>
                                 </field>
                                 <field name="scenarioIds">

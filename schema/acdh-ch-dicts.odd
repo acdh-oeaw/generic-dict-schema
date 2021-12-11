@@ -116,16 +116,32 @@
             <!-- Additionally needed elements -->
             <elementRef key="list" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="item" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <!-- WATCHME If I don't redefine the content model of list here, the resulting XML 
+               schema is violating the Unique particle attribution. We should find out, why. 
+               2021-12-11 -->
+            <elementSpec ident="list" mode="change">
+               <content>
+                  <sequence>
+                     <classRef key="model.divTop" minOccurs="0"/>
+                     <sequence minOccurs="1" maxOccurs="unbounded">
+                        <elementRef key="label" minOccurs="0"/>
+                        <elementRef key="item" minOccurs="1" maxOccurs="1"/>
+                     </sequence>
+                  </sequence>
+               </content>
+            </elementSpec>
+            
             <elementRef key="fs" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="f" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="symbol" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="change" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+            <elementRef key="listChange" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="ptr" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="interpretation" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
 
             <!-- 
-               TODO We should have a finer-grained definition for <ust type="corpusFrequency">
+               TODO We should have a finer-grained definition for <usg type="corpusFrequency">
                For the time being, I'm simply adding <q> and <val>.
                DS 2021-12-02
             -->
