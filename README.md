@@ -8,7 +8,7 @@ This repository contains a TEI customization used as the base model for several 
 * the [acdh-ch-dicts Schema Defintion (ODD)](schema/acdh-ch-dicts.odd) itself
 * a [HTML documentation](schema/acdh-ch-dicts.html)
 * the [RNG Schema, Schematron rules included](schema/out/acdh-ch-dicts.rng) derived from the ODD
-* and the [XML Schema](schema/out/acdh-ch-dicts.xml)
+* and the [XML Schema](schema/out/acdh-ch-dicts.xsd)
 
 ## Building the schema
 
