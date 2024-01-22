@@ -20,7 +20,7 @@ We use a method called ODD chaining to extend TEI Lex0 ODD in a two-step process
 1. First the bare-bones Lex-0 ODD is compiled into a stand-alone TEI definition by running it through [odd2odd.xsl](TEI-Stylesheets/odds/odd2odd.xsl). The result should be saved to `schema/tmp/TEI-Lex0.compiled.odd`. If you are using the oXygen XML editor, you can do this by running the transformation scenario `compile LEX0 ODD` in the oXygen project `acdh-ch-dicts-schema.xpr`.
 2. Afterwards, you can process the acdh-ch-dicts ODD into the various output formats. Again, you can use oXygen transformation scenarios for this: either the ones shipped with your oXygen installation or the most up-to-date ones provided by the [Oxygen TEI plugin](https://github.com/TEIC/oxygen-tei).
 
-For more information on ODD chaining see <http://teic.github.io/TCW/howtoChain.html>. 
+For more information on ODD chaining see <http://lb42.github.io/ODD/howtoChain.html>. 
 
 For more information on how to process ODDs into documentation and schemas refer to the section *Processing your ODD specification* at [Getting Started with P5 ODDs](https://tei-c.org/guidelines/customization/getting-started-with-p5-odds).
 
