@@ -302,9 +302,6 @@
                      <s:rule context="tei:cit[@type = 'translation']">
                         <s:report test="* except (tei:quote|tei:usg[@type = 'hint']|tei:bibl)">a translation equivalent may only contain 1) the translated text in a quote element, 2) a usage hint and/or 3) a bibliographic reference to the source of the translation.</s:report>
                      </s:rule>
-                     <s:rule context="tei:entry//tei:cit[@type = 'translation']">
-                        <s:assert test="parent::tei:sense">a translation equivalent in a headword or MWU entry must be a direct child of a sense element</s:assert>
-                     </s:rule>
                      <s:rule context="tei:cit[@subtype = 'proverb']">
                         <s:assert test="@type = 'example'">unexpected value "<s:value-of select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
                      </s:rule>
