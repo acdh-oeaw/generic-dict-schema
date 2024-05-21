@@ -7,3 +7,4 @@
 [submodule "TEI-Stylesheets"]
 	path = TEI-Stylesheets
 	url = git@github.com:TEIC/Stylesheets.git
+	branch = released
