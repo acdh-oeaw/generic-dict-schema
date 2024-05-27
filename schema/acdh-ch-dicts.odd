@@ -98,7 +98,8 @@
          <div>
             <head>Part 2: Formal Specification</head>
             
-            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEI-Lex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd">
+               <moduleRef key="derived-module-TEILex0"/>
             <!-- We copy all modules from TEI Lex0  -->
             <moduleRef key="analysis"/>
             <moduleRef key="core"/>
@@ -269,11 +270,40 @@
                         <valItem ident="usg">
                            <desc>hint on usage</desc>
                         </valItem>
+                        <!-- ADDED DS 2024-06-05 (found in SHAWI dict)-->
+                        <valItem ident="person">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <!-- shouldn't these become type="root" subtype="syn" or "dia"?    -->
+                        <valItem ident="synRoot">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="diaRoot">
+                           <desc>TODO description missing</desc>
+                        </valItem>
                      </valList>
                   </attDef>
                </attList>
             </elementSpec>            
             
+            <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
+               CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
+            <elementSpec ident="usg" mode="change">
+               <content>
+                  <alternate>
+                     <elementRef key="placeName"/>
+                     <macroRef key="macro.lexicalParaContent"/>
+                  </alternate>
+               </content>
+               <constraintSpec ident="placename-in-usg" scheme="schematron">
+                  <desc>assert that only usg type geographic contain a placeName element</desc>
+                  <constraint>
+                     <s:rule context="tei:usg[not(@type = 'geographic')]">
+                        <s:report test="exists(tei:placeName)">the placeName element must only occur inside of usg elements with @type="geographic".</s:report> 
+                     </s:rule>
+                  </constraint>
+               </constraintSpec>
+            </elementSpec>
             
             <elementSpec ident="cit" mode="change" module="core">
                <content>
@@ -294,6 +324,9 @@
                      <elementRef key="ptr"/>
                      <elementRef key="ref"/>
                      <elementRef key="gramGrp"/>
+                     <!-- ADDED DS 2024-05-26 -->
+                     <!--we should align th  e content more closely to the content in Lex0-->
+                     <elementRef key="form"/>
                   </alternate>
                </content>
                <constraintSpec ident="cit-context" scheme="schematron">
@@ -313,8 +346,10 @@
                         <valItem ident="example">
                            <desc>A dictionary example. Ideally, examples should consist in complete sentences. Examples should be concise, but can also contain several sentences. If dialogical models are involved, sentences are to be separated by a dash.</desc>
                         </valItem>
-                        <valItem ident="translation">
+                        <!-- ADDED DS 2025-06-05 -->
+                        <valItem ident="translationEquivalent">
                            <desc>A translation equivalent.</desc>
+                           <!-- used to be "translation" -->
                         </valItem>
                         <valItem ident="literalTranslation">
                            <!-- IS THIS THE SAME AS cit type="translation" subtype="verbatim" in dc_arz_eng_007 ? -->
@@ -337,7 +372,11 @@
                   </attDef>
                </attList>
             </elementSpec>
-            
+               
+               <!--<elementSpec ident="placeName" mode="change" module="namesdates">
+                  <
+               </elementSpec>
+            -->
             <elementSpec ident="form" mode="change" module="dictionaries">
                <constraintSpec ident="form-type" scheme="schematron">
                   <desc>assert content of correct context of @type values</desc>
