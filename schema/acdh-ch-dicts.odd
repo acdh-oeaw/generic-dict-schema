@@ -212,26 +212,34 @@
                         <valItem ident="arguments">
                            <desc>TODO description missing</desc>
                         </valItem>
+                        <valItem ident="aspect">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="constraint">
+                           <desc>TODO description missing</desc>
+                        </valItem>
                         <valItem ident="constr">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="degree">
                            <desc>TODO description missing</desc>
                         </valItem>
                         <valItem ident="derivedVerbClass">
                            <desc>TODO description missing</desc>
                         </valItem>
-                        
-                        <valItem ident="aspect">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
                         <valItem ident="extension">
                            <desc>TODO description missing</desc>
                         </valItem>
-                        
-                        <valItem ident="constraint">
+                        <valItem ident="frequency">
                            <desc>TODO description missing</desc>
                         </valItem>
-                        
                         <valItem ident="gender">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="government">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="inflectionType">
                            <desc>TODO description missing</desc>
                         </valItem>
                         <valItem ident="keys">
@@ -243,10 +251,19 @@
                         <valItem ident="morph">
                            <desc>TODO description missing</desc>
                         </valItem>
+                        <valItem ident="morphPattern">
+                           <desc>TODO description missing</desc>
+                        </valItem>
                         <valItem ident="morphType">
                            <desc>TODO description missing</desc>
                         </valItem>
+                        <valItem ident="nominalState">
+                           <desc>TODO description missing</desc>
+                        </valItem>
                         <valItem ident="number">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="person">
                            <desc>TODO description missing</desc>
                         </valItem>
                         <valItem ident="pos">
@@ -270,15 +287,14 @@
                         <valItem ident="usg">
                            <desc>hint on usage</desc>
                         </valItem>
-                        <!-- ADDED DS 2024-06-05 (found in SHAWI dict)-->
-                        <valItem ident="person">
-                           <desc>TODO description missing</desc>
-                        </valItem>
                         <!-- shouldn't these become type="root" subtype="syn" or "dia"?    -->
                         <valItem ident="synRoot">
                            <desc>TODO description missing</desc>
                         </valItem>
                         <valItem ident="diaRoot">
+                           <desc>TODO description missing</desc>
+                        </valItem>
+                        <valItem ident="diaRootNew">
                            <desc>TODO description missing</desc>
                         </valItem>
                      </valList>
@@ -288,18 +304,19 @@
             
             <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
                CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
+            <!-- changed placeName to name -->
             <elementSpec ident="usg" mode="change">
                <content>
                   <alternate>
-                     <elementRef key="placeName"/>
+                     <elementRef key="name"/>
                      <macroRef key="macro.lexicalParaContent"/>
                   </alternate>
                </content>
-               <constraintSpec ident="placename-in-usg" scheme="schematron">
-                  <desc>assert that only usg type geographic contain a placeName element</desc>
+               <constraintSpec ident="name-in-usg" scheme="schematron">
+                  <desc>assert that only usg type geographic contain a name element</desc>
                   <constraint>
                      <s:rule context="tei:usg[not(@type = 'geographic')]">
-                        <s:report test="exists(tei:placeName)">the placeName element must only occur inside of usg elements with @type="geographic".</s:report> 
+                        <s:report test="exists(tei:name)">the name element must only occur inside of usg elements with @type="geographic".</s:report> 
                      </s:rule>
                   </constraint>
                </constraintSpec>
