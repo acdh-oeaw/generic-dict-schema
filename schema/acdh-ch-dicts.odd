@@ -98,7 +98,7 @@
          <div>
             <head>Part 2: Formal Specification</head>
             
-            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="file:/C:/Users/mrauschsupola/generic-dict-schema/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
             <!-- We copy all modules from TEI Lex0  -->
             <moduleRef key="analysis"/>
@@ -233,6 +233,9 @@
                         <valItem ident="frequency">
                            <desc>TODO description missing</desc>
                         </valItem>
+                        <valItem ident="followedBy">
+                           <desc>TODO description missing</desc>
+                        </valItem>
                         <valItem ident="gender">
                            <desc>TODO description missing</desc>
                         </valItem>
@@ -308,7 +311,7 @@
             <elementSpec ident="usg" mode="change">
                <content>
                   <alternate>
-                     <elementRef key="name"/>
+                     <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
                      <macroRef key="macro.lexicalParaContent"/>
                   </alternate>
                </content>
