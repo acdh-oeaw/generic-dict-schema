@@ -318,8 +318,8 @@
                <constraintSpec ident="name-in-usg" scheme="schematron">
                   <desc>assert that only usg type geographic contain a name element</desc>
                   <constraint>
-                     <s:rule context="tei:usg[not(@type = 'geographic')]">
-                        <s:report test="exists(tei:name)">the name element must only occur inside of usg elements with @type="geographic".</s:report> 
+                     <s:rule context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')]">
+                        <s:report test="exists(tei:name)">the name element must only occur inside of usg elements with @type="geographic" or @type="socioCultural".</s:report> 
                      </s:rule>
                   </constraint>
                </constraintSpec>
