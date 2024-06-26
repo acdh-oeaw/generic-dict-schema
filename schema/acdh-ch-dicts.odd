@@ -3,7 +3,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron">
-   <teiHeader>
+   <teiHeader> 
       <fileDesc>
          <titleStmt>
             <title>ACDH-CH Dictionary Schema</title>
@@ -98,7 +98,7 @@
          <div>
             <head>Part 2: Formal Specification</head>
             
-            <schemaSpec ident="acdh-ch-dicts" source="file:/C:/Users/mrauschsupola/generic-dict-schema/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="file:/C:/Users/ksramo/Documents/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
             <!-- We copy all modules from TEI Lex0  -->
             <moduleRef key="analysis"/>
@@ -113,6 +113,40 @@
             <moduleRef key="textstructure"/>
             <moduleRef key="transcr"/>
             
+               <!-- TEI Lex-0 adjustments to make the xsd deterministic 2024-06-26 -->
+               <classSpec type="model" ident="model.hiLike" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.lexicalPhrase"  mode="delete"/>
+                  </classes>
+               </classSpec>
+               <elementSpec ident="xr" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.quoteLike"  mode="delete"/>
+                  </classes>
+               </elementSpec>
+               <elementSpec ident="lbl" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.emphLike"  mode="delete"/>
+                  </classes>
+               </elementSpec>
+               <elementSpec ident="publicationStmt" mode="change">
+                  <content>
+                     <sequence>
+                        <classRef key="model.publicationStmtPart.agency" minOccurs="1"
+                           maxOccurs="unbounded"/>
+                        <!-- elements model.publicationStmtPart.detail, except for availability, which is required in Lex-0 -->
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                           <classRef key="model.ptrLike"/>
+                           <elementRef key="date"/>
+                           <elementRef key="pubPlace"/>
+                           <elementRef key="idno"/>
+                        </alternate>
+                        <elementRef key="availability"/>
+                     </sequence>
+                  </content>
+               </elementSpec>
+               <!-- end of ambiguity-fixing adjustments -->
+               
             <!-- Additionally needed elements -->
             <moduleRef key="iso-fs" include="fs f symbol" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
 
