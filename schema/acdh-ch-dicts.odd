@@ -344,7 +344,7 @@
             <!-- changed placeName to name -->
             <elementSpec ident="usg" mode="change">
                <content>
-                  <alternate>
+                  <alternate minOccurs="1" maxOccurs="unbounded">
                      <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
                      <macroRef key="macro.lexicalParaContent"/>
                   </alternate>
