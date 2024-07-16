@@ -381,10 +381,7 @@
                <!-- changed placeName to name -->
                <elementSpec ident="usg" mode="change">
                   <content>
-                     <alternate minOccurs="1" maxOccurs="unbounded">
                         <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
-                        <macroRef key="macro.lexicalParaContent"/>
-                     </alternate>
                   </content>
                   <constraintSpec ident="name-in-usg" scheme="schematron">
                      <desc>assert that only usg type geographic or socioCultural contain a name

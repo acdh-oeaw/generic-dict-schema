@@ -5309,7 +5309,7 @@ one initial.</desc>
                               cit type="example" subtype="proverb"</s:assert>
                         </s:rule>
                      </constraint>
-                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false" ns="http://www.tei-c.org/ns/1.0">
                         <valList type="closed" mode="add">
                            <valItem ident="example" mode="add">
                               <desc>A dictionary example. Ideally, examples should consist in
@@ -5328,7 +5328,7 @@ one initial.</desc>
                                  subtype="literal"? </desc>
                            </valItem>
                         </valList>
-                     </attDef><attDef ident="subtype" mode="replace" usage="opt" predeclare="false">
+                     </attDef><attDef ident="subtype" mode="replace" usage="opt" predeclare="false" ns="http://www.tei-c.org/ns/1.0">
                         <valList type="closed" mode="add">
                            <valItem ident="proverb" mode="add">
                               <desc>Proverbs are a subtype of example.</desc>
@@ -9284,7 +9284,7 @@ l'original apparaît comme une forme fusionnée.</desc>
                               by the type attribute "lemma".</s:assert>
                         </s:rule>
                      </constraint>
-                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false" ns="http://www.tei-c.org/ns/1.0">
                         <valList type="closed" mode="add">
                            <valItem ident="lemma" mode="add">
                               <desc>the headword of a lemma entry</desc>
@@ -9363,7 +9363,7 @@ l'original apparaît comme une forme fusionnée.</desc>
                            </valItem>
 
                         </valList>
-                     </attDef><attDef ident="subtype" mode="replace" usage="opt" predeclare="false">
+                     </attDef><attDef ident="subtype" mode="replace" usage="opt" predeclare="false" ns="http://www.tei-c.org/ns/1.0">
                         <valList type="closed" mode="add">
                            <valItem ident="compound" mode="add">
                               <desc>Used for multi-word units</desc>
@@ -9566,7 +9566,7 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
     terme, un mot ou une forme dans une entrée de dictionnaire ou dans un fichier de données
     terminologiques.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">dentro de una entrada de un diccionario, o en un archivo
     de datos terminológicos, contiene información gramatical relativa al término, palabra o forma.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">all'interno di una voce in un dizionario o di un file
-    terminologico, contiene informazioni relative a un termine, una parola o una forma.</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.morphLike"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+    terminologico, contiene informazioni relative a un termine, una parola o una forma.</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.morphLike"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false" ns="http://www.tei-c.org/ns/1.0">
                         <valList type="closed" mode="add">
                            <valItem ident="arguments" mode="add">
                               <desc>TODO description missing</desc>
@@ -9911,7 +9911,7 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
     <p rend="dataDesc"> 句レベル要素と共に文字データを含むかもしれない。 </p>
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPET">9.3.4. Etymological Information</ref>
-  </listRef></elementSpec><elementSpec rend="change" module="dictionaries" ident="usg" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-10-02" xml:lang="fr">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">용법</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">字詞使用資訊</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">uso</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">uso</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains usage information in a dictionary entry.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-05-27" xml:lang="fr">contient, dans une entrée de dictionnaire, les informations sur son usage</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">사전 표제 항목에 용법 정보를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含辭條中的使用資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">辞書項目中にある用例情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene la información sobre el uso en la entrada de un diccionario.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">in una voce di dizionario, contiene informazioni sull'uso.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.entryPart"/><memberOf key="model.lexicalRefinement"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><alternate minOccurs="1" maxOccurs="unbounded"><elementRef key="name" minOccurs="0" maxOccurs="unbounded"/><macroRef key="macro.lexicalParaContent"/></alternate></content><constraintSpec ident="name-in-usg" scheme="schematron" mode="add" predeclare="false">
+  </listRef></elementSpec><elementSpec rend="change" module="dictionaries" ident="usg" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-10-02" xml:lang="fr">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">용법</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">字詞使用資訊</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">uso</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">uso</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains usage information in a dictionary entry.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-05-27" xml:lang="fr">contient, dans une entrée de dictionnaire, les informations sur son usage</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">사전 표제 항목에 용법 정보를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含辭條中的使用資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">辞書項目中にある用例情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene la información sobre el uso en la entrada de un diccionario.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">in una voce di dizionario, contiene informazioni sull'uso.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.entryPart"/><memberOf key="model.lexicalRefinement"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><elementRef key="name" minOccurs="0" maxOccurs="unbounded"/></content><constraintSpec ident="name-in-usg" scheme="schematron" mode="add" predeclare="false">
                      <desc>assert that only usg type geographic or socioCultural contain a name
                         element</desc>
                      <constraint>
@@ -13743,7 +13743,7 @@ supplied to printer.</change>
                               hint segment must be inside a translation equivalent</s:assert>
                         </s:rule>
                      </constraint>
-                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false" ns="http://www.tei-c.org/ns/1.0">
                         <valList type="closed" mode="add">
                            <valItem ident="hint" mode="add">
                               <desc>a hint in a translation to narrow down the semantic scope of the
