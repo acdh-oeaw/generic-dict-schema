@@ -7,8 +7,24 @@
       <fileDesc>
          <titleStmt>
             <title>ACDH-CH Dictionary Schema</title>
-            <author>Charly Mörth</author>
-            <author>Daniel Schopper</author>
+            <author>
+               <name xml:id="CM">Charly Mörth</name>
+            </author>
+            <author>
+               <name xml:id="DS">Daniel Schopper</name>
+            </author>
+            <respStmt>
+              <resp>contributor</resp>
+               <name xml:id="MRS">Michaela Rausch-Supola</name>
+            </respStmt>
+            <respStmt>
+               <resp>contributor</resp>
+               <name xml:id="KS">Kinga Sramó</name>
+            </respStmt>
+            <respStmt>
+               <resp>contributor</resp>
+               <name xml:id="VE">Veronika Engler</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
@@ -24,6 +40,7 @@
             incorporating most definitions from the VICAV dicts ODD, except for the prose part and
             the fvLib – TODO discuss if that is general enough to be included here or if it should
             be kept as a project/dictionary-specific vocabulary.</change>
+         <change status="draft" when="2024-07-26" who="#DS">fixing elementSpec for body; reducing tagset</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -73,22 +90,19 @@
          <div>
             <head>Part 2: Formal Specification</head>
 
-            <schemaSpec ident="acdh-ch-dicts"
-               source="tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd">
 
                <!-- We copy all modules from TEI Lex0  -->
                <moduleRef key="derived-module-TEILex0"/>
-               <moduleRef key="analysis"/>
-               <moduleRef key="core"/>
-               <moduleRef key="dictionaries"/>
-               <moduleRef key="figures"/>
-               <moduleRef key="gaiji"/>
-               <moduleRef key="header"/>
+               <moduleRef key="analysis" except="c pc"/>
+               <moduleRef key="core" except="hi q email num expan graphic"/>
+               <moduleRef key="dictionaries" except="dictScrap hyph lbl syll stress"/>
+               <moduleRef key="header" except="xenoData"/>
                <moduleRef key="linking"/>
                <moduleRef key="namesdates"/>
                <moduleRef key="tei"/>
-               <moduleRef key="textstructure"/>
-               <moduleRef key="transcr"/>
+               <moduleRef key="textstructure" except="back front"/>
+               <moduleRef key="transcr" except="metamark"/>
                
                <elementSpec ident="body" mode="change" module="textstructure">
                   <desc>contains the main content of the dictionary. MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc>
@@ -219,9 +233,10 @@
                <elementRef key="val" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
 
                <!-- TODO are we sure we want <mentioned> and <lb/> ? DS 2021-12-02-->
-               <elementRef key="mentioned"
+               <!-- I think we can make do without them DS 2024-07-26 -->
+               <!--<elementRef key="mentioned"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-               <elementRef key="lb" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+               <elementRef key="lb" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>-->
 
                <!-- 
                for some reason I had to explicitly add model.featureVal
