@@ -64,59 +64,17 @@
                   <gi>cit</gi>/<gi>quote</gi> constructs). The rationale behind keeping example
                sentences outside the entries is to be able to reuse them in different parts of the
                dictionary (See below: <ref target="#examples">Examples and Creating
-               examples</ref>).</p>
+                  examples</ref>).<specDesc key="body"/></p>
+            
+            
 
-            <elementSpec ident="body" mode="change">
-               <desc>The main body of the dictionary. MUST include a <gi>div</gi> of type
-                     <val>entries</val> and MAY include a <gi>div</gi> of type
-                  <val>examples</val>.</desc>
-               <content>
-                  <elementRef key="div" minOccurs="1" maxOccurs="2"/>
-               </content>
-               <constraintSpec ident="body-children" scheme="schematron">
-                  <desc>assert typed div elements at the top of body</desc>
-                  <constraint>
-                     <s:rule context="tei:body">
-                        <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a div
-                           of type "entries".</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-            </elementSpec>
-
-            <elementSpec ident="div" module="core" mode="change">
-               <constraintSpec ident="div-example-children" scheme="schematron">
-                  <desc>assert content of top-level divisions</desc>
-                  <constraint>
-                     <s:rule context="tei:div[@type = 'examples']">
-                        <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']"
-                           >div type="examples" may only contain cit type="example"</s:assert>
-                     </s:rule>
-                     <s:rule context="tei:div[@type = 'entries']">
-                        <s:assert test="every $e in * satisfies $e/self::tei:entry">div
-                           type="entries" may only contain entry elements</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-               <attList>
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="entries">
-                           <desc>contains all entries in a dictionary</desc>
-                        </valItem>
-                        <valItem ident="examples">
-                           <desc>contains examples used in the dictionary</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
+           
          </div>
          <div>
             <head>Part 2: Formal Specification</head>
 
             <schemaSpec ident="acdh-ch-dicts"
-               source="file:/C:/Users/ksramo/Documents/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
+               source="tmp/TEILex0.compiled.odd">
 
                <!-- We copy all modules from TEI Lex0  -->
                <moduleRef key="derived-module-TEILex0"/>
@@ -131,6 +89,66 @@
                <moduleRef key="tei"/>
                <moduleRef key="textstructure"/>
                <moduleRef key="transcr"/>
+               
+               <elementSpec ident="body" mode="change" module="textstructure">
+                  <desc>contains the main content of the dictionary. MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc>
+                  <content>
+                     <elementRef key="div" minOccurs="1" maxOccurs="2"/>
+                  </content>
+                  <constraintSpec ident="body-children" scheme="schematron">
+                     <desc>assert typed div elements at the top of body</desc>
+                     <constraint>
+                        <s:rule context="tei:body">
+                           <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a div
+                              of type "entries".</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                        <body>
+                           <div type="entries">
+                              <entry>...</entry>
+                              <entry>...</entry>
+                              <entry>...</entry>
+                           </div>
+                           <div type="examples">
+                              <cit type="example" xml:id="ex001">
+                                 <quote>...</quote>
+                              </cit>
+                           </div>
+                        </body>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementSpec ident="div" module="core" mode="change">
+                  <constraintSpec ident="div-example-children" scheme="schematron">
+                     <desc>assert content of top-level divisions</desc>
+                     <constraint>
+                        <s:rule context="tei:div[@type = 'examples']">
+                           <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']"
+                              >div type="examples" may only contain cit type="example"</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:div[@type = 'entries']">
+                           <s:assert test="every $e in * satisfies $e/self::tei:entry">div
+                              type="entries" may only contain entry elements</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="entries">
+                              <desc>contains all entries in a dictionary</desc>
+                           </valItem>
+                           <valItem ident="examples">
+                              <desc>contains examples used in the dictionary</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
 
                <!-- TEI Lex-0 adjustments to make the xsd deterministic 2024-06-26 -->
                <classSpec type="model" ident="model.hiLike" mode="change">
