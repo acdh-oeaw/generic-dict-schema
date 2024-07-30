@@ -458,7 +458,7 @@
                   <constraintSpec ident="cit-context" scheme="schematron">
                      <desc>assert correct context of cit types</desc>
                      <constraint>
-                        <s:rule context="tei:cit[not(@type = 'example')]">
+                        <s:rule context="tei:cit/@type[not(. = 'example')]">
                            <s:report test="tei:listBibl">listBibl is only expected in cit/@type='example'</s:report>
                         </s:rule>
                         <s:rule context="tei:cit[@type = 'translationEquivalent']">
