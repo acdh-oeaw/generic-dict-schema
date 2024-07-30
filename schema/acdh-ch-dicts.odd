@@ -409,7 +409,16 @@
                   </attList>
                </elementSpec>
 
-               <!-- TODO 2024-07-30: assure that "fs" is only contained in cit/@type='example' and entry -->
+               <elementSpec ident="fs" mode="change">
+                  <constraintSpec ident="fs-context" scheme="schematron">
+                     <desc>assure that "fs" is only contained in cit/@type='example' and entry</desc>
+                     <constraint>
+                        <s:rule context="tei:fs">
+                           <s:assert test="parent::tei:cit[@type='example'] or parent::tei:entry">fs is only contained by cit/@type example or entry</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
 
                <!-- either text node or series of name elements -->
                <elementSpec ident="usg" mode="change">
