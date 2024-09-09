@@ -445,6 +445,7 @@
                <elementSpec ident="cit" mode="change" module="core">
                   <content>
                      <sequence>
+                        <elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/>
                         <alternate minOccurs="1" maxOccurs="1">
                            <elementRef key="quote"/>
                            <elementRef key="form"/>
