@@ -457,7 +457,7 @@
                            <!-- both examples or translations have their textual content enclosed in quote elements -->
                            <!-- example entries may have 1–n nested translations -->
                            <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
-                           <elementRef key="usg"/>
+<!--                           <elementRef key="usg"/>-->
                            <elementRef key="note"/>
                            <elementRef key="gloss"/>
                            <!-- ADDED DS 2024-05-26 -->
