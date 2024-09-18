@@ -90,7 +90,7 @@
          <div>
             <head>Part 2: Formal Specification</head>
 
-            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
 
                <!-- We copy all modules from TEI Lex0  -->
                <moduleRef key="derived-module-TEILex0"/>
@@ -471,9 +471,6 @@
                   <constraintSpec ident="cit-context" scheme="schematron">
                      <desc>assert correct context of cit types</desc>
                      <constraint>
-                        <s:rule context="tei:cit[not(@type = 'example')]">
-                           <s:report test="tei:listBibl">listBibl is only expected in cit/@type='example'</s:report>
-                        </s:rule>
                         <s:rule context="tei:cit[@type = 'translationEquivalent']">
                            <s:assert test="parent::tei:sense">translationEquivalent: must be a direct child of a sense element</s:assert>
                            <s:assert test="exists(child::tei:form[not(@type)])">translationEquivalent must contain a form without a type attribute </s:assert>
@@ -486,8 +483,7 @@
                         </s:rule>
                         <s:rule context="tei:cit[@subtype = 'proverb']">
                            <s:assert test="@type = 'example'">unexpected value "<s:value-of
-                                 select="current()/@type"/>" in @type – a proverb must be encoded as
-                              cit type="example" subtype="proverb"</s:assert>
+                                 select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
