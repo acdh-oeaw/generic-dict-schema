@@ -1,37 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:base="file:/home/dschopper/data/generic-dict-schema/schema/acdh-ch-dicts.odd"><?TEIVERSION?>
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:base="file:/C:/Users/mrauschsupola/generic-dict-schema/generic-dict-schema/schema/acdh-ch-dicts.odd"><?TEIVERSION?>
    <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>ACDH-CH Dictionary Schema</title>
             <author>
-               <name xml:id="CM">Charly Mörth</name>
+               <name xml:id="CM" full="yes" instant="false">Charly Mörth</name>
             </author>
             <author>
-               <name xml:id="DS">Daniel Schopper</name>
+               <name xml:id="DS" full="yes" instant="false">Daniel Schopper</name>
             </author>
             <respStmt>
               <resp>contributor</resp>
-               <name xml:id="MRS">Michaela Rausch-Supola</name>
+               <name xml:id="MRS" full="yes" instant="false">Michaela Rausch-Supola</name>
             </respStmt>
             <respStmt>
                <resp>contributor</resp>
-               <name xml:id="KS">Kinga Sramó</name>
+               <name xml:id="KS" full="yes" instant="false">Kinga Sramó</name>
             </respStmt>
             <respStmt>
                <resp>contributor</resp>
-               <name xml:id="VE">Veronika Engler</name>
+               <name xml:id="VE" full="yes" instant="false">Veronika Engler</name>
             </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
-            <date>2021</date>
+            <date instant="false">2021</date>
          </publicationStmt>
-         <sourceDesc>
-            <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries
+         <sourceDesc default="false">
+            <p part="N">This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries
                produced at ACDH-CH.</p>
          </sourceDesc>
       </fileDesc>
-      <revisionDesc>
+      <revisionDesc status="draft">
          <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure;
             incorporating most definitions from the VICAV dicts ODD, except for the prose part and
             the fvLib – TODO discuss if that is general enough to be included here or if it should
@@ -42,20 +42,20 @@
    <text>
       <front>
          <argument>
-            <p>This TEI customization is a baseline schema all dictionaries encoded at the ACDH-CH
+            <p part="N">This TEI customization is a baseline schema all dictionaries encoded at the ACDH-CH
                should conform with. </p>
          </argument>
       </front>
       <body>
          <head>Part 1: Encoder Documentation</head>
-         <div>
+         <div part="N" org="uniform" sample="complete">
             <head>Basic Dictionary Structure</head>
-            <p>The dictionaries covered by this schema are encoded according to the Guidelines of
+            <p part="N">The dictionaries covered by this schema are encoded according to the Guidelines of
                the Text Encoding Initiative (P5). They are conceptualised as a specific type of text
-               and are therefore encoded with <gi>text</gi> elements. Each dictionary starts with a
-                  <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
+               and are therefore encoded with <gi scheme="TEI">text</gi> elements. Each dictionary starts with a
+                  <gi scheme="TEI">teiHeader</gi> element which contains the metadata of the dictionary.</p>
 
-            <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
+            <p part="N">The lexicographic data are placed in typed <gi scheme="TEI">div</gi> elements. Thus, our TEI
                dictionaries basically look like this:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                <TEI version="5.0">
@@ -72,9 +72,9 @@
                </TEI>
             </egXML>
 
-            <p>The <gi>body</gi> of a dictionary which conforms to this specification may not only
+            <p part="N">The <gi scheme="TEI">body</gi> of a dictionary which conforms to this specification may not only
                contain a flat series of entries but also examples (which are encoded as
-                  <gi>cit</gi>/<gi>quote</gi> constructs). The rationale behind keeping example
+                  <gi scheme="TEI">cit</gi>/<gi scheme="TEI">quote</gi> constructs). The rationale behind keeping example
                sentences outside the entries is to be able to reuse them in different parts of the
                dictionary (See below: <ref target="#examples">Examples and Creating
                   examples</ref>).<specDesc key="body"/></p>
@@ -83,10 +83,10 @@
 
            
          </div>
-         <div>
+         <div part="N" org="uniform" sample="complete">
             <head>Part 2: Formal Specification</head>
 
-            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd"><classSpec rend="add" module="tei" type="atts" ident="att.anchoring">
+            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd" mode="add" predeclare="false" ns="http://www.tei-c.org/ns/1.0" status="draft" start="TEI" defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"><classSpec rend="add" module="tei" type="atts" ident="att.anchoring">
   <gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">anchoring</gloss>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">provides attributes for use on annotations, e.g. notes and groups of notes
   describing the existence and position of an anchor for annotations.</desc>
@@ -5097,12 +5097,9 @@ one initial.</desc>
     mot-clé, ou un exemple.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">Una cita de algún otro documento junto a la referencia
     bibliográfica a la fuente.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">Un acitazione da un altro documento accompagnata da
     riferimenti bibliografici alla fonte.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="de">enthält ein Zitat aus einem anderen Dokument, zusammen mit einer bibliografischen Referenz auf die Quelle. In einem Wörterbuch kann es ein Beispieltext mit mindestens einem Vorkommen der Wortform enthalten, 
-        welches in dem beschriebenen Sinne verwendet wird, oder eine Übersetzung des Lemmas, oder ein Beispiel.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.quoteLike"/><memberOf key="model.entryPart.top"/></classes><content><sequence minOccurs="1" maxOccurs="1"><elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/><alternate minOccurs="1" maxOccurs="1"><elementRef key="quote"/><elementRef key="form"/></alternate><alternate minOccurs="0" maxOccurs="unbounded"><elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/><elementRef key="note"/><elementRef key="gloss"/></alternate><elementRef key="listBibl" minOccurs="0" maxOccurs="1"/><elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/></sequence></content><constraintSpec ident="cit-context" scheme="schematron">
+        welches in dem beschriebenen Sinne verwendet wird, oder eine Übersetzung des Lemmas, oder ein Beispiel.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.quoteLike"/><memberOf key="model.entryPart.top"/></classes><content autoPrefix="true"><sequence minOccurs="1" maxOccurs="1"><elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/><alternate minOccurs="1" maxOccurs="1"><elementRef key="quote" minOccurs="1" maxOccurs="1"/><elementRef key="form" minOccurs="1" maxOccurs="1"/></alternate><alternate minOccurs="0" maxOccurs="unbounded"><elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/><elementRef key="note" minOccurs="1" maxOccurs="1"/><elementRef key="gloss" minOccurs="1" maxOccurs="1"/></alternate><elementRef key="listBibl" minOccurs="0" maxOccurs="1"/><elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/></sequence></content><constraintSpec ident="cit-context" scheme="schematron" mode="add" predeclare="false">
                      <desc>assert correct context of cit types</desc>
                      <constraint>
-                        <s:rule context="tei:cit[not(@type = 'example')]">
-                           <s:report test="tei:listBibl">listBibl is only expected in cit/@type='example'</s:report>
-                        </s:rule>
                         <s:rule context="tei:cit[@type = 'translationEquivalent']">
                            <s:assert test="parent::tei:sense">translationEquivalent: must be a direct child of a sense element</s:assert>
                            <s:assert test="exists(child::tei:form[not(@type)])">translationEquivalent must contain a form without a type attribute </s:assert>
@@ -5114,40 +5111,39 @@ one initial.</desc>
                            <s:assert test="@subtype='literal' or @subtype='idiomatic'">only "literal" or "idiomatic" translations expected</s:assert>
                         </s:rule>
                         <s:rule context="tei:cit[@subtype = 'proverb']">
-                           <s:assert test="@type = 'example'">unexpected value "<s:value-of select="current()/@type"/>" in @type – a proverb must be encoded as
-                              cit type="example" subtype="proverb"</s:assert>
+                           <s:assert test="@type = 'example'">unexpected value "<s:value-of select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
                         </s:rule>
                      </constraint>
-                  </constraintSpec><attList><attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="example">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="example" mode="add">
                               <desc>A dictionary example. Ideally, examples should consist in
                                  complete sentences. Examples should be concise, but can also
                                  contain several sentences. If dialogical models are involved,
                                  sentences are to be separated by a dash.</desc>
                            </valItem>
-                           <valItem ident="translationEquivalent">
+                           <valItem ident="translationEquivalent" mode="add">
                               <desc>A translation equivalent.</desc>
                            </valItem>
-                           <valItem ident="translation">
+                           <valItem ident="translation" mode="add">
                               <desc>A translation.</desc>
                            </valItem>
-                           <valItem ident="etymon">
+                           <valItem ident="etymon" mode="add">
                               <desc>An etymon.</desc>
                            </valItem>
                         </valList>
-                     </attDef><attDef ident="subtype" mode="replace" usage="opt">
-                        <valList type="closed">
-                           <valItem ident="proverb">
+                     </attDef><attDef ident="subtype" mode="replace" usage="opt" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="proverb" mode="add">
                               <desc>Proverbs are a subtype of example.</desc>
                            </valItem>
-                           <valItem ident="scientificName">
+                           <valItem ident="scientificName" mode="add">
                               <desc>contains a scientific name of a plants or similar</desc>
                            </valItem>
-                           <valItem ident="literal">
+                           <valItem ident="literal" mode="add">
                               <desc>marks a translation to be a literal translation (instead of a idiomatic one)</desc>
                            </valItem>
-                           <valItem ident="idiomatic">
+                           <valItem ident="idiomatic" mode="add">
                               <desc>marks a translation to be a idiomatic translation (instead of a literal one)</desc>
                            </valItem>
                         </valList>
@@ -5781,9 +5777,9 @@ one initial.</desc>
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COXR">3.7. Simple Links and Cross-References</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">16.1. Links</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="core" ident="list"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en" versionDate="2007-06-12">list</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">liste</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">Liste</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains any sequence of items organized as a list.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">목록의 형태로 정리된 항목을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含以列表方式呈現的任何連續項目。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">リストのような、項目列を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">contient une suite d'items ordonnés dans une liste.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene cualquier secuencia de ítems o elementos
+  </listRef></elementSpec><elementSpec rend="add" module="core" ident="list" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en" versionDate="2007-06-12">list</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">liste</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">Liste</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains any sequence of items organized as a list.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">목록의 형태로 정리된 항목을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含以列表方式呈現的任何連續項目。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">リストのような、項目列を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">contient une suite d'items ordonnés dans une liste.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene cualquier secuencia de ítems o elementos
     organizados en una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi sequenza di voci organizzate in
-    una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">enthält eine Reihe von Listenpunkten, die als Liste organisiert sind.</desc><classes><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="att.typed"/><memberOf key="model.listLike"/></classes><content><sequence minOccurs="1" maxOccurs="1"><classRef key="model.divTop" minOccurs="0"/><sequence minOccurs="1" maxOccurs="unbounded"><elementRef key="label" minOccurs="0"/><elementRef key="item" minOccurs="1" maxOccurs="1"/></sequence></sequence></content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="gloss-list-must-have-labels" scheme="schematron">
+    una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">enthält eine Reihe von Listenpunkten, die als Liste organisiert sind.</desc><classes><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="att.typed"/><memberOf key="model.listLike"/></classes><content autoPrefix="true"><sequence minOccurs="1" maxOccurs="1"><classRef key="model.divTop" minOccurs="0" maxOccurs="1"/><sequence minOccurs="1" maxOccurs="unbounded"><elementRef key="label" minOccurs="0" maxOccurs="1"/><elementRef key="item" minOccurs="1" maxOccurs="1"/></sequence></sequence></content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="gloss-list-must-have-labels" scheme="schematron">
     <constraint>
       <sch:rule context="tei:list[@type='gloss']">
 	<sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
@@ -7638,7 +7634,7 @@ epistemology, methodology and history of
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBITY">3.12.1. Methods of Encoding Bibliographic References and Lists of References</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3">2.2.7. The Source Description</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCAS2">15.3.2. Declarable Elements</ref>
-  </listRef></elementSpec><elementSpec rend="change" module="core" ident="listBibl" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">citation list</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">인용 목록</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">書目列表</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">liste de références bibliographiques</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">lista de cita</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">lista di citazioni</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Liste bibliografischer Angaben</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains a list of bibliographic citations of any kind.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">여러 종류의 서지 인용 목록을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類的書目資料列表。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">書誌項目引用のリストを示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">contient une liste de références bibliographiques de toute nature.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene una lista de citas bibliográficas de cualquier tipo.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una lista di citazioni bibliografiche di qualsiasi natura.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">enthält eine Liste von bibliografischen Angaben jeglicher Art.</desc><classes><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="att.declarable"/><memberOf key="att.typed"/><memberOf key="model.biblLike"/></classes><content><alternate minOccurs="1" maxOccurs="unbounded"><elementRef key="bibl"/><elementRef key="biblStruct"/></alternate></content><constraintSpec ident="listBibl-context" scheme="schematron">
+  </listRef></elementSpec><elementSpec rend="change" module="core" ident="listBibl" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">citation list</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">인용 목록</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">書目列表</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">liste de références bibliographiques</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">lista de cita</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">lista di citazioni</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Liste bibliografischer Angaben</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains a list of bibliographic citations of any kind.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">여러 종류의 서지 인용 목록을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含任何種類的書目資料列表。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">書誌項目引用のリストを示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">contient une liste de références bibliographiques de toute nature.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene una lista de citas bibliográficas de cualquier tipo.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una lista di citazioni bibliografiche di qualsiasi natura.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">enthält eine Liste von bibliografischen Angaben jeglicher Art.</desc><classes><memberOf key="att.global"/><memberOf key="att.sortable"/><memberOf key="att.declarable"/><memberOf key="att.typed"/><memberOf key="model.biblLike"/></classes><content autoPrefix="true"><alternate minOccurs="1" maxOccurs="unbounded"><elementRef key="bibl" minOccurs="1" maxOccurs="1"/><elementRef key="biblStruct" minOccurs="1" maxOccurs="1"/></alternate></content><constraintSpec ident="listBibl-context" scheme="schematron" mode="add" predeclare="false">
                      <constraint>
                         <s:rule context="tei:listBibl[ancestor::tei:body]">
                            <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an example</s:assert>
@@ -8414,7 +8410,7 @@ l'original apparaît comme une forme fusionnée.</desc>
   </listRef></elementSpec><elementSpec rend="change" module="dictionaries" ident="form" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">form information group</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">형태 정보군</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">形式資訊群</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">groupe d'informations sur une forme dans une entrée</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">grupo de información de forma</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">gruppo di informazioni sulla form</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">groups all the information on the written and spoken forms of one headword.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">하나의 표제어에 대한 문어와 구어 형태에 관한 모든 정보군</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">匯集一個標題字在書寫及發音形式方面的所有資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">ひとつの見出し語の書記または発話形式の情報を全てまとめる。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">regroupe toutes les informations relatives à la
     morphologie et à la prononciation d'une entrée</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">agrupa toda la información relativa a la forma oral y
     escrita de una palabra.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">raggruppa tutte le informazioni sulle form scritte e
-    orali di un lemma</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.formPart"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><alternate minOccurs="0" maxOccurs="unbounded"><textNode xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.gLike" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalPhrase" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalInter" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.formPart" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="1" maxOccurs="1"/></alternate></content><constraintSpec ident="form-type" scheme="schematron">
+    orali di un lemma</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.formPart"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><alternate minOccurs="0" maxOccurs="unbounded"><textNode xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.gLike" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalPhrase" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalInter" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.formPart" minOccurs="1" maxOccurs="1"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="1" maxOccurs="1"/></alternate></content><constraintSpec ident="form-type" scheme="schematron" mode="add" predeclare="false">
                      <desc>assert content of correct context of @type values</desc>
                      <constraint>
                         <s:rule context="tei:form[@type = 'variant']">
@@ -8431,12 +8427,12 @@ l'original apparaît comme une forme fusionnée.</desc>
                               by the type attribute "lemma".</s:assert>
                         </s:rule>
                      </constraint>
-                  </constraintSpec><attList><attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="lemma">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="lemma" mode="add">
                               <desc>the headword of a lemma entry</desc>
                            </valItem>
-                           <valItem ident="inflected">
+                           <valItem ident="inflected" mode="add">
                               <desc>inflected form</desc>
                            </valItem>
                            
@@ -8444,11 +8440,11 @@ l'original apparaît comme une forme fusionnée.</desc>
 
 
                            
-                           <valItem ident="example">
+                           <valItem ident="example" mode="add">
                               <desc>???</desc>
                            </valItem>
 
-                           <valItem ident="variant">
+                           <valItem ident="variant" mode="add">
                               <desc>A variant form of the lemma. Only headwords may have variants.
                                  All other variants – e.g. competing morphological forms – are
                                  simply listed but not classified. Variants can be assigned usage
@@ -8456,63 +8452,63 @@ l'original apparaît comme une forme fusionnée.</desc>
                                  variant should precede less frequent ones. </desc>
                            </valItem>
 
-                           <valItem ident="stem">
+                           <valItem ident="stem" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
-                           <valItem ident="derived">
-                              <desc>TODO description missing</desc>
-                           </valItem>
-
-                           
-                           <valItem ident="lemmaVariant">
+                           <valItem ident="derived" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
                            
-                           <valItem ident="construction">
+                           <valItem ident="lemmaVariant" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
-                           <valItem ident="VN">
+                           
+                           <valItem ident="construction" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
-                           <valItem ident="infinitive">
+                           <valItem ident="VN" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
-                           <valItem ident="adverbial">
+                           <valItem ident="infinitive" mode="add">
+                              <desc>TODO description missing</desc>
+                           </valItem>
+
+                           <valItem ident="adverbial" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
 
-                           <valItem ident="abbreviation">
+                           <valItem ident="abbreviation" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
 
                            
-                           <valItem ident="lexicalType:adverb">
+                           <valItem ident="lexicalType:adverb" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="lexicalType:infinitive">
+                           <valItem ident="lexicalType:infinitive" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="lexicalType:infinitiveLocative">
+                           <valItem ident="lexicalType:infinitiveLocative" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="grammaticalCase:genitive">
+                           <valItem ident="grammaticalCase:genitive" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="grammaticalCase:vocative">
+                           <valItem ident="grammaticalCase:vocative" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
 
                         </valList>
-                     </attDef><attDef ident="subtype" mode="replace" usage="opt">
-                        <valList type="closed">
-                           <valItem ident="compound">
+                     </attDef><attDef ident="subtype" mode="replace" usage="opt" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="compound" mode="add">
                               <desc>Used for multi-word units</desc>
                            </valItem>
                         </valList>
@@ -8639,100 +8635,100 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
     terme, un mot ou une forme dans une entrée de dictionnaire ou dans un fichier de données
     terminologiques.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">dentro de una entrada de un diccionario, o en un archivo
     de datos terminológicos, contiene información gramatical relativa al término, palabra o forma.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">all'interno di una voce in un dizionario o di un file
-    terminologico, contiene informazioni relative a un termine, una parola o una forma.</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.morphLike"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><attList><attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="arguments">
+    terminologico, contiene informazioni relative a un termine, una parola o una forma.</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.morphLike"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="arguments" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="aspect">
+                           <valItem ident="aspect" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="constraint">
+                           <valItem ident="constraint" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="constr">
+                           <valItem ident="constr" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="degree">
+                           <valItem ident="degree" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="derivedVerbClass">
+                           <valItem ident="derivedVerbClass" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="extension">
+                           <valItem ident="extension" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="frequency">
+                           <valItem ident="frequency" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="followedBy">
+                           <valItem ident="followedBy" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="gender">
+                           <valItem ident="gender" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="government">
+                           <valItem ident="government" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="inflectionType">
+                           <valItem ident="inflectionType" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="keys">
+                           <valItem ident="keys" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="mood">
+                           <valItem ident="mood" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="morph">
+                           <valItem ident="morph" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="morphPattern">
+                           <valItem ident="morphPattern" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="morphType">
+                           <valItem ident="morphType" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="nominalState">
+                           <valItem ident="nominalState" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="number">
+                           <valItem ident="number" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="person">
+                           <valItem ident="person" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="pos">
+                           <valItem ident="pos" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                            <valItem ident="precededBy">
+                            <valItem ident="precededBy" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="reg">
+                           <valItem ident="reg" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="root">
+                           <valItem ident="root" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="roots">
+                           <valItem ident="roots" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="semCat">
+                           <valItem ident="semCat" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="subc">
+                           <valItem ident="subc" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="usg">
+                           <valItem ident="usg" mode="add">
                               <desc>hint on usage</desc>
                            </valItem>
                            
-                           <valItem ident="synRoot">
+                           <valItem ident="synRoot" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="diaRoot">
+                           <valItem ident="diaRoot" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
-                           <valItem ident="diaRootNew">
+                           <valItem ident="diaRootNew" mode="add">
                               <desc>TODO description missing</desc>
                            </valItem>
                         </valList>
@@ -8987,7 +8983,7 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
     <p rend="dataDesc"> 句レベル要素と共に文字データを含むかもしれない。 </p>
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPET">9.3.4. Etymological Information</ref>
-  </listRef></elementSpec><elementSpec rend="change" module="dictionaries" ident="usg" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-10-02" xml:lang="fr">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">용법</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">字詞使用資訊</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">uso</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">uso</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains usage information in a dictionary entry.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-05-27" xml:lang="fr">contient, dans une entrée de dictionnaire, les informations sur son usage</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">사전 표제 항목에 용법 정보를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含辭條中的使用資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">辞書項目中にある用例情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene la información sobre el uso en la entrada de un diccionario.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">in una voce di dizionario, contiene informazioni sull'uso.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.lexicalRefinement"/><memberOf key="att.lexicographic"/></classes><content><alternate minOccurs="1" maxOccurs="1"><textNode/><elementRef key="name" minOccurs="1" maxOccurs="unbounded"/></alternate></content><constraintSpec ident="name-in-usg" scheme="schematron">
+  </listRef></elementSpec><elementSpec rend="change" module="dictionaries" ident="usg" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-10-02" xml:lang="fr">usage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">용법</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">字詞使用資訊</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">uso</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">uso</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains usage information in a dictionary entry.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-05-27" xml:lang="fr">contient, dans une entrée de dictionnaire, les informations sur son usage</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">사전 표제 항목에 용법 정보를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含辭條中的使用資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">辞書項目中にある用例情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene la información sobre el uso en la entrada de un diccionario.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">in una voce di dizionario, contiene informazioni sull'uso.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.lexicalRefinement"/><memberOf key="att.lexicographic"/></classes><content autoPrefix="true"><alternate minOccurs="1" maxOccurs="1"><textNode/><elementRef key="name" minOccurs="1" maxOccurs="unbounded"/></alternate></content><constraintSpec ident="name-in-usg" scheme="schematron" mode="add" predeclare="false">
                      <desc>assert that only usg type geographic or socioCultural contain a name
                         element</desc>
                      <constraint>
@@ -9693,7 +9689,7 @@ material</measure>
   </listRef></elementSpec><elementSpec rend="change" module="header" ident="publicationStmt" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">publication statement</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">mention de publication</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">출판 진술</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">出版陳述</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-17" xml:lang="de">Angaben zur Veröffentlichung</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">declaración de la publicación</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">dichiarazione sulla pubblicazione</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">groups information concerning the publication or distribution of an electronic or other text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">regroupe des informations concernant la publication ou
     la diffusion d’un texte électronique ou d’un autre type de texte.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">전자 또는 기타 텍스트의 출판 또는 배포에 관한 정보를 모아 놓는다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">匯集電子文件或其他類型文件的出版或發行相關資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">電子テキストなどの出版や頒布に関する情報をまとめる。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-17" xml:lang="de">umfasst Angaben zu Veröffentlichung oder Vertrieb eines elektronischen oder sonstigen Textes.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">agrupa la información concerniente a la publicación o
     distribución de un texto electrónico u otro texto.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni riguardo la pubblicazione o la
-    distribuzione di un documento elettronico o di altra natua.</desc><classes><memberOf key="att.global"/></classes><content><sequence minOccurs="1" maxOccurs="1"><classRef key="model.publicationStmtPart.agency" minOccurs="1" maxOccurs="unbounded"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.ptrLike"/><elementRef key="date"/><elementRef key="pubPlace"/><elementRef key="idno"/></alternate><elementRef key="availability"/></sequence></content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="mul">
+    distribuzione di un documento elettronico o di altra natua.</desc><classes><memberOf key="att.global"/></classes><content autoPrefix="true"><sequence minOccurs="1" maxOccurs="1"><classRef key="model.publicationStmtPart.agency" minOccurs="1" maxOccurs="unbounded"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.ptrLike" minOccurs="1" maxOccurs="1"/><elementRef key="date" minOccurs="1" maxOccurs="1"/><elementRef key="pubPlace" minOccurs="1" maxOccurs="1"/><elementRef key="idno" minOccurs="1" maxOccurs="1"/></alternate><elementRef key="availability" minOccurs="1" maxOccurs="1"/></sequence></content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="mul">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <publicationStmt>
         <publisher>C. Muquardt </publisher>
@@ -11761,7 +11757,7 @@ supplied to printer.</change>
     </attDef>
   </attList>
   
-</classSpec><elementSpec rend="change" module="linking" ident="seg" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">arbitrary segment</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">임의의 분절</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">隨機分割</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">segment quelconque</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">segmento arbitrario</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">segmento arbitrario</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-19" xml:lang="de">arbiträres Segment</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-01-31" xml:lang="en">represents any segmentation of text below the <soCalled>chunk</soCalled> level.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">(다른 분절 요소를 포함하여) 텍스트의 임의의 구-층위 단위를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含文件中任何隨機字詞層次的單元 (包括其他分割元素)。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">任意の句レベルのテキスト単位を示す(要素segを含む)。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-10-06" xml:lang="fr">contient une unité de texte quelconque de niveau <soCalled>segment</soCalled>.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene cualquier unidad textual a nivel sintagmático (inclusive otros elementos de tipo seg.)</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi unità testuale a livello sintagmatico (ivi compresi altri elementi del tipo seg)</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-19" xml:lang="de">beschreibt Segmente eines Texts unterhalb des <soCalled>Chunk-Level</soCalled>.</desc><classes><memberOf key="model.segLike"/><memberOf key="att.global"/><memberOf key="att.segLike"/><memberOf key="att.typed"/><memberOf key="att.written"/><memberOf key="att.notated"/></classes><content autoPrefix="true"><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><constraintSpec ident="seg-context" scheme="schematron">
+</classSpec><elementSpec rend="change" module="linking" ident="seg" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">arbitrary segment</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">임의의 분절</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">隨機分割</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">segment quelconque</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">segmento arbitrario</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">segmento arbitrario</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-19" xml:lang="de">arbiträres Segment</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-01-31" xml:lang="en">represents any segmentation of text below the <soCalled>chunk</soCalled> level.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">(다른 분절 요소를 포함하여) 텍스트의 임의의 구-층위 단위를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含文件中任何隨機字詞層次的單元 (包括其他分割元素)。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">任意の句レベルのテキスト単位を示す(要素segを含む)。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-10-06" xml:lang="fr">contient une unité de texte quelconque de niveau <soCalled>segment</soCalled>.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene cualquier unidad textual a nivel sintagmático (inclusive otros elementos de tipo seg.)</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi unità testuale a livello sintagmatico (ivi compresi altri elementi del tipo seg)</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-19" xml:lang="de">beschreibt Segmente eines Texts unterhalb des <soCalled>Chunk-Level</soCalled>.</desc><classes><memberOf key="model.segLike"/><memberOf key="att.global"/><memberOf key="att.segLike"/><memberOf key="att.typed"/><memberOf key="att.written"/><memberOf key="att.notated"/></classes><content autoPrefix="true"><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><constraintSpec ident="seg-context" scheme="schematron" mode="add" predeclare="false">
                      <desc> assert correct context of seg</desc>
                      <constraint>
                         <s:rule context="tei:seg[@type = 'hint']">
@@ -11769,13 +11765,13 @@ supplied to printer.</change>
                               hint segment must be inside a translation equivalent</s:assert>
                         </s:rule>
                      </constraint>
-                  </constraintSpec><attList><attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="hint">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="hint" mode="add">
                               <desc>a hint in a translation to narrow down the semantic scope of the
                                  particular item.</desc>
                            </valItem>
-                           <valItem ident="constrPart">
+                           <valItem ident="constrPart" mode="add">
                               <desc>TODO add description ???</desc>
                            </valItem>
                         </valList>
@@ -12828,7 +12824,7 @@ supplied to printer.</change>
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DS">4. Default Text Structure</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCDEF">15.1. Varieties of Composite Text</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="textstructure" ident="body"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">text body</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 본문</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">正文</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">corps du texte</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Textkörper</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">cuerpo del texto</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">corpo del testo</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="ja" versionDate="2023-09-27">テキスト本文</gloss><desc rend="replace">contains the main content of the dictionary. MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc><classes><memberOf key="att.global"/></classes><content><elementRef key="div" minOccurs="1" maxOccurs="2"/></content><constraintSpec ident="body-children" scheme="schematron">
+  </listRef></elementSpec><elementSpec rend="add" module="textstructure" ident="body" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">text body</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 본문</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">正文</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">corps du texte</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Textkörper</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">cuerpo del texto</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">corpo del testo</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="ja" versionDate="2023-09-27">テキスト本文</gloss><desc rend="replace">contains the main content of the dictionary. MUST include a <tag scheme="TEI">div type="entries"</tag> and MAY include a <tag scheme="TEI">div type="examples"</tag>.</desc><classes><memberOf key="att.global"/></classes><content autoPrefix="true"><elementRef key="div" minOccurs="1" maxOccurs="2"/></content><constraintSpec ident="body-children" scheme="schematron" mode="add" predeclare="false">
                      <desc>assert typed div elements at the top of body</desc>
                      <constraint>
                         <s:rule context="tei:body">
@@ -12853,10 +12849,10 @@ supplied to printer.</change>
                      </egXML>
                   </exemplum><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DS">4. Default Text Structure</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="textstructure" ident="div"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">text division</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 구역</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">文本區段</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">division du texte</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Textabschnitt</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">división de texto</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">partizione testuale</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains a subdivision of the front, body, or back of a text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트의 전면부, 본문, 후면부의 하위 구역을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">文本的正文前資訊、正文、及正文後資訊的分段。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">前付、本文、後付中のテキスト部分を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">contient une subdivision dans le texte préliminaire, dans le
+  </listRef></elementSpec><elementSpec rend="add" module="textstructure" ident="div" ns="http://www.tei-c.org/ns/1.0"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">text division</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 구역</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">文本區段</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">division du texte</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Textabschnitt</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">división de texto</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">partizione testuale</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains a subdivision of the front, body, or back of a text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트의 전면부, 본문, 후면부의 하위 구역을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">文本的正文前資訊、正文、及正文後資訊的分段。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">前付、本文、後付中のテキスト部分を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">contient une subdivision dans le texte préliminaire, dans le
   corps d’un texte ou dans le texte postliminaire.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">enthält einen Unterabschnitt in Vorspann (front), Textkörper oder Nachspann (back) eines Textes.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene una subdivisión del paratexto inicial, del
   cuerpo del texto o del paratexto final.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una suddivisione del peritesto iniziale, del
-  corpo del testo, o del peritesto finale</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="att.written"/><memberOf key="model.divLike"/></classes><content><sequence minOccurs="1" maxOccurs="1"><alternate minOccurs="0" maxOccurs="unbounded"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divTop"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global"/></alternate><sequence minOccurs="0" maxOccurs="1"><alternate minOccurs="1" maxOccurs="1"><sequence minOccurs="1" maxOccurs="unbounded"><alternate minOccurs="1" maxOccurs="1"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divLike"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divGenLike"/></alternate><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence><sequence minOccurs="1" maxOccurs="1"><sequence minOccurs="1" maxOccurs="unbounded"><alternate minOccurs="1" maxOccurs="1"><elementRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="schemaSpec"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.common"/></alternate><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence><sequence minOccurs="0" maxOccurs="unbounded"><alternate minOccurs="1" maxOccurs="1"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divLike"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divGenLike"/></alternate><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence></sequence></alternate><sequence minOccurs="0" maxOccurs="unbounded"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divBottom"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence></sequence></sequence></content><constraintSpec ident="div-example-children" scheme="schematron">
+  corpo del testo, o del peritesto finale</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="att.written"/><memberOf key="model.divLike"/></classes><content><sequence minOccurs="1" maxOccurs="1"><alternate minOccurs="0" maxOccurs="unbounded"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divTop"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global"/></alternate><sequence minOccurs="0" maxOccurs="1"><alternate minOccurs="1" maxOccurs="1"><sequence minOccurs="1" maxOccurs="unbounded"><alternate minOccurs="1" maxOccurs="1"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divLike"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divGenLike"/></alternate><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence><sequence minOccurs="1" maxOccurs="1"><sequence minOccurs="1" maxOccurs="unbounded"><alternate minOccurs="1" maxOccurs="1"><elementRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="schemaSpec"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.common"/></alternate><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence><sequence minOccurs="0" maxOccurs="unbounded"><alternate minOccurs="1" maxOccurs="1"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divLike"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divGenLike"/></alternate><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence></sequence></alternate><sequence minOccurs="0" maxOccurs="unbounded"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.divBottom"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence></sequence></sequence></content><constraintSpec ident="div-example-children" scheme="schematron" mode="add" predeclare="false">
                      <desc>assert content of top-level divisions</desc>
                      <constraint>
                         <s:rule context="tei:div[@type = 'examples']">
@@ -12879,12 +12875,12 @@ supplied to printer.</change>
         Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
       </sch:report>
     </constraint>
-  </constraintSpec><attList><attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="entries">
+  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="entries" mode="add">
                               <desc>contains all entries in a dictionary</desc>
                            </valItem>
-                           <valItem ident="examples">
+                           <valItem ident="examples" mode="add">
                               <desc>contains examples used in the dictionary</desc>
                            </valItem>
                         </valList>
@@ -13007,11 +13003,11 @@ associated.</desc>
     </attDef>
   </attList>
   
-</classSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="iso-fs" ident="fs"><gloss versionDate="2007-07-04" xml:lang="en">feature structure</gloss><gloss versionDate="2007-12-20" xml:lang="ko">자질 구조</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">功能結構</gloss><gloss versionDate="2007-06-12" xml:lang="fr">structure de traits</gloss><gloss versionDate="2007-05-04" xml:lang="es">Estructura de rasgo</gloss><gloss versionDate="2007-01-21" xml:lang="it">struttura dei tratti</gloss><desc versionDate="2005-01-14" xml:lang="en">represents a <term>feature structure</term>, that is, a
+</classSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="iso-fs" ident="fs" ns="http://www.tei-c.org/ns/1.0"><gloss versionDate="2007-07-04" xml:lang="en">feature structure</gloss><gloss versionDate="2007-12-20" xml:lang="ko">자질 구조</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">功能結構</gloss><gloss versionDate="2007-06-12" xml:lang="fr">structure de traits</gloss><gloss versionDate="2007-05-04" xml:lang="es">Estructura de rasgo</gloss><gloss versionDate="2007-01-21" xml:lang="it">struttura dei tratti</gloss><desc versionDate="2005-01-14" xml:lang="en">represents a <term>feature structure</term>, that is, a
   collection of feature-value pairs organized as a
 structural unit.</desc><desc versionDate="2007-12-20" xml:lang="ko"><term>feature structure</term>, 즉, 구조화된 단위로서 구성된 자질-값 쌍의 집합을 표시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">表示一個<term>功能結構</term>，即組織為一個結構單元的功能-值配對集合。</desc><desc versionDate="2008-04-05" xml:lang="ja"><term>素性構造</term>を示す。すなわち、構造単位となる素性名-素性値の
   組の集合。</desc><desc versionDate="2007-06-12" xml:lang="fr">représente une <term>structure de traits</term>,
-      c'est-à-dire un ensemble de paires trait-valeur organisé comme une unité structurelle.</desc><desc versionDate="2007-05-04" xml:lang="es">representa una <term>feature structure (estructura de rasgos)</term>, es decir, un conjunto de pares de valores de rasgos organizados como una unidad estructural.</desc><desc versionDate="2007-01-21" xml:lang="it">rappresenta una <term>feature structure</term>, cioè una raccolta di coppie di valori tratti organizzata come una unità strutturale.</desc><classes><memberOf key="att.global"/><memberOf key="model.global.meta"/><memberOf key="att.datcat"/></classes><content><elementRef key="f" minOccurs="0" maxOccurs="unbounded"/></content><constraintSpec ident="fs-context" scheme="schematron">
+      c'est-à-dire un ensemble de paires trait-valeur organisé comme une unité structurelle.</desc><desc versionDate="2007-05-04" xml:lang="es">representa una <term>feature structure (estructura de rasgos)</term>, es decir, un conjunto de pares de valores de rasgos organizados como una unidad estructural.</desc><desc versionDate="2007-01-21" xml:lang="it">rappresenta una <term>feature structure</term>, cioè una raccolta di coppie di valori tratti organizzata come una unità strutturale.</desc><classes><memberOf key="att.global"/><memberOf key="model.global.meta"/><memberOf key="att.datcat"/></classes><content><elementRef key="f" minOccurs="0" maxOccurs="unbounded"/></content><constraintSpec ident="fs-context" scheme="schematron" mode="add" predeclare="false">
                      <desc>assure that "fs" is only contained in cit/@type='example' and entry</desc>
                      <constraint>
                         <s:rule context="tei:fs">
@@ -13192,7 +13188,7 @@ rasgo.</desc>
   <listRef>
     <ptr target="#FSBI" type="div3"/>
   </listRef>
-</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="iso-fs" ident="symbol"><gloss versionDate="2007-07-04" xml:lang="en">symbolic value</gloss><gloss versionDate="2007-12-20" xml:lang="ko">기호 값</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">符號值</gloss><gloss versionDate="2007-06-12" xml:lang="fr">valeur symbolique</gloss><gloss versionDate="2007-05-04" xml:lang="es">valor simbólico</gloss><gloss versionDate="2007-01-21" xml:lang="it">valore simbolico</gloss><desc versionDate="2005-01-14" xml:lang="en">represents the value part of a feature-value specification
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="iso-fs" ident="symbol" ns="http://www.tei-c.org/ns/1.0"><gloss versionDate="2007-07-04" xml:lang="en">symbolic value</gloss><gloss versionDate="2007-12-20" xml:lang="ko">기호 값</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">符號值</gloss><gloss versionDate="2007-06-12" xml:lang="fr">valeur symbolique</gloss><gloss versionDate="2007-05-04" xml:lang="es">valor simbólico</gloss><gloss versionDate="2007-01-21" xml:lang="it">valore simbolico</gloss><desc versionDate="2005-01-14" xml:lang="en">represents the value part of a feature-value specification
   which contains one of a finite list of symbols.</desc><desc versionDate="2007-12-20" xml:lang="ko">유한한 목록의 기호 중 하나를 포함하는 자질-값 명세에서 값 부분을 표시한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">表示功能值細節的值部分資訊，包含限定符號列表中的其中一項。</desc><desc versionDate="2008-04-05" xml:lang="ja">記号リスト中のいち項目を含む素性値規定のうち、値の部分を示す。</desc><desc versionDate="2007-06-12" xml:lang="fr">représente la partie valeur d'une spécification
       trait-valeur qui contient un symbole extrait d'une liste finie.</desc><desc versionDate="2007-05-04" xml:lang="es">representa la parte del valor de una especificación de valor de rasgo que contiene uno de una lista finita de símbolos.</desc><desc versionDate="2007-01-21" xml:lang="it">rappresenta la parte di valore di una specifica del valore dei tratti che contiene un simbolo da una lista chiusa di simboli.</desc><classes><memberOf key="model.featureVal"/><memberOf key="att.global"/><memberOf key="att.datcat"/></classes><content><empty/></content><attList><attDef ident="value" usage="req">
       <desc versionDate="2005-01-14" xml:lang="en">supplies a symbolic value for the feature, one of a finite list that
@@ -13396,7 +13392,7 @@ during the evolution of the encoded representation of that text.</p>
   <listRef>
     <ptr target="#CONANU" type="div2"/>
   </listRef>
-</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" rend="change" module="core" ident="ptr"><gloss versionDate="2007-07-04" xml:lang="en">pointer</gloss><gloss versionDate="2007-12-20" xml:lang="ko">포인터</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW"/><gloss versionDate="2008-04-06" xml:lang="es">puntero</gloss><gloss versionDate="2009-01-06" xml:lang="fr">pointeur</gloss><gloss versionDate="2007-11-06" xml:lang="it">puntatore</gloss><desc versionDate="2006-01-11" xml:lang="en">defines a pointer to another location.</desc><desc versionDate="2007-12-20" xml:lang="ko">다른 위치로의 포인터를 정의한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標明一個與其他位置相連結的指標。</desc><desc versionDate="2008-04-05" xml:lang="ja">他の場所を示すポインターを定義する。</desc><desc versionDate="2009-01-06" xml:lang="fr">définit un pointeur vers un autre emplacement.</desc><desc versionDate="2007-05-04" xml:lang="es">define un señalizador a otra localización.</desc><desc versionDate="2007-01-21" xml:lang="it">definisce un puntatore ad un'altra posizione.</desc><classes><memberOf key="att.cReferencing"/><memberOf key="att.global"/><memberOf key="att.internetMedia"/><memberOf key="att.pointing"/><memberOf key="att.typed"/><memberOf key="model.ptrLike"/></classes><content><empty/></content><constraintSpec ident="example-target" scheme="schematron">
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" rend="change" module="core" ident="ptr" ns="http://www.tei-c.org/ns/1.0"><gloss versionDate="2007-07-04" xml:lang="en">pointer</gloss><gloss versionDate="2007-12-20" xml:lang="ko">포인터</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW"/><gloss versionDate="2008-04-06" xml:lang="es">puntero</gloss><gloss versionDate="2009-01-06" xml:lang="fr">pointeur</gloss><gloss versionDate="2007-11-06" xml:lang="it">puntatore</gloss><desc versionDate="2006-01-11" xml:lang="en">defines a pointer to another location.</desc><desc versionDate="2007-12-20" xml:lang="ko">다른 위치로의 포인터를 정의한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">標明一個與其他位置相連結的指標。</desc><desc versionDate="2008-04-05" xml:lang="ja">他の場所を示すポインターを定義する。</desc><desc versionDate="2009-01-06" xml:lang="fr">définit un pointeur vers un autre emplacement.</desc><desc versionDate="2007-05-04" xml:lang="es">define un señalizador a otra localización.</desc><desc versionDate="2007-01-21" xml:lang="it">definisce un puntatore ad un'altra posizione.</desc><classes><memberOf key="att.cReferencing"/><memberOf key="att.global"/><memberOf key="att.internetMedia"/><memberOf key="att.pointing"/><memberOf key="att.typed"/><memberOf key="model.ptrLike"/></classes><content><empty/></content><constraintSpec ident="example-target" scheme="schematron" mode="add" predeclare="false">
                      <desc>rules that govern ptr elements</desc>
                      <constraint>
                         <s:rule context="tei:ptr[@type = 'example'][matches(@target,'^#') and not(contains(@target,' '))]">
