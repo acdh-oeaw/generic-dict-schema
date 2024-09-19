@@ -86,7 +86,7 @@
          <div part="N" org="uniform" sample="complete">
             <head>Part 2: Formal Specification</head>
 
-            <schemaSpec ident="acdh-ch-dicts" source="tmp/TEILex0.compiled.odd" mode="add" predeclare="false" ns="http://www.tei-c.org/ns/1.0" status="draft" start="TEI" defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"><classSpec rend="add" module="tei" type="atts" ident="att.anchoring">
+            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd" mode="add" predeclare="false" ns="http://www.tei-c.org/ns/1.0" status="draft" start="TEI" defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML"><classSpec rend="add" module="tei" type="atts" ident="att.anchoring">
   <gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">anchoring</gloss>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">provides attributes for use on annotations, e.g. notes and groups of notes
   describing the existence and position of an anchor for annotations.</desc>
@@ -5108,7 +5108,7 @@ one initial.</desc>
                            <s:assert test="parent::tei:cit[@type = 'example']">cit/type="translation" must be part of an example</s:assert>
                            <s:report test="tei:form">tei:cit/@type = 'translation' may only contain a tei:quote element</s:report>
                            <s:report test="* except (tei:quote|tei:usg)">a translation may only contain 1) the translated text in a quote element, 2) the context of the translation in a tei:usg element</s:report>
-                           <s:assert test="@subtype='literal' or @subtype='idiomatic'">only "literal" or "idiomatic" translations expected</s:assert>
+                           <s:assert test="not(@subtype) or @subtype='literal'">only "literal" translations expected</s:assert>
                         </s:rule>
                         <s:rule context="tei:cit[@subtype = 'proverb']">
                            <s:assert test="@type = 'example'">unexpected value "<s:value-of select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>

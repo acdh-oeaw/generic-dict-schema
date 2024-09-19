@@ -479,7 +479,7 @@
                            <s:assert test="parent::tei:cit[@type = 'example']">cit/type="translation" must be part of an example</s:assert>
                            <s:report test="tei:form">tei:cit/@type = 'translation' may only contain a tei:quote element</s:report>
                            <s:report test="* except (tei:quote|tei:usg)">a translation may only contain 1) the translated text in a quote element, 2) the context of the translation in a tei:usg element</s:report>
-                           <s:assert test="@subtype='literal' or @subtype='idiomatic'">only "literal" or "idiomatic" translations expected</s:assert>
+                           <s:assert test="not(@subtype) or @subtype='literal'">only "literal" translations expected</s:assert>
                         </s:rule>
                         <s:rule context="tei:cit[@subtype = 'proverb']">
                            <s:assert test="@type = 'example'">unexpected value "<s:value-of
