@@ -517,9 +517,6 @@
                            <valItem ident="literal">
                               <desc>marks a translation to be a literal translation (instead of a idiomatic one)</desc>
                            </valItem>
-                           <valItem ident="idiomatic">
-                              <desc>marks a translation to be a idiomatic translation (instead of a literal one)</desc>
-                           </valItem>
                         </valList>
                      </attDef>
                   </attList>

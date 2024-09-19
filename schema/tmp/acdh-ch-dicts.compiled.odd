@@ -5142,9 +5142,6 @@ one initial.</desc>
                            <valItem ident="literal" mode="add">
                               <desc>marks a translation to be a literal translation (instead of a idiomatic one)</desc>
                            </valItem>
-                           <valItem ident="idiomatic" mode="add">
-                              <desc>marks a translation to be a idiomatic translation (instead of a literal one)</desc>
-                           </valItem>
                         </valList>
                      </attDef></attList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#DSHD-eg-30">
