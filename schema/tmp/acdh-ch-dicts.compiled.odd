@@ -5106,8 +5106,7 @@ one initial.</desc>
                         </s:rule>
                         <s:rule context="tei:cit[@type = 'translation']">
                            <s:assert test="parent::tei:cit[@type = 'example']">cit/type="translation" must be part of an example</s:assert>
-                           <s:report test="tei:form">tei:cit/@type = 'translation' may only contain a tei:quote element</s:report>
-                           <s:report test="* except (tei:quote|tei:usg)">a translation may only contain 1) the translated text in a quote element, 2) the context of the translation in a tei:usg element</s:report>
+                           <s:report test="* except (tei:quote|tei:usg)">a cit type translation may only contain 1) the translated text in a quote element, 2) the context of the translation in a tei:usg element</s:report>
                            <s:assert test="not(@subtype) or @subtype='literal'">only "literal" translations expected</s:assert>
                         </s:rule>
                         <s:rule context="tei:cit[@subtype = 'proverb']">
