@@ -535,9 +535,24 @@
                         <s:rule context="tei:listBibl[ancestor::tei:body]">
                            <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an example</s:assert>
                            <s:assert test="not(tei:biblStruct)">a listBibl inside of an entry of an example is composed of bibl elements</s:assert>
-                        </s:rule>                        
+                        </s:rule>
                      </constraint>
                   </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="dictionaries">
+                              <desc>the listBibl is of type dictionaries</desc>
+                           </valItem>
+                           <valItem ident="corpora">
+                              <desc>the listBibl is of type corpora</desc>
+                           </valItem>
+                           <valItem ident="literature">
+                              <desc>the listBibl is of type literature</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
                
                <!--<elementSpec ident="placeName" mode="change" module="namesdates">

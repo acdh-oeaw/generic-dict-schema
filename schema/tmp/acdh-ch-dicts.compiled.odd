@@ -7635,15 +7635,21 @@ epistemology, methodology and history of
                         <s:rule context="tei:listBibl[ancestor::tei:body]">
                            <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an example</s:assert>
                            <s:assert test="not(tei:biblStruct)">a listBibl inside of an entry of an example is composed of bibl elements</s:assert>
-                        </s:rule>                        
+                        </s:rule>
                      </constraint>
-                  </constraintSpec><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" ident="type" mode="change" usage="req" predeclare="false">
-                    <valList type="semi" mode="change">
-                        <valItem ident="dictionaries" mode="add"/>
-                        <valItem ident="corpora" mode="add"/>
-                        <valItem ident="literature" mode="add"/>
-                    </valList>
-                </attDef></attList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+                  </constraintSpec><attList org="group"><attDef ident="type" mode="replace" usage="req" predeclare="false">
+                        <valList type="closed" mode="add">
+                           <valItem ident="dictionaries" mode="add">
+                              <desc>the listBibl is of type dictionaries</desc>
+                           </valItem>
+                           <valItem ident="corpora" mode="add">
+                              <desc>the listBibl is of type corpora</desc>
+                           </valItem>
+                           <valItem ident="literature" mode="add">
+                              <desc>the listBibl is of type literature</desc>
+                           </valItem>
+                        </valList>
+                     </attDef></attList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <listBibl>
         <head>Works consulted</head>
