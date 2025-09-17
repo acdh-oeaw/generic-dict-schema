@@ -7,8 +7,24 @@
       <fileDesc>
          <titleStmt>
             <title>ACDH-CH Dictionary Schema</title>
-            <author>Charly Mörth</author>
-            <author>Daniel Schopper</author>
+            <author>
+               <name xml:id="CM">Charly Mörth</name>
+            </author>
+            <author>
+               <name xml:id="DS">Daniel Schopper</name>
+            </author>
+            <respStmt>
+               <resp>contributor</resp>
+               <name xml:id="MRS">Michaela Rausch-Supola</name>
+            </respStmt>
+            <respStmt>
+               <resp>contributor</resp>
+               <name xml:id="KS">Kinga Sramó</name>
+            </respStmt>
+            <respStmt>
+               <resp>contributor</resp>
+               <name xml:id="VE">Veronika Engler</name>
+            </respStmt>
          </titleStmt>
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
@@ -20,6 +36,7 @@
       </fileDesc>
       <revisionDesc>
          <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure; incorporating most definitions from the VICAV dicts ODD, except for the prose part and the fvLib – TODO discuss if that is general enough to be included here or if it should be kept as a project/dictionary-specific vocabulary.</change>
+         <change status="draft" when="2024-07-26" who="#DS">fixing elementSpec for body; reducing tagset</change>
       </revisionDesc>
    </teiHeader>
    <text>
@@ -130,25 +147,25 @@
          <div>
             <head>Part 2: Formal Specification</head>
             
-            <schemaSpec ident="acdh-ch-dicts" source="file:///home/danielschopper/data/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
 
                <!-- We copy all modules from TEI Lex0 and exclude   -->
                <moduleRef key="analysis" except="c pc"/>
-               <moduleRef key="core"/>
-               <moduleRef key="dictionaries" except="hyph lbl syll pron"/>
+               <moduleRef key="core" except="hi q email num expan graphic"/>
+               <moduleRef key="dictionaries" except="dictScrap hyph lbl syll stress"/>
                <moduleRef key="figures" except="figure"/>
                <moduleRef key="gaiji"/>
-               <moduleRef key="header"/>
+               <moduleRef key="header" except="xenoData"/>
                <moduleRef key="linking"/>
                <moduleRef key="namesdates"/>
                <moduleRef key="tei"/>
-               <moduleRef key="textstructure"/>
+               <moduleRef key="textstructure" except="back front"/>
                
                <moduleRef key="transcr" except="metamark"/>
             
-               <elementSpec ident="body" mode="change">
-                  <desc>The main body of the dictionary. MUST include a <gi>div</gi> of type <val>entries</val> and MAY include a <gi>div</gi> of type <val>examples</val>.</desc>
+               <elementSpec ident="body" mode="change" module="textstructure">
+                  <desc>contains the main content of the dictionary. MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc>
                   <content>
                      <elementRef key="div" minOccurs="1" maxOccurs="2"/>
                   </content>
@@ -311,16 +328,8 @@
             <elementRef key="q" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
             <elementRef key="val" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
 
-            <!-- TODO are we sure we want <mentioned> and <lb/> ? DS 2021-12-02-->
-            <elementRef key="mentioned" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            <elementRef key="lb" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            
-            <!-- 
-               for some reason I had to explicitly add model.featureVal
-               and make <symbol> a member of it. We should find out why. 
-               DS 2021-12-02 
-            -->
-            <classRef key="model.featureVal" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+           
+             <classRef key="model.featureVal" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementSpec ident="symbol" mode="change">
                <classes mode="change">
                   <memberOf key="model.featureVal"/>
@@ -485,38 +494,43 @@
             </elementSpec>
             
             <elementSpec ident="cit" mode="change" module="core">
-               <!--<content>
-                  <alternate minOccurs="1" maxOccurs="unbounded">
-                     <!-\- both examples or translations have their textual content enclosed in quote elements -\->
-                     <elementRef key="quote" minOccurs="1" maxOccurs="1"/>
-                     <!-\- example entries may have 1–n nested translations -\->
-                     <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
-                     <!-\- Change history of examples are recorded in <fs> elements. -\->
-                     <elementRef key="fs"/>
-                     
-                     <elementRef key="bibl"/>
-                     
-                     <elementRef key="note"/>
-                     <elementRef key="sense"/>
-                     <elementRef key="usg"/>
-                     <elementRef key="xr"/>
-                     <elementRef key="def"/>
-                     <elementRef key="ptr"/>
-                     <elementRef key="ref"/>
-                     <elementRef key="gramGrp"/>
-                     <!-\- ADDED DS 2024-05-26 -\->
-                     <!-\-we should align the content more closely to the content in Lex0-\->
-                     <elementRef key="form"/>
-                  </alternate>
-               </content>-->
+               <content>
+                  <sequence>
+                     <elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/>
+                     <alternate minOccurs="1" maxOccurs="1">
+                        <elementRef key="quote"/>
+                        <elementRef key="form"/>
+                     </alternate>
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <!-- both examples or translations have their textual content enclosed in quote elements -->
+                        <!-- example entries may have 1–n nested translations -->
+                        <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
+                        <!--                           <elementRef key="usg"/>-->
+                        <elementRef key="note"/>
+                        <elementRef key="gloss"/>
+                        <!-- ADDED DS 2024-05-26 -->
+                        <!--we should align th  e content more closely to the content in Lex0-->
+                     </alternate>
+                     <elementRef key="listBibl" minOccurs="0" maxOccurs="1"/>
+                     <!-- change history of example entries  -->
+                     <elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/>
+                  </sequence>
+               </content>
                <constraintSpec ident="cit-context" scheme="schematron">
                   <desc>assert correct context of cit types</desc>
                   <constraint>
+                     <s:rule context="tei:cit[@type = 'translationEquivalent']">
+                        <s:assert test="parent::tei:sense">translationEquivalent: must be a direct child of a sense element</s:assert>
+                        <s:assert test="exists(child::tei:form[not(@type)])">translationEquivalent must contain a form without a type attribute </s:assert>
+                     </s:rule>
                      <s:rule context="tei:cit[@type = 'translation']">
-                        <s:report test="* except (tei:quote|tei:usg[@type = 'hint']|tei:bibl)">a translation equivalent may only contain 1) the translated text in a quote element, 2) a usage hint and/or 3) a bibliographic reference to the source of the translation.</s:report>
+                        <s:assert test="parent::tei:cit[@type = 'example']">cit/type="translation" must be part of an example</s:assert>
+                        <s:report test="* except (tei:quote|tei:usg)">a cit type translation may only contain 1) the translated text in a quote element, 2) the context of the translation in a tei:usg element</s:report>
+                        <s:assert test="not(@subtype) or @subtype='literal'">only "literal" translations expected</s:assert>
                      </s:rule>
                      <s:rule context="tei:cit[@subtype = 'proverb']">
-                        <s:assert test="@type = 'example'">unexpected value "<s:value-of select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
+                        <s:assert test="@type = 'example'">unexpected value "<s:value-of
+                           select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -534,20 +548,51 @@
                   <attDef ident="subtype" mode="replace" usage="opt">
                      <valList type="closed">
                         <valItem ident="proverb">
-                           <desc>proverb</desc>
+                           <desc>Proverbs are a subtype of example.</desc>
                         </valItem>
                         <valItem ident="scientificName">
-                           <desc>Scientific Name</desc>
-                           <remarks><p>Being sourced from controlled vocabularies, scientific Names are a special kind of translation equivalent.</p></remarks>
+                           <desc>contains a scientific name of a plants or similar</desc>
                         </valItem>
-                        <valItem ident="verbatim">
-                           <desc>TODO description missing</desc>
+                        <valItem ident="literal">
+                           <desc>marks a translation to be a literal translation (instead of a idiomatic one)</desc>
                         </valItem>
                      </valList>
                   </attDef>
                </attList>
             </elementSpec>
                
+               <elementSpec ident="listBibl" mode="change" module="core">
+                  <content>
+                     <!-- listBibls in the teiHeader can contain biblStruct, in all other contexts only bibl-->
+                     <alternate minOccurs="1" maxOccurs="unbounded">
+                        <elementRef key="bibl"/>
+                        <elementRef key="biblStruct"/>
+                     </alternate>
+                  </content>
+                  <constraintSpec ident="listBibl-context" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:listBibl[ancestor::tei:body]">
+                           <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an example</s:assert>
+                           <s:assert test="not(tei:biblStruct)">a listBibl inside of an entry of an example is composed of bibl elements</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="dictionaries">
+                              <desc>the listBibl is of type dictionaries</desc>
+                           </valItem>
+                           <valItem ident="corpora">
+                              <desc>the listBibl is of type corpora</desc>
+                           </valItem>
+                           <valItem ident="literature">
+                              <desc>the listBibl is of type literature</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
                
                <elementSpec ident="ref" mode="change" module="core">
                   <desc>a reference either to a license or to an example</desc>
@@ -586,8 +631,12 @@
                      <s:rule context="tei:form[@type = 'variant']">
                         <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]">a variant must be a direct child of the main form (type = "lemma", "multiWordUnit" or "inflected").</s:assert>
                      </s:rule>
-                     <s:rule context="tei:form[@type = 'lemma']">
-                        <s:assert test="parent::tei:entry">a headword must be a direct child of an entry element. </s:assert>
+                     <s:rule context="tei:form[@type =  ('lemma', 'inflected')]">
+                        <s:assert test="parent::tei:entry">a headword or inflected form must be a direct child of an entry element. </s:assert>
+                     </s:rule>
+                     <s:rule context="tei:form[@subtype='compound']">
+                        <s:assert test="@type='lemma'">The subtype "compound" must be accompanied
+                           by the type attribute "lemma".</s:assert>
                      </s:rule>
                   </constraint>
                </constraintSpec>
@@ -681,6 +730,13 @@
                            <desc>TODO description missing</desc>
                         </valItem>
                         
+                     </valList>
+                  </attDef>
+                  <attDef ident="subtype" mode="replace" usage="opt">
+                     <valList type="closed">
+                        <valItem ident="compound">
+                           <desc>Used for multi-word units</desc>
+                        </valItem>
                      </valList>
                   </attDef>
                </attList>
