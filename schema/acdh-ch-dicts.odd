@@ -12,7 +12,7 @@
          </titleStmt>
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
-            <date>2021</date>
+            <date>2021ff.</date>
          </publicationStmt>
          <sourceDesc>
             <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries produced at ACDH-CH.</p>
@@ -25,93 +25,186 @@
    <text>
       <front>
          <argument>
-            <p>This TEI customization is a baseline schema all dictionaries encoded at the ACDH-CH should conform with. </p>
+            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at the ACDH-CH should conform with. It serves two purposes: (1) It should define a compatibility layer between TEI Lex-0 – which it is based on – and legacy dictionaries (esp. VICAV), clearly defining where these dictionaries differ from Lex-0 while they are not ported to it; (2) in the future, it should define the baseline ODD which specific dictionaries should source and extend by their own rules, in order to define a schema which can be used for finer-grained validation.</p>
+            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it diverges from the cannonical TEI Lex-0 ODD.</p>
          </argument>
       </front>
       <body>
-         <head>Part 1: Encoder Documentation</head>
+         <head>Documentation</head>
          <div>
-            <head>Basic Dictionary Structure</head>
-            <p>The dictionaries covered by this schema are encoded according to the Guidelines of the Text Encoding Initiative (P5). They are conceptualised as a specific type of text and are therefore encoded with <gi>text</gi> elements. Each dictionary starts with a <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
-            
-            <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI dictionaries basically look like this:</p>
+            <head>Macrostructure</head>
+            <p>The dictionaries covered by this schema are encoded according to the Guidelines of
+               the Text Encoding Initiative (P5). They are conceptualised as a specific type of text
+               and are therefore encoded with <gi>text</gi> elements. Each dictionary starts with a
+                  <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
+            <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
+               dictionaries basically look like this:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                <TEI version="5.0">
-                  <teiHeader>
-                     ...
-                  </teiHeader>
+                  <teiHeader> ... </teiHeader>
                   <text>
                      <body>
                         <div type="entries">
                            <entry>...</entry>
                            <entry>...</entry>
-                           <entry>...</entry>
+                        </div>
+                        <div type="examples">
+                           <cit type="example">...</cit>
+                           <cit type="example">...</cit>
                         </div>
                      </body>
                   </text>
                </TEI>
             </egXML>
-            
-            <p>The <gi>body</gi> of a dictionary which conforms to this specification may not only contain a flat series of entries but also examples (which are encoded as <gi>cit</gi>/<gi>quote</gi> constructs). The rationale behind keeping example sentences outside the entries is to be able to reuse them in different parts of the dictionary (See below: <ref target="#examples">Examples and Creating examples</ref>).</p>
-            
-            <elementSpec ident="body" mode="change">
-               <desc>The main body of the dictionary. MUST include a <gi>div</gi> of type <val>entries</val> and MAY include a <gi>div</gi> of type <val>examples</val>.</desc>
-               <content>
-                  <elementRef key="div" minOccurs="1" maxOccurs="2"/>
-               </content>
-               <constraintSpec ident="body-children" scheme="schematron">
-                  <desc>assert typed div elements at the top of body</desc>
-                  <constraint>
-                     <s:rule context="tei:body">
-                        <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a div of type "entries".</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-            </elementSpec>
-            
-            <elementSpec ident="div" module="core" mode="change">
-               <constraintSpec ident="div-example-children" scheme="schematron">
-                  <desc>assert content of top-level divisions</desc>
-                  <constraint>
-                     <s:rule context="tei:div[@type = 'examples']">
-                        <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div type="examples" may only contain cit type="example"</s:assert>
-                     </s:rule>
-                     <s:rule context="tei:div[@type = 'entries']">
-                        <s:assert test="every $e in * satisfies $e/self::tei:entry">div type="entries" may only contain entry elements</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-               <attList>
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="entries">
-                           <desc>contains all entries in a dictionary</desc>
-                        </valItem>
-                        <valItem ident="examples">
-                           <desc>contains examples used in the dictionary</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
+            <p>The <gi>body</gi> of a dictionary which conforms to this specification should contain
+               two divisions: a series of entries within <tag>div type="entries"</tag> and a series
+               of examples, encoded as <tag>div type="examples"</tag>. Examples are, as usual,
+               encoded as <gi>cit</gi>/<gi>quote</gi> constructs. The rationale behind keeping
+               example sentences outside the entries is to be able to reuse them in different parts
+               of the dictionary.</p>
+            <p>
+                  <specDesc key="body"/>
+                  <specDesc key="div"/>
+            </p>
+            <p>In order to encode that an example should be integrated into an entry, the construct <tag>ref type="example"</tag> is used as a direct child f</p>
+         </div>
+         <div>
+            <head>Entries</head>
+            <p>The content model of dictionary entries closely align with the specs of Lex-0.</p>
+            <p>Unlike Lex-0, bibliographic references documenting the source of an entry (or parts of it) are attached at the end of this entry.</p>
+            <!-- TODO -->
+            <p><specDesc key="entry"/></p>
+         </div>
+         <div>
+            <head>Language Identifiers</head>
+            <p>All elements containing object language (lemmas, variants, inflected forms; including translations) must bear an <att>xml:lang</att> attribute. Thus, this ODD defines <att>xml:lang</att> as required on such elements.</p> 
+         </div>
+         <div>
+            <head>Provenance and Status</head>
+            <p>While usually changes of a TEI document are centrally documented in a <gi>revisionDesc</gi> element in the <gi>teiHeader</gi>, for technical reasons, we encode this information in-situ in each <gi>entry</gi> or example (<gi>cit</gi>). This information is collected at the end of each entry/example, as a series of feature structures (<tag>fs type="change"</tag>) which at least provide information of the parent records's status (<tag>f name="status"</tag>), the date of a change (<tag>f name="who"</tag>).</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
+               <fs type="change">​
+                 <f name="who">​
+                  <symbol value="stephan"/>​
+                    </f>​
+                 <f name="when">​
+                  <symbol value="2014_09_17"/>​
+                 </f>​
+                 <f name="status">​
+                  <symbol value="released"/>​
+                 </f>​
+               </fs>
+            </egXML>
+            <p>In some dictionaries, some statistics are collected within <gi>revisionDesc</gi>. For this <gi>measure</gi> within a <gi>change</gi> element is used:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <change when="2018-09-11">
+                  <measure type="records" quantity="48"/>
+                  <measure type="entries" quantity="10"/>
+                  <measure type="entryFrees" quantity="0"/>
+                  <measure type="lemmas" quantity="10"/>
+                  <measure type="releasedLemmas" quantity="0"/>
+                  <measure type="mwus" quantity="0"/>
+                  <measure type="cits" quantity="38"/>
+                  <measure type="releasedCits" quantity="0"/>
+                  <measure type="released" quantity="0"/>
+               </change>
+            </egXML>
+            <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding the <gi>measure</gi> element.</p>
+         </div>
+         <div>
+            <head>Legacy Encoding</head>
+            <p>As mentioned before, this ODD also tries to document encoding practies which are yet to be ported to a more cannonical TEI Lex-0 structure.</p>
+            <div>
+               <head>Morphosyntactic annotations</head>
+               <p>Inflected forms (<tag>form type="inflected"</tag>) in a pre-Lex-0-phase have been encoded in ana <att>ana</att> attribute on the respective <tag>form type="variant"</tag> containing a pointer to an entry in a central feature / feature value library (cf. Budin, Majewski &amp; Mörth 2012).</p>
+            </div>
+         </div>
+         <div>
+            <head>Further development</head>
+            <p>As legacy dictionaries will be gradually ported to Lex-0, the legacy definitions in this ODD will be reduced.</p>
+         </div>
+         <div>
+            <head>Using this ODD in a new project / dictionary</head>
+            <p>Whenever you want to start a new project based on this </p>
          </div>
          <div>
             <head>Part 2: Formal Specification</head>
             
-            <schemaSpec ident="acdh-ch-dicts" source="file:/C:/Users/ksramo/Documents/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="file:///home/danielschopper/data/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
-            <!-- We copy all modules from TEI Lex0  -->
-            <moduleRef key="analysis"/>
-            <moduleRef key="core"/>
-            <moduleRef key="dictionaries"/>
-            <moduleRef key="figures"/>
-            <moduleRef key="gaiji"/>
-            <moduleRef key="header"/>
-            <moduleRef key="linking"/>
-            <moduleRef key="namesdates"/>
-            <moduleRef key="tei"/>
-            <moduleRef key="textstructure"/>
-            <moduleRef key="transcr"/>
+
+               <!-- We copy all modules from TEI Lex0 and exclude   -->
+               <moduleRef key="analysis" except="c pc"/>
+               <moduleRef key="core"/>
+               <moduleRef key="dictionaries" except="hyph lbl syll pron"/>
+               <moduleRef key="figures" except="figure"/>
+               <moduleRef key="gaiji"/>
+               <moduleRef key="header"/>
+               <moduleRef key="linking"/>
+               <moduleRef key="namesdates"/>
+               <moduleRef key="tei"/>
+               <moduleRef key="textstructure"/>
+               
+               <moduleRef key="transcr" except="metamark"/>
+            
+               <elementSpec ident="body" mode="change">
+                  <desc>The main body of the dictionary. MUST include a <gi>div</gi> of type <val>entries</val> and MAY include a <gi>div</gi> of type <val>examples</val>.</desc>
+                  <content>
+                     <elementRef key="div" minOccurs="1" maxOccurs="2"/>
+                  </content>
+                  <constraintSpec ident="body-children" scheme="schematron">
+                     <desc>assert typed div elements at the top of body</desc>
+                     <constraint>
+                        <s:rule context="tei:body">
+                           <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a div of type "entries".</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               <elementSpec ident="div" module="core" mode="change" xml:id="divSpec">
+                  <constraintSpec ident="div-example-children" scheme="schematron">
+                     <desc>assert content of top-level divisions</desc>
+                     <constraint>
+                        <s:rule context="tei:div[@type = 'examples']">
+                           <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div type="examples" may only contain cit type="example"</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:div[@type = 'entries']">
+                           <s:assert test="every $e in * satisfies $e/self::tei:entry">div type="entries" may only contain entry elements</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="entries">
+                              <desc>contains all entries in a dictionary</desc>
+                           </valItem>
+                           <valItem ident="examples">
+                              <desc>contains examples used in the dictionary</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>   
+                  </attList>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <TEI version="5.0">
+                           <teiHeader> ... </teiHeader>
+                           <text>
+                              <body>
+                                 <div type="entries">
+                                    <entry>...</entry>
+                                    <entry>...</entry>
+                                 </div>
+                                 <div type="examples">
+                                    <cit type="example">...</cit>
+                                    <cit type="example">...</cit>
+                                 </div>
+                              </body>
+                           </text>
+                        </TEI>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>               
             
                <!-- TEI Lex-0 adjustments to make the xsd deterministic 2024-06-26 -->
                <classSpec type="model" ident="model.hiLike" mode="change">
@@ -145,30 +238,70 @@
                      </sequence>
                   </content>
                </elementSpec>
+               
+               <elementSpec ident="list" mode="change">
+                  <content>
+                     <sequence>
+                        <classRef key="model.divTop" minOccurs="0"/>
+                        <sequence minOccurs="1" maxOccurs="unbounded">
+                           <elementRef key="label" minOccurs="0"/>
+                           <elementRef key="item" minOccurs="1" maxOccurs="1"/>
+                        </sequence>
+                     </sequence>
+                  </content>
+               </elementSpec>
                <!-- end of ambiguity-fixing adjustments -->
                
             <!-- Additionally needed elements -->
             <moduleRef key="iso-fs" include="fs f symbol" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-
-            <!-- WATCHME If I don't redefine the content model of list here, the resulting XML 
-            schema is violating the Unique particle attribution. We should find out, why. 
-            2021-12-11 -->
-            <elementSpec ident="list" mode="change">
-               <content>
-                  <sequence>
-                     <classRef key="model.divTop" minOccurs="0"/>
-                     <sequence minOccurs="1" maxOccurs="unbounded">
-                        <elementRef key="label" minOccurs="0"/>
-                        <elementRef key="item" minOccurs="1" maxOccurs="1"/>
-                     </sequence>
-                  </sequence>
-               </content>
-            </elementSpec>
-            
-            <elementRef key="listChange" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            <elementRef key="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            <elementRef key="ptr" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            <elementRef key="interpretation" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
+               
+               <elementSpec ident="change" mode="change">
+                  <content>
+                     <alternate minOccurs="1" maxOccurs="1">
+                        <elementRef key="measure"/>
+                        <textNode/>
+                     </alternate>
+                  </content>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <change when="2018-09-11">
+                           <measure type="records" quantity="48"/>
+                           <measure type="entries" quantity="10"/>
+                           <measure type="entryFrees" quantity="0"/>
+                           <measure type="lemmas" quantity="10"/>
+                           <measure type="releasedLemmas" quantity="0"/>
+                           <measure type="mwus" quantity="0"/>
+                           <measure type="cits" quantity="38"/>
+                           <measure type="releasedCits" quantity="0"/>
+                           <measure type="released" quantity="0"/>
+                        </change>
+                     </egXML>
+                  </exemplum>
+                  <remarks><p>can either contain a textual description or a series <gi>change</gi> elements with statistical prpoerties of the dictionary at a given point of time (<att>when</att>).</p></remarks>
+               </elementSpec>
+               
+               <elementSpec ident="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add" module="core">
+                  <classes mode="replace">
+                     <memberOf/>
+                  </classes>
+                  <exemplum>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <change when="2018-09-11">
+                           <measure type="records" quantity="48"/>
+                           <measure type="entries" quantity="10"/>
+                           <measure type="entryFrees" quantity="0"/>
+                           <measure type="lemmas" quantity="10"/>
+                           <measure type="releasedLemmas" quantity="0"/>
+                           <measure type="mwus" quantity="0"/>
+                           <measure type="cits" quantity="38"/>
+                           <measure type="releasedCits" quantity="0"/>
+                           <measure type="released" quantity="0"/>
+                        </change>
+                     </egXML>
+                  </exemplum>
+               </elementSpec>
+               
+               <elementRef key="interpretation" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
 
             <!-- 
                TODO We should have a finer-grained definition for <usg type="corpusFrequency">
@@ -213,7 +346,7 @@
             
             <elementSpec ident="seg" mode="change" module="linking">
                <constraintSpec ident="seg-context" scheme="schematron">
-                  <desc> assert correct context of seg</desc>
+                  <desc>assert correct context of seg</desc>
                   <constraint>
                      <s:rule context="tei:seg[@type = 'hint']">
                         <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a hint segment must be inside a translation equivalent</s:assert>
@@ -233,112 +366,104 @@
                   </attDef>
                </attList>
             </elementSpec>
-            
-            
+               
+               
+<!--               
             <elementSpec ident="gram" mode="change" module="dictionaries">
                <attList>
-                  <!-- TODO 2021-12-03 
-                     Vocabularies should be moved to specific implementations. 
-                     Also this one? 
-                  -->
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="arguments">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="aspect">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="constraint">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="constr">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="degree">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="derivedVerbClass">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="extension">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="frequency">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="followedBy">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="gender">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="government">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="inflectionType">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="keys">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="mood">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="morph">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="morphPattern">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="morphType">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="nominalState">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="number">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="person">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="pos">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="reg">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="root">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="roots">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="semCat">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="subc">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="usg">
-                           <desc>hint on usage</desc>
-                        </valItem>
-                        <!-- shouldn't these become type="root" subtype="syn" or "dia"?    -->
-                        <valItem ident="synRoot">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="diaRoot">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="diaRootNew">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
+                  <attDef ident="type" mode="change" usage="req">
+                  <valList type="closed">
+                     <valItem ident="arguments">
+                        <desc>arguments to a verb</desc>
+                     </valItem>
+                     <valItem ident="aspect">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="constraint">
+                        <desc>describes an</desc>
+                     </valItem>
+                     <valItem ident="constr">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="degree">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="derivedVerbClass">
+                        <desc>derived verb class</desc>
+                        <remarks>
+                           <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
+                        </remarks>
+                     </valItem>
+                     <valItem ident="extension"/>
+                     <valItem ident="frequency">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="gender">
+                        <desc>grammatical gender</desc>
+                     </valItem>
+                     <valItem ident="government">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="inflectionType">
+                        <desc>inflection type</desc>
+                     </valItem>
+                     <valItem ident="mood">
+                        <desc>grammatical mood</desc>
+                     </valItem>
+                     <valItem ident="morph">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="morphPattern">
+                        <desc>morphological pattern</desc>
+                     </valItem>
+                     <valItem ident="morphType">
+                        <desc>mophological type</desc>
+                        <remarks>
+                           <p>Many Arabic dialects have nominals which do not display feminine or plural forms. These are identified with a gram element and a morphType attribute.</p>
+                        </remarks>
+                     </valItem>
+                     <valItem ident="nominalState">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="number">
+                        <desc>grammatical number</desc>
+                     </valItem>
+                     <valItem ident="person">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="pos">
+                        <desc>part of speech type</desc>
+                     </valItem>
+                     <valItem ident="reg">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                     <valItem ident="root">
+                        <desc>consonantal root</desc>
+                     </valItem>
+                     
+                     <valItem ident="subc">
+                        <desc>subcategorization</desc>
+                     </valItem>
+                     
+                     <valItem ident="usg">
+                        <desc>hint on usage</desc>
+                     </valItem>
+                     
+                     <valItem ident="synRoot">
+                        <desc>synchronous root</desc>
+                     </valItem>
+                     <valItem ident="diaRoot">
+                        <desc>diachronic root</desc>
+                     </valItem>
+                     <valItem ident="diaRootNew">
+                        <desc>TODO description missing</desc>
+                     </valItem>
+                  </valList>
+               </attDef>
                </attList>
             </elementSpec>            
-            
+            -->
+               
             <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
                CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
             <!-- changed placeName to name -->
@@ -360,16 +485,17 @@
             </elementSpec>
             
             <elementSpec ident="cit" mode="change" module="core">
-               <content>
+               <!--<content>
                   <alternate minOccurs="1" maxOccurs="unbounded">
-                     <!-- both examples or translations have their textual content enclosed in quote elements -->
+                     <!-\- both examples or translations have their textual content enclosed in quote elements -\->
                      <elementRef key="quote" minOccurs="1" maxOccurs="1"/>
-                     <!-- example entries may have 1–n nested translations -->
+                     <!-\- example entries may have 1–n nested translations -\->
                      <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
-                     <!-- change history of example entries  -->
+                     <!-\- Change history of examples are recorded in <fs> elements. -\->
                      <elementRef key="fs"/>
-                     <!-- only  -->
+                     
                      <elementRef key="bibl"/>
+                     
                      <elementRef key="note"/>
                      <elementRef key="sense"/>
                      <elementRef key="usg"/>
@@ -378,11 +504,11 @@
                      <elementRef key="ptr"/>
                      <elementRef key="ref"/>
                      <elementRef key="gramGrp"/>
-                     <!-- ADDED DS 2024-05-26 -->
-                     <!--we should align th  e content more closely to the content in Lex0-->
+                     <!-\- ADDED DS 2024-05-26 -\->
+                     <!-\-we should align the content more closely to the content in Lex0-\->
                      <elementRef key="form"/>
                   </alternate>
-               </content>
+               </content>-->
                <constraintSpec ident="cit-context" scheme="schematron">
                   <desc>assert correct context of cit types</desc>
                   <constraint>
@@ -395,38 +521,60 @@
                   </constraint>
                </constraintSpec>
                <attList>
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="example">
-                           <desc>A dictionary example. Ideally, examples should consist in complete sentences. Examples should be concise, but can also contain several sentences. If dialogical models are involved, sentences are to be separated by a dash.</desc>
+                  <attDef ident="type" mode="change" usage="req">
+                     <valList type="closed" mode="change">
+                        <valItem ident="literalTranslation" mode="add">
+                           <desc>literal translation</desc>
+                           <remarks><p>Added for backwards compatibility.</p></remarks>
                         </valItem>
-                        <!-- ADDED DS 2025-06-05 -->
-                        <valItem ident="translationEquivalent">
-                           <desc>A translation equivalent.</desc>
-                           <!-- used to be "translation" -->
-                        </valItem>
-                        <valItem ident="literalTranslation">
-                           <!-- IS THIS THE SAME AS cit type="translation" subtype="verbatim" in dc_arz_eng_007 ? -->
-                           <desc>TODO add difference to translation – or would’t that be a subtype="literal"? </desc>
-                        </valItem>
+                        <valItem ident="cognate" mode="delete"/>
+                        <valItem ident="cognateSet" mode="delete"/>
                      </valList>
                   </attDef>
                   <attDef ident="subtype" mode="replace" usage="opt">
                      <valList type="closed">
                         <valItem ident="proverb">
-                           <desc>Proverbs are a subtype of example.</desc>
+                           <desc>proverb</desc>
+                        </valItem>
+                        <valItem ident="scientificName">
+                           <desc>Scientific Name</desc>
+                           <remarks><p>Being sourced from controlled vocabularies, scientific Names are a special kind of translation equivalent.</p></remarks>
                         </valItem>
                         <valItem ident="verbatim">
                            <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="scientificName">
-                           <desc>TODO descripion missing</desc>
                         </valItem>
                      </valList>
                   </attDef>
                </attList>
             </elementSpec>
                
+               
+               <elementSpec ident="ref" mode="change" module="core">
+                  <desc>a reference either to a license or to an example</desc>
+                  <content>
+                     <empty/>
+                  </content>
+                  <constraintSpec ident="ref" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:ref[@type = 'example']">
+                           <s:assert test="exists(substring-after(.,':'))">Example with id "<s:value-of select="exists(//tei:cit[@type='example'][@xml:id=substring-after(current()/@target,'#')])"/>" not found</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change">
+                        <valList type="closed">
+                           <valItem ident="license" mode="add">
+                              <desc>license</desc>
+                           </valItem>
+                           <valItem ident="example">
+                              <desc>example</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+                  <remarks><p>In case of <val>example</val>, the <att>target</att> attribute should contain a pointer to a <tag>cit type="example"</tag>.</p></remarks>
+               </elementSpec>
                <!--<elementSpec ident="placeName" mode="change" module="namesdates">
                   <
                </elementSpec>
