@@ -94,7 +94,22 @@
          </div>
          <div>
             <head>Language Identifiers</head>
-            <p>All elements containing object language (lemmas, variants, inflected forms; including translations) must bear an <att>xml:lang</att> attribute. Thus, this ODD defines <att>xml:lang</att> as required on such elements.</p> 
+            <p>All elements containing object language (lemmas, variants, inflected forms; including
+               translations) must bear an <att>xml:lang</att> attribute. In accordance with the
+               recommendation by the Lex-0 specification (section <ref
+                  target="https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#index.xml-body.1_div.3_div.2"
+                  >3.2. Mandatory attributes</ref>) we require thus <att>xml:lang</att> to be on the
+               one of the following elements (many of which are "container" elements):</p>
+            <list>
+               <item>Etymons (<tag>tei:cit @type='etymon'</tag>)</item>
+               <item>Translations (<tag>tei:cit @type='translation'</tag>)</item>
+               <item>Examples (<tag>tei:cit @type='example'</tag>)</item>
+               <item>TranslationEquivalents (<tag>tei:cit
+                  @type='translationEquivalent'</tag>)</item>
+               <item>Entries (<gi>entry</gi>)</item>
+               <item>Some gram elements (<val>arguments</val>, <val>diaRoot</val>,
+                     <val>governmant</val>,<val>root</val>,<val>synRoot</val>)</item>
+            </list>
          </div>
          <div>
             <head>Provenance and Status</head>
@@ -129,11 +144,21 @@
             <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding the <gi>measure</gi> element.</p>
          </div>
          <div>
+            <head>forms</head>
+         </div>
+         <div>
             <head>Legacy Encoding</head>
-            <p>As mentioned before, this ODD also tries to document encoding practies which are yet to be ported to a more cannonical TEI Lex-0 structure.</p>
+            <p>As mentioned before, this ODD also tries to document encoding practies which are yet
+               to be ported to a more cannonical TEI Lex-0 structure. These are indicated in the
+               formal specification part of this document by the attribute <att>validUntil</att> or
+               .</p>
             <div>
                <head>Morphosyntactic annotations</head>
                <p>Inflected forms (<tag>form type="inflected"</tag>) in a pre-Lex-0-phase have been encoded in ana <att>ana</att> attribute on the respective <tag>form type="variant"</tag> containing a pointer to an entry in a central feature / feature value library (cf. Budin, Majewski &amp; Mörth 2012).</p>
+            </div>
+            <div>
+               <head>Multi-Word-Units</head>
+               <p>In the legacy encoding scheme, entries describing multi-word-units (MWUs) were identifies by using <tag>form type="multiWordUnit</tag> to encode the entry's headword. This behaviour is supported by this ODD with a deprecation warning.</p>
             </div>
          </div>
          <div>
@@ -142,12 +167,17 @@
          </div>
          <div>
             <head>Using this ODD in a new project / dictionary</head>
-            <p>Whenever you want to start a new project based on this </p>
+            <list>
+               <item>Set up a new ODD and source it from this one.</item>
+               <item>Define the languages in the dictionary by restricting the values of <att>xml:lang</att>.</item>
+               <item>Identify which of the backward-compatability additions in this ODD are not relevant any more and override them, if necessary, in your new ODD.</item>
+            </list>
          </div>
          <div>
             <head>Part 2: Formal Specification</head>
             
-            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
+            <!--<schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">-->
+            <schemaSpec ident="acdh-ch-dicts" source="file:///home/danielschopper/data/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
 
                <!-- We copy all modules from TEI Lex0 and exclude   -->
@@ -325,7 +355,7 @@
                For the time being, I'm simply adding <q> and <val>.
                DS 2021-12-02
             -->
-            <elementRef key="q" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
+            <elementRef key="q" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
             <elementRef key="val" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
 
            
@@ -377,13 +407,48 @@
             </elementSpec>
                
                
-<!--               
+           
+
             <elementSpec ident="gram" mode="change" module="dictionaries">
                <attList>
                   <attDef ident="type" mode="change" usage="req">
-                  <valList type="closed">
-                     <valItem ident="arguments">
+                  <!-- extending gram/types of TEI Lex-0-->
+                  <valList type="closed" mode="change">
+                     <valItem ident="derivedVerbClass" mode="add" >
+                        <desc>derived verb class</desc>
+                        <remarks>
+                           <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
+                        </remarks>
+                     </valItem>
+                     <valItem ident="synRoot" mode="add">
+                        <desc>synchronous root</desc>
+                     </valItem>
+                     <valItem ident="diaRoot" mode="add">
+                        <desc>diachronic root</desc>
+                     </valItem>
+                     <valItem ident="subc" mode="add">
+                        <desc>any subcategory of another gram value</desc>
+                     </valItem>
+                     <valItem ident="derivedVerbClass" mode="add">
+                        <desc>derived verb class</desc>
+                        <remarks>
+                           <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
+                        </remarks>
+                     </valItem>
+                     <valItem ident="person" mode="add"/>
+                     
+                     <valItem ident="morphPattern" mode="add">
+                        <desc>morphological pattern</desc>
+                     </valItem>
+                     
+                     <!--<valItem ident="arguments">
                         <desc>arguments to a verb</desc>
+                     </valItem>
+                     <valItem ident="morphType">
+                        <desc>mophological type</desc>
+                        <remarks>
+                           <p>Many Arabic dialects have nominals which do not display feminine or plural forms. These are identified with a gram element and a morphType attribute.</p>
+                        </remarks>
                      </valItem>
                      <valItem ident="aspect">
                         <desc>TODO description missing</desc>
@@ -394,15 +459,8 @@
                      <valItem ident="constr">
                         <desc>TODO description missing</desc>
                      </valItem>
-                     <valItem ident="degree">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="derivedVerbClass">
-                        <desc>derived verb class</desc>
-                        <remarks>
-                           <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
-                        </remarks>
-                     </valItem>
+                     
+                    
                      <valItem ident="extension"/>
                      <valItem ident="frequency">
                         <desc>TODO description missing</desc>
@@ -422,15 +480,8 @@
                      <valItem ident="morph">
                         <desc>TODO description missing</desc>
                      </valItem>
-                     <valItem ident="morphPattern">
-                        <desc>morphological pattern</desc>
-                     </valItem>
-                     <valItem ident="morphType">
-                        <desc>mophological type</desc>
-                        <remarks>
-                           <p>Many Arabic dialects have nominals which do not display feminine or plural forms. These are identified with a gram element and a morphType attribute.</p>
-                        </remarks>
-                     </valItem>
+                     
+                     
                      <valItem ident="nominalState">
                         <desc>TODO description missing</desc>
                      </valItem>
@@ -464,14 +515,22 @@
                      <valItem ident="diaRoot">
                         <desc>diachronic root</desc>
                      </valItem>
-                     <valItem ident="diaRootNew">
-                        <desc>TODO description missing</desc>
-                     </valItem>
+                     -->
                   </valList>
                </attDef>
                </attList>
-            </elementSpec>            
-            -->
+            </elementSpec>          
+               
+               <classSpec type="atts" ident="att.global" mode="change">
+                  <constraintSpec ident="xml-lang-on-object-lang-elts" scheme="schematron" mode="add" xml:id="xml-lang-on-object-lang-elts">
+                     <desc>assert that @xml:lang is added to elements with object language</desc>
+                     <constraint>
+                        <s:rule context="tei:cit[@type = ('etymon','translation','example','translationEquivalent')]|tei:entry|tei:gram[@type=('arguments','diaRoot','government','root','synRoot')]">
+                           <s:assert test="exists(@xml:lang)">Elements containing object language must have an @xml:lang attribute.</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+               </classSpec>
                
             <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
                CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
@@ -537,9 +596,9 @@
                <attList>
                   <attDef ident="type" mode="change" usage="req">
                      <valList type="closed" mode="change">
-                        <valItem ident="literalTranslation" mode="add">
+                        <valItem ident="literalTranslation" mode="add" validUntil="2025-12-31">
                            <desc>literal translation</desc>
-                           <remarks><p>Added for backwards compatibility.</p></remarks>
+                           <desc type="deprecationInfo">cit[@type='literalTranslation'] is only allowed for backwards compatibility and should be replaced with cit[@type='translationEquivalent'][@subtype='literal']</desc>
                         </valItem>
                         <!-- CHECKME These are not deleted -->
                         <valItem ident="cognate" mode="delete"/>
@@ -647,9 +706,9 @@
                <attList>
                   <attDef ident="type" mode="change" usage="opt">
                      <valList type="closed" mode="change">
-                        <valItem ident="multiWordUnit" mode="add">
+                        <valItem ident="multiWordUnit" mode="add" validUntil="2025-12-31">
                            <desc>the headword of a MWU entry</desc>
-                           <remarks><p>kept for compatibility reasons. To be replaced by @subtype="compound"</p></remarks>
+                           <desc type="deprecationInfo">This attribute value is introduced for compatibility reasons and will be deprecated in the future. It should be replaced by @type="entry" and @subtype="compound".</desc>
                         </valItem>
                         
                         <valItem ident="construction" mode="add"> 
@@ -664,6 +723,9 @@
                            <desc>Used for multi-word units</desc>
                         </valItem>
                      </valList>
+                  </attDef>
+                  <attDef ident="ana" mode="change" usage="opt" validUntil="2025-12-31">
+                     <desc type="deprecationInfo">ana on form is kept for backwards compatability but will be removed in a future versions of this ODD.</desc>
                   </attDef>
                </attList>
             </elementSpec>
