@@ -541,6 +541,7 @@
                            <desc>literal translation</desc>
                            <remarks><p>Added for backwards compatibility.</p></remarks>
                         </valItem>
+                        <!-- CHECKME These are not deleted -->
                         <valItem ident="cognate" mode="delete"/>
                         <valItem ident="cognateSet" mode="delete"/>
                      </valList>
@@ -628,6 +629,9 @@
                <constraintSpec ident="form-type" scheme="schematron">
                   <desc>assert content of correct context of @type values</desc>
                   <constraint>
+                     <s:rule context="tei:form[not(parent::tei:cit)]">
+                        <s:assert test="exists(@type)">@type is reqired on all forms except examples or translations.</s:assert>
+                     </s:rule>
                      <s:rule context="tei:form[@type = 'variant']">
                         <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]">a variant must be a direct child of the main form (type = "lemma", "multiWordUnit" or "inflected").</s:assert>
                      </s:rule>
@@ -641,93 +645,15 @@
                   </constraint>
                </constraintSpec>
                <attList>
-                  <!-- TODO In Zulu , there are <form>s without @type inside 
-                     of cit type translation 
-                     HOW TO treat? 2021-12-11 DS
-                  -->
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="lemma">
-                           <desc>the headword of a lemma entry</desc>
-                        </valItem>
-                        <valItem ident="multiWordUnit">
+                  <attDef ident="type" mode="change" usage="opt">
+                     <valList type="closed" mode="change">
+                        <valItem ident="multiWordUnit" mode="add">
                            <desc>the headword of a MWU entry</desc>
+                           <remarks><p>kept for compatibility reasons. To be replaced by @subtype="compound"</p></remarks>
                         </valItem>
                         
-                        <valItem ident="inflected">
-                           <desc>inflected form</desc>
-                        </valItem>
-                        <!-- WHAT IS @type='infl' ? 
-                    121 in baghdad dict, many empty orth elements
-                    112 in apc
-                -->
-                        <!--<valItem ident="infl">
-                    <desc>????</desc>
-                </valItem>-->
-                        
-                        
-                        <!-- WHEN IS THIS USED ? 16 instances in damascus dict  -->
-                        <valItem ident="example">
-                           <desc>???</desc>
-                        </valItem>
-                        
-                        <valItem ident="variant">
-                           <desc>A variant form of the lemma. Only headwords may have variants. All other variants – e.g. competing morphological forms – are simply listed but not classified. Variants can be assigned usage labels indicating e.g. a particular register. The more frequent variant should precede less frequent ones. </desc>
-                        </valItem>
-                        
-                        <valItem ident="stem">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                        <valItem ident="derived">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                        <!-- in how far is @type = "lemmaVariant" different from @type = 'variant'? -->
-                        <valItem ident="lemmaVariant">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                        <!-- WHEN IS THIS USED ?? -->
-                        <valItem ident="construction">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                        <valItem ident="VN">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                        <valItem ident="infinitive">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                        <valItem ident="adverbial">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                       
-                        <valItem ident="abbreviation">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        
-                       
-                        <!-- TODO DS 2021-12-02 
-                           These @types look complex – we should describe why 
-                           they are different from the other "flat" values -->
-                        <valItem ident="lexicalType:adverb">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="lexicalType:infinitive">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="lexicalType:infinitiveLocative">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="grammaticalCase:genitive">
-                           <desc>TODO description missing</desc>
-                        </valItem>
-                        <valItem ident="grammaticalCase:vocative">
-                           <desc>TODO description missing</desc>
+                        <valItem ident="construction" mode="add"> 
+                           <desc/>
                         </valItem>
                         
                      </valList>
