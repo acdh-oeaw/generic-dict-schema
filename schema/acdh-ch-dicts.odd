@@ -101,12 +101,12 @@
                   >3.2. Mandatory attributes</ref>) we require thus <att>xml:lang</att> to be on the
                one of the following elements (many of which are "container" elements):</p>
             <list>
+               <item>Entries (<gi>entry</gi>)</item>
                <item>Etymons (<tag>tei:cit @type='etymon'</tag>)</item>
-               <item>Translations (<tag>tei:cit @type='translation'</tag>)</item>
                <item>Examples (<tag>tei:cit @type='example'</tag>)</item>
                <item>TranslationEquivalents (<tag>tei:cit
                   @type='translationEquivalent'</tag>)</item>
-               <item>Entries (<gi>entry</gi>)</item>
+               <item>Translations within exapmles (<tag>tei:cit @type='translation'</tag>)</item>
                <item>Some gram elements (<val>arguments</val>, <val>diaRoot</val>,
                      <val>governmant</val>,<val>root</val>,<val>synRoot</val>)</item>
             </list>
