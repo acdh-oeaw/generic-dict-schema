@@ -127,6 +127,7 @@
                  </f>​
                </fs>
             </egXML>
+            
             <p>In some dictionaries, some statistics are collected within <gi>revisionDesc</gi>. For this <gi>measure</gi> within a <gi>change</gi> element is used:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <change when="2018-09-11">
@@ -143,9 +144,10 @@
             </egXML>
             <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding the <gi>measure</gi> element.</p>
          </div>
+         
          <div>
             <head>Forms</head>
-            <p>All forms can have <tag>form type="variant"</tag> which are to be listed at the end of the respective form. 
+            <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be listed at the end of the respective form. 
             We have applied this construct only to phonological/morphological variants, not orthographic variants.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form type="inflected">
@@ -194,7 +196,7 @@
             <head>Part 2: Formal Specification</head>
             
             <!--<schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">-->
-            <schemaSpec ident="acdh-ch-dicts" source="file:///home/danielschopper/data/generic-dict-schema/schema/tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
 
                <!-- We copy all modules from TEI Lex0 and exclude   -->
