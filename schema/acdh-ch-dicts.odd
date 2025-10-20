@@ -145,8 +145,24 @@
          </div>
          <div>
             <head>Forms</head>
-            <p>All forms can have <tag>form type="variant"</tag> which are to be listed at the end of the respective form.</p>
+            <p>All forms can have <tag>form type="variant"</tag> which are to be listed at the end of the respective form. 
+            We have applied this construct only to phonological/morphological variants, not orthographic variants.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <form type="inflected">
+                  <gramGrp>
+                     <gram type="number">plural</gram>
+                  </gramGrp>
+                  <orth>gufūn</orth>
+                  <orth xml:lang="ar">جفون</orth>
+                  
+                  <form type="variant">
+                     <orth>agfān</orth>
+                     <orth xml:lang="ar">اجفان</orth>
+                  </form>
+               </form>                              
+            </egXML>
          </div>
+         
          <div>
             <head>Legacy Encoding</head>
             <p>As mentioned before, this ODD also tries to document encoding practies which are yet
