@@ -80,8 +80,10 @@
                example sentences outside the entries is to be able to reuse them in different parts
                of the dictionary.</p>
             <p>
+               <specList>
                   <specDesc key="body"/>
                   <specDesc key="div"/>
+               </specList>
             </p>
             <p>In order to encode that an example should be integrated into an entry, the construct <tag>ref type="example"</tag> is used as a direct child f</p>
          </div>
@@ -90,7 +92,18 @@
             <p>The content model of dictionary entries closely align with the specs of Lex-0.</p>
             <p>Unlike Lex-0, bibliographic references documenting the source of an entry (or parts of it) are attached at the end of this entry.</p>
             <!-- TODO -->
-            <p><specDesc key="entry"/></p>
+            <p>
+               <specList>
+                  <specDesc key="entry"/>
+               </specList>
+            </p>
+            
+         </div>
+         <div>
+            <head>Transcription</head>
+            
+            <p>In Arabic corpora and dictionaries, hyphens are put between all affixes, not between inflexional affixes, e.g. ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
+             
          </div>
          <div>
             <head>Language Identifiers</head>
