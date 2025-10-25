@@ -274,12 +274,13 @@
             </egXML>
             
             <p>To encode multiple stages of an etymology, <tag>etym</tag> elements are nested. The element at the highest 
-               position in the hierarchy represents the most recent stage, the one at the lowest position the oldest stage.</p>
+               position in the hierarchy represents the most recent stage, the one at the lowest position the oldest stage. 
+               The code below is part of the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂ cabulum/capulum (Latin) `rope´. </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                <etym>
                   <etym>
                      <cit type="etymon">
-                        <form><orth xml:lang="ar-Latn">ḥabl</orth></form>
+                        <form><orth xml:lang="la">cabulum</orth></form>
                      </cit>
                   </etym>
                   <cit type="etymon">
