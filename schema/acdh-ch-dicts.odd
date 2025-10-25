@@ -26,10 +26,12 @@
                <name xml:id="VE">Veronika Engler</name>
             </respStmt>
          </titleStmt>
+         
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
             <date>2021ff.</date>
          </publicationStmt>
+         
          <sourceDesc>
             <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries produced at ACDH-CH.</p>
          </sourceDesc>
@@ -37,15 +39,32 @@
       <revisionDesc>
          <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure; incorporating most definitions from the VICAV dicts ODD, except for the prose part and the fvLib – TODO discuss if that is general enough to be included here or if it should be kept as a project/dictionary-specific vocabulary.</change>
          <change status="draft" when="2024-07-26" who="#DS">fixing elementSpec for body; reducing tagset</change>
+         <change status="draft" when="2025-10-26" who="#CM">enhanced chapters 2. Entries, 4. Language Identifiers and 6. Forms </change>
+         <change status="draft" when="2025-10-26" who="#CM">added chapters 7. Etymologies, 8. Linking, 9. Bibliographic information</change>
       </revisionDesc>
    </teiHeader>
    <text>
       <front>
          <argument>
-            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at the ACDH-CH should conform with. It serves two purposes: (1) It should define a compatibility layer between TEI Lex-0 – which it is based on – and legacy dictionaries (esp. VICAV), clearly defining where these dictionaries differ from Lex-0 while they are not ported to it; (2) in the future, it should define the baseline ODD which specific dictionaries should source and extend by their own rules, in order to define a schema which can be used for finer-grained validation.</p>
-            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it diverges from the cannonical TEI Lex-0 ODD.</p>
+            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at the ACDH-CH 
+               should conform with. It serves two purposes: (1) It should define a compatibility layer between 
+               TEI Lex-0 – which it is based on – and legacy dictionaries (esp. VICAV), clearly defining where 
+               these dictionaries differ from Lex-0 while they are not ported to it; (2) in the future, it 
+               should define the baseline ODD which specific dictionaries should source and extend by their 
+               own rules, in order to define a schema which can be used for finer-grained validation.</p>
+            
+            <p>The examples are mainly taken from the following dictionaries:
+               <list>
+                  <item>The VICAV Dictionary of Egyptian Arabic (VDEA)</item>
+                  <item>The SHAWI Dictionary (DShaAr)</item>
+               </list>
+            </p>
+            
+            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it diverges 
+               from the cannonical TEI Lex-0 ODD and project-specific practices.</p>
          </argument>
       </front>
+      
       <body>
          <head>Documentation</head>
          <div>
@@ -76,6 +95,7 @@
                   </text>
                </TEI>
             </egXML>
+            
             <p>The <gi>body</gi> of a dictionary which conforms to this specification should contain
                two divisions: a series of entries within <tag>div type="entries"</tag> and a series
                of examples, encoded as <tag>div type="examples"</tag>. Examples are, as usual,
@@ -88,7 +108,8 @@
                   <specDesc key="div"/>
                </specList>
             </p>
-            <p>In order to encode that an example should be integrated into an entry, the construct <tag>ref type="example"</tag> is used as a direct child f</p>
+            <p>In order to encode that an example should be integrated into an entry, the 
+               construct <tag>xr</tag>/<tag>ref type="example"</tag> is used as a direct child f</p>
          </div>
          
          <div>
@@ -269,6 +290,39 @@
          </div>
          
          <div>
+            <head>Examples</head>
+            <p>As stated before, examples are placed in <tag>div type="examples"</tag> elements. In accordance with lex-0 (7.5), 
+               they are encoded as <code>cit/quote</code> constructs.</p>
+            
+            <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <cit xml:id="VDEA.amiira_cawza_qalam__001" type="example" xml:lang="ar-Latn">
+                  <quote>amīra ʕawza ʔalam ruṣāṣ.</quote>
+                  
+                  <cit type="translation" xml:lang="en">
+                     <quote>Amira needs a pencil.</quote>
+                  </cit>
+               </cit>
+            </egXML>
+            
+            <p>A special case are proverbs which are encoded with @subtype="proverb" on the main container <tag>cit</tag>.</p>
+            <p>Often literal translations are needed. These are encoded as <tag>cit type="translation" subtype="literal"</tag>.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
+                  <quote>il-ʕagala min iš-šiṭān.</quote>
+                  
+                  <cit type="translation" xml:lang="en">
+                     <quote>Haste makes waste.</quote>
+                  </cit>
+                  
+                  <cit type="translation" subtype="literal" xml:lang="en">
+                     <quote>Hasting comes from the devil.</quote>
+                  </cit>
+               </cit>                  
+            </egXML>
+         </div>
+         
+         <div>
             <head>Linking</head>
             <p>In accordance with Lex-0, all <tag>ref</tag> elements are applied inside of <tag>xr</tag> elements. 
                They can be used inside of forms and senses. In <tag>form</tag> elements, they should be 
@@ -300,6 +354,34 @@
                   ...                  
                   <xr><ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"></ref></xr>
                </sense>               
+            </egXML>
+         </div>
+         
+         <div>
+            <head>Bibliographic information</head>
+            <p>Bibliographical references are listed in a <tag>listBibl</tag> element at the end of each entry. 
+               This sollution allows to provide exact information with respect to page numbers or other such 
+               information.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <listBibl type="literature">
+                  <bibl xml:id="d1e112726">
+                     <title ref="zot:Lentin2013"></title>
+                     <biblScope unit="page">p.106</biblScope>
+                  </bibl>
+                  <bibl xml:id="d1e112808">
+                     <title ref="zot:Younes2021"></title>
+                     <biblScope unit="page">p.16</biblScope>
+                  </bibl>
+               </listBibl>               
+            </egXML>
+            
+            <p>This information is referenced in <att>source</att> attributes which can flexibly be applied 
+              in <tag>form</tag> but also other elements.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <form source="#d1e112915" type="lemma">
+                  <orth>kitab</orth>
+               </form>              
             </egXML>
          </div>
          
@@ -352,7 +434,7 @@
                <moduleRef key="transcr" except="metamark"/>
             
                <elementSpec ident="body" mode="change" module="textstructure">
-                  <desc>contains the main content of the dictionary. MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc>
+                  <desc>contains the main content of the dictionary. It MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc>
                   <content>
                      <elementRef key="div" minOccurs="1" maxOccurs="2"/>
                   </content>
