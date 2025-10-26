@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-10-25T10:56:18Z. . 
+Schema generated from ODD source 2025-10-26T10:08:30Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -6076,7 +6076,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
    </define>
    <define name="body">
       <element name="body">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text body) contains the main content of the dictionary. MUST include a `&lt;div type="entries"&gt;` and MAY include a `&lt;div type="examples"&gt;`. [4. Default Text Structure]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text body) contains the main content of the dictionary. It MUST include a `&lt;div type="entries"&gt;` and MAY include a `&lt;div type="examples"&gt;`. [4. Default Text Structure]</a:documentation>
          <group>
             <ref name="div"/>
             <optional>

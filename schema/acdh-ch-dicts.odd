@@ -200,33 +200,63 @@
          
          <div>
             <head>Forms</head>
-            <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be listed at the end of the respective form. 
-            We have applied this construct only to phonological/morphological variants, not orthographic variants.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <form type="inflected">
-                  <gramGrp>
-                     <gram type="number">plural</gram>
-                  </gramGrp>
-                  <orth>gufūn</orth>
-                  <orth xml:lang="ar">جفون</orth>
-                  
-                  <form type="variant">
-                     <orth>agfān</orth>
-                     <orth xml:lang="ar">اجفان</orth>
+            <div>
+               <head>Lemma</head>
+               <p>The first form element contains the lemma. In our customisation, multi-word units are 
+                 also treated as lemmas. They get an additional @subtype="compound" attribute.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <entry xml:lang="ar-Latn" xml:id="VDEA.daftar_shikaat_000">
+                     <form type="lemma" subtype="compound">
+                        <orth xml:lang="ar-Latn">daftaṛ šikāt</orth>
+                        <orth xml:lang="ar">دفتر شيكات</orth>
+                     </form>
+                     
+                     <gramGrp>
+                        <gram type="pos">nounPhrase</gram>
+                     </gramGrp>
+                     ...
+                  </entry>
+               </egXML>
+               
+               <p>Under this category fall noun phrases, verb phrases as well as prepositional constructs.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <form type="lemma" subtype="compound">
+                     <orth xml:lang="ar-Latn">bi-l-ḥaʔʔ</orth>
+                     <orth xml:lang="ar">بالحق</orth>
                   </form>
-               </form>                              
-            </egXML>
+               </egXML>
+            </div>
             
-            <p>Orthographical variants are encoded in several <tag>orth</tag> elements. </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <form type="lemma">
-                  <orth xml:lang="ar-Latn">talāta</orth>
-                  <orth xml:lang="ar">تلاتة</orth>
-                  <orth xml:lang="ar">تلاته</orth>
-                  <orth xml:lang="ar">ثلاثة</orth>
-                  <orth xml:lang="ar">ثلاثه</orth>
-               </form>
-            </egXML>
+            <div>
+               <head>Variants</head>
+               <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be listed at the end of the respective form. 
+                  We have applied this construct only to phonological/morphological variants, not orthographic variants.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <form type="inflected">
+                     <gramGrp>
+                        <gram type="number">plural</gram>
+                     </gramGrp>
+                     <orth>gufūn</orth>
+                     <orth xml:lang="ar">جفون</orth>
+                     
+                     <form type="variant">
+                        <orth>agfān</orth>
+                        <orth xml:lang="ar">اجفان</orth>
+                     </form>
+                  </form>                              
+               </egXML>
+               
+               <p>Orthographical variants are encoded in several <tag>orth</tag> elements. </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <form type="lemma">
+                     <orth xml:lang="ar-Latn">talāta</orth>
+                     <orth xml:lang="ar">تلاتة</orth>
+                     <orth xml:lang="ar">تلاته</orth>
+                     <orth xml:lang="ar">ثلاثة</orth>
+                     <orth xml:lang="ar">ثلاثه</orth>
+                  </form>
+               </egXML>
+            </div>
          </div>
          
          <div>
@@ -244,7 +274,7 @@
                </bibl>
             </p>
             
-            <p>We distinguish three cases: 
+            <p>In our dictionaries, we encounter three cases: 
               <list>
                  <item>Single etymology</item>   
                  <item>Several competing etymologies</item>   
@@ -252,48 +282,60 @@
               </list>
             </p>
             
-            <p>In involved linguistic varieties are indicated with <att>xml:lang</att>.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-               <etym>
-                  <cit type="etymon">
-                     <form><orth xml:lang="it">sta bene</orth></form>                     
-                  </cit>
-               </etym>                         
-            </egXML>
-            
-            <p>When there are several possible etymologies, <tag>etym</tag> contains several <tag>cit type="etymon"</tag> elements.            </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-               <etym>
-                  <cit type="etymon">
-                     <form><orth xml:lang="en">plastic</orth></form>
-                  </cit>
-                  <cit type="etymon">
-                     <form><orth xml:lang="fr">plastique</orth></form>
-                  </cit>
-               </etym>               
-            </egXML>
-            
-            <p>To encode multiple stages of an etymology, <tag>etym</tag> elements are nested. The element at the highest 
-               position in the hierarchy represents the most recent stage, the one at the lowest position the oldest stage. 
-               The code below is part of the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂ cabulum/capulum (Latin) `rope´. </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-               <etym>
+            <div>
+               <head>Single etymology</head>
+               <p>The involved linguistic varieties are indicated with <att>xml:lang</att>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <etym>
                      <cit type="etymon">
-                        <form><orth xml:lang="la">cabulum</orth></form>
+                        <form><orth xml:lang="it">sta bene</orth></form>                     
                      </cit>
-                  </etym>
-                  <cit type="etymon">
-                     <form><orth xml:lang="en">cable</orth></form>
-                  </cit>
-               </etym>             
-            </egXML>
+                  </etym>                         
+               </egXML>
+               
+            </div>
+            
+            <div>
+               <head>Several competing etymologies</head>
+               <p>When there are several possible etymologies, <tag>etym</tag> contains several <tag>cit type="etymon"</tag> elements.            
+               </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <etym>
+                     <cit type="etymon">
+                        <form><orth xml:lang="en">plastic</orth></form>
+                     </cit>
+                     <cit type="etymon">
+                        <form><orth xml:lang="fr">plastique</orth></form>
+                     </cit>
+                  </etym>               
+               </egXML>
+               
+            </div>
+            
+            <div>
+               <head>Historical sequence of etymologies</head>
+               <p>To encode multiple stages of an etymology, <tag>etym</tag> elements are nested. The element at the highest 
+                  position in the hierarchy represents the most recent stage, the one at the lowest position the oldest stage. 
+                  The code below is part of the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂ cabulum/capulum (Latin) `rope´. </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <etym>
+                     <etym>
+                        <cit type="etymon">
+                           <form><orth xml:lang="la">cabulum</orth></form>
+                        </cit>
+                     </etym>
+                     <cit type="etymon">
+                        <form><orth xml:lang="en">cable</orth></form>
+                     </cit>
+                  </etym>             
+               </egXML>
+            </div>
          </div>
          
          <div>
             <head>Examples</head>
             <p>As stated before, examples are placed in <tag>div type="examples"</tag> elements. In accordance with lex-0 (7.5), 
-               they are encoded as <code>cit/quote</code> constructs.</p>
+               these are encoded as <code>cit/quote</code> constructs.</p>
             
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -306,21 +348,38 @@
                </cit>
             </egXML>
             
-            <p>A special case are proverbs which are encoded with @subtype="proverb" on the main container <tag>cit</tag>.</p>
-            <p>Often literal translations are needed. These are encoded as <tag>cit type="translation" subtype="literal"</tag>.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
-                  <quote>il-ʕagala min iš-šiṭān.</quote>
-                  
-                  <cit type="translation" xml:lang="en">
-                     <quote>Haste makes waste.</quote>
-                  </cit>
-                  
-                  <cit type="translation" subtype="literal" xml:lang="en">
-                     <quote>Hasting comes from the devil.</quote>
-                  </cit>
-               </cit>                  
-            </egXML>
+            <div>
+               <head>Proverbs</head>
+               <p>A special case are proverbs which are encoded with @subtype="proverb" on the main container <tag>cit</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
+                     <quote>il-ḥaṛaka baṛaka.</quote>
+                     
+                     <cit type="translation" xml:lang="en">
+                        <quote>Hard work brings its own reward.</quote>
+                     </cit>
+                  </cit>                     
+               </egXML>
+            </div>
+            
+            <div>
+               <head>Literal translations</head>
+               <p>Often literal translations are needed. These are encoded as <tag>cit type="translation" subtype="literal"</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
+                     <quote>il-ʕagala min iš-šiṭān.</quote>
+                     
+                     <cit type="translation" xml:lang="en">
+                        <quote>Haste makes waste.</quote>
+                     </cit>
+                     
+                     <cit type="translation" subtype="literal" xml:lang="en">
+                        <quote>Hasting comes from the devil.</quote>
+                     </cit>
+                  </cit>                  
+               </egXML>
+               
+            </div>
          </div>
          
          <div>
