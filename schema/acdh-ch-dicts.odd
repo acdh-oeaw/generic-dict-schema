@@ -331,6 +331,40 @@
                </egXML>
             </div>
          </div>
+
+         <div>
+            <head>Grammatical information</head>
+            <p>All <tag>gram</tag> elements must be placed inside of <tag>gramGrp</tag>. Such information can be 
+              found in these elements:
+              <list>
+                 <item>entry (mandatory)</item>
+                 <item>form</item>
+                 <item>sense</item>
+              </list>
+            </p>
+            
+            <div>
+               <head>Top level <tag>gramGrp</tag></head>
+               <p>All entries have a <tag>gramGrp</tag> element which indicates at least the wordclass of the lemma.</p>
+            </div>
+            
+            <div>
+               <head><tag>gramGrp</tag> in forms</head>
+            </div>
+            
+            <div>
+               <head><tag>gramGrp</tag> in senses</head>
+               <p>Several types of <tag>gram</tag> elements are used together with verbs.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="collocate" xml:lang="ar-Latn">bi-</gram></gramGrp>
+                  
+                  <cit type="translationEquivalent" xml:lang="en">
+                     <form><orth>infatuated (with)</orth></form>
+                  </cit>                 
+               </egXML>
+            </div>
+         </div>
          
          <div>
             <head>Examples</head>
