@@ -354,7 +354,8 @@
             
             <div>
                <head><tag>gramGrp</tag> in senses</head>
-               <p>Several types of <tag>gram</tag> elements are used together with verbs.</p>
+               <p>Several types of <tag>gram</tag> elements are used together with verbs. Prepositions required 
+                 with particular senses are indicated like this:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <gramGrp>
                      <gram type="collocate" xml:lang="ar-Latn">bi-</gram></gramGrp>
@@ -363,13 +364,29 @@
                      <form><orth>infatuated (with)</orth></form>
                   </cit>                 
                </egXML>
+               
+               <p>If a verb requires particular morphological forms, the value <val>government</val> is used.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="government">imperfect</gram>
+                  </gramGrp>                  
+               </egXML>
+               
+               <p>Transitivity can be indicated using the value <val>valency</val>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="valency">transitive|intransitive|ditransitive</gram>
+                  </gramGrp>                  
+               </egXML>
+               
             </div>
          </div>
          
          <div>
             <head>Examples</head>
-            <p>As stated before, examples are placed in <tag>div type="examples"</tag> elements. In accordance with lex-0 (7.5), 
-               these are encoded as <code>cit/quote</code> constructs.</p>
+            <p>As stated before, illustrative sentences are placed in <tag>div type="examples"</tag>. 
+               In accordance with lex-0 (7.5), the examples are encoded as <code>cit/quote</code> constructs 
+               which have a <att>type</att> attribute with the <val>example</val>.</p>
             
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -380,6 +397,13 @@
                      <quote>Amira needs a pencil.</quote>
                   </cit>
                </cit>
+            </egXML>
+            
+            <p>Ideally, examples should consist in complete sentences. They should be concise, 
+               but can also contain several sentences. If dialogical models are involved, sentences 
+               are to be separated by a dash.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <quote xml:lang="ar-arz-x-cairo-vicavTrans">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
             </egXML>
             
             <div>
@@ -423,9 +447,6 @@
                put after the last <tag>orth</tag> element.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form type="derivative">
-                  <gramGrp>
-                     <gram type="pos">verbalNoun</gram>
-                  </gramGrp>
                   <orth xml:lang="ar-Latn">dars</orth>
                   <orth xml:lang="ar">درس</orth>
                   <xr type="related"><ref type="entry" target="#VDEA.dars_001"/></xr>
@@ -436,9 +457,7 @@
                      <orth xml:lang="ar">دراسه</orth>
                      <xr type="related"><ref type="entry" target="#VDEA.diraasa_001"></ref></xr>
                   </form>
-               </form>
-               
-               
+               </form>                            
             </egXML>
             
             <p>The example pointers are put at the end of the <tag>sense</tag> element.</p>
