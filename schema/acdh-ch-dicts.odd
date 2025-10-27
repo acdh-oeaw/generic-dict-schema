@@ -758,9 +758,6 @@
                </attList>
             </elementSpec>
                
-               
-           
-
             <elementSpec ident="gram" mode="change" module="dictionaries">
                <attList>
                   <attDef ident="type" mode="change" usage="req">
