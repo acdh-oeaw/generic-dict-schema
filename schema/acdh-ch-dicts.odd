@@ -775,6 +775,9 @@
                      <valItem ident="synRoot" mode="add">
                         <desc>synchronous root</desc>
                      </valItem>
+                     <valItem ident="root" mode="add">
+                        <desc>synchronous root</desc>
+                     </valItem>
                      <valItem ident="diaRoot" mode="add">
                         <desc>diachronic root</desc>
                      </valItem>
