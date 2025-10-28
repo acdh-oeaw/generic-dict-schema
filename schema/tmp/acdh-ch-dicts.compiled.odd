@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:base=""><?TEIVERSION?>
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:base="file:/home/danielschopper/data/generic-dict-schema/schema/acdh-ch-dicts.odd"><?TEIVERSION?>
    <teiHeader><fileDesc>
          <titleStmt>
             <title>ACDH-CH Dictionary Schema</title>
@@ -21,10 +21,12 @@
                <name xml:id="VE">Veronika Engler</name>
             </respStmt>
          </titleStmt>
+         
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
             <date>2021ff.</date>
          </publicationStmt>
+         
          <sourceDesc>
             <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries produced at ACDH-CH.</p>
          </sourceDesc>
@@ -38,14 +40,31 @@
       </tei:constraintDecl></tei:encodingDesc><revisionDesc>
          <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure; incorporating most definitions from the VICAV dicts ODD, except for the prose part and the fvLib – TODO discuss if that is general enough to be included here or if it should be kept as a project/dictionary-specific vocabulary.</change>
          <change status="draft" when="2024-07-26" who="#DS">fixing elementSpec for body; reducing tagset</change>
+         <change status="draft" when="2025-10-26" who="#CM">enhanced chapters 2. Entries, 4. Language Identifiers and 6. Forms </change>
+         <change status="draft" when="2025-10-26" who="#CM">added chapters 7. Etymologies, 8. Linking, 9. Bibliographic information</change>
       </revisionDesc></teiHeader>
    <text>
       <front>
          <argument>
-            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at the ACDH-CH should conform with. It serves two purposes: (1) It should define a compatibility layer between TEI Lex-0 – which it is based on – and legacy dictionaries (esp. VICAV), clearly defining where these dictionaries differ from Lex-0 while they are not ported to it; (2) in the future, it should define the baseline ODD which specific dictionaries should source and extend by their own rules, in order to define a schema which can be used for finer-grained validation.</p>
-            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it diverges from the cannonical TEI Lex-0 ODD.</p>
+            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at the ACDH-CH 
+               should conform with. It serves two purposes: (1) It should define a compatibility layer between 
+               TEI Lex-0 – which it is based on – and legacy dictionaries (esp. VICAV), clearly defining where 
+               these dictionaries differ from Lex-0 while they are not ported to it; (2) in the future, it 
+               should define the baseline ODD which specific dictionaries should source and extend by their 
+               own rules, in order to define a schema which can be used for finer-grained validation.</p>
+            
+            <p>The examples are mainly taken from the following dictionaries:
+               <list>
+                  <item>The VICAV Dictionary of Egyptian Arabic (VDEA)</item>
+                  <item>The SHAWI Dictionary (DShaAr)</item>
+               </list>
+            </p>
+            
+            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it diverges 
+               from the cannonical TEI Lex-0 ODD and project-specific practices.</p>
          </argument>
       </front>
+      
       <body>
          <head>Documentation</head>
          <div>
@@ -58,13 +77,16 @@
                dictionaries basically look like this:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                <TEI version="5.0">
-                  <teiHeader> ... </teiHeader>
+                  <teiHeader> 
+                     ... 
+                  </teiHeader>
                   <text>
                      <body>
                         <div type="entries">
                            <entry>...</entry>
                            <entry>...</entry>
                         </div>
+                        
                         <div type="examples">
                            <cit type="example">...</cit>
                            <cit type="example">...</cit>
@@ -73,44 +95,75 @@
                   </text>
                </TEI>
             </egXML>
+            
             <p>The <gi>body</gi> of a dictionary which conforms to this specification should contain
                two divisions: a series of entries within <tag>div type="entries"</tag> and a series
                of examples, encoded as <tag>div type="examples"</tag>. Examples are, as usual,
-               encoded as <gi>cit</gi>/<gi>quote</gi> constructs. The rationale behind keeping
+               encoded as <tag>cit</tag>/<tag>quote</tag> constructs. The rationale behind keeping
                example sentences outside the entries is to be able to reuse them in different parts
                of the dictionary.</p>
             <p>
+               <specList>
                   <specDesc key="body"/>
                   <specDesc key="div"/>
+               </specList>
             </p>
-            <p>In order to encode that an example should be integrated into an entry, the construct <tag>ref type="example"</tag> is used as a direct child f</p>
+            <p>In order to encode that an example should be integrated into an entry, the 
+               construct <tag>xr</tag>/<tag>ref type="example"</tag> is used as a direct child f</p>
          </div>
+         
          <div>
             <head>Entries</head>
             <p>The content model of dictionary entries closely align with the specs of Lex-0.</p>
             <p>Unlike Lex-0, bibliographic references documenting the source of an entry (or parts of it) are attached at the end of this entry.</p>
             <!-- TODO -->
-            <p><specDesc key="entry"/></p>
+            <p>
+               <specList>
+                  <specDesc key="entry"/>
+               </specList>
+            </p>
+            
+            <p>The entry contains the following parts in the following order. Optional components are put in brackets:
+               <list>
+                  <item>Lemma</item>
+                  <item>(Morphological forms)</item>
+                  <item>(Derived forms)</item>
+                  <item>Grammatical information related to the lemma</item>
+                  <item>(Etymology)</item>
+                  <item>Senses</item>
+                  <item>(Bibliographic references)</item>
+               </list>
+            </p>
+         </div>
+         
+         <div>
+            <head>Transcription</head>
+            
+            <p>In Arabic corpora and dictionaries, hyphens are put between all affixes, not between inflexional affixes, e.g. ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
+             
          </div>
          <div>
-            <head>Language Identifiers</head>
+            <head>Language identifiers</head>
             <p>All elements containing object language (lemmas, variants, inflected forms; including
                translations) must bear an <att>xml:lang</att> attribute. In accordance with the
-               recommendation by the Lex-0 specification (section <ref target="https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#index.xml-body.1_div.3_div.2">3.2. Mandatory attributes</ref>) we require thus <att>xml:lang</att> to be on the
+               recommendation of the Lex-0 specification (section <ref target="https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#index.xml-body.1_div.3_div.2">3.2. Mandatory attributes</ref>) we require thus <att>xml:lang</att> to be on 
                one of the following elements (many of which are "container" elements):</p>
+
             <list>
-               <item>Etymons (<tag>tei:cit @type='etymon'</tag>)</item>
-               <item>Translations (<tag>tei:cit @type='translation'</tag>)</item>
-               <item>Examples (<tag>tei:cit @type='example'</tag>)</item>
-               <item>TranslationEquivalents (<tag>tei:cit
-                  @type='translationEquivalent'</tag>)</item>
                <item>Entries (<gi>entry</gi>)</item>
-               <item>Some gram elements (<val>arguments</val>, <val>diaRoot</val>,
-                     <val>governmant</val>,<val>root</val>,<val>synRoot</val>)</item>
+               <item>The orthographical representations of all <gi>form</gi>s: 
+                  this includes <tag>orth</tag> in etymologgies.</item>
+               <item>Examples (<tag>tei:cit @type='example'</tag>)</item>
+               <item>Translation equivalents (<tag>tei:cit
+                  @type='translationEquivalent'</tag>)</item>
+               <item>Translations within exapmles (<tag>tei:cit @type='translation'</tag>)</item>
+               <item>All <tag>gram</tag> elements that contain data both in the object and working 
+                  languages (e.g. <val>collocate</val>, <val>diaRoot</val>,
+                     <val>governmant</val>,<val>root</val>,<val>synRoot</val>).</item>
             </list>
          </div>
          <div>
-            <head>Provenance and Status</head>
+            <head>Provenance and status</head>
             <p>While usually changes of a TEI document are centrally documented in a <gi>revisionDesc</gi> element in the <gi>teiHeader</gi>, for technical reasons, we encode this information in-situ in each <gi>entry</gi> or example (<gi>cit</gi>). This information is collected at the end of each entry/example, as a series of feature structures (<tag>fs type="change"</tag>) which at least provide information of the parent records's status (<tag>f name="status"</tag>), the date of a change (<tag>f name="who"</tag>).</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
                <fs type="change">​
@@ -125,6 +178,7 @@
                  </f>​
                </fs>
             </egXML>
+            
             <p>In some dictionaries, some statistics are collected within <gi>revisionDesc</gi>. For this <gi>measure</gi> within a <gi>change</gi> element is used:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <change when="2018-09-11">
@@ -141,11 +195,309 @@
             </egXML>
             <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding the <gi>measure</gi> element.</p>
          </div>
+         
          <div>
-            <head>forms</head>
+            <head>Forms</head>
+            <div>
+               <head>Lemma</head>
+               <p>The first form element contains the lemma. In our customisation, multi-word units are 
+                 also treated as lemmas. They get an additional @subtype="compound" attribute.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <entry xml:lang="ar-Latn" xml:id="VDEA.daftar_shikaat_000">
+                     <form type="lemma" subtype="compound">
+                        <orth xml:lang="ar-Latn">daftaṛ šikāt</orth>
+                        <orth xml:lang="ar">دفتر شيكات</orth>
+                     </form>
+                     
+                     <gramGrp>
+                        <gram type="pos">nounPhrase</gram>
+                     </gramGrp>
+                     ...
+                  </entry>
+               </egXML>
+               
+               <p>Under this category fall noun phrases, verb phrases as well as prepositional constructs.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <form type="lemma" subtype="compound">
+                     <orth xml:lang="ar-Latn">bi-l-ḥaʔʔ</orth>
+                     <orth xml:lang="ar">بالحق</orth>
+                  </form>
+               </egXML>
+            </div>
+            
+            <div>
+               <head>Variants</head>
+               <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be listed at the end of the respective form. 
+                  We have applied this construct only to phonological/morphological variants, not orthographic variants.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <form type="inflected">
+                     <gramGrp>
+                        <gram type="number">plural</gram>
+                     </gramGrp>
+                     <orth>gufūn</orth>
+                     <orth xml:lang="ar">جفون</orth>
+                     
+                     <form type="variant">
+                        <orth>agfān</orth>
+                        <orth xml:lang="ar">اجفان</orth>
+                     </form>
+                  </form>                              
+               </egXML>
+               
+               <p>Orthographical variants are encoded in several <tag>orth</tag> elements. </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <form type="lemma">
+                     <orth xml:lang="ar-Latn">talāta</orth>
+                     <orth xml:lang="ar">تلاتة</orth>
+                     <orth xml:lang="ar">تلاته</orth>
+                     <orth xml:lang="ar">ثلاثة</orth>
+                     <orth xml:lang="ar">ثلاثه</orth>
+                  </form>
+               </egXML>
+            </div>
          </div>
+         
          <div>
-            <head>Legacy Encoding</head>
+            <head>Etymologies</head>
+            <p>Etymologies are currently encoded in accordance with the following publication:<lb/> 
+               <bibl type="article">                  
+                  <author>Jack Bowers</author>,<author>Axel Herold</author>, <author>Laurent Romary</author>,
+                  <author>Toma Tasovac</author>. <title>TEI Lex-0 Etym – towards terse recommendations for the encoding of etymological information.</title>
+                  
+               </bibl>
+               <bibl type="journal">
+                  <title>Journal of the Text Encoding Initiative</title>
+                  <date>2022</date>
+                  <ptr target="ff10.4000/jtei.4300ff.ffhal-03108781v2f"/>
+               </bibl>
+            </p>
+            
+            <p>In our dictionaries, we encounter three cases: 
+              <list>
+                 <item>Single etymology</item>   
+                 <item>Several competing etymologies</item>   
+                 <item>Historical sequence of etymologies</item>   
+              </list>
+            </p>
+            
+            <div>
+               <head>Single etymology</head>
+               <p>The involved linguistic varieties are indicated with <att>xml:lang</att>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <etym>
+                     <cit type="etymon">
+                        <form><orth xml:lang="it">sta bene</orth></form>                     
+                     </cit>
+                  </etym>                         
+               </egXML>
+               
+            </div>
+            
+            <div>
+               <head>Several competing etymologies</head>
+               <p>When there are several possible etymologies, <tag>etym</tag> contains several <tag>cit type="etymon"</tag> elements.            
+               </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <etym>
+                     <cit type="etymon">
+                        <form><orth xml:lang="en">plastic</orth></form>
+                     </cit>
+                     <cit type="etymon">
+                        <form><orth xml:lang="fr">plastique</orth></form>
+                     </cit>
+                  </etym>               
+               </egXML>
+               
+            </div>
+            
+            <div>
+               <head>Historical sequence of etymologies</head>
+               <p>To encode multiple stages of an etymology, <tag>etym</tag> elements are nested. The element at the highest 
+                  position in the hierarchy represents the most recent stage, the one at the lowest position the oldest stage. 
+                  The code below is part of the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂ cabulum/capulum (Latin) `rope´. </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <etym>
+                     <etym>
+                        <cit type="etymon">
+                           <form><orth xml:lang="la">cabulum</orth></form>
+                        </cit>
+                     </etym>
+                     <cit type="etymon">
+                        <form><orth xml:lang="en">cable</orth></form>
+                     </cit>
+                  </etym>             
+               </egXML>
+            </div>
+         </div>
+
+         <div>
+            <head>Grammatical information</head>
+            <p>All <tag>gram</tag> elements must be placed inside of <tag>gramGrp</tag>. Such information can be 
+              found in these elements:
+              <list>
+                 <item>entry (mandatory)</item>
+                 <item>form</item>
+                 <item>sense</item>
+              </list>
+            </p>
+            
+            <div>
+               <head>Top level <tag>gramGrp</tag></head>
+               <p>All entries have a <tag>gramGrp</tag> element which indicates at least the wordclass of the lemma.</p>
+            </div>
+            
+            <div>
+               <head><tag>gramGrp</tag> in forms</head>
+            </div>
+            
+            <div>
+               <head><tag>gramGrp</tag> in senses</head>
+               <p>Several types of <tag>gram</tag> elements are used together with verbs. Prepositions required 
+                 with particular senses are indicated like this:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="collocate" xml:lang="ar-Latn">bi-</gram></gramGrp>
+                  
+                  <cit type="translationEquivalent" xml:lang="en">
+                     <form><orth>infatuated (with)</orth></form>
+                  </cit>                 
+               </egXML>
+               
+               <p>If a verb requires particular morphological forms, the value <val>government</val> is used.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="government">imperfect</gram>
+                  </gramGrp>                  
+               </egXML>
+               
+               <p>Transitivity can be indicated using the value <val>valency</val>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="valency">transitive|intransitive|ditransitive</gram>
+                  </gramGrp>                  
+               </egXML>
+               
+            </div>
+         </div>
+         
+         <div>
+            <head>Examples</head>
+            <p>As stated before, illustrative sentences are placed in <tag>div type="examples"</tag>. 
+               In accordance with lex-0 (7.5), the examples are encoded as <code>cit/quote</code> constructs 
+               which have a <att>type</att> attribute with the <val>example</val>.</p>
+            
+            <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <cit xml:id="VDEA.amiira_cawza_qalam__001" type="example" xml:lang="ar-Latn">
+                  <quote>amīra ʕawza ʔalam ruṣāṣ.</quote>
+                  
+                  <cit type="translation" xml:lang="en">
+                     <quote>Amira needs a pencil.</quote>
+                  </cit>
+               </cit>
+            </egXML>
+            
+            <p>Ideally, examples should consist in complete sentences. They should be concise, 
+               but can also contain several sentences. If dialogical models are involved, sentences 
+               are to be separated by a dash.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <quote xml:lang="ar-arz-x-cairo-vicavTrans">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
+            </egXML>
+            
+            <div>
+               <head>Proverbs</head>
+               <p>A special case are proverbs which are encoded with @subtype="proverb" on the main container <tag>cit</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
+                     <quote>il-ḥaṛaka baṛaka.</quote>
+                     
+                     <cit type="translation" xml:lang="en">
+                        <quote>Hard work brings its own reward.</quote>
+                     </cit>
+                  </cit>                     
+               </egXML>
+            </div>
+            
+            <div>
+               <head>Literal translations</head>
+               <p>Often literal translations are needed. These are encoded as <tag>cit type="translation" subtype="literal"</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
+                     <quote>il-ʕagala min iš-šiṭān.</quote>
+                     
+                     <cit type="translation" xml:lang="en">
+                        <quote>Haste makes waste.</quote>
+                     </cit>
+                     
+                     <cit type="translation" subtype="literal" xml:lang="en">
+                        <quote>Hasting comes from the devil.</quote>
+                     </cit>
+                  </cit>                  
+               </egXML>
+               
+            </div>
+         </div>
+         
+         <div>
+            <head>Linking</head>
+            <p>In accordance with Lex-0, all <tag>ref</tag> elements are applied inside of <tag>xr</tag> elements. 
+               They can be used inside of forms and senses. In <tag>form</tag> elements, they should be 
+               put after the last <tag>orth</tag> element.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <form type="derivative">
+                  <orth xml:lang="ar-Latn">dars</orth>
+                  <orth xml:lang="ar">درس</orth>
+                  <xr type="related"><ref type="entry" target="#VDEA.dars_001"/></xr>
+                  
+                  <form type="variant">
+                     <orth xml:lang="ar-Latn">dirāsa</orth>
+                     <orth xml:lang="ar">دراسة</orth>
+                     <orth xml:lang="ar">دراسه</orth>
+                     <xr type="related"><ref type="entry" target="#VDEA.diraasa_001"/></xr>
+                  </form>
+               </form>                            
+            </egXML>
+            
+            <p>The example pointers are put at the end of the <tag>sense</tag> element.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <sense xml:id="VDEA.s_daras_001_0">
+                  
+                  ...                  
+                  <xr><ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"/></xr>
+               </sense>               
+            </egXML>
+         </div>
+         
+         <div>
+            <head>Bibliographic information</head>
+            <p>Bibliographical references are listed in a <tag>listBibl</tag> element at the end of each entry. 
+               This sollution allows to provide exact information with respect to page numbers or other such 
+               information.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <listBibl type="literature">
+                  <bibl xml:id="d1e112726">
+                     <title ref="zot:Lentin2013"/>
+                     <biblScope unit="page">p.106</biblScope>
+                  </bibl>
+                  <bibl xml:id="d1e112808">
+                     <title ref="zot:Younes2021"/>
+                     <biblScope unit="page">p.16</biblScope>
+                  </bibl>
+               </listBibl>               
+            </egXML>
+            
+            <p>This information is referenced in <att>source</att> attributes which can flexibly be applied 
+              in <tag>form</tag> but also other elements.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <form source="#d1e112915" type="lemma">
+                  <orth>kitab</orth>
+               </form>              
+            </egXML>
+         </div>
+         
+         <div>
+            <head>Legacy encoding</head>
             <p>As mentioned before, this ODD also tries to document encoding practies which are yet
                to be ported to a more cannonical TEI Lex-0 structure. These are indicated in the
                formal specification part of this document by the attribute <att>validUntil</att> or
@@ -160,7 +512,7 @@
             </div>
          </div>
          <div>
-            <head>Further development</head>
+            <head>Further developments</head>
             <p>As legacy dictionaries will be gradually ported to Lex-0, the legacy definitions in this ODD will be reduced.</p>
          </div>
          <div>
@@ -175,7 +527,7 @@
             <head>Part 2: Formal Specification</head>
             
             <!--<schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">-->
-            <schemaSpec ident="acdh-ch-dicts" source="file:///home/danielschopper/data/generic-dict-schema/schema/tmp/TEILex0.compiled.odd"><classSpec rend="add" module="tei" type="atts" xml:id="class-attr-anchoring" ident="att.anchoring">
+            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd"><classSpec rend="add" module="tei" type="atts" xml:id="class-attr-anchoring" ident="att.anchoring">
   <gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">anchoring</gloss>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">provides attributes for use on annotations, e.g. notes and groups of notes
   describing the existence and position of an anchor for annotations.</desc>
@@ -8679,6 +9031,8 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
                         </remarks>
                      </valItem><valItem ident="synRoot" mode="add">
                         <desc>synchronous root</desc>
+                     </valItem><valItem ident="root" mode="add">
+                        <desc>synchronous root</desc>
                      </valItem><valItem ident="diaRoot" mode="add">
                         <desc>diachronic root</desc>
                      </valItem><valItem ident="subc" mode="add">
@@ -13149,7 +13503,7 @@ elements of  <gi>profileDesc</gi> unless these are documenting multiple texts.</
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DS">4. Default Text Structure</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CC.html#CCDEF">16.1. Varieties of Composite Text</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="textstructure" xml:id="gi-body" ident="body"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">text body</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 본문</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">正文</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">corps du texte</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Textkörper</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">cuerpo del texto</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">corpo del testo</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2023-09-27" xml:lang="ja">テキスト本文</gloss><desc rend="replace">contains the main content of the dictionary. MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc><classes><memberOf key="att.global"/></classes><content><elementRef key="div" minOccurs="1" maxOccurs="2"/></content><constraintSpec ident="body-children" scheme="schematron">
+  </listRef></elementSpec><elementSpec rend="add" module="textstructure" xml:id="gi-body" ident="body"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">text body</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 본문</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">正文</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">corps du texte</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-13" xml:lang="de">Textkörper</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">cuerpo del texto</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">corpo del testo</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2023-09-27" xml:lang="ja">テキスト本文</gloss><desc rend="replace">contains the main content of the dictionary. It MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc><classes><memberOf key="att.global"/></classes><content><elementRef key="div" minOccurs="1" maxOccurs="2"/></content><constraintSpec ident="body-children" scheme="schematron">
                      <desc>assert typed div elements at the top of body</desc>
                      <constraint>
                         <s:rule context="tei:body">
