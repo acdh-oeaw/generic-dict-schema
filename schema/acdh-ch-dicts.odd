@@ -145,25 +145,43 @@
          <div>
             <head>Language identifiers</head>
             <p>All elements containing object language (lemmas, variants, inflected forms; including
-               translations) must bear an <att>xml:lang</att> attribute. In accordance with the
+               translations) must have an <att>xml:lang</att> attribute. In accordance with the
                recommendation of the Lex-0 specification (section <ref
                   target="https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#index.xml-body.1_div.3_div.2"
-                  >3.2. Mandatory attributes</ref>) we require thus <att>xml:lang</att> to be on 
+                  >3.2. Mandatory attributes</ref>), we require thus <att>xml:lang</att> to be on 
                one of the following elements (many of which are "container" elements):</p>
 
             <list>
                <item>Entries (<gi>entry</gi>)</item>
-               <item>The orthographical representations of all <gi>form</gi>s: 
-                  this includes <tag>orth</tag> in etymologgies.</item>
-               <item>Examples (<tag>tei:cit @type='example'</tag>)</item>
-               <item>Translation equivalents (<tag>tei:cit
-                  @type='translationEquivalent'</tag>)</item>
-               <item>Translations within exapmles (<tag>tei:cit @type='translation'</tag>)</item>
+               <item>All orthographical representations in <gi>form</gi>s: 
+                  this includes <tag>orth</tag> in etymologies.</item>
+               <item>Examples (div[@type="examples"]/cit[@type="example"])</item>
+               <item>Translation equivalents (sense/cit[@type="translationEquivalent"])</item>
+               <item>Translations within exapmles (cit[@type="example"]/cit @type="translation")</item>
                <item>All <tag>gram</tag> elements that contain data both in the object and working 
                   languages (e.g. <val>collocate</val>, <val>diaRoot</val>,
-                     <val>governmant</val>,<val>root</val>,<val>synRoot</val>).</item>
+                     <val>governmant</val>, <val>root</val>, <val>synRoot</val>).</item>
             </list>
+            
+            <p>In the Arabic dictionaries, we provide the entires with detailed language identifiers, making use of a 
+               combination of ISO 639-3 three-letter codes for macrolanguages and private use subtags giving 
+               locations plus transcription system of the described varieties.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <entry xml:lang="ar-arz-x-cairo-vicav" xml:id="VDEA.baqa_002">
+                  ...
+               </entry>
+            </egXML>
+            
+            <p>Inside of entries and on all examples we use shorter codes only indicating the macrolanguage and the 
+               riting system when dealing with transcriptions.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <form type="lemma">
+                  <orth xml:lang="ar-Latn">kitāb</orth>
+                  <orth xml:lang="ar">كتاب</orth>
+               </form>              
+            </egXML>
          </div>
+         
          <div>
             <head>Provenance and status</head>
             <p>While usually changes of a TEI document are centrally documented in a <gi>revisionDesc</gi> element in the <gi>teiHeader</gi>, for technical reasons, we encode this information in-situ in each <gi>entry</gi> or example (<gi>cit</gi>). This information is collected at the end of each entry/example, as a series of feature structures (<tag>fs type="change"</tag>) which at least provide information of the parent records's status (<tag>f name="status"</tag>), the date of a change (<tag>f name="who"</tag>).</p>
