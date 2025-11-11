@@ -188,10 +188,10 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
                <fs type="change">​
                  <f name="who">​
-                  <symbol value="stephan"/>​
+                  <symbol value="stephanP"/>​
                     </f>​
                  <f name="when">​
-                  <symbol value="2014_09_17"/>​
+                  <symbol value="2014-09-17"/>​
                  </f>​
                  <f name="status">​
                   <symbol value="released"/>​
@@ -1064,7 +1064,7 @@
                      <s:rule context="tei:form[@type = 'variant']">
                         <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]">a variant must be a direct child of the main form (type = "lemma", "multiWordUnit" or "inflected").</s:assert>
                      </s:rule>
-                     <s:rule context="tei:form[@type =  ('lemma', 'inflected')]">
+                     <s:rule context="tei:form[@type = ('lemma', 'inflected')]">
                         <s:assert test="parent::tei:entry">a headword or inflected form must be a direct child of an entry element. </s:assert>
                      </s:rule>
                      <s:rule context="tei:form[@subtype='compound']">
@@ -1099,6 +1099,13 @@
                   </attDef>
                </attList>
             </elementSpec>
+               
+            <elementSpec ident="listChange" mode="add" module="header">
+               <content>
+                  <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
+               </content>
+            </elementSpec>
+               
          </schemaSpec>
          </div>
       </body>
