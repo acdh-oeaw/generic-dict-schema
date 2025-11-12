@@ -149,15 +149,15 @@
                recommendation of the Lex-0 specification (section <ref
                   target="https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#index.xml-body.1_div.3_div.2"
                   >3.2. Mandatory attributes</ref>), we require thus <att>xml:lang</att> to be on 
-               one of the following elements (many of which are "container" elements):</p>
+               one of the following elements:</p>
 
             <list>
                <item>Entries (<gi>entry</gi>)</item>
                <item>All orthographical representations in <gi>form</gi>s: 
                   this includes <tag>orth</tag> in etymologies.</item>
-               <item>Examples (div[@type="examples"]/cit[@type="example"])</item>
+               <item>Examples (div[@type="examples"]/cit[@type="example"]/quote)</item>
                <item>Translation equivalents (sense/cit[@type="translationEquivalent"])</item>
-               <item>Translations within exapmles (cit[@type="example"]/cit @type="translation")</item>
+               <item>Translations within examples (cit[@type="example"]/cit[@type="translation"])</item>
                <item>All <tag>gram</tag> elements that contain data both in the object and working 
                   languages (e.g. <val>collocate</val>, <val>diaRoot</val>,
                      <val>governmant</val>, <val>root</val>, <val>synRoot</val>).</item>
@@ -180,6 +180,8 @@
                   <orth xml:lang="ar">كتاب</orth>
                </form>              
             </egXML>
+            
+            <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation containers cit[@type="translation"].</p>
          </div>
          
          <div>
@@ -188,10 +190,10 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
                <fs type="change">​
                  <f name="who">​
-                  <symbol value="stephan"/>​
+                  <symbol value="stephanP"/>​
                     </f>​
                  <f name="when">​
-                  <symbol value="2014_09_17"/>​
+                  <symbol value="2014-09-17"/>​
                  </f>​
                  <f name="status">​
                   <symbol value="released"/>​
@@ -1064,7 +1066,7 @@
                      <s:rule context="tei:form[@type = 'variant']">
                         <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]">a variant must be a direct child of the main form (type = "lemma", "multiWordUnit" or "inflected").</s:assert>
                      </s:rule>
-                     <s:rule context="tei:form[@type =  ('lemma', 'inflected')]">
+                     <s:rule context="tei:form[@type = ('lemma', 'inflected')]">
                         <s:assert test="parent::tei:entry">a headword or inflected form must be a direct child of an entry element. </s:assert>
                      </s:rule>
                      <s:rule context="tei:form[@subtype='compound']">
@@ -1099,6 +1101,13 @@
                   </attDef>
                </attList>
             </elementSpec>
+               
+            <elementSpec ident="listChange" mode="add" module="header">
+               <content>
+                  <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
+               </content>
+            </elementSpec>
+               
          </schemaSpec>
          </div>
       </body>
