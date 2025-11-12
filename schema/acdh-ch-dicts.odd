@@ -163,17 +163,17 @@
                      <val>governmant</val>, <val>root</val>, <val>synRoot</val>).</item>
             </list>
             
-            <p>In the Arabic dictionaries, we provide the entires with detailed language identifiers, making use of a 
-               combination of ISO 639-3 three-letter codes for macrolanguages and private use subtags giving 
-               locations plus transcription system of the described varieties.</p>
+            <p>In the Arabic dictionaries, we provide the entries with language identifiers made up of two components,   
+               (1) the ISO 639-3 three-letter codes for macrolanguages and (2) private use subtags giving 
+               location plus transcription system of the described varieties.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <entry xml:lang="ar-arz-x-cairo-vicav" xml:id="VDEA.baqa_002">
                   ...
                </entry>
             </egXML>
             
-            <p>Inside of entries and on all examples we use shorter codes only indicating the macrolanguage and the 
-               riting system when dealing with transcriptions.</p>
+            <p>Inside of entries and on all examples, we use shorter two-letter codes indicating the linguistic variety 
+               and the writing system when dealing with transcriptions. </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form type="lemma">
                   <orth xml:lang="ar-Latn">kitāb</orth>
