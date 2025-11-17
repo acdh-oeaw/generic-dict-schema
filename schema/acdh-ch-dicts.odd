@@ -370,6 +370,14 @@
             
             <div>
                <head><tag>gramGrp</tag> in forms</head>
+               <p>The Arabic dictionaries have a number of special gram-types.</p>
+               <list>
+                  <item>@state is used with the value construct. The construct state describes a nominal form 
+                     used in some Afro-Asiatic languages where a noun is put into a specific state when it 
+                     is followed by another noun as part of a genitive construction. E.g. <foreign>abu maḥmūd</foreign> `Mahmud's father´.
+                     In Egyptian Arabic, the basic form of `father´ is <foreign>abb</foreign>, the construct state <foreign>abu</foreign>. 
+                  </item>
+               </list>
             </div>
             
             <div>
@@ -384,8 +392,9 @@
                      <form><orth>infatuated (with)</orth></form>
                   </cit>                 
                </egXML>
-               
-               <p>If a verb requires particular morphological forms, the value <val>government</val> is used.</p>
+                            
+               <p>If a verb requires complementation through verb forms in a aparticular mood, 
+                  the value <val>government</val> is used.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <gramGrp>
                      <gram type="government">imperfect</gram>
@@ -399,6 +408,7 @@
                   </gramGrp>                  
                </egXML>
                
+              
             </div>
          </div>
          
@@ -812,10 +822,16 @@
                      <valItem ident="morphPattern" mode="add">
                         <desc>morphological pattern</desc>
                      </valItem>
-                     
-                     <!--<valItem ident="arguments">
+                     <valItem ident="participle" mode="add">
+                        <desc>The value of the this gram-type can be "present|past"</desc>
+                     </valItem>
+                     <valItem ident="arguments" mode="add">
                         <desc>arguments to a verb</desc>
                      </valItem>
+                     <valItem ident="state" mode="add">
+                        <desc>construct</desc>
+                     </valItem>
+                     <!--
                      <valItem ident="morphType">
                         <desc>mophological type</desc>
                         <remarks>
