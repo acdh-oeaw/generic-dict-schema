@@ -381,13 +381,23 @@
                
                <div>
                   <head>Construct state</head>
-                  <p>@state is used with the value construct. The construct state describes a nominal form 
-                     used in some Afro-Asiatic languages where a noun is put into a specific state when it 
-                     is followed by another noun as part of a genitive construction. E.g. <foreign>abu maḥmūd</foreign> `Mahmud's father´.
-                     In Egyptian Arabic, the basic form of `father´ is <foreign>abb</foreign>, the construct state <foreign>abu</foreign>.</p>
-               </div>
-               
-               
+                  <p>The existing TEI Lex-0 contains obvious lacunae with respect to some categories needed in 
+                     the descroption of non-European languages. One such case is the construct state, a nominal form 
+                     found in some Afro-Asiatic languages where some nouns have specific forms when it 
+                     they are followed by another noun as part of a so called genitive construction. E.g. <foreign>abu maḥmūd</foreign> `Mahmud's father´.
+                     In Egyptian Arabic, the basic form of `father´ is <foreign>abb</foreign>, the construct state <foreign>abu</foreign>. 
+                     This phenomenon has to be clearly distinguished from case which also can play a role in some of these languages. 
+                     We solved the issue by adding an additional @type value <att>state</att>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <form type="inflected">
+                        <gramGrp>
+                           <gram type="state">construct</gram>
+                        </gramGrp>
+                        <orth xml:lang="ar-Latn">abu</orth>
+                        <orth xml:lang="ar">ابو</orth>
+                     </form>                     
+                  </egXML>
+               </div>                             
             </div>
             
             <div>
