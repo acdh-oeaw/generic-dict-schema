@@ -365,19 +365,29 @@
             
             <div>
                <head>Top level <tag>gramGrp</tag></head>
-               <p>All entries have a <tag>gramGrp</tag> element which indicates at least the wordclass of the lemma.</p>
+               <p>All entries have a <tag>gramGrp</tag> element which contains at least a gram element indicating the wordclass of the lemma.</p>
+
+               <p>The Arabic dictionaries have a number of special gram-types: root, derivedVerbClass</p>
             </div>
             
             <div>
                <head><tag>gramGrp</tag> in forms</head>
-               <p>The Arabic dictionaries have a number of special gram-types.</p>
-               <list>
-                  <item>@state is used with the value construct. The construct state describes a nominal form 
+               <p>Again, the Arabic dictionaries have a number of special gram-types.</p>
+             
+               <div>
+                  <head>Morphological patterns</head>
+                  
+               </div>
+               
+               <div>
+                  <head>Construct state</head>
+                  <p>@state is used with the value construct. The construct state describes a nominal form 
                      used in some Afro-Asiatic languages where a noun is put into a specific state when it 
                      is followed by another noun as part of a genitive construction. E.g. <foreign>abu maḥmūd</foreign> `Mahmud's father´.
-                     In Egyptian Arabic, the basic form of `father´ is <foreign>abb</foreign>, the construct state <foreign>abu</foreign>. 
-                  </item>
-               </list>
+                     In Egyptian Arabic, the basic form of `father´ is <foreign>abb</foreign>, the construct state <foreign>abu</foreign>.</p>
+               </div>
+               
+               
             </div>
             
             <div>
@@ -408,7 +418,15 @@
                   </gramGrp>                  
                </egXML>
                
-              
+               <p>Particular arguments of a verb can be indicated like this:</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="arguments">w ḥ</gram></gramGrp>
+                  
+                  <cit type="translationEquivalent" xml:lang="en">
+                     <form><orth>to teach (s.o. s.th.)</orth></form>
+                  </cit>                  
+               </egXML>
             </div>
          </div>
          
