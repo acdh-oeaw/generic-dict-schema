@@ -145,19 +145,13 @@
          <div>
             <head>Language identifiers</head>
             <p>All elements containing object language (lemmas, variants, inflected forms; including
-               translations) must have an <att>xml:lang</att> attribute. In accordance with the
-               recommendation of the Lex-0 specification (section <ref
-                  target="https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html#index.xml-body.1_div.3_div.2"
-                  >3.2. Mandatory attributes</ref>), we require thus <att>xml:lang</att> to be on 
-               one of the following elements:</p>
+               translations) must have an <att>xml:lang</att> attribute. We therefore apply <att>xml:lang</att> on these elements:</p>
 
             <list>
                <item>Entries (<gi>entry</gi>)</item>
-               <item>All orthographical representations in <gi>form</gi>s: 
-                  this includes <tag>orth</tag> in etymologies.</item>
-               <item>Examples (div[@type="examples"]/cit[@type="example"]/quote)</item>
-               <item>Translation equivalents (sense/cit[@type="translationEquivalent"])</item>
-               <item>Translations within examples (cit[@type="example"]/cit[@type="translation"])</item>
+               <item>All orthographical representations (<tag>orth</tag>) in forms, including orth elements in etymologies and 
+                  translation equivalents.</item>
+               <item>All <tag>quote</tag> elements in examples</item>
                <item>All <tag>gram</tag> elements that contain data both in the object and working 
                   languages (e.g. <val>collocate</val>, <val>diaRoot</val>,
                      <val>governmant</val>, <val>root</val>, <val>synRoot</val>).</item>
@@ -165,14 +159,14 @@
             
             <p>In the Arabic dictionaries, we provide the entries with language identifiers made up of two components,   
                (1) the ISO 639-3 three-letter codes for macrolanguages and (2) private use subtags giving 
-               location plus transcription system of the described varieties.</p>
+               location plus transcription system of the described varieties on the entry elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <entry xml:lang="ar-arz-x-cairo-vicav" xml:id="VDEA.baqa_002">
                   ...
                </entry>
             </egXML>
             
-            <p>Inside of entries and on all examples, we use shorter two-letter codes indicating the linguistic variety 
+            <p>Inside of entries, including on all examples, we use shorter two-letter codes indicating the linguistic variety 
                and the writing system when dealing with transcriptions. </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form type="lemma">
@@ -182,6 +176,20 @@
             </egXML>
             
             <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation containers cit[@type="translation"].</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
+                  <quote xml:lang="ar-Latn">fukk aṭ-ṭāga!</quote>
+                  
+                  <cit type="translation">
+                     <quote xml:lang="en">Open the window!</quote></cit>
+                  
+                  <cit type="translation">
+                     <quote xml:lang="de">Mach das Fenster auf!</quote></cit>
+                  
+                  <cit type="translation">
+                     <quote xml:lang="ar">!افتح النافذة</quote></cit>
+               </cit>               
+            </egXML>
          </div>
          
          <div>
