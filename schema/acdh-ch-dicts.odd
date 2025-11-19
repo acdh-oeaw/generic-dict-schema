@@ -264,11 +264,11 @@
                      <gramGrp>
                         <gram type="number">plural</gram>
                      </gramGrp>
-                     <orth>gufūn</orth>
+                     <orth xml:lang="ar-Latn">gufūn</orth>
                      <orth xml:lang="ar">جفون</orth>
                      
                      <form type="variant">
-                        <orth>agfān</orth>
+                        <orth xml:lang="ar-Latn">agfān</orth>
                         <orth xml:lang="ar">اجفان</orth>
                      </form>
                   </form>                              
@@ -416,8 +416,8 @@
                   <gramGrp>
                      <gram type="collocate" xml:lang="ar-Latn">bi-</gram></gramGrp>
                   
-                  <cit type="translationEquivalent" xml:lang="en">
-                     <form><orth>infatuated (with)</orth></form>
+                  <cit type="translationEquivalent">
+                     <form><orth xml:lang="en">infatuated (with)</orth></form>
                   </cit>                 
                </egXML>
                             
@@ -441,9 +441,33 @@
                   <gramGrp>
                      <gram type="arguments">w ḥ</gram></gramGrp>
                   
-                  <cit type="translationEquivalent" xml:lang="en">
-                     <form><orth>to teach (s.o. s.th.)</orth></form>
+                  <cit type="translationEquivalent">
+                     <form><orth xml:lang="en">to teach (s.o. s.th.)</orth></form>
                   </cit>                  
+               </egXML>
+            </div>
+         </div>
+         
+         <div>
+            <head>Senses</head>
+            <p>Senses can have gramatical information (see chapter <tag>gramGrp</tag> in senses) and information specifying usage domains and or semantic categories</p>
+            
+            <div>
+               <head>Domain labels</head>
+            </div>
+            <div>
+               <head>Semantic labeling</head>
+               <p>The Some VICAV dictionaries contain labels <term>kinship term</term>, <term>city</term>, <term>harbour</term> etc. placing them in particular semantic categories. 
+                  This kind of information is put in <att>ana</att> attributes the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of the header.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
+                     <cit type="translationEquivalent">
+                        <form>
+                           <orth xml:lang="en">el-Ma’adi</orth>
+                        </form>
+                     </cit>
+                     ...
+                  </sense>
                </egXML>
             </div>
          </div>
@@ -456,11 +480,11 @@
             
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <cit xml:id="VDEA.amiira_cawza_qalam__001" type="example" xml:lang="ar-Latn">
-                  <quote>amīra ʕawza ʔalam ruṣāṣ.</quote>
+               <cit xml:id="VDEA.amiira_cawza_qalam__001" type="example">
+                  <quote xml:lang="ar-Latn">amīra ʕawza ʔalam ruṣāṣ.</quote>
                   
-                  <cit type="translation" xml:lang="en">
-                     <quote>Amira needs a pencil.</quote>
+                  <cit type="translation">
+                     <quote xml:lang="en">Amira needs a pencil.</quote>
                   </cit>
                </cit>
             </egXML>
@@ -469,7 +493,7 @@
                but can also contain several sentences. If dialogical models are involved, sentences 
                are to be separated by a dash.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <quote xml:lang="ar-arz-x-cairo-vicavTrans">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
+               <quote xml:lang="ar-Latn">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
             </egXML>
             
             <div>
@@ -477,10 +501,10 @@
                <p>A special case are proverbs which are encoded with @subtype="proverb" on the main container <tag>cit</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
-                     <quote>il-ḥaṛaka baṛaka.</quote>
+                     <quote xml:lang="ar-Latn">il-ḥaṛaka baṛaka.</quote>
                      
-                     <cit type="translation" xml:lang="en">
-                        <quote>Hard work brings its own reward.</quote>
+                     <cit type="translation">
+                        <quote xml:lang="en">Hard work brings its own reward.</quote>
                      </cit>
                   </cit>                     
                </egXML>
@@ -491,14 +515,14 @@
                <p>Often literal translations are needed. These are encoded as <tag>cit type="translation" subtype="literal"</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
-                     <quote>il-ʕagala min iš-šiṭān.</quote>
+                     <quote xml:lang="ar-Latn">il-ʕagala min iš-šiṭān.</quote>
                      
-                     <cit type="translation" xml:lang="en">
-                        <quote>Haste makes waste.</quote>
+                     <cit type="translation">
+                        <quote xml:lang="en">Haste makes waste.</quote>
                      </cit>
                      
-                     <cit type="translation" subtype="literal" xml:lang="en">
-                        <quote>Hasting comes from the devil.</quote>
+                     <cit type="translation" subtype="literal">
+                        <quote xml:lang="en">Hasting comes from the devil.</quote>
                      </cit>
                   </cit>                  
                </egXML>
@@ -559,7 +583,7 @@
               in <tag>form</tag> but also other elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form source="#d1e112915" type="lemma">
-                  <orth>kitab</orth>
+                  <orth xml:lang="ar-Latn">kitab</orth>
                </form>              
             </egXML>
          </div>
