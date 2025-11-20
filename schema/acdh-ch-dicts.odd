@@ -139,7 +139,7 @@
          <div>
             <head>Transcription</head>
             
-            <p>In Arabic corpora and dictionaries, hyphens are put between all affixes, not between inflexional affixes, e.g. ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
+            <p>In our Arabic corpora and dictionaries, hyphens are in principle put between all affixes, with the exception of inflexional affixes, e.g. ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
              
          </div>
          <div>
@@ -450,15 +450,29 @@
          
          <div>
             <head>Senses</head>
-            <p>Senses can have gramatical information (see chapter <tag>gramGrp</tag> in senses) and information specifying usage domains and or semantic categories</p>
+            <p>Senses can have grammatical information (see chapter <tag>gramGrp</tag> in senses) and information specifying usage domains and or semantic categories.</p>
             
             <div>
                <head>Domain labels</head>
+               <p>We attempt to indicate the specific field of knowledge a word is primarily used in. They terms used are documented in a taxonomy in the <tag>encodingDesc</tag> of the header. </p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <sense xml:id="VDEA.s_disk_001_0">
+                     <usg type="domain" valueDatcat="#domains.medicine">medicine</usg>
+                     <cit type="translationEquivalent">
+                        <form>
+                           <orth xml:lang="en">slipped disk</orth>
+                        </form>
+                     </cit>
+                  </sense>
+                  
+               </egXML>
             </div>
+            
             <div>
                <head>Semantic labeling</head>
-               <p>The Some VICAV dictionaries contain labels <term>kinship term</term>, <term>city</term>, <term>harbour</term> etc. placing them in particular semantic categories. 
-                  This kind of information is put in <att>ana</att> attributes the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of the header.</p>
+               <p>Some VICAV dictionaries contain labels such as <term>kinship term</term>, <term>city</term>, <term>harbour</term> etc. placing them in particular semantic categories. 
+                  This kind of information is put in <att>ana</att> attributes the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of the header.
+                  These are then used in <att>ana</att> attributes on the <tag>sense</tag> elements.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
                      <cit type="translationEquivalent">
@@ -475,7 +489,7 @@
          <div>
             <head>Examples</head>
             <p>As stated before, illustrative sentences are placed in <tag>div type="examples"</tag>. 
-               In accordance with lex-0 (7.5), the examples are encoded as <code>cit/quote</code> constructs 
+               In accordance with Lex-0 (7.5), the examples are encoded as <code>cit/quote</code> constructs 
                which have a <att>type</att> attribute with the <val>example</val>.</p>
             
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
