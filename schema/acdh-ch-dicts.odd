@@ -159,14 +159,14 @@
             
             <p>In the Arabic dictionaries, we provide the entries with language identifiers made up of two components,   
                (1) the ISO 639-3 three-letter codes for macrolanguages and (2) private use subtags giving 
-               location plus transcription system of the described varieties on the entry elements.</p>
+               location plus transcription system of the described varieties on the entry elements as a default value.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <entry xml:lang="ar-arz-x-cairo-vicav" xml:id="VDEA.baqa_002">
+               <entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002">
                   ...
                </entry>
             </egXML>
             
-            <p>Inside of entries, including on all examples, we use shorter two-letter codes indicating the linguistic variety 
+            <p>Inside of entries, including on all examples, we use shorter two-letter language codes indicating the linguistic variety 
                and the writing system when dealing with transcriptions. </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form type="lemma">
@@ -175,7 +175,7 @@
                </form>              
             </egXML>
             
-            <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation containers cit[@type="translation"].</p>
+            <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation containers cit[@type="translation"]/quote.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
                   <quote xml:lang="ar-Latn">fukk aṭ-ṭāga!</quote>
@@ -190,6 +190,8 @@
                      <quote xml:lang="ar">!افتح النافذة</quote></cit>
                </cit>               
             </egXML>
+            
+            <p>In consequence, all <tag>orth</tag> and <tag>quote</tag> elements of an entry must have <att>xml:lang</att> attributes.</p>
          </div>
          
          <div>
@@ -325,8 +327,7 @@
             
             <div>
                <head>Several competing etymologies</head>
-               <p>When there are several possible etymologies, <tag>etym</tag> contains several <tag>cit type="etymon"</tag> elements.            
-               </p>
+               <p>When there are several possible etymologies, <tag>etym</tag> contains several <tag>cit type="etymon"</tag> elements.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <etym>
                      <cit type="etymon">
@@ -373,8 +374,95 @@
             
             <div>
                <head>Top level <tag>gramGrp</tag></head>
-               <p>All entries have a <tag>gramGrp</tag> element which contains at least a gram element indicating the wordclass of the lemma.</p>
-
+               <p>All entries have a <tag>gramGrp</tag> element which contains at least a gram element indicating the wordclass of the lemma which is encoded as <tag>gram type="pos"</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <gramGrp>
+                     <gram type="pos">noun</gram>
+                  </gramGrp>
+               </egXML>
+               
+               <p>The list of possible values contains:</p>               
+               <list>
+                  <item>adjective</item>
+                  <item>adverb</item>
+                  <item>article</item>
+                  <item>auxiliary</item>
+                  <item>commonNoun</item>
+                  <item>conjunction</item>
+                  <item>copula</item>
+                  <item>demonstrative</item>
+                  <item>demonstrativePronoun</item>
+                  <item>existentialMarker</item>
+                  <item>fraction</item>
+                  <item>genitiveMarker</item>
+                  <item>interjection</item>
+                  <item>interrogative</item>
+                  <item>interrogativeAdverb</item>
+                  <item>interrogativePronoun</item>
+                  <item>modal</item>
+                  <item>modalVerb</item>
+                  <item>negation</item>
+                  <item>negParticle</item>
+                  <item>noun</item>
+                  <item>numeral</item>
+                  <item>ordinalNumeral</item>
+                  <item>particle</item>
+                  <item>passiveParticiple</item>
+                  <item>personalPronoun</item>
+                  <item>petrifiedWordForm</item>
+                  <item>preposition</item>
+                  <item>presentational</item>
+                  <item>pronoun</item>
+                  <item>relativePronoun</item>
+                  <item>quantifier</item>
+                  <item>responseParticle</item>
+                  <item>verb</item>
+                  <item>vocativeParticle</item>
+               </list>
+               
+               <p>For pragmatic reasons, in particular to avoid subtyping, there are also items such as the following ones:</p>
+               <list>
+                  <item>activeParticiple</item>
+                  <item>collectiveNoun</item>
+                  <item>instanceNoun</item>
+                  <item>modalVerb</item>
+                  <item>ordinalNumeral</item>
+                  <item>passiveParticiple</item>
+                  <item>properNoun</item>
+                  <item>verbalNoun</item>
+                  <item>unitNoun</item>
+               </list>
+               
+               <p>"Part of speech" is understood in very wide sense here. It is also used to categorise multi-word items that are treated as lemmata in their own right.</p>
+               <list>
+                  <item>nounPhrase</item>
+                  <item>verbPhrase</item>
+                  <item>phrase</item>
+               </list>
+               
+               <p>Lexical items such as 'on account of' are labelled as complexPreposition.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <form type="lemma" subtype="compound">
+                     <orth xml:lang="ar-Latn">ʕalašān xāṭir-</orth>
+                     <orth xml:lang="ar">علشان خاطر</orth>
+                  </form>
+                  
+                  <gramGrp>
+                     <gram type="pos">complexPreposition</gram>
+                  </gramGrp>                                  
+               </egXML>
+               
+               <p>Prepositional phrases that are used adverbially are labelled as such. The phrase below means 'in the evening'</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                  <form type="lemma" subtype="compound">
+                     <orth xml:lang="ar-Latn">bi-l-lēl</orth>
+                  </form>
+                  
+                  <gramGrp>
+                     <gram type="pos">adverb</gram>
+                  </gramGrp>
+               </egXML>               
+               
                <p>The Arabic dictionaries have a number of special gram-types: root, derivedVerbClass</p>
             </div>
             
