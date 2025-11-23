@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" >
    <teiHeader> 
       <fileDesc>
          <titleStmt>
@@ -572,6 +572,16 @@
                   </sense>
                </egXML>
             </div>
+            
+         </div>
+         
+         <div>
+            <head>Usage labels</head>
+            <p>According to Lex-0 the <tag>usg</tag> has to be typefied. There is one type not provided by Lex-0 which is <att>pragmatics</att> which is 
+               mainly used to indicate in which situations a lexical item is being used.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <usg type="pragmatics" xml:lang="en">to express prohibitions</usg>
+            </egXML>
          </div>
          
          <div>
@@ -677,7 +687,7 @@
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <cit xml:id="VDEA.il_kutub_di_001" type="example">
-                     <quote xml:lang="ar-Latn">il-<seg corresp="VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote>
+                     <quote xml:lang="ar-Latn">il-<seg type="w" corresp="VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote>
                   
                   …
                   </cit>
@@ -687,29 +697,30 @@
             <div>
                <head>Tokens in constructions</head>
                <p>By construction we understand units that represent specific syntactic templates. The approach taken here is the same as described
-                  in the chapter before. Such constructions can be made up of an (1) <tag>oRef</tag> element, (2) <tag>seg</tag> elements that can be linked to 
+                  in the chapter before. Such constructions can be made up of an (1) <tag>seg[@type="oRef"]</tag> element, (2) <tag>seg[@type="constrPart"]</tag> elements that can be linked to 
                   particular concepts in the related taxonomy and (3) plain text components.</p>
                
                <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att> attributes.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">                  
-                  <gram type="construction"><oRef></oRef><seg valueDatcat="#pronSuffix"></seg></gram>
+                  <gram type="construction"><seg type="oRef"/><seg valueDatcat="#pronSuffix"></seg></gram>
                </egXML>
                
-               <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>oRef</tag>.</p>
+               <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>seg[@type="oRef"]</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><oRef>baʔā</oRef>-li-<seg valueDatcat="#pronSuffix"></seg> <seg valueDatcat="#timeExpression"></seg></gram>                                 
+                  <gram type="construction"><seg type="oRef">baʔā</seg>-li-<seg valueDatcat="#pronSuffix"></seg> <seg valueDatcat="#timeExpression"></seg></gram>                                 
                </egXML>
                
                <p><tag>oRef</tag> can also be furnished with the <att>valueDatcat</att> attribute to select sprecific forms.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><oRef valueDatcat="#imperative"/>-<seg valueDatcat="#persSuffix"></seg> <seg valueDatcat="#imperfectiveVerb"></seg></gram>
+                  <gram type="construction"><seg type="oRef" valueDatcat="#imperative"/>-<seg valueDatcat="#persSuffix"></seg> <seg valueDatcat="#imperfectiveVerb"></seg></gram>
                </egXML>
                
                <p>The existence of several options is represented by several <tag>gram</tag> elements inside one <tag>gramGroup</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <gramGrp>
-                     <gram type="construction" xml:lang="ar-Latn"><oRef></oRef> ʕan</gram>
-                     <gram type="construction" xml:lang="ar-Latn"><oRef></oRef> bi-</gram></gramGrp>
+                     <gram type="construction" xml:lang="ar-Latn"><seg type="oRef"/> ʕan</gram>
+                     <gram type="construction" xml:lang="ar-Latn"><seg type="oRef"/> bi-</gram>
+                  </gramGrp>
                   
                   <cit type="translationEquivalent">
                      <form><orth xml:lang="en">to hear (of|about)</orth></form>
@@ -1003,6 +1014,12 @@
                         <valItem ident="constrPart">
                            <desc>TODO add description ???</desc>
                         </valItem>
+                        <valItem ident="oRef">
+                           <desc>TODO add description ???</desc>
+                        </valItem>
+                        <valItem ident="w">
+                           <desc>TODO add description ???</desc>
+                        </valItem>
                      </valList>
                   </attDef>
                </attList>
@@ -1013,44 +1030,51 @@
                   <attDef ident="type" mode="change" usage="req">
                   <!-- extending gram/types of TEI Lex-0-->
                   <valList type="closed" mode="change">
+                     <valItem ident="arguments" mode="add">
+                        <desc>arguments to a verb</desc>
+                     </valItem>
+                     <valItem ident="constraint" mode="add">
+                        <desc>arguments to a verb</desc>
+                     </valItem>
+                     <valItem ident="construction" mode="add">
+                        <desc>arguments to a verb</desc>
+                     </valItem>
                      <valItem ident="derivedVerbClass" mode="add" >
                         <desc>derived verb class</desc>
                         <remarks>
                            <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
                         </remarks>
                      </valItem>
-                     <valItem ident="synRoot" mode="add">
-                        <desc>synchronous root</desc>
-                     </valItem>
-                     <valItem ident="root" mode="add">
-                        <desc>synchronous root</desc>
-                     </valItem>
                      <valItem ident="diaRoot" mode="add">
                         <desc>diachronic root</desc>
                      </valItem>
-                     <valItem ident="subc" mode="add">
-                        <desc>any subcategory of another gram value</desc>
-                     </valItem>
-                     <valItem ident="derivedVerbClass" mode="add">
-                        <desc>derived verb class</desc>
-                        <remarks>
-                           <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
-                        </remarks>
-                     </valItem>
-                     <valItem ident="person" mode="add"/>
-                     
                      <valItem ident="morphPattern" mode="add">
                         <desc>morphological pattern</desc>
                      </valItem>
                      <valItem ident="participle" mode="add">
                         <desc>The value of the this gram-type can be "present|past"</desc>
                      </valItem>
-                     <valItem ident="arguments" mode="add">
-                        <desc>arguments to a verb</desc>
+                     <valItem ident="person" mode="add"/>
+                     <valItem ident="polarity" mode="add">
+                        <desc></desc>
                      </valItem>
+                     <valItem ident="root" mode="add">
+                        <desc>synchronous root</desc>
+                     </valItem>
+<!--                 <valItem ident="subc" mode="add">
+                        <desc>any subcategory of another gram value</desc>
+                     </valItem>
+                      -->
                      <valItem ident="state" mode="add">
                         <desc>construct</desc>
                      </valItem>
+                     <valItem ident="synRoot" mode="add">
+                        <desc>synchronous root</desc>
+                     </valItem>
+                     <valItem ident="voice" mode="add">
+                        <desc></desc>
+                     </valItem>
+                     
                      <!--
                      <valItem ident="morphType">
                         <desc>mophological type</desc>
@@ -1090,39 +1114,6 @@
                      </valItem>
                      
                      
-                     <valItem ident="nominalState">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="number">
-                        <desc>grammatical number</desc>
-                     </valItem>
-                     <valItem ident="person">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="pos">
-                        <desc>part of speech type</desc>
-                     </valItem>
-                     <valItem ident="reg">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="root">
-                        <desc>consonantal root</desc>
-                     </valItem>
-                     
-                     <valItem ident="subc">
-                        <desc>subcategorization</desc>
-                     </valItem>
-                     
-                     <valItem ident="usg">
-                        <desc>hint on usage</desc>
-                     </valItem>
-                     
-                     <valItem ident="synRoot">
-                        <desc>synchronous root</desc>
-                     </valItem>
-                     <valItem ident="diaRoot">
-                        <desc>diachronic root</desc>
-                     </valItem>
                      -->
                   </valList>
                </attDef>
@@ -1143,7 +1134,9 @@
             <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
                CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
             <!-- changed placeName to name -->
-            <elementSpec ident="usg" mode="change">
+
+                        
+           <elementSpec ident="usg" mode="change" module="dictionaries">
                <content>
                   <alternate>
                      <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
@@ -1153,12 +1146,25 @@
                <constraintSpec ident="name-in-usg" scheme="schematron">
                   <desc>assert that only usg type geographic contain a name element</desc>
                   <constraint>
-                     <s:rule context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')]">
+                     <s:rule context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')] and not(@type='pragmatics')]">
                         <s:report test="exists(tei:name)">the name element must only occur inside of usg elements with @type="geographic" or @type="socioCultural".</s:report> 
                      </s:rule>
                   </constraint>
                </constraintSpec>
-            </elementSpec>
+              <attList>
+                 <attDef ident="type" mode="change" usage="req">
+                    <!-- extending gram/types of TEI Lex-0-->
+                    <valList type="closed" mode="change">
+                       <valItem ident="pragmatics" mode="add" >
+                          <desc>Pragmatic information</desc>
+                          <remarks>
+                             <p></p>
+                          </remarks>
+                       </valItem>
+                    </valList>
+                 </attDef>
+              </attList>
+           </elementSpec>
             
             <elementSpec ident="cit" mode="change" module="core">
                <content>

@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-10-28T14:22:11Z. . 
+Schema generated from ODD source 2025-11-23T13:09:06Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -3667,7 +3667,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
             </s:rule>
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                    context="tei:form[@type =  ('lemma', 'inflected')]">
+                    context="tei:form[@type = ('lemma', 'inflected')]">
                <s:assert test="parent::tei:entry">a headword or inflected form must be a direct child of an entry element. </s:assert>
             </s:rule>
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
@@ -3815,22 +3815,32 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <value>collocate</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>arguments</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">arguments to a verb</a:documentation>
+               <value>constraint</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">arguments to a verb</a:documentation>
+               <value>construction</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">arguments to a verb</a:documentation>
                <value>derivedVerbClass</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">derived verb class</a:documentation>
-               <value>synRoot</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">synchronous root</a:documentation>
-               <value>root</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">synchronous root</a:documentation>
                <value>diaRoot</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">diachronic root</a:documentation>
-               <value>subc</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">any subcategory of another gram value</a:documentation>
-               <value>derivedVerbClass</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">derived verb class</a:documentation>
-               <value>person</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <value>morphPattern</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">morphological pattern</a:documentation>
+               <value>participle</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The value of the this gram-type can be "present|past"</a:documentation>
+               <value>person</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>polarity</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>root</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">synchronous root</a:documentation>
+               <value>state</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">construct</a:documentation>
+               <value>synRoot</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">synchronous root</a:documentation>
+               <value>voice</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             </choice>
          </attribute>
          <empty/>
@@ -3931,7 +3941,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                   id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-24">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
-                    context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')]">
+                    context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')] and not(@type='pragmatics')]">
                <s:report test="exists(tei:name)">the name element must only occur inside of usg elements with @type="geographic" or @type="socioCultural".</s:report>
             </s:rule>
          </pattern>
@@ -3961,6 +3971,8 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marker which identifies the typical use of a lexical unit in a particular discourse type or genre</a:documentation>
                <value>hint</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marker which cannot be classified otherwise</a:documentation>
+               <value>pragmatics</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Pragmatic information</a:documentation>
             </choice>
          </attribute>
          <empty/>
@@ -5461,6 +5473,9 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
                <ref name="list"/>
             </oneOrMore>
             <oneOrMore>
+               <ref name="listChange"/>
+            </oneOrMore>
+            <oneOrMore>
                <ref name="change"/>
             </oneOrMore>
          </choice>
@@ -5683,6 +5698,10 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
                <value>hint</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a hint in a translation to narrow down the semantic scope of the particular item.</a:documentation>
                <value>constrPart</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">TODO add description ???</a:documentation>
+               <value>oRef</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">TODO add description ???</a:documentation>
+               <value>w</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">TODO add description ???</a:documentation>
             </choice>
          </attribute>
@@ -6391,6 +6410,14 @@ Suggested values include: 1] spoken (spoken); 2] thought (thought); 3] written (
       <choice>
          <ref name="symbol"/>
       </choice>
+   </define>
+   <define name="listChange">
+      <element name="listChange">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+         <oneOrMore>
+            <ref name="change"/>
+         </oneOrMore>
+      </element>
    </define>
    <start>
       <ref name="TEI"/>
