@@ -78,18 +78,18 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                <TEI version="5.0">
                   <teiHeader> 
-                     ... 
+                     … 
                   </teiHeader>
                   <text>
                      <body>
                         <div type="entries">
-                           <entry>...</entry>
-                           <entry>...</entry>
+                           <entry>…</entry>
+                           <entry>…</entry>
                         </div>
                         
                         <div type="examples">
-                           <cit type="example">...</cit>
-                           <cit type="example">...</cit>
+                           <cit type="example">…</cit>
+                           <cit type="example">…</cit>
                         </div>
                      </body>
                   </text>
@@ -162,7 +162,7 @@
                location plus transcription system of the described varieties on the entry elements as a default value.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002">
-                  ...
+                  …
                </entry>
             </egXML>
             
@@ -244,7 +244,7 @@
                      <gramGrp>
                         <gram type="pos">nounPhrase</gram>
                      </gramGrp>
-                     ...
+                     …
                   </entry>
                </egXML>
                
@@ -433,7 +433,7 @@
                   <item>unitNoun</item>
                </list>
                
-               <p>"Part of speech" is understood in very wide sense here. It is also used to categorise multi-word items that are treated as lemmata in their own right.</p>
+               <p>"Part of speech" is understood in a very wide sense here. It is also used to categorise multi-word items that are treated as lemmata in their own right.</p>
                <list>
                   <item>nounPhrase</item>
                   <item>verbPhrase</item>
@@ -568,7 +568,7 @@
                            <orth xml:lang="en">el-Ma’adi</orth>
                         </form>
                      </cit>
-                     ...
+                     …
                   </sense>
                </egXML>
             </div>
@@ -656,10 +656,68 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <sense xml:id="VDEA.s_daras_001_0">
                   
-                  ...                  
+                  …                  
                   <xr><ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"></ref></xr>
                </sense>               
             </egXML>
+         </div>
+         
+         <div>
+            <head>Tokens</head>
+            <p>There are two positions where the annotation of tokens (=wordforms) is needed: the examples and gram-tags that describe 
+              grammatical constructions.</p>
+            
+            <div>
+               <head>Tokens in examples</head>
+               <p>As examples are often reused in several entries, a mechanism is needed to link wordforms to entries to allow 
+                 to highlight wordforms related to the respective headwords. The form element would be too unwieldy to use in this
+                 context. The most obvious option would be <tag>w</tag> which currently is not available in Lex-0. The second best option
+                  appeared to be <tag>seg</tag>.                  
+               </p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <cit xml:id="VDEA.il_kutub_di_001" type="example">
+                     <quote xml:lang="ar-Latn">il-<seg corresp="VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote>
+                  
+                  …
+                  </cit>
+               </egXML>
+            </div>
+            
+            <div>
+               <head>Tokens in constructions</head>
+               <p>By construction we understand units that represent specific syntactic templates. The approach taken here is the same as described
+                  in the chapter before. Such constructions can be made up of an (1) <tag>oRef</tag> element, (2) <tag>seg</tag> elements that can be linked to 
+                  particular concepts in the related taxonomy and (3) plain text components.</p>
+               
+               <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att> attributes.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">                  
+                  <gram type="construction"><oRef></oRef><seg valueDatcat="#pronSuffix"></seg></gram>
+               </egXML>
+               
+               <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>oRef</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gram type="construction"><oRef>baʔā</oRef>-li-<seg valueDatcat="#pronSuffix"></seg> <seg valueDatcat="#timeExpression"></seg></gram>                                 
+               </egXML>
+               
+               <p><tag>oRef</tag> can also be furnished with the <att>valueDatcat</att> attribute to select sprecific forms.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gram type="construction"><oRef valueDatcat="#imperative"/>-<seg valueDatcat="#persSuffix"></seg> <seg valueDatcat="#imperfectiveVerb"></seg></gram>
+               </egXML>
+               
+               <p>The existence of several options is represented by several <tag>gram</tag> elements inside one <tag>gramGroup</tag>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <gramGrp>
+                     <gram type="construction" xml:lang="ar-Latn"><oRef></oRef> ʕan</gram>
+                     <gram type="construction" xml:lang="ar-Latn"><oRef></oRef> bi-</gram></gramGrp>
+                  
+                  <cit type="translationEquivalent">
+                     <form><orth xml:lang="en">to hear (of|about)</orth></form>
+                  </cit>
+                  
+                  …                 
+               </egXML>
+            </div>
          </div>
          
          <div>
@@ -779,16 +837,16 @@
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <TEI version="5.0">
-                           <teiHeader> ... </teiHeader>
+                           <teiHeader> … </teiHeader>
                            <text>
                               <body>
                                  <div type="entries">
-                                    <entry>...</entry>
-                                    <entry>...</entry>
+                                    <entry>…</entry>
+                                    <entry>…</entry>
                                  </div>
                                  <div type="examples">
-                                    <cit type="example">...</cit>
-                                    <cit type="example">...</cit>
+                                    <cit type="example">…</cit>
+                                    <cit type="example">…</cit>
                                  </div>
                               </body>
                            </text>
