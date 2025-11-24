@@ -702,7 +702,7 @@
                
                <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att> attributes.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">                  
-                  <gram type="construction"><seg type="oRef"/><seg valueDatcat="#pronSuffix"></seg></gram>
+                  <gram type="construction"><seg type="oRef"/>​<seg valueDatcat="#pronSuffix"></seg></gram>
                </egXML>
                
                <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>seg[@type="oRef"]</tag>.</p>
