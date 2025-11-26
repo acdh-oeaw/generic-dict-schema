@@ -6,7 +6,7 @@
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
               schemaLocation="xml.tmp"/>
    <!--
-    Schema generated from ODD source 2025-11-11T10:09:33Z. . 
+    Schema generated from ODD source 2025-11-26T08:37:19Z. . 
     TEI Edition:  
     TEI Edition Location: https://www.tei-c.org/Vault/P5// 
     
@@ -2782,8 +2782,7 @@ Suggested values include: 1] full (full form); 2] pref (prefix); 3] suff (suffix
                <xs:attributeGroup ref="tei:att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>(type) allows the encoder to classify the abbreviation according to some convenient typology.
-Sample values include: 1] suspension (suspension); 2] contraction (contraction); 3] brevigraph; 4] superscription (superscription); 5] acronym (acronym); 6] title (title); 7] organization (organization); 8] geographic (geographic)</xs:documentation>
+                     <xs:documentation>(type) allows the encoder to classify the abbreviation according to some convenient typology.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
@@ -2800,52 +2799,56 @@ Sample values include: 1] suspension (suspension); 2] contraction (contraction);
          <xs:documentation>(reference) a reference either to a license or to an example [3.7. Simple Links and Cross-References 17.1. Links]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
-         <xs:attributeGroup ref="tei:att.lexicographic.attributes"/>
-         <xs:attributeGroup ref="tei:att.notated.attributes"/>
-         <xs:attributeGroup ref="tei:att.scoped.attributes"/>
-         <xs:attributeGroup ref="tei:att.global.attributes"/>
-         <xs:attributeGroup ref="tei:att.cReferencing.attributes"/>
-         <xs:attributeGroup ref="tei:att.cmc.attributes"/>
-         <xs:attributeGroup ref="tei:att.internetMedia.attributes"/>
-         <xs:attributeGroup ref="tei:att.pointing.attributes"/>
-         <xs:attributeGroup ref="tei:att.typed.attribute.subtype"/>
-         <xs:attribute name="type" use="required">
-            <xs:annotation>
-               <xs:documentation>
+         <xs:complexContent>
+            <xs:extension base="tei:macro.phraseSeq">
+               <xs:attributeGroup ref="tei:att.lexicographic.attributes"/>
+               <xs:attributeGroup ref="tei:att.notated.attributes"/>
+               <xs:attributeGroup ref="tei:att.scoped.attributes"/>
+               <xs:attributeGroup ref="tei:att.global.attributes"/>
+               <xs:attributeGroup ref="tei:att.cReferencing.attributes"/>
+               <xs:attributeGroup ref="tei:att.cmc.attributes"/>
+               <xs:attributeGroup ref="tei:att.internetMedia.attributes"/>
+               <xs:attributeGroup ref="tei:att.pointing.attributes"/>
+               <xs:attributeGroup ref="tei:att.typed.attribute.subtype"/>
+               <xs:attribute name="type" use="required">
+                  <xs:annotation>
+                     <xs:documentation>
 Suggested values include: 1] entry; 2] sense; 3] bibliography</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-               <xs:union memberTypes="xs:Name">
+                  </xs:annotation>
                   <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="entry">
-                           <xs:annotation>
-                              <xs:documentation/>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
+                     <xs:union memberTypes="xs:Name">
+                        <xs:simpleType>
+                           <xs:restriction base="xs:token">
+                              <xs:enumeration value="entry">
+                                 <xs:annotation>
+                                    <xs:documentation/>
+                                 </xs:annotation>
+                              </xs:enumeration>
+                           </xs:restriction>
+                        </xs:simpleType>
+                        <xs:simpleType>
+                           <xs:restriction base="xs:token">
+                              <xs:enumeration value="sense">
+                                 <xs:annotation>
+                                    <xs:documentation/>
+                                 </xs:annotation>
+                              </xs:enumeration>
+                           </xs:restriction>
+                        </xs:simpleType>
+                        <xs:simpleType>
+                           <xs:restriction base="xs:token">
+                              <xs:enumeration value="bibliography">
+                                 <xs:annotation>
+                                    <xs:documentation/>
+                                 </xs:annotation>
+                              </xs:enumeration>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:union>
                   </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="sense">
-                           <xs:annotation>
-                              <xs:documentation/>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="bibliography">
-                           <xs:annotation>
-                              <xs:documentation/>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-               </xs:union>
-            </xs:simpleType>
-         </xs:attribute>
+               </xs:attribute>
+            </xs:extension>
+         </xs:complexContent>
       </xs:complexType>
    </xs:element>
    <xs:element name="list">
@@ -2863,58 +2866,12 @@ Suggested values include: 1] entry; 2] sense; 3] bibliography</xs:documentation>
          <xs:attributeGroup ref="tei:att.typed.attribute.subtype"/>
          <xs:attribute name="type">
             <xs:annotation>
-               <xs:documentation>(type) describes the nature of the items in the list.
-Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (instructions); 4] litany (litany); 5] syllogism (syllogism)</xs:documentation>
+               <xs:documentation>(type) describes the nature of the items in the list.</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
-               <xs:union>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="gloss"/>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="index">
-                           <xs:annotation>
-                              <xs:documentation>(index) each list item is an entry in an index such as the alphabetical topical index at the back of a print volume.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="instructions">
-                           <xs:annotation>
-                              <xs:documentation>(instructions) each list item is a step in a sequence of instructions, as in a recipe.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="litany">
-                           <xs:annotation>
-                              <xs:documentation>(litany) each list item is one of a sequence of petitions, supplications or invocations, typically in a religious ritual.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="syllogism">
-                           <xs:annotation>
-                              <xs:documentation>(syllogism) each list item is part of an argument consisting of two or more propositions and a final conclusion derived from them.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
-                     </xs:restriction>
-                  </xs:simpleType>
-               </xs:union>
+               <xs:restriction base="xs:token">
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
+               </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
       </xs:complexType>
@@ -3890,19 +3847,24 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                         <xs:documentation/>
                      </xs:annotation>
                   </xs:enumeration>
+                  <xs:enumeration value="arguments">
+                     <xs:annotation>
+                        <xs:documentation>arguments to a verb</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="constraint">
+                     <xs:annotation>
+                        <xs:documentation>arguments to a verb</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="construction">
+                     <xs:annotation>
+                        <xs:documentation>arguments to a verb</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
                   <xs:enumeration value="derivedVerbClass">
                      <xs:annotation>
                         <xs:documentation>derived verb class</xs:documentation>
-                     </xs:annotation>
-                  </xs:enumeration>
-                  <xs:enumeration value="synRoot">
-                     <xs:annotation>
-                        <xs:documentation>synchronous root</xs:documentation>
-                     </xs:annotation>
-                  </xs:enumeration>
-                  <xs:enumeration value="root">
-                     <xs:annotation>
-                        <xs:documentation>synchronous root</xs:documentation>
                      </xs:annotation>
                   </xs:enumeration>
                   <xs:enumeration value="diaRoot">
@@ -3910,14 +3872,14 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                         <xs:documentation>diachronic root</xs:documentation>
                      </xs:annotation>
                   </xs:enumeration>
-                  <xs:enumeration value="subc">
+                  <xs:enumeration value="morphPattern">
                      <xs:annotation>
-                        <xs:documentation>any subcategory of another gram value</xs:documentation>
+                        <xs:documentation>morphological pattern</xs:documentation>
                      </xs:annotation>
                   </xs:enumeration>
-                  <xs:enumeration value="derivedVerbClass">
+                  <xs:enumeration value="participle">
                      <xs:annotation>
-                        <xs:documentation>derived verb class</xs:documentation>
+                        <xs:documentation>The value of the this gram-type can be "present|past"</xs:documentation>
                      </xs:annotation>
                   </xs:enumeration>
                   <xs:enumeration value="person">
@@ -3925,9 +3887,29 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                         <xs:documentation/>
                      </xs:annotation>
                   </xs:enumeration>
-                  <xs:enumeration value="morphPattern">
+                  <xs:enumeration value="polarity">
                      <xs:annotation>
-                        <xs:documentation>morphological pattern</xs:documentation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="root">
+                     <xs:annotation>
+                        <xs:documentation>synchronous root</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="state">
+                     <xs:annotation>
+                        <xs:documentation>construct</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="synRoot">
+                     <xs:annotation>
+                        <xs:documentation>synchronous root</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="voice">
+                     <xs:annotation>
+                        <xs:documentation/>
                      </xs:annotation>
                   </xs:enumeration>
                </xs:restriction>
@@ -4100,6 +4082,11 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                   <xs:enumeration value="hint">
                      <xs:annotation>
                         <xs:documentation>marker which cannot be classified otherwise</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="pragmatics">
+                     <xs:annotation>
+                        <xs:documentation>Pragmatic information</xs:documentation>
                      </xs:annotation>
                   </xs:enumeration>
                </xs:restriction>
@@ -6397,72 +6384,12 @@ Suggested values include: 1] funder; 2] sponsor; 3] rightsHolder</xs:documentati
          <xs:attributeGroup ref="tei:att.typed.attribute.subtype"/>
          <xs:attribute name="type">
             <xs:annotation>
-               <xs:documentation>categorizes the identifier, for example as an ISBN, Social Security number, etc.
-Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7] OCLC</xs:documentation>
+               <xs:documentation>categorizes the identifier, for example as an ISBN, Social Security number, etc.</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
-               <xs:union>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="ISBN"/>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="ISSN">
-                           <xs:annotation>
-                              <xs:documentation>International Standard Serial Number: an eight-digit number to uniquely identify a serial publication.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="DOI">
-                           <xs:annotation>
-                              <xs:documentation>Digital Object Identifier: a unique string of letters and numbers assigned to an electronic document.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="URI"/>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="VIAF">
-                           <xs:annotation>
-                              <xs:documentation>A data number in the Virtual Internet Authority File assigned to link different names in catalogs around the world for the same entity.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="ESTC">
-                           <xs:annotation>
-                              <xs:documentation>English Short-Title Catalogue number: an identifying number assigned to a document in English printed in the British Isles or North America before 1801.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="OCLC">
-                           <xs:annotation>
-                              <xs:documentation>OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                     </xs:restriction>
-                  </xs:simpleType>
-                  <xs:simpleType>
-                     <xs:restriction base="xs:token">
-                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
-                     </xs:restriction>
-                  </xs:simpleType>
-               </xs:union>
+               <xs:restriction base="xs:token">
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
+               </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
       </xs:complexType>
@@ -7042,6 +6969,16 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</xs:d
                         <xs:documentation>TODO add description ???</xs:documentation>
                      </xs:annotation>
                   </xs:enumeration>
+                  <xs:enumeration value="oRef">
+                     <xs:annotation>
+                        <xs:documentation>TODO add description ???</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="w">
+                     <xs:annotation>
+                        <xs:documentation>TODO add description ???</xs:documentation>
+                     </xs:annotation>
+                  </xs:enumeration>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -7401,8 +7338,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</xs:d
                <xs:attributeGroup ref="tei:att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>characterizes the element in some sense, using any convenient classification scheme or typology.
-Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</xs:documentation>
+                     <xs:documentation>characterizes the element in some sense, using any convenient classification scheme or typology.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">

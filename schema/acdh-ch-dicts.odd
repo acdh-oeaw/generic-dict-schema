@@ -674,20 +674,18 @@
          
          <div>
             <head>Tokens</head>
-            <p>There are two positions where the annotation of tokens (=wordforms) is needed: the examples and gram-tags that describe 
-              grammatical constructions.</p>
+            <p>We need to annotate tokens (wordforms) in two contexts: (1) examples, and (2) gram tags that describe grammatical constructions.</p>
             
             <div>
                <head>Tokens in examples</head>
-               <p>As examples are often reused in several entries, a mechanism is needed to link wordforms to entries to allow 
-                 to highlight wordforms related to the respective headwords. The form element would be too unwieldy to use in this
-                 context. The most obvious option would be <tag>w</tag> which currently is not available in Lex-0. The second best option
-                  appeared to be <tag>seg</tag>.                  
+               <p>Examples are frequently reused across entries, so we need a mechanism to link the wordforms in those examples to the relevant 
+                  entries to enable headword highlighting. The form element would be too heavy in this context. The most suitable element would 
+                  be w, which Lex‑0 does not currently provide; the next best alternative is seg.                  
                </p>
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <cit xml:id="VDEA.il_kutub_di_001" type="example">
-                     <quote xml:lang="ar-Latn">il-<seg type="w" corresp="VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote>
+                     <quote xml:lang="ar-Latn">il-<seg type="w" corresp="#VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote>
                   
                   …
                   </cit>
@@ -696,30 +694,31 @@
             
             <div>
                <head>Tokens in constructions</head>
-               <p>By construction we understand units that represent specific syntactic templates. The approach taken here is the same as described
-                  in the chapter before. Such constructions can be made up of an (1) <tag>seg[@type="oRef"]</tag> element, (2) <tag>seg[@type="constrPart"]</tag> elements that can be linked to 
-                  particular concepts in the related taxonomy and (3) plain text components.</p>
+               <p>By ‘construction’ we mean a unit encoding a specific syntactic template, following the approach outlined in the previous chapter. 
+                   A construction may comprise (1) a ref[@type="oRef"] element, (2) one or more seg[@type="constrPart"] elements that can be linked 
+                   to concepts in the associated taxonomy, and (3) intervening plain text.
+               </p>
                
                <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att> attributes.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">                  
                   <gram type="construction"><seg type="oRef"/>​<seg valueDatcat="#pronSuffix"></seg></gram>
                </egXML>
                
-               <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>seg[@type="oRef"]</tag>.</p>
+               <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>ref[@type="oRef"]</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><seg type="oRef">baʔā</seg>-li-<seg valueDatcat="#pronSuffix"></seg> <seg valueDatcat="#timeExpression"></seg></gram>                                 
+                  <gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg valueDatcat="#pronSuffix"></seg> <seg valueDatcat="#timeExpression"></seg></gram>                                 
                </egXML>
                
                <p><tag>oRef</tag> can also be furnished with the <att>valueDatcat</att> attribute to select sprecific forms.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><seg type="oRef" valueDatcat="#imperative"/>-<seg valueDatcat="#persSuffix"></seg> <seg valueDatcat="#imperfectiveVerb"></seg></gram>
+                  <gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg valueDatcat="#persSuffix"></seg> <seg valueDatcat="#imperfectiveVerb"></seg></gram>
                </egXML>
                
                <p>The existence of several options is represented by several <tag>gram</tag> elements inside one <tag>gramGroup</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <gramGrp>
-                     <gram type="construction" xml:lang="ar-Latn"><seg type="oRef"/> ʕan</gram>
-                     <gram type="construction" xml:lang="ar-Latn"><seg type="oRef"/> bi-</gram>
+                     <gram type="construction" xml:lang="ar-Latn"><ref type="oRef"/> ʕan</gram>
+                     <gram type="construction" xml:lang="ar-Latn"><ref type="oRef"/> bi-</gram>
                   </gramGrp>
                   
                   <cit type="translationEquivalent">
@@ -1271,7 +1270,7 @@
                <elementSpec ident="ref" mode="change" module="core">
                   <desc>a reference either to a license or to an example</desc>
                   <content>
-                     <empty/>
+                     <macroRef key="macro.phraseSeq"/>
                   </content>
                   <constraintSpec ident="ref" scheme="schematron">
                      <constraint>

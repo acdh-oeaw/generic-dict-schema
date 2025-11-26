@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-11-23T13:09:06Z. . 
+Schema generated from ODD source 2025-11-26T08:37:14Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -2780,7 +2780,7 @@ Suggested values include: 1] full (full form); 2] pref (prefix); 3] suff (suffix
    <define name="ref">
       <element name="ref">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) a reference either to a license or to an example [3.7. Simple Links and Cross-References 17.1. Links]</a:documentation>
-         <empty/>
+         <ref name="macro.phraseSeq"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="acdh-ch-dicts-ref-ref-constraint-rule-16">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
