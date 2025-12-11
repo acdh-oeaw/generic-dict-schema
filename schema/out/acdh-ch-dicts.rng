@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-11-27T08:37:20Z. . 
+Schema generated from ODD source 2025-12-11T10:22:00Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -2625,8 +2625,13 @@ Suggested values include: 1] full (full form); 2] pref (prefix); 3] suff (suffix
                <ref name="usg"/>
             </zeroOrMore>
             <choice>
-               <ref name="quote"/>
                <ref name="form"/>
+               <group>
+                  <ref name="quote"/>
+                  <optional>
+                     <ref name="quote"/>
+                  </optional>
+               </group>
             </choice>
             <zeroOrMore>
                <choice>
@@ -3827,8 +3832,8 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">diachronic root</a:documentation>
                <value>morphPattern</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">morphological pattern</a:documentation>
-               <value>participle</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The value of the this gram-type can be "present|past"</a:documentation>
+               <value>msd</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The abbreviation stands for morphosyntactic description. The value of this gram-type can be "activeParticiple|passiveParticiple"</a:documentation>
                <value>person</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <value>polarity</value>
@@ -5701,8 +5706,8 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">TODO add description ???</a:documentation>
                <value>oRef</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">TODO add description ???</a:documentation>
-               <value>w</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">TODO add description ???</a:documentation>
+               <value>exPart</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">exPart stands for example part and is used to encode tokens in example sentences.</a:documentation>
             </choice>
          </attribute>
          <empty/>

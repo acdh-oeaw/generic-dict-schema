@@ -2,8 +2,8 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" >
-   <teiHeader> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron">
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>ACDH-CH Dictionary Schema</title>
@@ -26,45 +26,61 @@
                <name xml:id="VE">Veronika Engler</name>
             </respStmt>
          </titleStmt>
-         
+
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
             <date>2021ff.</date>
          </publicationStmt>
-         
+
          <sourceDesc>
-            <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries produced at ACDH-CH.</p>
+            <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries
+               produced at ACDH-CH.</p>
          </sourceDesc>
       </fileDesc>
+      <encodingDesc>
+         <tagsDecl> 
+            <!-- Define reusable CSS rules --> 
+            <rendition xml:id="exampleSource" scheme="css">position:relative; top:-15px; font-size: smaller; font-style: italic; font-weight:bold; text-align: right; color:rgb(39, 79, 140); padding-right:10px;</rendition>
+            <rendition xml:id="table" scheme="css">border-spacing: 0; border-collapse: collapse; </rendition>
+            <rendition xml:id="tbCell" scheme="css">border: 2px solid black;</rendition>
+         </tagsDecl>
+      </encodingDesc>
       <revisionDesc>
-         <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure; incorporating most definitions from the VICAV dicts ODD, except for the prose part and the fvLib – TODO discuss if that is general enough to be included here or if it should be kept as a project/dictionary-specific vocabulary.</change>
-         <change status="draft" when="2024-07-26" who="#DS">fixing elementSpec for body; reducing tagset</change>
-         <change status="draft" when="2025-10-26" who="#CM">enhanced chapters 2. Entries, 4. Language Identifiers and 6. Forms </change>
-         <change status="draft" when="2025-10-26" who="#CM">added chapters 7. Etymologies, 8. Linking, 9. Bibliographic information</change>
+         <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure;
+            incorporating most definitions from the VICAV dicts ODD, except for the prose part and
+            the fvLib – TODO discuss if that is general enough to be included here or if it should
+            be kept as a project/dictionary-specific vocabulary.</change>
+         <change status="draft" when="2024-07-26" who="#DS">fixing elementSpec for body; reducing
+            tagset</change>
+         <change status="draft" when="2025-10-26" who="#CM">enhanced chapters 2. Entries, 4.
+            Language Identifiers and 6. Forms </change>
+         <change status="draft" when="2025-10-26" who="#CM">added chapters 7. Etymologies, 8.
+            Linking, 9. Bibliographic information</change>
       </revisionDesc>
    </teiHeader>
    <text>
       <front>
          <argument>
-            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at the ACDH-CH 
-               should conform with. It serves two purposes: (1) It should define a compatibility layer between 
-               TEI Lex-0 – which it is based on – and legacy dictionaries (esp. VICAV), clearly defining where 
-               these dictionaries differ from Lex-0 while they are not ported to it; (2) in the future, it 
-               should define the baseline ODD which specific dictionaries should source and extend by their 
-               own rules, in order to define a schema which can be used for finer-grained validation.</p>
-            
-            <p>The examples are mainly taken from the following dictionaries:
-               <list>
+            <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at
+               the ACDH-CH should conform with. It serves two purposes: (1) It should define a
+               compatibility layer between TEI Lex-0 – which it is based on – and legacy
+               dictionaries (esp. VICAV), clearly defining where these dictionaries differ from
+               Lex-0 while they are not ported to it; (2) in the future, it should define the
+               baseline ODD which specific dictionaries should source and extend by their own rules,
+               in order to define a schema which can be used for finer-grained validation.</p>
+
+            <p>The examples are mainly taken from the following dictionaries: <list>
                   <item>The VICAV Dictionary of Egyptian Arabic (VDEA)</item>
+                  <item>The VICAV Arabic-English Dictionary (VAED)</item>
                   <item>The SHAWI Dictionary (DShaAr)</item>
                </list>
             </p>
-            
-            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it diverges 
-               from the cannonical TEI Lex-0 ODD and project-specific practices.</p>
+
+            <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it
+               diverges from the cannonical TEI Lex-0 ODD and project-specific practices.</p>
          </argument>
       </front>
-      
+
       <body>
          <head>Documentation</head>
          <div>
@@ -77,16 +93,14 @@
                dictionaries basically look like this:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                <TEI version="5.0">
-                  <teiHeader> 
-                     … 
-                  </teiHeader>
+                  <teiHeader> … </teiHeader>
                   <text>
                      <body>
                         <div type="entries">
                            <entry>…</entry>
                            <entry>…</entry>
                         </div>
-                        
+
                         <div type="examples">
                            <cit type="example">…</cit>
                            <cit type="example">…</cit>
@@ -95,7 +109,7 @@
                   </text>
                </TEI>
             </egXML>
-            
+
             <p>The <gi>body</gi> of a dictionary which conforms to this specification should contain
                two divisions: a series of entries within <tag>div type="entries"</tag> and a series
                of examples, encoded as <tag>div type="examples"</tag>. Examples are, as usual,
@@ -108,23 +122,24 @@
                   <specDesc key="div"/>
                </specList>
             </p>
-            <p>In order to encode that an example should be integrated into an entry, the 
-               construct <tag>xr</tag>/<tag>ref type="example"</tag> is used as a direct child f</p>
+            <p>In order to encode that an example should be integrated into an entry, the construct
+                  <tag>xr</tag>/<tag>ref type="example"</tag> is used as a direct child f</p>
          </div>
-         
+
          <div>
             <head>Entries</head>
             <p>The content model of dictionary entries closely align with the specs of Lex-0.</p>
-            <p>Unlike Lex-0, bibliographic references documenting the source of an entry (or parts of it) are attached at the end of this entry.</p>
+            <p>Unlike Lex-0, bibliographic references documenting the source of an entry (or parts
+               of it) are attached at the end of this entry.</p>
             <!-- TODO -->
             <p>
                <specList>
                   <specDesc key="entry"/>
                </specList>
             </p>
-            
-            <p>The entry contains the following parts in the following order. Optional components are put in brackets:
-               <list>
+
+            <p>The entry contains the following parts in the following order. Optional components
+               are put in brackets: <list>
                   <item>Lemma</item>
                   <item>(Morphological forms)</item>
                   <item>(Derived forms)</item>
@@ -135,83 +150,127 @@
                </list>
             </p>
          </div>
-         
+
          <div>
-            <head>Transcription</head>
-            
-            <p>In our Arabic corpora and dictionaries, hyphens are in principle put between all affixes, with the exception of inflexional affixes, e.g. ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
-             
+            <head>Character encoding and transcription conventions</head>
+
+            <p>Character encoding is based on Unicode. We have tried to avoid combining diacritics
+               wherever possible. In the Arabic corpora and dictionaries pertaining to the VICAV project, hyphens are
+               in principle put between all affixes, with the exception of inflexional affixes, e.g.
+               ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
+
+            <p>The following characters are being used in the VICAV dictionaries.</p>
+            <table rendition="#table">
+               <row>
+                  <cell rendition="#tbCell">ʔ</cell>
+                  <cell rendition="#tbCell">&amp;#x294;</cell>
+                  <cell rendition="#tbCell">&amp;#660;</cell>
+                  <cell rendition="#tbCell">Latin Letter Glottal Stop</cell>
+                  <cell rendition="#tbCell"/>
+                  <cell rendition="#tbCell">DShaAr, VAED, VDEA</cell>
+               </row>
+               <row>
+                  <cell rendition="#tbCell">ʕ</cell>
+                  <cell rendition="#tbCell">&amp;#x295;</cell>
+                  <cell rendition="#tbCell">&amp;#661;</cell>
+                  <cell rendition="#tbCell">Latin Letter Pharyngeal Voiced Fricative</cell>
+                  <cell rendition="#tbCell"/>
+                  <cell rendition="#tbCell">DShaAr, VAED, VDEA</cell>
+               </row>
+               <row>
+                  <cell rendition="#tbCell">ˀ</cell>
+                  <cell rendition="#tbCell">&amp;#x2C0;</cell>
+                  <cell rendition="#tbCell">&amp;#704;</cell>
+                  <cell rendition="#tbCell">Modifier Letter Glottal Stop</cell>
+                  <cell rendition="#tbCell">This is used to indicate glottal stop that have replaced KA qāf</cell>
+                  <cell rendition="#tbCell">VDEA</cell>
+               </row>
+            </table>
+
          </div>
+         
          <div>
             <head>Language identifiers</head>
             <p>All elements containing object language (lemmas, variants, inflected forms; including
-               translations) must have an <att>xml:lang</att> attribute. We therefore apply <att>xml:lang</att> on these elements:</p>
+               translations) must have an <att>xml:lang</att> attribute. We therefore apply
+                  <att>xml:lang</att> on these elements:</p>
 
             <list>
                <item>Entries (<gi>entry</gi>)</item>
-               <item>All orthographical representations (<tag>orth</tag>) in forms, including orth elements in etymologies and 
-                  translation equivalents.</item>
+               <item>All orthographical representations (<tag>orth</tag>) in forms, including orth
+                  elements in etymologies and translation equivalents.</item>
                <item>All <tag>quote</tag> elements in examples</item>
-               <item>All <tag>gram</tag> elements that contain data both in the object and working 
-                  languages (e.g. <val>collocate</val>, <val>diaRoot</val>,
-                     <val>governmant</val>, <val>root</val>, <val>synRoot</val>).</item>
+               <item>All <tag>gram</tag> elements that contain data both in the object and working
+                  languages (e.g. <val>collocate</val>, <val>diaRoot</val>, <val>governmant</val>,
+                     <val>root</val>, <val>synRoot</val>).</item>
             </list>
+
+            <p>In the Arabic dictionaries, we provide the entries with language identifiers made up
+               of two components, (1) the ISO 639-3 three-letter codes for macrolanguages and (2)
+               private use subtags giving location plus transcription system of the described
+               varieties on the entry elements as a default value.</p>
             
-            <p>In the Arabic dictionaries, we provide the entries with language identifiers made up of two components,   
-               (1) the ISO 639-3 three-letter codes for macrolanguages and (2) private use subtags giving 
-               location plus transcription system of the described varieties on the entry elements as a default value.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002">
-                  …
+               <entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
+                 … 
                </entry>
             </egXML>
-            
-            <p>Inside of entries, including on all examples, we use shorter two-letter language codes indicating the linguistic variety 
-               and the writing system when dealing with transcriptions. </p>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
+            <p>Inside of entries, including on all examples, we use shorter two-letter language
+               codes indicating the linguistic variety and the writing system when dealing with
+               transcriptions. </p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form type="lemma">
                   <orth xml:lang="ar-Latn">kitāb</orth>
                   <orth xml:lang="ar">كتاب</orth>
-               </form>              
+               </form>
             </egXML>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
+            <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation
+               containers cit[@type="translation"]/quote.</p>
             
-            <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation containers cit[@type="translation"]/quote.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
-                  <quote xml:lang="ar-Latn">fukk aṭ-ṭāga!</quote>
-                  
-                  <cit type="translation">
-                     <quote xml:lang="en">Open the window!</quote></cit>
-                  
-                  <cit type="translation">
-                     <quote xml:lang="de">Mach das Fenster auf!</quote></cit>
-                  
-                  <cit type="translation">
-                     <quote xml:lang="ar">!افتح النافذة</quote></cit>
-               </cit>               
-            </egXML>
             
-            <p>In consequence, all <tag>orth</tag> and <tag>quote</tag> elements of an entry must have <att>xml:lang</att> attributes.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
+
+   <quote xml:lang="ar-Latn">fukk aṭ-ṭāga!</quote>
+                  
+   <cit type="translation">
+      <quote xml:lang="en">Open the window!</quote></cit>
+   
+   <cit type="translation">
+      <quote xml:lang="de">Mach das Fenster auf!</quote></cit>
+   
+   <cit type="translation">
+      <quote xml:lang="ar">!افتح النافذة</quote></cit>
+</cit>
+</egXML>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+            
+            <p>In consequence, all <tag>orth</tag> and <tag>quote</tag> elements of an entry must
+               have <att>xml:lang</att> attributes.</p>
          </div>
-         
+
          <div>
             <head>Provenance and status</head>
-            <p>While usually changes of a TEI document are centrally documented in a <gi>revisionDesc</gi> element in the <gi>teiHeader</gi>, for technical reasons, we encode this information in-situ in each <gi>entry</gi> or example (<gi>cit</gi>). This information is collected at the end of each entry/example, as a series of feature structures (<tag>fs type="change"</tag>) which at least provide information of the parent records's status (<tag>f name="status"</tag>), the date of a change (<tag>f name="who"</tag>).</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true">
-               <fs type="change">​
-                 <f name="who">​
-                  <symbol value="stephanP"/>​
-                    </f>​
-                 <f name="when">​
-                  <symbol value="2014-09-17"/>​
-                 </f>​
-                 <f name="status">​
-                  <symbol value="released"/>​
-                 </f>​
-               </fs>
-            </egXML>
-            
-            <p>In some dictionaries, some statistics are collected within <gi>revisionDesc</gi>. For this <gi>measure</gi> within a <gi>change</gi> element is used:</p>
+            <p>While usually changes of a TEI document are centrally documented in a
+                  <gi>revisionDesc</gi> element in the <gi>teiHeader</gi>, for technical reasons, we
+               encode this information in-situ in each <gi>entry</gi> or example (<gi>cit</gi>).
+               This information is collected at the end of each entry/example, as a series of
+               feature structures (<tag>fs type="change"</tag>) which at least provide information
+               of the parent records's status (<tag>f name="status"</tag>), the date of a change
+                  (<tag>f name="who"</tag>).</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true" xml:space="preserve"><fs type="change">
+   <f name="who">​<symbol value="stephanP"/></f>
+   <f name="when"><symbol value="2014-09-17"/>​ </f>​   
+   <f name="status">​<symbol value="released"/>​ </f>​ 
+</fs>
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
+            <p>In some dictionaries, some statistics are collected within <gi>revisionDesc</gi>. For
+               this <gi>measure</gi> within a <gi>change</gi> element is used:</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <change when="2018-09-11">
                   <measure type="records" quantity="48"/>
@@ -225,42 +284,49 @@
                   <measure type="released" quantity="0"/>
                </change>
             </egXML>
-            <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding the <gi>measure</gi> element.</p>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+            
+            <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding
+               the <gi>measure</gi> element.</p>
          </div>
-         
+
          <div>
             <head>Forms</head>
             <div>
                <head>Lemma</head>
-               <p>The first form element contains the lemma. In our customisation, multi-word units are 
-                 also treated as lemmas. They get an additional @subtype="compound" attribute.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <entry xml:lang="ar-Latn" xml:id="VDEA.daftar_shikaat_000">
-                     <form type="lemma" subtype="compound">
-                        <orth xml:lang="ar-Latn">daftaṛ šikāt</orth>
-                        <orth xml:lang="ar">دفتر شيكات</orth>
-                     </form>
-                     
-                     <gramGrp>
-                        <gram type="pos">nounPhrase</gram>
-                     </gramGrp>
-                     …
-                  </entry>
-               </egXML>
-               
-               <p>Under this category fall noun phrases, verb phrases as well as prepositional constructs.</p>
+               <p>The first form element contains the lemma. In our customisation, multi-word units
+                  are also treated as lemmas. They get an additional @subtype="compound"
+                  attribute.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><entry xml:lang="ar-Latn" xml:id="VDEA.daftar_shikaat_000">
+   <form type="lemma" subtype="compound">
+      <orth xml:lang="ar-Latn">daftaṛ šikāt</orth>
+      <orth xml:lang="ar">دفتر شيكات</orth>
+   </form>
+   
+   <gramGrp>
+      <gram type="pos">nounPhrase</gram>
+   </gramGrp> 
+   … 
+</entry>
+</egXML>               
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
+               <p>Under this category fall noun phrases, verb phrases as well as prepositional
+                  constructs.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <form type="lemma" subtype="compound">
                      <orth xml:lang="ar-Latn">bi-l-ḥaʔʔ</orth>
                      <orth xml:lang="ar">بالحق</orth>
                   </form>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
-            
+
             <div>
                <head>Variants</head>
-               <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be listed at the end of the respective form. 
-                  We have applied this construct only to phonological/morphological variants, not orthographic variants.</p>
+               <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be
+                  listed at the end of the respective form. We have applied this construct only to
+                  phonological/morphological variants, not orthographic variants.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <form type="inflected">
                      <gramGrp>
@@ -273,8 +339,9 @@
                         <orth xml:lang="ar-Latn">agfān</orth>
                         <orth xml:lang="ar">اجفان</orth>
                      </form>
-                  </form>                              
+                  </form>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
                <p>Orthographical variants are encoded in several <tag>orth</tag> elements. </p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -286,16 +353,17 @@
                      <orth xml:lang="ar">ثلاثه</orth>
                   </form>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
          </div>
-         
+
          <div>
             <head>Etymologies</head>
-            <p>Etymologies are currently encoded in accordance with the following publication:<lb/> 
-               <bibl type="article">                  
-                  <author>Jack Bowers</author>,<author>Axel Herold</author>, <author>Laurent Romary</author>,
-                  <author>Toma Tasovac</author>. <title>TEI Lex-0 Etym – towards terse recommendations for the encoding of etymological information.</title>
-                  
+            <p>Etymologies are currently encoded in accordance with the following publication:<lb/>
+               <bibl type="article">
+                  <author>Jack Bowers</author>,<author>Axel Herold</author>, <author>Laurent
+                     Romary</author>, <author>Toma Tasovac</author>. <title>TEI Lex-0 Etym – towards
+                     terse recommendations for the encoding of etymological information.</title>
                </bibl>
                <bibl type="journal">
                   <title>Journal of the Text Encoding Initiative</title>
@@ -303,31 +371,32 @@
                   <ptr target="ff10.4000/jtei.4300ff.ffhal-03108781v2f"/>
                </bibl>
             </p>
-            
-            <p>In our dictionaries, we encounter three cases: 
-              <list>
-                 <item>Single etymology</item>   
-                 <item>Several competing etymologies</item>   
-                 <item>Historical sequence of etymologies</item>   
-              </list>
+
+            <p>In our dictionaries, we encounter three cases: <list>
+                  <item>Single etymology</item>
+                  <item>Several competing etymologies</item>
+                  <item>Historical sequence of etymologies</item>
+               </list>
             </p>
-            
+
             <div>
                <head>Single etymology</head>
                <p>The involved linguistic varieties are indicated with <att>xml:lang</att>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <etym>
                      <cit type="etymon">
-                        <form><orth xml:lang="it">sta bene</orth></form>                     
+                        <form><orth xml:lang="it">sta bene</orth></form>
                      </cit>
-                  </etym>                         
+                  </etym>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
             </div>
-            
+
             <div>
                <head>Several competing etymologies</head>
-               <p>When there are several possible etymologies, <tag>etym</tag> contains several <tag>cit type="etymon"</tag> elements.</p>
+               <p>When there are several possible etymologies, <tag>etym</tag> contains several
+                     <tag>cit type="etymon"</tag> elements.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <etym>
                      <cit type="etymon">
@@ -336,16 +405,18 @@
                      <cit type="etymon">
                         <form><orth xml:lang="fr">plastique</orth></form>
                      </cit>
-                  </etym>               
+                  </etym>
                </egXML>
-               
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
-            
+
             <div>
                <head>Historical sequence of etymologies</head>
-               <p>To encode multiple stages of an etymology, <tag>etym</tag> elements are nested. The element at the highest 
-                  position in the hierarchy represents the most recent stage, the one at the lowest position the oldest stage. 
-                  The code below is part of the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂ cabulum/capulum (Latin) `rope´. </p>
+               <p>To encode multiple stages of an etymology, <tag>etym</tag> elements are nested.
+                  The element at the highest position in the hierarchy represents the most recent
+                  stage, the one at the lowest position the oldest stage. The code below is part of
+                  the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂
+                  cabulum/capulum (Latin) `rope´. </p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <etym>
                      <etym>
@@ -356,32 +427,34 @@
                      <cit type="etymon">
                         <form><orth xml:lang="en">cable</orth></form>
                      </cit>
-                  </etym>             
+                  </etym>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
          </div>
 
          <div>
             <head>Grammatical information</head>
-            <p>All <tag>gram</tag> elements must be placed inside of <tag>gramGrp</tag>. Such information can be 
-              found in these elements:
-              <list>
-                 <item>entry (mandatory)</item>
-                 <item>form</item>
-                 <item>sense</item>
-              </list>
+            <p>All <tag>gram</tag> elements must be placed inside of <tag>gramGrp</tag>. Such
+               information can be found in these elements: <list>
+                  <item>entry (mandatory)</item>
+                  <item>form</item>
+                  <item>sense</item>
+               </list>
             </p>
-            
+
             <div>
                <head>Top level <tag>gramGrp</tag></head>
-               <p>All entries have a <tag>gramGrp</tag> element which contains at least a gram element indicating the wordclass of the lemma which is encoded as <tag>gram type="pos"</tag>.</p>
+               <p>All entries have a <tag>gramGrp</tag> element which contains at least a gram
+                  element indicating the wordclass of the lemma which is encoded as <tag>gram
+                     type="pos"</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <gramGrp>
                      <gram type="pos">noun</gram>
                   </gramGrp>
                </egXML>
-               
-               <p>The list of possible values contains:</p>               
+
+               <p>The list of possible values contains:</p>
                <list>
                   <item>adjective</item>
                   <item>adverb</item>
@@ -418,8 +491,9 @@
                   <item>verb</item>
                   <item>vocativeParticle</item>
                </list>
-               
-               <p>For pragmatic reasons, in particular to avoid subtyping, there are also items such as the following ones:</p>
+
+               <p>For pragmatic reasons, in particular to avoid subtyping, there are also items such
+                  as the following ones:</p>
                <list>
                   <item>collectiveNoun</item>
                   <item>instanceNoun</item>
@@ -429,49 +503,52 @@
                   <item>verbalNoun</item>
                   <item>unitNoun</item>
                </list>
-               
-               <p>"Part of speech" is understood in a very wide sense here. It is also used to categorise multi-word items that are treated as lemmata in their own right.</p>
+
+               <p>"Part of speech" is understood in a very wide sense here. It is also used to
+                  categorise multi-word items that are treated as lemmata in their own right.</p>
                <list>
                   <item>nounPhrase</item>
                   <item>verbPhrase</item>
                   <item>phrase</item>
                </list>
-               
+
                <p>Lexical items such as 'on account of' are labelled as complexPreposition.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <form type="lemma" subtype="compound">
                      <orth xml:lang="ar-Latn">ʕalašān xāṭir-</orth>
                      <orth xml:lang="ar">علشان خاطر</orth>
                   </form>
-                  
                   <gramGrp>
                      <gram type="pos">complexPreposition</gram>
-                  </gramGrp>                                  
+                  </gramGrp>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
-               <p>Prepositional phrases that are used adverbially are generally labelled as adverbs. The phrase below means 'in the evening'</p>
+               <p>Prepositional phrases that are used adverbially are generally labelled as adverbs.
+                  The phrase below means 'in the evening'</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
                   <form type="lemma" subtype="compound">
                      <orth xml:lang="ar-Latn">bi-l-lēl</orth>
                   </form>
-                  
                   <gramGrp>
                      <gram type="pos">adverb</gram>
                   </gramGrp>
-               </egXML>               
+               </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
-               <p>The Arabic dictionaries have a number of special gram-types: root, derivedVerbClass, morphPattern, status.</p>
+               <p>The Arabic dictionaries have a number of special gram-types: root,
+                  derivedVerbClass, morphPattern, status.</p>
             </div>
-            
+
             <div>
                <head><tag>gramGrp</tag> in forms</head>
                <p>Again, the Arabic dictionaries have a number of special gram-types.</p>
-             
+
                <div>
                   <head>Morphological patterns</head>
-                  <p>Morphological patterns are used in form elements to identify particular templates being used to
-                    create wordforms in Semitic languages. In the VICAV system, the root consonants are symbolised by
-                    numbers.</p>
+                  <p>Morphological patterns are used in form elements to identify particular
+                     templates being used to create wordforms in Semitic languages. In the VICAV
+                     system, the root consonants are symbolised by numbers.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <form type="lemma">
                         <orth xml:lang="ar-Latn">kātib</orth>
@@ -479,23 +556,28 @@
                         <gramGrp>
                            <gram type="morphPattern">1ā2i3</gram>
                         </gramGrp>
-                     </form>                                          
+                     </form>
                   </egXML>
-                  
-                  <p>These constructs are particularly used with wordforms of Arabic origin. When foreign loans are well-integrated 
-                    in the morphological system, they may be furnished with this kind of information. They are generally avoided 
-                    with items that can not easily be integrated into the system.</p>
+                  <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
+                  <p>These constructs are particularly used with wordforms of Arabic origin. When
+                     foreign loans are well-integrated in the morphological system, they may be
+                     furnished with this kind of information. They are generally avoided with items
+                     that can not easily be integrated into the system.</p>
                </div>
-               
+
                <div>
                   <head>Construct state</head>
-                  <p>The existing TEI Lex-0 contains obvious lacunae with respect to some categories needed in 
-                     the descroption of non-European languages. One such case is the construct state, a nominal form 
-                     found in some Afro-Asiatic languages where some nouns have specific forms when it 
-                     they are followed by another noun as part of a so called genitive construction. E.g. <foreign>abu maḥmūd</foreign> `Mahmud's father´.
-                     In Egyptian Arabic, the basic form of `father´ is <foreign>abb</foreign>, the construct state <foreign>abu</foreign>. 
-                     This phenomenon has to be clearly distinguished from case which also can play a role in some of these languages. 
-                     We solved the issue by adding an additional @type value <att>state</att>.</p>
+                  <p>The existing TEI Lex-0 contains obvious lacunae with respect to some categories
+                     needed in the descroption of non-European languages. One such case is the
+                     construct state, a nominal form found in some Afro-Asiatic languages where some
+                     nouns have specific forms when it they are followed by another noun as part of
+                     a so called genitive construction. E.g. <foreign>abu maḥmūd</foreign> `Mahmud's
+                     father´. In Egyptian Arabic, the basic form of `father´ is
+                        <foreign>abb</foreign>, the construct state <foreign>abu</foreign>. This
+                     phenomenon has to be clearly distinguished from case which also can play a role
+                     in some of these languages. We solved the issue by adding an additional @type
+                     value <att>state</att>.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <form type="inflected">
                         <gramGrp>
@@ -503,58 +585,63 @@
                         </gramGrp>
                         <orth xml:lang="ar-Latn">abu</orth>
                         <orth xml:lang="ar">ابو</orth>
-                     </form>                     
+                     </form>
                   </egXML>
-               </div>                             
+                  <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               </div>
             </div>
-            
+
             <div>
                <head><tag>gramGrp</tag> in senses</head>
-               <p>Several types of <tag>gram</tag> elements are used together with verbs. Prepositions required 
-                 with particular senses are indicated like this:</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gramGrp>
-                     <gram type="collocate" xml:lang="ar-Latn">bi-</gram></gramGrp>
-                  
-                  <cit type="translationEquivalent">
-                     <form><orth xml:lang="en">infatuated (with)</orth></form>
-                  </cit>                 
-               </egXML>
-                            
-               <p>If a verb requires complementation through verb forms in a aparticular mood, 
-                  the value <val>government</val> is used.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gramGrp>
-                     <gram type="government">imperfect</gram>
-                  </gramGrp>                  
-               </egXML>
+               <p>Several types of <tag>gram</tag> elements are used together with verbs.
+                  Prepositions required with particular senses are indicated like this:</p>
                
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><gramGrp>
+   <gram type="collocate" xml:lang="ar-Latn">bi-</gram>
+</gramGrp>
+
+<cit type="translationEquivalent">
+   <form><orth xml:lang="en">infatuated (with)</orth></form>
+</cit>
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
+               <p>If a verb requires complementation through verb forms in a aparticular mood, the
+                  value <val>government</val> is used.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+   <gramGrp>
+      <gram type="government">imperfect</gram>
+   </gramGrp>
+</egXML>
+
                <p>Transitivity can be indicated using the value <val>valency</val>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <gramGrp>
                      <gram type="valency">transitive|intransitive|ditransitive</gram>
-                  </gramGrp>                  
+                  </gramGrp>
                </egXML>
-               
+
                <p>Particular arguments of a verb can be indicated like this:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <gramGrp>
                      <gram type="arguments">w ḥ</gram></gramGrp>
-                  
                   <cit type="translationEquivalent">
                      <form><orth xml:lang="en">to teach (s.o. s.th.)</orth></form>
-                  </cit>                  
+                  </cit>
                </egXML>
             </div>
          </div>
-         
+
          <div>
             <head>Senses</head>
-            <p>Senses can have grammatical information (see chapter <tag>gramGrp</tag> in senses) and information specifying usage domains and or semantic categories.</p>
-            
+            <p>Senses can have grammatical information (see chapter <tag>gramGrp</tag> in senses)
+               and information specifying usage domains and or semantic categories.</p>
+
             <div>
                <head>Domain labels</head>
-               <p>We attempt to indicate the specific field of knowledge a word is primarily used in. They terms used are documented in a taxonomy in the <tag>encodingDesc</tag> of the header. </p>
+               <p>We attempt to indicate the specific field of knowledge a word is primarily used
+                  in. They terms used are documented in a taxonomy in the <tag>encodingDesc</tag> of
+                  the header. </p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sense xml:id="VDEA.s_disk_001_0">
                      <usg type="domain" valueDatcat="#domains.medicine">medicine</usg>
@@ -564,213 +651,236 @@
                         </form>
                      </cit>
                   </sense>
-                  
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
-            
+
             <div>
                <head>Semantic labeling</head>
-               <p>Some VICAV dictionaries contain labels such as <term>kinship term</term>, <term>city</term>, <term>harbour</term> etc. placing them in particular semantic categories. 
-                  This kind of information is put in <att>ana</att> attributes the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of the header.
-                  These are then used in <att>ana</att> attributes on the <tag>sense</tag> elements.</p>
+               <p>Some VICAV dictionaries contain labels such as <term>kinship term</term>,
+                     <term>city</term>, <term>harbour</term> etc. placing them in particular
+                  semantic categories. This kind of information is put in <att>ana</att> attributes
+                  the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of
+                  the header. These are then used in <att>ana</att> attributes on the
+                     <tag>sense</tag> elements.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
                      <cit type="translationEquivalent">
                         <form>
                            <orth xml:lang="en">el-Ma’adi</orth>
                         </form>
-                     </cit>
-                     …
-                  </sense>
+                     </cit> … </sense>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
-            
+
          </div>
-         
+
          <div>
             <head>Usage labels</head>
-            <p>According to Lex-0 the <tag>usg</tag> has to be typefied. There is one type not provided by Lex-0 which is <att>pragmatics</att> which is 
-               mainly used to indicate in which situations a lexical item is being used.</p>
+            <p>According to Lex-0 the <tag>usg</tag> has to be typefied. There is one type not
+               provided by Lex-0 which is <att>pragmatics</att> which is mainly used to indicate in
+               which situations a lexical item is being used.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <usg type="pragmatics" xml:lang="en">to express prohibitions</usg>
             </egXML>
          </div>
-         
+
          <div>
             <head>Examples</head>
-            <p>As stated before, illustrative sentences are placed in <tag>div type="examples"</tag>. 
-               In accordance with Lex-0 (7.5), the examples are encoded as <code>cit/quote</code> constructs 
-               which have a <att>type</att> attribute with the <val>example</val>.</p>
-            
+            <p>As stated before, illustrative sentences are placed in <tag>div
+               type="examples"</tag>. In accordance with Lex-0 (7.5), the examples are encoded as
+                  <code>cit/quote</code> constructs which have a <att>type</att> attribute with the
+                  <val>example</val>.</p>
+
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <cit xml:id="VDEA.amiira_cawza_qalam__001" type="example">
-                  <quote xml:lang="ar-Latn">amīra ʕawza ʔalam ruṣāṣ.</quote>
-                  
-                  <cit type="translation">
+                  <quote xml:lang="ar-Latn">amīra ʕawza ʔalam ruṣāṣ.</quote> <cit type="translation">
                      <quote xml:lang="en">Amira needs a pencil.</quote>
                   </cit>
                </cit>
             </egXML>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
-            <p>Ideally, examples should consist in complete sentences. They should be concise, 
-               but can also contain several sentences. If dialogical models are involved, sentences 
-               are to be separated by a dash, indicated change of speakers.</p>
+            <p>Ideally, examples should consist in complete sentences. They should be concise, but
+               can also contain several sentences. If dialogical models are involved, sentences are
+               to be separated by a dash, indicated change of speakers.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <quote xml:lang="ar-Latn">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
             </egXML>
-            
+
             <div>
                <head>Proverbs</head>
-               <p>A special case are proverbs which are encoded with @subtype="proverb" on the main container <tag>cit</tag>.</p>
+               <p>A special case are proverbs which are encoded with @subtype="proverb" on the main
+                  container <tag>cit</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
-                     <quote xml:lang="ar-Latn">il-ḥaṛaka baṛaka.</quote>
+                     <quote xml:lang="ar-Latn">il-ḥaṛaka baṛaka.</quote> 
                      
                      <cit type="translation">
                         <quote xml:lang="en">Hard work brings its own reward.</quote>
                      </cit>
-                  </cit>                     
+                  </cit>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
-            
+
             <div>
                <head>Literal translations</head>
-               <p>When it is necessary to indicate that a translation is literal, @subtype="literal" can be used 
-                  on <tag>cit[@type="example"]</tag> element.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>When it is necessary to indicate that a translation is literal, @subtype="literal"
+                  can be used on <tag>cit[@type="example"]</tag> element.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
                   <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
-                     <quote xml:lang="ar-Latn">il-ʕagala min iš-šiṭān.</quote>
+                     <quote xml:lang="ar-Latn">il-ʕagala min iš-šiṭān.</quote> 
                      
                      <cit type="translation">
-                        <quote xml:lang="en">Haste makes waste.</quote>
+                        <quote xml:lang="en">Haste makes waste.</quote>                        
                      </cit>
                      
                      <cit type="translation" subtype="literal">
                         <quote xml:lang="en">Haste (comes) from the devil.</quote>
                      </cit>
-                  </cit>                  
+                  </cit>
                </egXML>
+               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
             </div>
          </div>
-         
+
          <div>
             <head>Linking</head>
-            <p>In accordance with Lex-0, all <tag>ref</tag> elements are applied inside of <tag>xr</tag> elements. 
-               They can be used inside of forms and senses. In <tag>form</tag> elements, they should be 
-               put after the last <tag>orth</tag> element.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <form type="derivative">
-                  <orth xml:lang="ar-Latn">dars</orth>
-                  <orth xml:lang="ar">درس</orth>
-                  <xr type="related"><ref type="entry" target="#VDEA.dars_001"/></xr>
-                  
-                  <form type="variant">
-                     <orth xml:lang="ar-Latn">dirāsa</orth>
-                     <orth xml:lang="ar">دراسة</orth>
-                     <orth xml:lang="ar">دراسه</orth>
-                     <xr type="related"><ref type="entry" target="#VDEA.diraasa_001"></ref></xr>
-                  </form>
-               </form>                            
-            </egXML>
+            <p>In accordance with Lex-0, all <tag>ref</tag> elements are applied inside of
+                  <tag>xr</tag> elements. They can be used inside of forms and senses. In
+                  <tag>form</tag> elements, they should be put after the last <tag>orth</tag>
+               element.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><form type="derivative">
+   <orth xml:lang="ar-Latn">dars</orth>
+   <orth xml:lang="ar">درس</orth>
+   <xr type="related"><ref type="entry" target="#VDEA.dars_001"/></xr> 
+   
+   <form
+      type="variant">
+      <orth xml:lang="ar-Latn">dirāsa</orth>
+      <orth xml:lang="ar">دراسة</orth>
+      <orth xml:lang="ar">دراسه</orth>
+      <xr type="related"><ref type="entry" target="#VDEA.diraasa_001"/></xr>
+   </form>
+</form>
+</egXML>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <p>The example pointers are put at the end of the <tag>sense</tag> element.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <sense xml:id="VDEA.s_daras_001_0">
-                  
-                  …                  
-                  <xr><ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"></ref></xr>
-               </sense>               
-            </egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><sense xml:id="VDEA.s_daras_001_0"> 
+   … 
+   
+   <xr><ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"/></xr>
+</sense>
+</egXML>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
          </div>
-         
+
          <div>
             <head>Tokens</head>
-            <p>We need to annotate tokens (wordforms) in two contexts: (1) examples, and (2) gram tags that describe grammatical constructions.</p>
-            
+            <p>We need to annotate tokens (wordforms) in two contexts: (1) examples, and (2) gram
+               tags that describe grammatical constructions.</p>
+
             <div>
                <head>Tokens in examples</head>
-               <p>Examples are frequently reused across entries, so we need a mechanism to link the wordforms in those examples to the relevant 
-                  entries to enable headword highlighting. The form element would be too heavy in this context. The most suitable element would 
-                  be w, which Lex‑0 does not currently provide; the next best alternative is seg.                  
-               </p>
-               
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <cit xml:id="VDEA.il_kutub_di_001" type="example">
-                     <quote xml:lang="ar-Latn">il-<seg type="exPart" corresp="#VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote>
-                  
-                  …
-                  </cit>
-               </egXML>
+               <p>Examples are frequently reused across entries, so we need a mechanism to link the
+                  wordforms in those examples to the relevant entries to enable headword
+                  highlighting. The form element would be too heavy in this context. The most
+                  suitable element would be w, which Lex‑0 does not currently provide; the next best
+                  alternative is seg. </p>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="VDEA.il_kutub_di_001" type="example">
+   <quote xml:lang="ar-Latn">il-<seg type="exPart" corresp="#VDEA.kitaab_000"
+         >kutub</seg> di miš baṭṭāla.</quote> 
+   … 
+</cit>
+</egXML>
             </div>
-            
+
             <div>
                <head>Tokens in constructions</head>
-               <p>By ‘construction’ we mean a unit encoding a specific syntactic template, following the approach outlined in the previous chapter. 
-                   A construction may comprise (1) a ref[@type="oRef"] element, (2) one or more seg[@type="constrPart"] elements that can be linked 
-                   to concepts in the associated taxonomy, and (3) intervening plain text.
-               </p>
-               
-               <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att> attributes.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">                  
-                  <gram type="construction"><ref type="oRef"/>​<seg valueDatcat="#pronSuffix"></seg></gram>
-               </egXML>
-               
-               <p>To represent particular inflected forms of the headword, such forms can be placed inside of <tag>ref[@type="oRef"]</tag>.</p>
+               <p>By ‘construction’ we mean a unit encoding a specific syntactic template, following
+                  the approach outlined in the previous chapter. A construction may comprise (1) a
+                  ref[@type="oRef"] element, (2) one or more seg[@type="constrPart"] elements that
+                  can be linked to concepts in the associated taxonomy, and (3) intervening plain
+                  text. </p>
+
+               <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att>
+                  attributes.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg valueDatcat="#pronSuffix"></seg> <seg valueDatcat="#timeExpression"></seg></gram>                                 
+                  <gram type="construction">
+                     <ref type="oRef"/> ​<seg valueDatcat="#pronSuffix"/></gram>
                </egXML>
-               
-               <p><tag>oRef</tag> can also be furnished with the <att>valueDatcat</att> attribute to select sprecific forms.</p>
+
+               <p>To represent particular inflected forms of the headword, such forms can be placed
+                  inside of <tag>ref[@type="oRef"]</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg valueDatcat="#persSuffix"></seg> <seg valueDatcat="#imperfectiveVerb"></seg></gram>
+                  <gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg
+                        valueDatcat="#pronSuffix"/> <seg valueDatcat="#timeExpression"/></gram>
                </egXML>
-               
-               <p>The existence of several options is represented by several <tag>gram</tag> elements inside one <tag>gramGroup</tag>.</p>
+
+               <p><tag>oRef</tag> can also be furnished with the <att>valueDatcat</att> attribute to
+                  select sprecific forms.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gramGrp>
-                     <gram type="construction" xml:lang="ar-Latn"><ref type="oRef"/> ʕan</gram>
-                     <gram type="construction" xml:lang="ar-Latn"><ref type="oRef"/> bi-</gram>
-                  </gramGrp>
-                  
-                  <cit type="translationEquivalent">
-                     <form><orth xml:lang="en">to hear (of|about)</orth></form>
-                  </cit>
-                  
-                  …                 
+                  <gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg
+                        valueDatcat="#persSuffix"/> <seg valueDatcat="#imperfectiveVerb"/></gram>
                </egXML>
+
+               <p>The existence of several options is represented by several <tag>gram</tag>
+                  elements inside one <tag>gramGroup</tag>.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+<gramGrp>
+   <gram type="construction" xml:lang="ar-Latn">
+      <ref type="oRef"/> ʕan</gram>
+   
+   <gram type="construction" xml:lang="ar-Latn">
+      <ref type="oRef"/> bi-</gram>
+</gramGrp>
+   
+<cit type="translationEquivalent">
+   <form>
+      <orth xml:lang="en">to hear (of|about)</orth></form>
+</cit> 
+… 
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
          </div>
-         
+
          <div>
             <head>Bibliographic information</head>
-            <p>Bibliographical references are listed in a <tag>listBibl</tag> element at the end of each entry. 
-               This sollution allows to provide exact information with respect to page numbers or other such 
-               information.</p>
+            <p>Bibliographical references are listed in a <tag>listBibl</tag> element at the end of
+               each entry. This sollution allows to provide exact information with respect to page
+               numbers or other such information.</p>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><listBibl type="literature">
+   <bibl xml:id="d1e112726">
+      <title ref="zot:Lentin2013"/>
+      <biblScope unit="page">p.106</biblScope>
+   </bibl>
+
+   <bibl xml:id="d1e112808">
+      <title ref="zot:Younes2021"/>
+      <biblScope unit="page">p.16</biblScope>
+   </bibl>
+</listBibl>
+</egXML>
+<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
             
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <listBibl type="literature">
-                  <bibl xml:id="d1e112726">
-                     <title ref="zot:Lentin2013"></title>
-                     <biblScope unit="page">p.106</biblScope>
-                  </bibl>
-                  <bibl xml:id="d1e112808">
-                     <title ref="zot:Younes2021"></title>
-                     <biblScope unit="page">p.16</biblScope>
-                  </bibl>
-               </listBibl>               
-            </egXML>
-            
-            <p>This information is referenced in <att>source</att> attributes which can flexibly be applied 
-              in <tag>form</tag> but also other elements.</p>
+            <p>This information is referenced in <att>source</att> attributes which can flexibly be
+               applied in <tag>form</tag> but also other elements.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <form source="#d1e112915" type="lemma">
                   <orth xml:lang="ar-Latn">kitab</orth>
-               </form>              
+               </form>
             </egXML>
+            <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
          </div>
-         
+
          <div>
             <head>Legacy encoding</head>
             <p>As mentioned before, this ODD also tries to document encoding practies which are yet
@@ -779,30 +889,39 @@
                .</p>
             <div>
                <head>Morphosyntactic annotations</head>
-               <p>Inflected forms (<tag>form type="inflected"</tag>) in a pre-Lex-0-phase have been encoded in ana <att>ana</att> attribute on the respective <tag>form type="variant"</tag> containing a pointer to an entry in a central feature / feature value library (cf. Budin, Majewski &amp; Mörth 2012).</p>
+               <p>Inflected forms (<tag>form type="inflected"</tag>) in a pre-Lex-0-phase have been
+                  encoded in ana <att>ana</att> attribute on the respective <tag>form
+                     type="variant"</tag> containing a pointer to an entry in a central feature /
+                  feature value library (cf. Budin, Majewski &amp; Mörth 2012).</p>
             </div>
             <div>
                <head>Multi-Word-Units</head>
-               <p>In the legacy encoding scheme, entries describing multi-word-units (MWUs) were identifies by using <tag>form type="multiWordUnit</tag> to encode the entry's headword. This behaviour is supported by this ODD with a deprecation warning.</p>
+               <p>In the legacy encoding scheme, entries describing multi-word-units (MWUs) were
+                  identifies by using <tag>form type="multiWordUnit</tag> to encode the entry's
+                  headword. This behaviour is supported by this ODD with a deprecation warning.</p>
             </div>
          </div>
          <div>
             <head>Further developments</head>
-            <p>As legacy dictionaries will be gradually ported to Lex-0, the legacy definitions in this ODD will be reduced.</p>
+            <p>As legacy dictionaries will be gradually ported to Lex-0, the legacy definitions in
+               this ODD will be reduced.</p>
          </div>
          <div>
             <head>Using this ODD in a new project / dictionary</head>
             <list>
                <item>Set up a new ODD and source it from this one.</item>
-               <item>Define the languages in the dictionary by restricting the values of <att>xml:lang</att>.</item>
-               <item>Identify which of the backward-compatability additions in this ODD are not relevant any more and override them, if necessary, in your new ODD.</item>
+               <item>Define the languages in the dictionary by restricting the values of
+                     <att>xml:lang</att>.</item>
+               <item>Identify which of the backward-compatability additions in this ODD are not
+                  relevant any more and override them, if necessary, in your new ODD.</item>
             </list>
          </div>
          <div>
             <head>Part 2: Formal Specification</head>
-            
+
             <!--<schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">-->
-            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
+            <schemaSpec ident="acdh-ch-dicts"
+               source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
                <moduleRef key="derived-module-TEILex0"/>
 
                <!-- We copy all modules from TEI Lex0 and exclude   -->
@@ -816,11 +935,13 @@
                <moduleRef key="namesdates"/>
                <moduleRef key="tei"/>
                <moduleRef key="textstructure" except="back front"/>
-               
+
                <moduleRef key="transcr" except="metamark"/>
-            
+
                <elementSpec ident="body" mode="change" module="textstructure">
-                  <desc>contains the main content of the dictionary. It MUST include a <tag>div type="entries"</tag> and MAY include a <tag>div type="examples"</tag>.</desc>
+                  <desc>contains the main content of the dictionary. It MUST include a <tag>div
+                        type="entries"</tag> and MAY include a <tag>div
+                     type="examples"</tag>.</desc>
                   <content>
                      <elementRef key="div" minOccurs="1" maxOccurs="2"/>
                   </content>
@@ -828,7 +949,8 @@
                      <desc>assert typed div elements at the top of body</desc>
                      <constraint>
                         <s:rule context="tei:body">
-                           <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a div of type "entries".</s:assert>
+                           <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a
+                              div of type "entries".</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -838,10 +960,13 @@
                      <desc>assert content of top-level divisions</desc>
                      <constraint>
                         <s:rule context="tei:div[@type = 'examples']">
-                           <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div type="examples" may only contain cit type="example"</s:assert>
+                           <s:assert
+                              test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div
+                              type="examples" may only contain cit type="example"</s:assert>
                         </s:rule>
                         <s:rule context="tei:div[@type = 'entries']">
-                           <s:assert test="every $e in * satisfies $e/self::tei:entry">div type="entries" may only contain entry elements</s:assert>
+                           <s:assert test="every $e in * satisfies $e/self::tei:entry">div
+                              type="entries" may only contain entry elements</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -855,7 +980,7 @@
                               <desc>contains examples used in the dictionary</desc>
                            </valItem>
                         </valList>
-                     </attDef>   
+                     </attDef>
                   </attList>
                   <exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -876,22 +1001,22 @@
                         </TEI>
                      </egXML>
                   </exemplum>
-               </elementSpec>               
-            
+               </elementSpec>
+
                <!-- TEI Lex-0 adjustments to make the xsd deterministic 2024-06-26 -->
                <classSpec type="model" ident="model.hiLike" mode="change">
                   <classes mode="change">
-                     <memberOf key="model.lexicalPhrase"  mode="delete"/>
+                     <memberOf key="model.lexicalPhrase" mode="delete"/>
                   </classes>
                </classSpec>
                <elementSpec ident="xr" mode="change">
                   <classes mode="change">
-                     <memberOf key="model.quoteLike"  mode="delete"/>
+                     <memberOf key="model.quoteLike" mode="delete"/>
                   </classes>
                </elementSpec>
                <elementSpec ident="lbl" mode="change">
                   <classes mode="change">
-                     <memberOf key="model.emphLike"  mode="delete"/>
+                     <memberOf key="model.emphLike" mode="delete"/>
                   </classes>
                </elementSpec>
                <elementSpec ident="publicationStmt" mode="change">
@@ -910,7 +1035,7 @@
                      </sequence>
                   </content>
                </elementSpec>
-               
+
                <elementSpec ident="list" mode="change">
                   <content>
                      <sequence>
@@ -923,10 +1048,11 @@
                   </content>
                </elementSpec>
                <!-- end of ambiguity-fixing adjustments -->
-               
-            <!-- Additionally needed elements -->
-            <moduleRef key="iso-fs" include="fs f symbol" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-               
+
+               <!-- Additionally needed elements -->
+               <moduleRef key="iso-fs" include="fs f symbol"
+                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+
                <elementSpec ident="change" mode="change">
                   <content>
                      <alternate minOccurs="1" maxOccurs="1">
@@ -949,10 +1075,16 @@
                         </change>
                      </egXML>
                   </exemplum>
-                  <remarks><p>can either contain a textual description or a series <gi>change</gi> elements with statistical prpoerties of the dictionary at a given point of time (<att>when</att>).</p></remarks>
+                  <remarks>
+                     <p>can either contain a textual description or a series <gi>change</gi>
+                        elements with statistical prpoerties of the dictionary at a given point of
+                        time (<att>when</att>).</p>
+                  </remarks>
                </elementSpec>
-               
-               <elementSpec ident="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add" module="core">
+
+               <elementSpec ident="measure"
+                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add"
+                  module="core">
                   <classes mode="replace">
                      <memberOf/>
                   </classes>
@@ -972,281 +1104,284 @@
                      </egXML>
                   </exemplum>
                </elementSpec>
-               
-               <elementRef key="interpretation" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
 
-            <!-- 
+               <elementRef key="interpretation"
+                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+
+               <!-- 
                TODO We should have a finer-grained definition for <usg type="corpusFrequency">
                For the time being, I'm simply adding <q> and <val>.
                DS 2021-12-02
             -->
-            <elementRef key="q" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            <elementRef key="val" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>   
+               <elementRef key="q" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+               <elementRef key="val" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
 
-           
-             <classRef key="model.featureVal" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            <elementSpec ident="symbol" mode="change">
-               <classes mode="change">
-                  <memberOf key="model.featureVal"/>
-               </classes>
-            </elementSpec>
-            
-            <classRef key="att.measurement" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-            
-            <elementSpec ident="ptr" mode="change" module="core">
-               <constraintSpec ident="example-target" scheme="schematron">
-                  <desc>rules that govern ptr elements</desc>
-                  <constraint>
-                     <s:rule context="tei:ptr[@type = 'example'][matches(@target,'^#') and not(contains(@target,' '))]">
-                        <s:assert test="exists(root()//tei:cit[@type = 'example'][@xml:id = current()/substring-after(@target,'#')])">unknown example with id "<s:value-of select="current()/substring-after(@target,'#')"/>"</s:assert>
-                     </s:rule>
-                     <s:rule context="tei:ptr[@type = 'example'][not(matches(@target,'^#')) or contains(@target,' ')]">
-                        <s:report test="count(tokenize(@target,'\s')[.!='']) > 1">only one pointer allowed in @target</s:report>
-                        <s:report test="not(starts-with(normalize-space(@target),'#'))">unexpected value "<s:value-of select="current()/@target"/>": the value of @target must be a fragment identifier pointing to an xml:id of a dictionary example (tei:cit[@type='example'])</s:report>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-            </elementSpec>
-            
-            <elementSpec ident="seg" mode="change" module="linking">
-               <constraintSpec ident="seg-context" scheme="schematron">
-                  <desc>assert correct context of seg</desc>
-                  <constraint>
-                     <s:rule context="tei:seg[@type = 'hint']">
-                        <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a hint segment must be inside a translation equivalent</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-               <attList>
-                  <attDef ident="type" mode="replace" usage="req">
-                     <valList type="closed">
-                        <valItem ident="hint">
-                           <desc>a hint in a translation to narrow down the semantic scope of the particular item.</desc>  
-                        </valItem>
-                        <valItem ident="constrPart">
-                           <desc>TODO add description ???</desc>
-                        </valItem>
-                        <valItem ident="oRef">
-                           <desc>TODO add description ???</desc>
-                        </valItem>
-                        <valItem ident="w">
-                           <desc>TODO add description ???</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
-               
-            <elementSpec ident="gram" mode="change" module="dictionaries">
-               <attList>
-                  <attDef ident="type" mode="change" usage="req">
-                  <!-- extending gram/types of TEI Lex-0-->
-                  <valList type="closed" mode="change">
-                     <valItem ident="arguments" mode="add">
-                        <desc>arguments to a verb</desc>
-                     </valItem>
-                     <valItem ident="constraint" mode="add">
-                        <desc>arguments to a verb</desc>
-                     </valItem>
-                     <valItem ident="construction" mode="add">
-                        <desc>arguments to a verb</desc>
-                     </valItem>
-                     <valItem ident="derivedVerbClass" mode="add" >
-                        <desc>derived verb class</desc>
-                        <remarks>
-                           <p>In the VICAV dictionaries, we apply a mixed system of indicators mainly making use of the labels traditionally used in Arabic linguistics. In cases not covered by this system, we use labels analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
-                        </remarks>
-                     </valItem>
-                     <valItem ident="diaRoot" mode="add">
-                        <desc>diachronic root</desc>
-                     </valItem>
-                     <valItem ident="morphPattern" mode="add">
-                        <desc>morphological pattern</desc>
-                     </valItem>
-                     <valItem ident="msd" mode="add">
-                        <desc>The value of the this gram-type can be "activeParticiple|passiveParticiple"</desc>
-                     </valItem>
-                     <valItem ident="person" mode="add"/>
-                     <valItem ident="polarity" mode="add">
-                        <desc></desc>
-                     </valItem>
-                     <valItem ident="root" mode="add">
-                        <desc>synchronous root</desc>
-                     </valItem>
-<!--                 <valItem ident="subc" mode="add">
-                        <desc>any subcategory of another gram value</desc>
-                     </valItem>
-                      -->
-                     <valItem ident="state" mode="add">
-                        <desc>construct</desc>
-                     </valItem>
-                     <valItem ident="synRoot" mode="add">
-                        <desc>synchronous root</desc>
-                     </valItem>
-                     <valItem ident="voice" mode="add">
-                        <desc></desc>
-                     </valItem>
-                     
-                     <!--
-                     <valItem ident="morphType">
-                        <desc>mophological type</desc>
-                        <remarks>
-                           <p>Many Arabic dialects have nominals which do not display feminine or plural forms. These are identified with a gram element and a morphType attribute.</p>
-                        </remarks>
-                     </valItem>
-                     <valItem ident="aspect">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="constraint">
-                        <desc>describes an</desc>
-                     </valItem>
-                     <valItem ident="constr">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     
-                    
-                     <valItem ident="extension"/>
-                     <valItem ident="frequency">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="gender">
-                        <desc>grammatical gender</desc>
-                     </valItem>
-                     <valItem ident="government">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     <valItem ident="inflectionType">
-                        <desc>inflection type</desc>
-                     </valItem>
-                     <valItem ident="mood">
-                        <desc>grammatical mood</desc>
-                     </valItem>
-                     <valItem ident="morph">
-                        <desc>TODO description missing</desc>
-                     </valItem>
-                     
-                     
-                     -->
-                  </valList>
-               </attDef>
-               </attList>
-            </elementSpec>          
-               
+
+               <classRef key="model.featureVal"
+                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+               <elementSpec ident="symbol" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.featureVal"/>
+                  </classes>
+               </elementSpec>
+
+               <classRef key="att.measurement"
+                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+
+               <elementSpec ident="ptr" mode="change" module="core">
+                  <constraintSpec ident="example-target" scheme="schematron">
+                     <desc>rules that govern ptr elements</desc>
+                     <constraint>
+                        <s:rule
+                           context="tei:ptr[@type = 'example'][matches(@target,'^#') and not(contains(@target,' '))]">
+                           <s:assert
+                              test="exists(root()//tei:cit[@type = 'example'][@xml:id = current()/substring-after(@target,'#')])"
+                              >unknown example with id "<s:value-of
+                                 select="current()/substring-after(@target,'#')"/>"</s:assert>
+                        </s:rule>
+                        <s:rule
+                           context="tei:ptr[@type = 'example'][not(matches(@target,'^#')) or contains(@target,' ')]">
+                           <s:report test="count(tokenize(@target,'\s')[.!='']) > 1">only one
+                              pointer allowed in @target</s:report>
+                           <s:report test="not(starts-with(normalize-space(@target),'#'))"
+                              >unexpected value "<s:value-of select="current()/@target"/>": the
+                              value of @target must be a fragment identifier pointing to an xml:id
+                              of a dictionary example (tei:cit[@type='example'])</s:report>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+
+               <elementSpec ident="seg" mode="change" module="linking">
+                  <constraintSpec ident="seg-context" scheme="schematron">
+                     <desc>assert correct context of seg</desc>
+                     <constraint>
+                        <s:rule context="tei:seg[@type = 'hint']">
+                           <s:assert
+                              test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a
+                              hint segment must be inside a translation equivalent</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="replace" usage="req">
+                        <valList type="closed">
+                           <valItem ident="hint">
+                              <desc>a hint in a translation to narrow down the semantic scope of the
+                                 particular item.</desc>
+                           </valItem>
+                           <valItem ident="constrPart">
+                              <desc>TODO add description ???</desc>
+                           </valItem>
+                           <valItem ident="oRef">
+                              <desc>TODO add description ???</desc>
+                           </valItem>
+                           <valItem ident="exPart">
+                              <desc>exPart stands for example part and is used to encode tokens in
+                                 example sentences.</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="gram" mode="change" module="dictionaries">
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <!-- extending gram/types of TEI Lex-0-->
+                        <valList type="closed" mode="change">
+                           <valItem ident="arguments" mode="add">
+                              <desc>arguments to a verb</desc>
+                           </valItem>
+                           <valItem ident="constraint" mode="add">
+                              <desc>arguments to a verb</desc>
+                           </valItem>
+                           <valItem ident="construction" mode="add">
+                              <desc>arguments to a verb</desc>
+                           </valItem>
+                           <valItem ident="derivedVerbClass" mode="add">
+                              <desc>derived verb class</desc>
+                              <remarks>
+                                 <p>In the VICAV dictionaries, we apply a mixed system of indicators
+                                    mainly making use of the labels traditionally used in Arabic
+                                    linguistics. In cases not covered by this system, we use labels
+                                    analogous to Woidich 2006 (Das Kairenisch-Arabische).</p>
+                              </remarks>
+                           </valItem>
+                           <valItem ident="diaRoot" mode="add">
+                              <desc>diachronic root</desc>
+                           </valItem>
+                           <valItem ident="morphPattern" mode="add">
+                              <desc>morphological pattern</desc>
+                           </valItem>
+                           <valItem ident="msd" mode="add">
+                              <desc>The abbreviation stands for morphosyntactic description. The
+                                 value of this gram-type can be
+                                 "activeParticiple|passiveParticiple"</desc>
+                           </valItem>
+                           <valItem ident="person" mode="add"/>
+                           <valItem ident="polarity" mode="add">
+                              <desc/>
+                           </valItem>
+                           <valItem ident="root" mode="add">
+                              <desc>synchronous root</desc>
+                           </valItem>
+                           <valItem ident="state" mode="add">
+                              <desc>construct</desc>
+                           </valItem>
+                           <valItem ident="synRoot" mode="add">
+                              <desc>synchronous root</desc>
+                           </valItem>
+                           <valItem ident="voice" mode="add">
+                              <desc/>
+                           </valItem>
+
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
                <classSpec type="atts" ident="att.global" mode="change">
-                  <constraintSpec ident="xml-lang-on-object-lang-elts" scheme="schematron" mode="add" xml:id="xml-lang-on-object-lang-elts">
+                  <constraintSpec ident="xml-lang-on-object-lang-elts" scheme="schematron"
+                     mode="add" xml:id="xml-lang-on-object-lang-elts">
                      <desc>assert that @xml:lang is added to elements with object language</desc>
                      <constraint>
-                        <s:rule context="tei:cit[@type = ('etymon','translation','example','translationEquivalent')]|tei:entry|tei:gram[@type=('arguments','diaRoot','government','root','synRoot')]">
-                           <s:assert test="exists(@xml:lang)">Elements containing object language must have an @xml:lang attribute.</s:assert>
+                        <s:rule
+                           context="tei:cit[@type = ('etymon','translation','example','translationEquivalent')]|tei:entry|tei:gram[@type=('arguments','diaRoot','government','root','synRoot')]">
+                           <s:assert test="exists(@xml:lang)">Elements containing object language
+                              must have an @xml:lang attribute.</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
                </classSpec>
-               
-            <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
-               CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
-            <!-- changed placeName to name -->
 
-                        
-           <elementSpec ident="usg" mode="change" module="dictionaries">
-               <content>
-                  <alternate>
-                     <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
-                     <macroRef key="macro.lexicalParaContent"/>
-                  </alternate>
-               </content>
-               <constraintSpec ident="name-in-usg" scheme="schematron">
-                  <desc>assert that only usg type geographic contain a name element</desc>
-                  <constraint>
-                     <s:rule context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')] and not(@type='pragmatics')]">
-                        <s:report test="exists(tei:name)">the name element must only occur inside of usg elements with @type="geographic" or @type="socioCultural".</s:report> 
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-              <attList>
-                 <attDef ident="type" mode="change" usage="req">
-                    <!-- extending gram/types of TEI Lex-0-->
-                    <valList type="closed" mode="change">
-                       <valItem ident="pragmatics" mode="add" >
-                          <desc>Pragmatic information</desc>
-                          <remarks>
-                             <p></p>
-                          </remarks>
-                       </valItem>
-                    </valList>
-                 </attDef>
-              </attList>
-           </elementSpec>
-            
-            <elementSpec ident="cit" mode="change" module="core">
-               <content>
-                  <sequence>
-                     <elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/>
+               <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
+               CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
+               <!-- changed placeName to name -->
+
+
+               <elementSpec ident="usg" mode="change" module="dictionaries">
+                  <content>
+                     <alternate>
+                        <elementRef key="name" minOccurs="0" maxOccurs="unbounded"/>
+                        <macroRef key="macro.lexicalParaContent"/>
+                     </alternate>
+                  </content>
+                  <constraintSpec ident="name-in-usg" scheme="schematron">
+                     <desc>assert that only usg type geographic contain a name element</desc>
+                     <constraint>
+                        <s:rule
+                           context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')] and not(@type='pragmatics')]">
+                           <s:report test="exists(tei:name)">the name element must only occur inside
+                              of usg elements with @type="geographic" or
+                              @type="socioCultural".</s:report>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <!-- extending gram/types of TEI Lex-0-->
+                        <valList type="closed" mode="change">
+                           <valItem ident="pragmatics" mode="add">
+                              <desc>Pragmatic information</desc>
+                              <remarks>
+                                 <p/>
+                              </remarks>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="cit" mode="change" module="core">
+                  <content>
+                     <sequence>
+                        <elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/>
+                        <alternate minOccurs="1" maxOccurs="1">
+                           <elementRef key="form"/>
+                           <sequence>
+                              <elementRef key="quote" minOccurs="1" maxOccurs="1"/>
+                              <elementRef key="quote" minOccurs="0" maxOccurs="1"/>
+                           </sequence>
+                        </alternate>
+                        <!--
                      <alternate minOccurs="1" maxOccurs="1">
                         <elementRef key="quote"/>
                         <elementRef key="form"/>
                      </alternate>
-                     <alternate minOccurs="0" maxOccurs="unbounded">
-                        <!-- both examples or translations have their textual content enclosed in quote elements -->
-                        <!-- example entries may have 1–n nested translations -->
-                        <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
-                        <!--                           <elementRef key="usg"/>-->
-                        <elementRef key="note"/>
-                        <elementRef key="gloss"/>
-                        <!-- ADDED DS 2024-05-26 -->
-                        <!--we should align th  e content more closely to the content in Lex0-->
-                     </alternate>
-                     <elementRef key="listBibl" minOccurs="0" maxOccurs="1"/>
-                     <!-- change history of example entries  -->
-                     <elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/>
-                  </sequence>
-               </content>
-               <constraintSpec ident="cit-context" scheme="schematron">
-                  <desc>assert correct context of cit types</desc>
-                  <constraint>
-                     <s:rule context="tei:cit[@type = 'translationEquivalent']">
-                        <s:assert test="parent::tei:sense">translationEquivalent: must be a direct child of a sense element</s:assert>
-                        <s:assert test="exists(child::tei:form[not(@type)])">translationEquivalent must contain a form without a type attribute </s:assert>
-                     </s:rule>
-                     <s:rule context="tei:cit[@type = 'translation']">
-                        <s:assert test="parent::tei:cit[@type = 'example']">cit/type="translation" must be part of an example</s:assert>
-                        <s:report test="* except (tei:quote|tei:usg)">a cit type translation may only contain 1) the translated text in a quote element, 2) the context of the translation in a tei:usg element</s:report>
-                        <s:assert test="not(@subtype) or @subtype='literal'">only "literal" translations expected</s:assert>
-                     </s:rule>
-                     <s:rule context="tei:cit[@subtype = 'proverb']">
-                        <s:assert test="@type = 'example'">unexpected value "<s:value-of
-                           select="current()/@type"/>" in @type – a proverb must be encoded as cit type="example" subtype="proverb"</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-               <attList>
-                  <attDef ident="type" mode="change" usage="req">
-                     <valList type="closed" mode="change">
-                        <valItem ident="literalTranslation" mode="add" validUntil="2025-12-31">
-                           <desc>literal translation</desc>
-                           <desc type="deprecationInfo">cit[@type='literalTranslation'] is only allowed for backwards compatibility and should be replaced with cit[@type='translationEquivalent'][@subtype='literal']</desc>
-                        </valItem>
-                        <!-- CHECKME These are not deleted -->
-                        <valItem ident="cognate" mode="delete"/>
-                        <valItem ident="cognateSet" mode="delete"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="subtype" mode="replace" usage="opt">
-                     <valList type="closed">
-                        <valItem ident="proverb">
-                           <desc>Proverbs are a subtype of example.</desc>
-                        </valItem>
-                        <valItem ident="scientificName">
-                           <desc>contains a scientific name of a plants or similar</desc>
-                        </valItem>
-                        <valItem ident="literal">
-                           <desc>marks a translation to be a literal translation (instead of a idiomatic one)</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
-               
+-->
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                           <!-- both examples or translations have their textual content enclosed in quote elements -->
+                           <!-- example entries may have 1–n nested translations -->
+                           <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
+                           <!--                           <elementRef key="usg"/>-->
+                           <elementRef key="note"/>
+                           <elementRef key="gloss"/>
+                           <!-- ADDED DS 2024-05-26 -->
+                           <!--we should align th  e content more closely to the content in Lex0-->
+                        </alternate>
+                        <elementRef key="listBibl" minOccurs="0" maxOccurs="1"/>
+                        <!-- change history of example entries  -->
+                        <elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/>
+                     </sequence>
+                  </content>
+                  <constraintSpec ident="cit-context" scheme="schematron">
+                     <desc>assert correct context of cit types</desc>
+                     <constraint>
+                        <s:rule context="tei:cit[@type = 'translationEquivalent']">
+                           <s:assert test="parent::tei:sense">translationEquivalent: must be a
+                              direct child of a sense element</s:assert>
+                           <s:assert test="exists(child::tei:form[not(@type)])"
+                              >translationEquivalent must contain a form without a type attribute
+                           </s:assert>
+                        </s:rule>
+                        <s:rule context="tei:cit[@type = 'translation']">
+                           <s:assert test="parent::tei:cit[@type = 'example']"
+                              >cit/type="translation" must be part of an example</s:assert>
+                           <s:report test="* except (tei:quote|tei:usg)">a cit type translation may
+                              only contain 1) the translated text in a quote element, 2) the context
+                              of the translation in a tei:usg element</s:report>
+                           <s:assert test="not(@subtype) or @subtype='literal'">only "literal"
+                              translations expected</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:cit[@subtype = 'proverb']">
+                           <s:assert test="@type = 'example'">unexpected value "<s:value-of
+                                 select="current()/@type"/>" in @type – a proverb must be encoded as
+                              cit type="example" subtype="proverb"</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="req">
+                        <valList type="closed" mode="change">
+                           <valItem ident="literalTranslation" mode="add" validUntil="2025-12-31">
+                              <desc>literal translation</desc>
+                              <desc type="deprecationInfo">cit[@type='literalTranslation'] is only
+                                 allowed for backwards compatibility and should be replaced with
+                                 cit[@type='translationEquivalent'][@subtype='literal']</desc>
+                           </valItem>
+                           <!-- CHECKME These are not deleted -->
+                           <valItem ident="cognate" mode="delete"/>
+                           <valItem ident="cognateSet" mode="delete"/>
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="replace" usage="opt">
+                        <valList type="closed">
+                           <valItem ident="proverb">
+                              <desc>Proverbs are a subtype of example.</desc>
+                           </valItem>
+                           <valItem ident="scientificName">
+                              <desc>contains a scientific name of a plants or similar</desc>
+                           </valItem>
+                           <valItem ident="literal">
+                              <desc>marks a translation to be a literal translation (instead of a
+                                 idiomatic one)</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
                <elementSpec ident="listBibl" mode="change" module="core">
                   <content>
                      <!-- listBibls in the teiHeader can contain biblStruct, in all other contexts only bibl-->
@@ -1258,8 +1393,11 @@
                   <constraintSpec ident="listBibl-context" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:listBibl[ancestor::tei:body]">
-                           <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an example</s:assert>
-                           <s:assert test="not(tei:biblStruct)">a listBibl inside of an entry of an example is composed of bibl elements</s:assert>
+                           <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']"
+                              >a listBibl is expected to be a direct child of an entry or an
+                              example</s:assert>
+                           <s:assert test="not(tei:biblStruct)">a listBibl inside of an entry of an
+                              example is composed of bibl elements</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -1279,7 +1417,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
-               
+
                <elementSpec ident="ref" mode="change" module="core">
                   <desc>a reference either to a license or to an example</desc>
                   <content>
@@ -1288,7 +1426,10 @@
                   <constraintSpec ident="ref" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:ref[@type = 'example']">
-                           <s:assert test="exists(substring-after(.,':'))">Example with id "<s:value-of select="exists(//tei:cit[@type='example'][@xml:id=substring-after(current()/@target,'#')])"/>" not found</s:assert>
+                           <s:assert test="exists(substring-after(.,':'))">Example with id
+                                 "<s:value-of
+                                 select="exists(//tei:cit[@type='example'][@xml:id=substring-after(current()/@target,'#')])"
+                              />" not found</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -1304,65 +1445,76 @@
                         </valList>
                      </attDef>
                   </attList>
-                  <remarks><p>In case of <val>example</val>, the <att>target</att> attribute should contain a pointer to a <tag>cit type="example"</tag>.</p></remarks>
+                  <remarks>
+                     <p>In case of <val>example</val>, the <att>target</att> attribute should
+                        contain a pointer to a <tag>cit type="example"</tag>.</p>
+                  </remarks>
                </elementSpec>
                <!--<elementSpec ident="placeName" mode="change" module="namesdates">
                   <
                </elementSpec>
             -->
-            <elementSpec ident="form" mode="change" module="dictionaries">
-               <constraintSpec ident="form-type" scheme="schematron">
-                  <desc>assert content of correct context of @type values</desc>
-                  <constraint>
-                     <s:rule context="tei:form[not(parent::tei:cit)]">
-                        <s:assert test="exists(@type)">@type is reqired on all forms except examples or translations.</s:assert>
-                     </s:rule>
-                     <s:rule context="tei:form[@type = 'variant']">
-                        <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]">a variant must be a direct child of the main form (type = "lemma", "multiWordUnit" or "inflected").</s:assert>
-                     </s:rule>
-                     <s:rule context="tei:form[@type = ('lemma', 'inflected')]">
-                        <s:assert test="parent::tei:entry">a headword or inflected form must be a direct child of an entry element. </s:assert>
-                     </s:rule>
-                     <s:rule context="tei:form[@subtype='compound']">
-                        <s:assert test="@type='lemma'">The subtype "compound" must be accompanied
-                           by the type attribute "lemma".</s:assert>
-                     </s:rule>
-                  </constraint>
-               </constraintSpec>
-               <attList>
-                  <attDef ident="type" mode="change" usage="opt">
-                     <valList type="closed" mode="change">
-                        <valItem ident="multiWordUnit" mode="add" validUntil="2025-12-31">
-                           <desc>the headword of a MWU entry</desc>
-                           <desc type="deprecationInfo">This attribute value is introduced for compatibility reasons and will be deprecated in the future. It should be replaced by @type="entry" and @subtype="compound".</desc>
-                        </valItem>
-                        
-                        <valItem ident="construction" mode="add"> 
-                           <desc/>
-                        </valItem>
-                        
-                     </valList>
-                  </attDef>
-                  <attDef ident="subtype" mode="replace" usage="opt">
-                     <valList type="closed">
-                        <valItem ident="compound">
-                           <desc>Used for multi-word units</desc>
-                        </valItem>
-                     </valList>
-                  </attDef>
-                  <attDef ident="ana" mode="change" usage="opt" validUntil="2025-12-31">
-                     <desc type="deprecationInfo">ana on form is kept for backwards compatability but will be removed in a future versions of this ODD.</desc>
-                  </attDef>
-               </attList>
-            </elementSpec>
-               
-            <elementSpec ident="listChange" mode="add" module="header">
-               <content>
-                  <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
-               </content>
-            </elementSpec>
-               
-         </schemaSpec>
+               <elementSpec ident="form" mode="change" module="dictionaries">
+                  <constraintSpec ident="form-type" scheme="schematron">
+                     <desc>assert content of correct context of @type values</desc>
+                     <constraint>
+                        <s:rule context="tei:form[not(parent::tei:cit)]">
+                           <s:assert test="exists(@type)">@type is reqired on all forms except
+                              examples or translations.</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:form[@type = 'variant']">
+                           <s:assert
+                              test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]"
+                              >a variant must be a direct child of the main form (type = "lemma",
+                              "multiWordUnit" or "inflected").</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:form[@type = ('lemma', 'inflected')]">
+                           <s:assert test="parent::tei:entry">a headword or inflected form must be a
+                              direct child of an entry element. </s:assert>
+                        </s:rule>
+                        <s:rule context="tei:form[@subtype='compound']">
+                           <s:assert test="@type='lemma'">The subtype "compound" must be accompanied
+                              by the type attribute "lemma".</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="type" mode="change" usage="opt">
+                        <valList type="closed" mode="change">
+                           <valItem ident="multiWordUnit" mode="add" validUntil="2025-12-31">
+                              <desc>the headword of a MWU entry</desc>
+                              <desc type="deprecationInfo">This attribute value is introduced for
+                                 compatibility reasons and will be deprecated in the future. It
+                                 should be replaced by @type="entry" and @subtype="compound".</desc>
+                           </valItem>
+
+                           <valItem ident="construction" mode="add">
+                              <desc/>
+                           </valItem>
+
+                        </valList>
+                     </attDef>
+                     <attDef ident="subtype" mode="replace" usage="opt">
+                        <valList type="closed">
+                           <valItem ident="compound">
+                              <desc>Used for multi-word units</desc>
+                           </valItem>
+                        </valList>
+                     </attDef>
+                     <attDef ident="ana" mode="change" usage="opt" validUntil="2025-12-31">
+                        <desc type="deprecationInfo">ana on form is kept for backwards compatability
+                           but will be removed in a future versions of this ODD.</desc>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+
+               <elementSpec ident="listChange" mode="add" module="header">
+                  <content>
+                     <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
+                  </content>
+               </elementSpec>
+
+            </schemaSpec>
          </div>
       </body>
    </text>
