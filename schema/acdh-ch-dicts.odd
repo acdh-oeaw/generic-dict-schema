@@ -40,7 +40,7 @@
       <encodingDesc>
          <tagsDecl> 
             <!-- Define reusable CSS rules --> 
-            <rendition xml:id="exampleSource" scheme="css">position:relative; top:-15px; font-size: smaller; font-style: italic; font-weight:bold; text-align: right; color:rgb(39, 79, 140); padding-right:10px;</rendition>
+            <rendition xml:id="exampleSource" scheme="css">position:relative; top:-15px; font-size: smaller; font-style: italic; font-weight:bold; color:rgb(39, 79, 140); padding-left:30px;</rendition>
             <rendition xml:id="table" scheme="css">border-spacing: 0; border-collapse: collapse; </rendition>
             <rendition xml:id="tbCell" scheme="css">border: 2px solid black;</rendition>
          </tagsDecl>
@@ -69,10 +69,12 @@
                baseline ODD which specific dictionaries should source and extend by their own rules,
                in order to define a schema which can be used for finer-grained validation.</p>
 
-            <p>The examples are mainly taken from the following dictionaries: <list>
+            <p>The examples are mainly taken from the following dictionaries: 
+               <list>
                   <item>The VICAV Dictionary of Egyptian Arabic (VDEA)</item>
                   <item>The VICAV Arabic-English Dictionary (VAED)</item>
                   <item>The SHAWI Dictionary (DShaAr)</item>
+                  <item>Concise isiZulu-English Internet Dictionary (CIEID)</item>
                </list>
             </p>
 
@@ -91,24 +93,24 @@
                   <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
             <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
                dictionaries basically look like this:</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-               <TEI version="5.0">
-                  <teiHeader> … </teiHeader>
-                  <text>
-                     <body>
-                        <div type="entries">
-                           <entry>…</entry>
-                           <entry>…</entry>
-                        </div>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible" xml:space="preserve">
+   <TEI version="5.0">
+      <teiHeader> … </teiHeader>
+      <text>
+         <body>
+            <div type="entries">
+               <entry>…</entry>
+               <entry>…</entry>
+            </div>
 
-                        <div type="examples">
-                           <cit type="example">…</cit>
-                           <cit type="example">…</cit>
-                        </div>
-                     </body>
-                  </text>
-               </TEI>
-            </egXML>
+            <div type="examples">
+               <cit type="example">…</cit>
+               <cit type="example">…</cit>
+            </div>
+         </body>
+      </text>
+   </TEI>
+</egXML>
 
             <p>The <gi>body</gi> of a dictionary which conforms to this specification should contain
                two divisions: a series of entries within <tag>div type="entries"</tag> and a series
@@ -182,7 +184,7 @@
                   <cell rendition="#tbCell">&amp;#x2C0;</cell>
                   <cell rendition="#tbCell">&amp;#704;</cell>
                   <cell rendition="#tbCell">Modifier Letter Glottal Stop</cell>
-                  <cell rendition="#tbCell">This is used to indicate glottal stop that have replaced KA qāf</cell>
+                  <cell rendition="#tbCell">This character is used to indicate glottal stops that have replaced CA qāf</cell>
                   <cell rendition="#tbCell">VDEA</cell>
                </row>
             </table>
@@ -210,28 +212,26 @@
                private use subtags giving location plus transcription system of the described
                varieties on the entry elements as a default value.</p>
             
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
-                 … 
-               </entry>
-            </egXML>
-            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+<entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
+   … 
+</entry>
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
             <p>Inside of entries, including on all examples, we use shorter two-letter language
                codes indicating the linguistic variety and the writing system when dealing with
                transcriptions. </p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <form type="lemma">
-                  <orth xml:lang="ar-Latn">kitāb</orth>
-                  <orth xml:lang="ar">كتاب</orth>
-               </form>
-            </egXML>
-            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><form type="lemma">
+   <orth xml:lang="ar-Latn">kitāb</orth>
+   <orth xml:lang="ar">كتاب</orth>
+</form>
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
             <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation
                containers cit[@type="translation"]/quote.</p>
-            
-            
+                      
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
 
    <quote xml:lang="ar-Latn">fukk aṭ-ṭāga!</quote>
@@ -435,8 +435,9 @@
 
          <div>
             <head>Grammatical information</head>
-            <p>All <tag>gram</tag> elements must be placed inside of <tag>gramGrp</tag>. Such
-               information can be found in these elements: <list>
+            <p>All <tag>gram</tag> elements must be placed inside of <tag>gramGrp</tag>. 
+               Grammatical information can be found in these elements: 
+               <list>
                   <item>entry (mandatory)</item>
                   <item>form</item>
                   <item>sense</item>
@@ -694,13 +695,14 @@
                   <val>example</val>.</p>
 
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <cit xml:id="VDEA.amiira_cawza_qalam__001" type="example">
-                  <quote xml:lang="ar-Latn">amīra ʕawza ʔalam ruṣāṣ.</quote> <cit type="translation">
-                     <quote xml:lang="en">Amira needs a pencil.</quote>
-                  </cit>
-               </cit>
-            </egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="VDEA.amiira_cawza_qalam__001" type="example">
+   <quote xml:lang="ar-Latn">amīra ʕawza ʔalam ruṣāṣ.</quote> 
+   
+   <cit type="translation">
+      <quote xml:lang="en">Amira needs a pencil.</quote>
+   </cit>
+</cit>
+</egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <p>Ideally, examples should consist in complete sentences. They should be concise, but
@@ -709,42 +711,43 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <quote xml:lang="ar-Latn">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
             </egXML>
-
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+            
             <div>
                <head>Proverbs</head>
                <p>A special case are proverbs which are encoded with @subtype="proverb" on the main
                   container <tag>cit</tag>.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
-                     <quote xml:lang="ar-Latn">il-ḥaṛaka baṛaka.</quote> 
-                     
-                     <cit type="translation">
-                        <quote xml:lang="en">Hard work brings its own reward.</quote>
-                     </cit>
-                  </cit>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
+
+   <quote xml:lang="ar-Latn">il-ḥaṛaka baṛaka.</quote> 
+   
+   <cit type="translation">
+      <quote xml:lang="en">Hard work brings its own reward.</quote>
+   </cit>
+</cit>
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
             <div>
                <head>Literal translations</head>
                <p>When it is necessary to indicate that a translation is literal, @subtype="literal"
                   can be used on <tag>cit[@type="example"]</tag> element.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                  <cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
-                     <quote xml:lang="ar-Latn">il-ʕagala min iš-šiṭān.</quote> 
-                     
-                     <cit type="translation">
-                        <quote xml:lang="en">Haste makes waste.</quote>                        
-                     </cit>
-                     
-                     <cit type="translation" subtype="literal">
-                        <quote xml:lang="en">Haste (comes) from the devil.</quote>
-                     </cit>
-                  </cit>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
-               
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
+
+   <quote xml:lang="ar-Latn">il-ʕagala min iš-šiṭān.</quote> 
+   
+   <cit type="translation">
+      <quote xml:lang="en">Haste makes waste.</quote>                        
+   </cit>
+   
+   <cit type="translation" subtype="literal">
+      <quote xml:lang="en">Haste (comes) from the devil.</quote>
+   </cit>
+</cit>
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+
             </div>
          </div>
 
@@ -764,7 +767,9 @@
       <orth xml:lang="ar-Latn">dirāsa</orth>
       <orth xml:lang="ar">دراسة</orth>
       <orth xml:lang="ar">دراسه</orth>
-      <xr type="related"><ref type="entry" target="#VDEA.diraasa_001"/></xr>
+      
+      <xr type="related">
+         <ref type="entry" target="#VDEA.diraasa_001"/></xr>
    </form>
 </form>
 </egXML>
@@ -774,7 +779,8 @@
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><sense xml:id="VDEA.s_daras_001_0"> 
    … 
    
-   <xr><ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"/></xr>
+   <xr type="related">
+      <ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"/></xr>
 </sense>
 </egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
@@ -799,6 +805,7 @@
    … 
 </cit>
 </egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
             <div>
@@ -807,7 +814,7 @@
                   the approach outlined in the previous chapter. A construction may comprise (1) a
                   ref[@type="oRef"] element, (2) one or more seg[@type="constrPart"] elements that
                   can be linked to concepts in the associated taxonomy, and (3) intervening plain
-                  text. </p>
+                  text.</p>
 
                <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att>
                   attributes.</p>
@@ -869,7 +876,7 @@
    </bibl>
 </listBibl>
 </egXML>
-<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+            <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
             
             <p>This information is referenced in <att>source</att> attributes which can flexibly be
                applied in <tag>form</tag> but also other elements.</p>
