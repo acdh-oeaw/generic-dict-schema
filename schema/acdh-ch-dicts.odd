@@ -40,7 +40,7 @@
       <encodingDesc>
          <tagsDecl> 
             <!-- Define reusable CSS rules --> 
-            <rendition xml:id="exampleSource" scheme="css">position:relative; top:-15px; font-size: smaller; font-style: italic; font-weight:bold; color:rgb(39, 79, 140); padding-left:30px;</rendition>
+            <rendition xml:id="exampleSource" scheme="css">position:relative; top:-10px; font-size: smaller; font-style: italic; font-weight:bold; color:rgb(39, 79, 140); padding-left:30px;</rendition>
             <rendition xml:id="table" scheme="css">border-spacing: 0; border-collapse: collapse; </rendition>
             <rendition xml:id="tbCell" scheme="css">border: 2px solid black;</rendition>
          </tagsDecl>
@@ -74,7 +74,7 @@
                   <item>The VICAV Dictionary of Egyptian Arabic (VDEA)</item>
                   <item>The VICAV Arabic-English Dictionary (VAED)</item>
                   <item>The SHAWI Dictionary (DShaAr)</item>
-                  <item>Concise isiZulu-English Internet Dictionary (CIEID)</item>
+                  <item>The Concise isiZulu-English Internet Dictionary (CIEID)</item>
                </list>
             </p>
 
@@ -93,7 +93,7 @@
                   <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
             <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
                dictionaries basically look like this:</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible" xml:space="preserve">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
    <TEI version="5.0">
       <teiHeader> … </teiHeader>
       <text>
@@ -222,17 +222,23 @@
             <p>Inside of entries, including on all examples, we use shorter two-letter language
                codes indicating the linguistic variety and the writing system when dealing with
                transcriptions. </p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><form type="lemma">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma">
    <orth xml:lang="ar-Latn">kitāb</orth>
    <orth xml:lang="ar">كتاب</orth>
 </form>
+   
+…
 </egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
             <p>In examples, @xml:lang is used on cit[type="example"]/quote and the translation
                containers cit[@type="translation"]/quote.</p>
                       
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<cit xml:id="DShaAr.fukk_at_taaga_001" type="example">
 
    <quote xml:lang="ar-Latn">fukk aṭ-ṭāga!</quote>
                   
@@ -245,6 +251,8 @@
    <cit type="translation">
       <quote xml:lang="ar">!افتح النافذة</quote></cit>
 </cit>
+   
+…
 </egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
@@ -261,30 +269,35 @@
                feature structures (<tag>fs type="change"</tag>) which at least provide information
                of the parent records's status (<tag>f name="status"</tag>), the date of a change
                   (<tag>f name="who"</tag>).</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true" xml:space="preserve"><fs type="change">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="true" xml:space="preserve">…
+
+<fs type="change">
    <f name="who">​<symbol value="stephanP"/></f>
    <f name="when"><symbol value="2014-09-17"/>​ </f>​   
    <f name="status">​<symbol value="released"/>​ </f>​ 
 </fs>
-</egXML>
+   
+…</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
             <p>In some dictionaries, some statistics are collected within <gi>revisionDesc</gi>. For
                this <gi>measure</gi> within a <gi>change</gi> element is used:</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <change when="2018-09-11">
-                  <measure type="records" quantity="48"/>
-                  <measure type="entries" quantity="10"/>
-                  <measure type="entryFrees" quantity="0"/>
-                  <measure type="lemmas" quantity="10"/>
-                  <measure type="releasedLemmas" quantity="0"/>
-                  <measure type="mwus" quantity="0"/>
-                  <measure type="cits" quantity="38"/>
-                  <measure type="releasedCits" quantity="0"/>
-                  <measure type="released" quantity="0"/>
-               </change>
-            </egXML>
-            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">…
+               
+<change when="2018-09-11">
+   <measure type="records" quantity="48"/>
+   <measure type="entries" quantity="10"/>
+   <measure type="entryFrees" quantity="0"/>
+   <measure type="lemmas" quantity="10"/>
+   <measure type="releasedLemmas" quantity="0"/>
+   <measure type="mwus" quantity="0"/>
+   <measure type="cits" quantity="38"/>
+   <measure type="releasedCits" quantity="0"/>
+   <measure type="released" quantity="0"/>
+</change>
+               
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <p>In order to accomodate this information, the TEI Lex-0 schema is extended by adding
                the <gi>measure</gi> element.</p>
@@ -307,18 +320,21 @@
       <gram type="pos">nounPhrase</gram>
    </gramGrp> 
    … 
-</entry>
-</egXML>               
+</entry>  
+</egXML>             
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
                <p>Under this category fall noun phrases, verb phrases as well as prepositional
                   constructs.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <form type="lemma" subtype="compound">
-                     <orth xml:lang="ar-Latn">bi-l-ḥaʔʔ</orth>
-                     <orth xml:lang="ar">بالحق</orth>
-                  </form>
-               </egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">…
+   
+<form type="lemma" subtype="compound">
+   <orth xml:lang="ar-Latn">bi-l-ḥaʔʔ</orth>
+   <orth xml:lang="ar">بالحق</orth>
+</form>
+   
+…
+</egXML>
                <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
@@ -327,33 +343,37 @@
                <p>All forms can have nested <tag>form type="variant"</tag> elements which are to be
                   listed at the end of the respective form. We have applied this construct only to
                   phonological/morphological variants, not orthographic variants.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <form type="inflected">
-                     <gramGrp>
-                        <gram type="number">plural</gram>
-                     </gramGrp>
-                     <orth xml:lang="ar-Latn">gufūn</orth>
-                     <orth xml:lang="ar">جفون</orth>
-                     
-                     <form type="variant">
-                        <orth xml:lang="ar-Latn">agfān</orth>
-                        <orth xml:lang="ar">اجفان</orth>
-                     </form>
-                  </form>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples">…
+   
+<form type="inflected">
+   <gramGrp>
+      <gram type="number">plural</gram>
+   </gramGrp>
+   <orth xml:lang="ar-Latn">gufūn</orth>
+   <orth xml:lang="ar">جفون</orth>
+   
+   <form type="variant">
+      <orth xml:lang="ar-Latn">agfān</orth>
+      <orth xml:lang="ar">اجفان</orth>
+   </form>
+</form>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
                <p>Orthographical variants are encoded in several <tag>orth</tag> elements. </p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <form type="lemma">
-                     <orth xml:lang="ar-Latn">talāta</orth>
-                     <orth xml:lang="ar">تلاتة</orth>
-                     <orth xml:lang="ar">تلاته</orth>
-                     <orth xml:lang="ar">ثلاثة</orth>
-                     <orth xml:lang="ar">ثلاثه</orth>
-                  </form>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">…
+                  
+<form type="lemma">
+   <orth xml:lang="ar-Latn">talāta</orth>
+   <orth xml:lang="ar">تلاتة</orth>
+   <orth xml:lang="ar">تلاته</orth>
+   <orth xml:lang="ar">ثلاثة</orth>
+   <orth xml:lang="ar">ثلاثه</orth>
+</form>
+                  
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
          </div>
 
@@ -381,15 +401,18 @@
 
             <div>
                <head>Single etymology</head>
-               <p>The involved linguistic varieties are indicated with <att>xml:lang</att>.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-                  <etym>
-                     <cit type="etymon">
-                        <form><orth xml:lang="it">sta bene</orth></form>
-                     </cit>
-                  </etym>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               <p>The involved linguistic varieties are indicated with <att>xml:lang</att> on the orth element. 
+                  The degree of certainty can be indicated with the <att>cert</att> attribute.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">…
+   
+<etym>
+   <cit type="etymon">
+      <form><orth xml:lang="it">sta bene</orth></form>
+   </cit>
+</etym>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
             </div>
 
@@ -397,17 +420,19 @@
                <head>Several competing etymologies</head>
                <p>When there are several possible etymologies, <tag>etym</tag> contains several
                      <tag>cit type="etymon"</tag> elements.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-                  <etym>
-                     <cit type="etymon">
-                        <form><orth xml:lang="en">plastic</orth></form>
-                     </cit>
-                     <cit type="etymon">
-                        <form><orth xml:lang="fr">plastique</orth></form>
-                     </cit>
-                  </etym>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">…
+
+<etym>
+   <cit type="etymon" cert="medium">
+      <form><orth xml:lang="en">plastic</orth></form>
+   </cit>
+   <cit type="etymon" cert="medium">
+      <form><orth xml:lang="fr">plastique</orth></form>
+   </cit>
+</etym>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
             <div>
@@ -417,19 +442,21 @@
                   stage, the one at the lowest position the oldest stage. The code below is part of
                   the entry <foreign>kabl</foreign> `cable´ and implies: kabl ˂ cable (Eng.) ˂
                   cabulum/capulum (Latin) `rope´. </p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-                  <etym>
-                     <etym>
-                        <cit type="etymon">
-                           <form><orth xml:lang="la">cabulum</orth></form>
-                        </cit>
-                     </etym>
-                     <cit type="etymon">
-                        <form><orth xml:lang="en">cable</orth></form>
-                     </cit>
-                  </etym>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">…
+                  
+<etym>
+   <etym>
+      <cit type="etymon">
+         <form><orth xml:lang="la">cabulum</orth></form>
+      </cit>
+   </etym>
+   <cit type="etymon">
+      <form><orth xml:lang="en">cable</orth></form>
+   </cit>
+</etym>
+                  
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
          </div>
 
@@ -446,120 +473,197 @@
 
             <div>
                <head>Top level <tag>gramGrp</tag></head>
-               <p>All entries have a <tag>gramGrp</tag> element which contains at least a gram
-                  element indicating the wordclass of the lemma which is encoded as <tag>gram
-                     type="pos"</tag>.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-                  <gramGrp>
-                     <gram type="pos">noun</gram>
-                  </gramGrp>
-               </egXML>
-
-               <p>The list of possible values contains:</p>
-               <list>
-                  <item>adjective</item>
-                  <item>adverb</item>
-                  <item>article</item>
-                  <item>auxiliary</item>
-                  <item>commonNoun</item>
-                  <item>conjunction</item>
-                  <item>copula</item>
-                  <item>demonstrative</item>
-                  <item>demonstrativePronoun</item>
-                  <item>existentialMarker</item>
-                  <item>fraction</item>
-                  <item>genitiveMarker</item>
-                  <item>interjection</item>
-                  <item>interrogative</item>
-                  <item>interrogativeAdverb</item>
-                  <item>interrogativePronoun</item>
-                  <item>modal</item>
-                  <item>modalVerb</item>
-                  <item>negation</item>
-                  <item>negParticle</item>
-                  <item>noun</item>
-                  <item>numeral</item>
-                  <item>ordinalNumeral</item>
-                  <item>particle</item>
-                  <item>personalPronoun</item>
-                  <item>petrifiedWordForm</item>
-                  <item>preposition</item>
-                  <item>presentational</item>
-                  <item>pronoun</item>
-                  <item>relativePronoun</item>
-                  <item>quantifier</item>
-                  <item>responseParticle</item>
-                  <item>verb</item>
-                  <item>vocativeParticle</item>
-               </list>
-
-               <p>For pragmatic reasons, in particular to avoid subtyping, there are also items such
-                  as the following ones:</p>
-               <list>
-                  <item>collectiveNoun</item>
-                  <item>instanceNoun</item>
-                  <item>modalVerb</item>
-                  <item>ordinalNumeral</item>
-                  <item>properNoun</item>
-                  <item>verbalNoun</item>
-                  <item>unitNoun</item>
-               </list>
-
-               <p>"Part of speech" is understood in a very wide sense here. It is also used to
-                  categorise multi-word items that are treated as lemmata in their own right.</p>
-               <list>
-                  <item>nounPhrase</item>
-                  <item>verbPhrase</item>
-                  <item>phrase</item>
-               </list>
-
-               <p>Lexical items such as 'on account of' are labelled as complexPreposition.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-                  <form type="lemma" subtype="compound">
-                     <orth xml:lang="ar-Latn">ʕalašān xāṭir-</orth>
-                     <orth xml:lang="ar">علشان خاطر</orth>
-                  </form>
-                  <gramGrp>
-                     <gram type="pos">complexPreposition</gram>
-                  </gramGrp>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
-               <p>Prepositional phrases that are used adverbially are generally labelled as adverbs.
-                  The phrase below means 'in the evening'</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
-                  <form type="lemma" subtype="compound">
-                     <orth xml:lang="ar-Latn">bi-l-lēl</orth>
-                  </form>
-                  <gramGrp>
-                     <gram type="pos">adverb</gram>
-                  </gramGrp>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
-               
-               <p>The Arabic dictionaries have a number of special gram-types: root,
-                  derivedVerbClass, morphPattern, status.</p>
-            </div>
-
-            <div>
-               <head><tag>gramGrp</tag> in forms</head>
-               <p>Again, the Arabic dictionaries have a number of special gram-types.</p>
-
                <div>
-                  <head>Morphological patterns</head>
-                  <p>Morphological patterns are used in form elements to identify particular
-                     templates being used to create wordforms in Semitic languages. In the VICAV
-                     system, the root consonants are symbolised by numbers.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <form type="lemma">
-                        <orth xml:lang="ar-Latn">kātib</orth>
-                        <orth xml:lang="ar">كاتب</orth>
-                        <gramGrp>
-                           <gram type="morphPattern">1ā2i3</gram>
-                        </gramGrp>
+                  <head>part-of-speech information</head>
+                  <p>All entries need to have a <tag>gramGrp</tag> element which contains at least a gram                  
+                     element indicating the wordclass of the lemma which is encoded as <tag>gram
+                        type="pos"</tag>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">…
+                     
+<gramGrp>
+   <gram type="pos">noun</gram>
+</gramGrp>
+                     
+…</egXML>
+                  
+                  <p>The list of possible values contains:</p>
+                  <list>
+                     <item>adjective</item>
+                     <item>adverb</item>
+                     <item>article</item>
+                     <item>auxiliary</item>
+                     <item>commonNoun</item>
+                     <item>conjunction</item>
+                     <item>copula</item>
+                     <item>demonstrative</item>
+                     <item>demonstrativePronoun</item>
+                     <item>existentialMarker</item>
+                     <item>fraction</item>
+                     <item>genitiveMarker</item>
+                     <item>interjection</item>
+                     <item>interrogative</item>
+                     <item>interrogativeAdverb</item>
+                     <item>interrogativePronoun</item>
+                     <item>modal</item>
+                     <item>modalVerb</item>
+                     <item>negation</item>
+                     <item>negParticle</item>
+                     <item>noun</item>
+                     <item>numeral</item>
+                     <item>ordinalNumeral</item>
+                     <item>particle</item>
+                     <item>personalPronoun</item>
+                     <item>petrifiedWordForm</item>
+                     <item>preposition</item>
+                     <item>presentational</item>
+                     <item>pronoun</item>
+                     <item>relativePronoun</item>
+                     <item>quantifier</item>
+                     <item>responseParticle</item>
+                     <item>verb</item>
+                     <item>vocativeParticle</item>
+                  </list>
+                  
+                  <p>For pragmatic reasons, in particular to avoid subtyping, there are also items such
+                     as the following ones:</p>
+                  <list>
+                     <item>collectiveNoun</item>
+                     <item>instanceNoun</item>
+                     <item>modalVerb</item>
+                     <item>ordinalNumeral</item>
+                     <item>properNoun</item>
+                     <item>verbalNoun</item>
+                     <item>unitNoun</item>
+                  </list>
+                  
+                  <p>"Part of speech" is understood in a very wide sense here. It is also used to
+                     categorise multi-word items that are treated as lemmata in their own right.</p>
+                  <list>
+                     <item>nounPhrase</item>
+                     <item>verbPhrase</item>
+                     <item>phrase</item>
+                  </list>
+                  
+                  <p>Lexical items such as 'on account of' are labelled as complexPreposition.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="feasible">
+                     <form type="lemma" subtype="compound">
+                        <orth xml:lang="ar-Latn">ʕalašān xāṭir-</orth>
+                        <orth xml:lang="ar">علشان خاطر</orth>
                      </form>
+                     <gramGrp>
+                        <gram type="pos">complexPreposition</gram>
+                     </gramGrp>
                   </egXML>
                   <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+                  
+                  <p>Prepositional phrases that are used adverbially are generally labelled as adverbs.
+                     The phrase below means 'in the evening'</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma" subtype="compound">
+   <orth xml:lang="ar-Latn">bi-l-lēl</orth>
+</form>
+   
+<gramGrp>
+   <gram type="pos">adverb</gram>
+</gramGrp>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+                  
+               </div>
+               
+               <div>
+                  <head>Roots</head>
+                  <p>In Semitic languages. roots are abstract, foundational morphemes consisting of a sequence of consonants (radicals) 
+                     that carry the basic lexical meaning of a word. Most Arabic roots consist of 
+                     three consonants.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…                     
+
+<form type="lemma">
+   <orth xml:lang="ar-Latn">kitāb</orth>
+   <orth xml:lang="ar">كتاب</orth>
+   …                     
+</form>
+
+<gramGrp>
+   <gram type="pos">noun</gram>
+   <gram type="root">ktb</gram>
+</gramGrp>
+                     
+…</egXML>
+                  <p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
+               </div>
+              
+               <div>
+                  <head>Stems</head>
+                  <p>The isiZulu Dictionary has a gram/@type="stem" element, 
+                     the stem being the base form of a word to which derivational and inflectional endings are added.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma">
+   <orth xml:lang="zu">-hambisa</orth>
+</form>
+…                     
+<gramGrp>
+   <gram type="pos">verb</gram>
+   <gram type="stem" xml:lang="zu">hamba</gram>
+</gramGrp>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: Concise isiZulu-English Internet Dictionary)</p>
+               </div>
+               
+               <div>
+                  <head>Derived verb classes</head>
+                  <p>By derived verb classes Arabic linguistics understands what has often been called "stems". 
+                     There are ten commonly used stems (I to X), each with specific vowel patterns and/or affixes (prefixes, 
+                     infixes, or gemination) that predictably alter the meaning of the root in ways such as making 
+                     it causative, reflexive, or intensive.</p>
+                  <p>In the VICAV Dictionary of Egyptian Arabic, the system adopted by Woidich (2006) is applied. 
+                    Otherwise, the traditional system of Roman numers is used.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<form type="lemma">
+   <orth xml:lang="ar-Latn">kātaba</orth>
+   <orth xml:lang="ar">كاتب</orth>
+   …
+</form>
+
+<gramGrp>
+   <gram type="pos">verb</gram>
+   <gram type="derivedVerbClass">III</gram>
+   <gram type="root">ktb</gram>
+</gramGrp>
+                     
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
+               </div>
+            </div>
+            
+            <div>
+               <head><tag>gramGrp</tag> in forms</head>
+               <p>The following chapters contain information which only apply to 
+                  subsets of our dictionaries.</p>
+
+               <div>
+                  <head>Morphological patterns (Arabic)</head>
+                  <p>The value morphPattern stands for morphological pattern which are used in form elements to identify particular
+                     templates being used to create wordforms in Semitic languages. In the VICAV
+                     system, the root consonants are symbolised by numbers.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma">
+   <orth xml:lang="ar-Latn">kātib</orth>
+   <orth xml:lang="ar">كاتب</orth>
+   <gramGrp>
+      <gram type="morphPattern">1ā2i3</gram>
+   </gramGrp>
+</form>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
                   <p>These constructs are particularly used with wordforms of Arabic origin. When
                      foreign loans are well-integrated in the morphological system, they may be
@@ -568,7 +672,7 @@
                </div>
 
                <div>
-                  <head>Construct state</head>
+                  <head>Construct state (Arabic)</head>
                   <p>The existing TEI Lex-0 contains obvious lacunae with respect to some categories
                      needed in the descroption of non-European languages. One such case is the
                      construct state, a nominal form found in some Afro-Asiatic languages where some
@@ -579,57 +683,108 @@
                      phenomenon has to be clearly distinguished from case which also can play a role
                      in some of these languages. We solved the issue by adding an additional @type
                      value <att>state</att>.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <form type="inflected">
-                        <gramGrp>
-                           <gram type="state">construct</gram>
-                        </gramGrp>
-                        <orth xml:lang="ar-Latn">abu</orth>
-                        <orth xml:lang="ar">ابو</orth>
-                     </form>
-                  </egXML>
-                  <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <gramGrp>
+      <gram type="state">construct</gram>
+   </gramGrp>
+   <orth xml:lang="ar-Latn">abu</orth>
+   <orth xml:lang="ar">ابو</orth>
+</form>
+   
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               </div>
+               
+               <div>
+                  <head>Nominal classes (isiZulu)</head>
+                  <p>Nominal classes are a characteristic grammatical feature of the southern Niger-Congo languages. 
+                     The system classifies nouns into various categories, which in turn govern agreement rules across 
+                     the sentence. Nouns assigned to particular classes are typically assigned particular prefixes, 
+                     attached to the noun stem.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma">
+   <orth xml:lang="zu">umuntu</orth>
+   <gramGrp>
+      <gram type="nomClass">1</gram>
+   </gramGrp>
+</form>   
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
                </div>
             </div>
 
             <div>
                <head><tag>gramGrp</tag> in senses</head>
-               <p>Several types of <tag>gram</tag> elements are used together with verbs.
-                  Prepositions required with particular senses are indicated like this:</p>
+               <p>Several types of <tag>gram</tag> elements are used together with verbs.</p>
                
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><gramGrp>
+               <div>
+                  <head>Prepositions</head>
+                  <p>Prepositions required with particular senses are indicated like this:</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<gramGrp>
    <gram type="collocate" xml:lang="ar-Latn">bi-</gram>
 </gramGrp>
 
 <cit type="translationEquivalent">
    <form><orth xml:lang="en">infatuated (with)</orth></form>
 </cit>
+   
+…
 </egXML>
-<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
-
-               <p>If a verb requires complementation through verb forms in a aparticular mood, the
-                  value <val>government</val> is used.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-   <gramGrp>
-      <gram type="government">imperfect</gram>
-   </gramGrp>
+                  <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               </div>
+               
+               <div>
+                  <head>Government</head>
+                  <p>If a verb requires complementation through verb forms in a aparticular mood, the
+                     value <val>government</val> is used.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<gramGrp>
+   <gram type="government">imperfect</gram>
+</gramGrp>
+                     
+…
 </egXML>
+               </div>
 
-               <p>Transitivity can be indicated using the value <val>valency</val>.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gramGrp>
-                     <gram type="valency">transitive|intransitive|ditransitive</gram>
-                  </gramGrp>
-               </egXML>
+               <div>
+                  <head>Transitivity</head>
+                  <p>Transitivity can be indicated using the value <val>valency</val>.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
+<gramGrp>
+   <gram type="valency">transitive|intransitive|ditransitive</gram>
+</gramGrp>
+                     
+…
+</egXML>
+               </div>
+               
+            <div>
+               <head>Arguments</head>
                <p>Particular arguments of a verb can be indicated like this:</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gramGrp>
-                     <gram type="arguments">w ḥ</gram></gramGrp>
-                  <cit type="translationEquivalent">
-                     <form><orth xml:lang="en">to teach (s.o. s.th.)</orth></form>
-                  </cit>
-               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<gramGrp>
+   <gram type="arguments">w ḥ</gram>
+</gramGrp>
+
+<cit type="translationEquivalent">
+   <form><orth xml:lang="en">to teach (s.o. s.th.)</orth></form>
+</cit>
+…
+</egXML>
+            </div>
+               
+               
+
             </div>
          </div>
 
@@ -642,18 +797,22 @@
                <head>Domain labels</head>
                <p>We attempt to indicate the specific field of knowledge a word is primarily used
                   in. They terms used are documented in a taxonomy in the <tag>encodingDesc</tag> of
-                  the header. </p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <sense xml:id="VDEA.s_disk_001_0">
-                     <usg type="domain" valueDatcat="#domains.medicine">medicine</usg>
-                     <cit type="translationEquivalent">
-                        <form>
-                           <orth xml:lang="en">slipped disk</orth>
-                        </form>
-                     </cit>
-                  </sense>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+                  the header. In accordance with Lex-0, the attribute <att>valueDatcat</att> is used 
+                  to refer to the taxonomy in the header.</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+                  
+<sense xml:id="VDEA.s_disk_001_0">
+   <usg type="domain" valueDatcat="#domains.medicine">medicine</usg>
+   <cit type="translationEquivalent">
+      <form>
+         <orth xml:lang="en">slipped disk</orth>
+      </form>
+   </cit>
+</sense>
+                  
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
             <div>
@@ -664,15 +823,20 @@
                   the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of
                   the header. These are then used in <att>ana</att> attributes on the
                      <tag>sense</tag> elements.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
-                     <cit type="translationEquivalent">
-                        <form>
-                           <orth xml:lang="en">el-Ma’adi</orth>
-                        </form>
-                     </cit> … </sense>
-               </egXML>
-               <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
+   <cit type="translationEquivalent">
+      <form>
+         <orth xml:lang="en">el-Ma’adi</orth>
+      </form>
+   </cit> 
+   … 
+</sense>
+   
+… 
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
          </div>
@@ -682,9 +846,11 @@
             <p>According to Lex-0 the <tag>usg</tag> has to be typefied. There is one type not
                provided by Lex-0 which is <att>pragmatics</att> which is mainly used to indicate in
                which situations a lexical item is being used.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <usg type="pragmatics" xml:lang="en">to express prohibitions</usg>
-            </egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<usg type="pragmatics" xml:lang="en">to express prohibitions</usg>
+   
+…</egXML>
          </div>
 
          <div>
@@ -695,37 +861,46 @@
                   <val>example</val>.</p>
 
             <p>Translations go into <tag>cit type="translation"</tag> elements.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="VDEA.amiira_cawza_qalam__001" type="example">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+             
+<cit xml:id="VDEA.amiira_cawza_qalam__001" type="example">
    <quote xml:lang="ar-Latn">amīra ʕawza ʔalam ruṣāṣ.</quote> 
    
    <cit type="translation">
       <quote xml:lang="en">Amira needs a pencil.</quote>
    </cit>
 </cit>
-</egXML>
+   
+…</egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <p>Ideally, examples should consist in complete sentences. They should be concise, but
                can also contain several sentences. If dialogical models are involved, sentences are
                to be separated by a dash, indicated change of speakers.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <quote xml:lang="ar-Latn">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
-            </egXML>
-            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<quote xml:lang="ar-Latn">tislam idēki. - ʔaḷḷāh yisallimak.</quote>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <div>
                <head>Proverbs</head>
                <p>A special case are proverbs which are encoded with @subtype="proverb" on the main
                   container <tag>cit</tag>.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<cit xml:id="VDEA.il_haraka_baraka_001" type="example" subtype="proverb">
 
    <quote xml:lang="ar-Latn">il-ḥaṛaka baṛaka.</quote> 
    
    <cit type="translation">
       <quote xml:lang="en">Hard work brings its own reward.</quote>
    </cit>
+
 </cit>
-</egXML>
+   
+…</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
@@ -733,7 +908,9 @@
                <head>Literal translations</head>
                <p>When it is necessary to indicate that a translation is literal, @subtype="literal"
                   can be used on <tag>cit[@type="example"]</tag> element.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<cit type="example" subtype="proverb" xml:id="VDEA.cala_mihlak_il__001">
 
    <quote xml:lang="ar-Latn">il-ʕagala min iš-šiṭān.</quote> 
    
@@ -745,7 +922,7 @@
       <quote xml:lang="en">Haste (comes) from the devil.</quote>
    </cit>
 </cit>
-</egXML>
+…</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
 
             </div>
@@ -757,7 +934,9 @@
                   <tag>xr</tag> elements. They can be used inside of forms and senses. In
                   <tag>form</tag> elements, they should be put after the last <tag>orth</tag>
                element.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><form type="derivative">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<form type="derivative">
    <orth xml:lang="ar-Latn">dars</orth>
    <orth xml:lang="ar">درس</orth>
    <xr type="related"><ref type="entry" target="#VDEA.dars_001"/></xr> 
@@ -772,17 +951,21 @@
          <ref type="entry" target="#VDEA.diraasa_001"/></xr>
    </form>
 </form>
-</egXML>
+               
+…</egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <p>The example pointers are put at the end of the <tag>sense</tag> element.</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><sense xml:id="VDEA.s_daras_001_0"> 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<sense xml:id="VDEA.s_daras_001_0"> 
    … 
    
    <xr type="related">
       <ref type="example" target="#VDEA.ahmad_biyidris_il_dash_001"/></xr>
 </sense>
-</egXML>
+               
+…</egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
          </div>
 
@@ -799,12 +982,15 @@
                   suitable element would be w, which Lex‑0 does not currently provide; the next best
                   alternative is seg. </p>
 
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><cit xml:id="VDEA.il_kutub_di_001" type="example">
-   <quote xml:lang="ar-Latn">il-<seg type="exPart" corresp="#VDEA.kitaab_000"
-         >kutub</seg> di miš baṭṭāla.</quote> 
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<cit xml:id="VDEA.il_kutub_di_001" type="example">
+   <quote xml:lang="ar-Latn">il-
+      <seg type="exPart" corresp="#VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote> 
    … 
 </cit>
-</egXML>
+                  
+…</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
@@ -818,28 +1004,36 @@
 
                <p>Linking to the taxonomy is accomplished through <att>valueDatacat</att>
                   attributes.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction">
-                     <ref type="oRef"/> ​<seg valueDatcat="#pronSuffix"/></gram>
-               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<gram type="construction">
+   <ref type="oRef"/> ​<seg valueDatcat="#pronSuffix"/>
+</gram>
+                  
+…</egXML>
 
                <p>To represent particular inflected forms of the headword, such forms can be placed
                   inside of <tag>ref[@type="oRef"]</tag>.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg
-                        valueDatcat="#pronSuffix"/> <seg valueDatcat="#timeExpression"/></gram>
-               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg
+      valueDatcat="#pronSuffix"/> <seg valueDatcat="#timeExpression"/></gram>
+                  
+…</egXML>
 
                <p><tag>oRef</tag> can also be furnished with the <att>valueDatcat</att> attribute to
                   select sprecific forms.</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg
-                        valueDatcat="#persSuffix"/> <seg valueDatcat="#imperfectiveVerb"/></gram>
-               </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg
+      valueDatcat="#persSuffix"/> <seg valueDatcat="#imperfectiveVerb"/></gram>
+                  
+…</egXML>
 
                <p>The existence of several options is represented by several <tag>gram</tag>
                   elements inside one <tag>gramGroup</tag>.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
 <gramGrp>
    <gram type="construction" xml:lang="ar-Latn">
       <ref type="oRef"/> ʕan</gram>
@@ -851,7 +1045,8 @@
 <cit type="translationEquivalent">
    <form>
       <orth xml:lang="en">to hear (of|about)</orth></form>
-</cit> 
+</cit>
+   
 … 
 </egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
@@ -864,7 +1059,9 @@
                each entry. This sollution allows to provide exact information with respect to page
                numbers or other such information.</p>
 
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><listBibl type="literature">
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<listBibl type="literature">
    <bibl xml:id="d1e112726">
       <title ref="zot:Lentin2013"/>
       <biblScope unit="page">p.106</biblScope>
@@ -875,25 +1072,28 @@
       <biblScope unit="page">p.16</biblScope>
    </bibl>
 </listBibl>
-</egXML>
+               
+…</egXML>
             <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
             
             <p>This information is referenced in <att>source</att> attributes which can flexibly be
                applied in <tag>form</tag> but also other elements.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <form source="#d1e112915" type="lemma">
-                  <orth xml:lang="ar-Latn">kitab</orth>
-               </form>
-            </egXML>
-            <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<form source="#d1e112915" type="lemma">
+   <orth xml:lang="ar-Latn">kitab</orth>
+</form>
+               
+…</egXML>
+<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
          </div>
 
          <div>
             <head>Legacy encoding</head>
-            <p>As mentioned before, this ODD also tries to document encoding practies which are yet
+            <p>As mentioned before, this ODD also tries to document encoding practices which are yet
                to be ported to a more cannonical TEI Lex-0 structure. These are indicated in the
-               formal specification part of this document by the attribute <att>validUntil</att> or
-               .</p>
+               formal specification part of this document by the attribute <att>validUntil</att>.</p>
+            
             <div>
                <head>Morphosyntactic annotations</head>
                <p>Inflected forms (<tag>form type="inflected"</tag>) in a pre-Lex-0-phase have been
@@ -1361,7 +1561,7 @@
                   <attList>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
-                           <valItem ident="literalTranslation" mode="add" validUntil="2025-12-31">
+                           <valItem ident="literalTranslation" mode="add" validUntil="2026-12-31">
                               <desc>literal translation</desc>
                               <desc type="deprecationInfo">cit[@type='literalTranslation'] is only
                                  allowed for backwards compatibility and should be replaced with
@@ -1488,7 +1688,7 @@
                   <attList>
                      <attDef ident="type" mode="change" usage="opt">
                         <valList type="closed" mode="change">
-                           <valItem ident="multiWordUnit" mode="add" validUntil="2025-12-31">
+                           <valItem ident="multiWordUnit" mode="add" validUntil="2026-12-31">
                               <desc>the headword of a MWU entry</desc>
                               <desc type="deprecationInfo">This attribute value is introduced for
                                  compatibility reasons and will be deprecated in the future. It
@@ -1508,7 +1708,7 @@
                            </valItem>
                         </valList>
                      </attDef>
-                     <attDef ident="ana" mode="change" usage="opt" validUntil="2025-12-31">
+                     <attDef ident="ana" mode="change" usage="opt" validUntil="2026-12-31">
                         <desc type="deprecationInfo">ana on form is kept for backwards compatability
                            but will be removed in a future versions of this ODD.</desc>
                      </attDef>
