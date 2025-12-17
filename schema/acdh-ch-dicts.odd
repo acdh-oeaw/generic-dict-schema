@@ -616,6 +616,25 @@
                </div>
                
                <div>
+                  <head>Diminutives</head>
+                  <p>Diminutives are identified making use of gram[@type="derivationType"] elements.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <gramGrp>
+      <gram type="derivationType">diminutive</gram>
+      <gram type="number">singular</gram>
+      <gram type="gender">feminine</gram>
+   </gramGrp>
+   …
+   <orth>gṣayra</orth>
+</form>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               </div>
+               
+               <div>
                   <head>Derived verb classes</head>
                   <p>By derived verb classes Arabic linguistics understands what has often been called "stems". 
                      There are ten commonly used stems (I to X), each with specific vowel patterns and/or affixes (prefixes, 
