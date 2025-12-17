@@ -1478,7 +1478,7 @@
                      <desc>assert that only usg type geographic contain a name element</desc>
                      <constraint>
                         <s:rule
-                           context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural')] and not(@type='pragmatics')]">
+                           context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]">
                            <s:report test="exists(tei:name)">the name element must only occur inside
                               of usg elements with @type="geographic" or
                               @type="socioCultural".</s:report>
