@@ -41,8 +41,7 @@
          <tagsDecl> 
             <!-- Define reusable CSS rules --> 
             <rendition xml:id="exampleSource" scheme="css">position:relative; top:-10px; font-size: smaller; font-style: italic; font-weight:bold; color:rgb(39, 79, 140); padding-left:30px;</rendition>
-            <rendition xml:id="table" scheme="css">border-spacing: 0; border-collapse: collapse; </rendition>
-            <rendition xml:id="tbCell" scheme="css">border: 2px solid black;</rendition>
+            <rendition xml:id="tbTable" scheme="css">border-collapse: collapse; </rendition>                       
          </tagsDecl>
       </encodingDesc>
       <revisionDesc>
@@ -61,6 +60,7 @@
    <text>
       <front>
          <argument>
+            
             <p>This TEI customization is a catch-all schema which comparable dictionaries encoded at
                the ACDH-CH should conform with. It serves two purposes: (1) It should define a
                compatibility layer between TEI Lex-0 – which it is based on – and legacy
@@ -69,15 +69,35 @@
                baseline ODD which specific dictionaries should source and extend by their own rules,
                in order to define a schema which can be used for finer-grained validation.</p>
 
-            <p>The examples are mainly taken from the following dictionaries: 
-               <list>
-                  <item>The VICAV Dictionary of Egyptian Arabic (VDEA)</item>
-                  <item>The VICAV Arabic-English Dictionary (VAED)</item>
-                  <item>The SHAWI Dictionary (DShaAr)</item>
-                  <item>The Concise isiZulu-English Internet Dictionary (CIEID)</item>
-               </list>
-            </p>
-
+            <p>The examples are taken from the following dictionaries:</p> 
+            <table rendition="#tbTable">
+               <row>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Dictionary</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Prefix</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Vulgo</cell>
+               </row>
+               <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The VICAV Dictionary of Egyptian Arabic</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDEA</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">EgyDict</cell>
+               </row>
+               <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The VICAV Arabic-English Dictionary</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VAED</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">MSADict</cell>
+               </row>
+               <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The SHAWI Dictionary</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ShawiDict</cell>
+               </row>
+               <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The Concise isiZulu-English Internet Dictionary</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">CIEID</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">isiZuluDict</cell>
+               </row>
+            </table>
+            
             <p>Being a derivate of TEI Lex-0, the documentation in this ODD only describes where it
                diverges from the cannonical TEI Lex-0 ODD and project-specific practices.</p>
          </argument>
@@ -161,34 +181,41 @@
                in principle put between all affixes, with the exception of inflexional affixes, e.g.
                ʕam-yiktibū-ha 'they write it', b-al-beet 'in the house'.</p>
 
-            <p>The following characters are being used in the VICAV dictionaries.</p>
-            <table rendition="#table">
+            <p>The following characters are used in the VICAV dictionaries.</p>
+            <table rendition="#tbTable">
                <row>
-                  <cell rendition="#tbCell">ʔ</cell>
-                  <cell rendition="#tbCell">&amp;#x294;</cell>
-                  <cell rendition="#tbCell">&amp;#660;</cell>
-                  <cell rendition="#tbCell">Latin Letter Glottal Stop</cell>
-                  <cell rendition="#tbCell"/>
-                  <cell rendition="#tbCell">DShaAr, VAED, VDEA</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Glyph</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Hex-calue</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Dec-value</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;"></cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;"></cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Dictionaries</cell>
                </row>
                <row>
-                  <cell rendition="#tbCell">ʕ</cell>
-                  <cell rendition="#tbCell">&amp;#x295;</cell>
-                  <cell rendition="#tbCell">&amp;#661;</cell>
-                  <cell rendition="#tbCell">Latin Letter Pharyngeal Voiced Fricative</cell>
-                  <cell rendition="#tbCell"/>
-                  <cell rendition="#tbCell">DShaAr, VAED, VDEA</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ʔ</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&amp;#x294;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&amp;#660;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Latin Letter Glottal Stop</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr, VAED, VDEA</cell>
                </row>
                <row>
-                  <cell rendition="#tbCell">ˀ</cell>
-                  <cell rendition="#tbCell">&amp;#x2C0;</cell>
-                  <cell rendition="#tbCell">&amp;#704;</cell>
-                  <cell rendition="#tbCell">Modifier Letter Glottal Stop</cell>
-                  <cell rendition="#tbCell">This character is used to indicate glottal stops that have replaced CA qāf</cell>
-                  <cell rendition="#tbCell">VDEA</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ʕ</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&amp;#x295;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&amp;#661;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Latin Letter Pharyngeal Voiced Fricative</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr, VAED, VDEA</cell>
+               </row>
+               <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ˀ</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&amp;#x2C0;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&amp;#704;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Modifier Letter Glottal Stop</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">This character is used to indicate glottal stops that have replaced CA qāf</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDEA</cell>
                </row>
             </table>
-
          </div>
          
          <div>
@@ -616,8 +643,8 @@
                </div>
                
                <div>
-                  <head>Diminutives</head>
-                  <p>Diminutives are identified making use of gram[@type="derivationType"] elements.</p>
+                  <head>Derivation type</head>
+                  <p>Categories such as diminutives and augmentatives are identified making use of gram[@type="derivationType"] elements.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <form type="inflected">
@@ -801,7 +828,186 @@
 </egXML>
             </div>
                
-               
+            <div>
+               <head>Synopsis of gram</head>
+               <table rendition="#tbTable">
+                  <row>
+                     <cell style="background:rgb(67, 95, 206); color:white;">@type</cell>
+                     <cell style="background:rgb(67, 95, 206); color:white;">Values</cell>
+                     <cell style="background:rgb(67, 95, 206); color:white;">Generic-dict</cell>
+                     <cell style="background:rgb(67, 95, 206); color:white;">Lex-0</cell>
+                     <cell style="background:rgb(67, 95, 206); color:white;">Dictionaries</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">arguments</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">aspect</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">case</cell>
+                     <cell style="border: 1px solid black">locative, vocative</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">collocate</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓ (???)</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">constraint</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">construction</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">degree</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">derivedVerbClass</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">diaRoot</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">gender</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">government</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">inflectionType</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">mood</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">morphPattern</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">msd (morphosyntactic description) </cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>               
+                  <row>
+                     <cell style="border: 1px solid black">nominalState</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">number</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">person</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">polarity</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">pos</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">root</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">synRoot</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">valency</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">voice</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+               </table>
+            </div>               
 
             </div>
          </div>
@@ -1122,7 +1328,7 @@
             <div>
                <head>Multi-Word-Units</head>
                <p>In the legacy encoding scheme, entries describing multi-word-units (MWUs) were
-                  identifies by using <tag>form type="multiWordUnit</tag> to encode the entry's
+                  identified by using <tag>form type="multiWordUnit</tag> to encode the entry's
                   headword. This behaviour is supported by this ODD with a deprecation warning.</p>
             </div>
          </div>
