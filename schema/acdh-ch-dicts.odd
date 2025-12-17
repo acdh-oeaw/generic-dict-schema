@@ -1622,13 +1622,13 @@
                         <!-- extending gram/types of TEI Lex-0-->
                         <valList type="closed" mode="change">
                            <valItem ident="arguments" mode="add">
-                              <desc>arguments to a verb</desc>
+                              <desc>arguments to a verb (see above)</desc>
                            </valItem>
                            <valItem ident="constraint" mode="add">
-                              <desc>arguments to a verb</desc>
+                              <desc>constraints</desc>
                            </valItem>
                            <valItem ident="construction" mode="add">
-                              <desc>arguments to a verb</desc>
+                              <desc>constructions (see above)</desc>
                            </valItem>
                            <valItem ident="derivedVerbClass" mode="add">
                               <desc>derived verb class</desc>
@@ -1649,6 +1649,9 @@
                               <desc>The abbreviation stands for morphosyntactic description. The
                                  value of this gram-type can be
                                  "activeParticiple|passiveParticiple"</desc>
+                           </valItem>
+                           <valItem ident="nominalState" mode="add">
+                              <desc>Used for "status constructus"</desc>
                            </valItem>
                            <valItem ident="person" mode="add"/>
                            <valItem ident="polarity" mode="add">
