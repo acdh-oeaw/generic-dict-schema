@@ -502,7 +502,7 @@
                <head>Top level <tag>gramGrp</tag></head>
                
                <div>
-                  <head>part-of-speech information</head>
+                  <head xml:id="pos">part-of-speech information</head>
                   <p>All entries need to have a <tag>gramGrp</tag> element which contains at least a gram                  
                      element indicating the wordclass of the lemma which is encoded as <tag>gram
                         type="pos"</tag>.</p>
@@ -602,7 +602,7 @@
                </div>
                
                <div>
-                  <head>Roots</head>
+                  <head xml:id="roots">Roots</head>
                   <p>In Semitic languages. roots are abstract, foundational morphemes consisting of a sequence of consonants (radicals) 
                      that carry the basic lexical meaning of a word. Most Arabic roots consist of 
                      three consonants.</p>
@@ -624,7 +624,7 @@
                </div>
               
                <div>
-                  <head>Stems</head>
+                  <head xml:id="stems">Stems</head>
                   <p>The isiZulu Dictionary has a gram/@type="stem" element, 
                      the stem being the base form of a word to which derivational and inflectional endings are added.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
@@ -662,7 +662,7 @@
                </div>
                
                <div>
-                  <head>Derived verb classes</head>
+                  <head xml:id="derVerbClasses">Derived verb classes</head>
                   <p>By derived verb classes Arabic linguistics understands what has often been called "stems". 
                      There are ten commonly used stems (I to X), each with specific vowel patterns and/or affixes (prefixes, 
                      infixes, or gemination) that predictably alter the meaning of the root in ways such as making 
@@ -694,7 +694,7 @@
                   subsets of our dictionaries.</p>
 
                <div>
-                  <head>Morphological patterns (Arabic)</head>
+                  <head xml:id="morphPattern">Morphological patterns (Arabic)</head>
                   <p>The value morphPattern stands for morphological pattern which are used in form elements to identify particular
                      templates being used to create wordforms in Semitic languages. In the VICAV
                      system, the root consonants are symbolised by numbers.</p>
@@ -718,7 +718,7 @@
                </div>
 
                <div>
-                  <head>Construct state (Arabic)</head>
+                  <head xml:id="constructState">Construct state (Arabic)</head>
                   <p>The existing TEI Lex-0 contains obvious lacunae with respect to some categories
                      needed in the descroption of non-European languages. One such case is the
                      construct state, a nominal form found in some Afro-Asiatic languages where some
@@ -744,7 +744,7 @@
                </div>
                
                <div>
-                  <head>Nominal classes (isiZulu)</head>
+                  <head xml:id="nomClass">Nominal classes (isiZulu)</head>
                   <p>Nominal classes are a characteristic grammatical feature of the southern Niger-Congo languages. 
                      The system classifies nouns into various categories, which in turn govern agreement rules across 
                      the sentence. Nouns assigned to particular classes are typically assigned particular prefixes, 
@@ -787,7 +787,7 @@
                </div>
                
                <div>
-                  <head>Government</head>
+                  <head xml:id="government">Government</head>
                   <p>If a verb requires complementation through verb forms in a aparticular mood, the
                      value <val>government</val> is used.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
@@ -801,7 +801,7 @@
                </div>
 
                <div>
-                  <head>Transitivity</head>
+                  <head xml:id="transitivity">Transitivity</head>
                   <p>Transitivity can be indicated using the value <val>valency</val>.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
@@ -814,7 +814,7 @@
                </div>
                
             <div>
-               <head>Arguments</head>
+               <head xml:id="arguments">Arguments</head>
                <p>Particular arguments of a verb can be indicated like this:</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -831,6 +831,7 @@
                
             <div>
                <head>Synopsis of gram</head>
+               <p>This overview is produced 2025-12-18.</p>
                <table rendition="#tbTable">
                   <row>
                      <cell style="background:rgb(67, 95, 206); color:white;">@type</cell>
@@ -840,7 +841,7 @@
                      <cell style="background:rgb(67, 95, 206); color:white;">Dictionaries</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">arguments</cell>
+                     <cell style="border: 1px solid black"><ref target="#arguments">arguments</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
@@ -885,18 +886,18 @@
                      <cell style="border: 1px solid black">degree</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
-                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">derivedVerbClass</cell>
+                     <cell style="border: 1px solid black"><ref target="#derVerbClasses">derivedVerbClass</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">diaRoot</cell>
+                     <cell style="border: 1px solid black"><ref target="#roots">diaRoot</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
@@ -910,7 +911,7 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">government</cell>
+                     <cell style="border: 1px solid black"><ref target="#government">government</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
@@ -931,7 +932,7 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">morphPattern</cell>
+                     <cell style="border: 1px solid black"><ref target="#morphPattern">morphPattern</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
@@ -945,7 +946,14 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>               
                   <row>
-                     <cell style="border: 1px solid black">nominalState</cell>
+                     <cell style="border: 1px solid black"><ref target="#nomClass">nomClass</ref></cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">isiZuluDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black"><ref target="#constructState">nominalState</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
@@ -973,28 +981,28 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">pos</cell>
+                     <cell style="border: 1px solid black"><ref target="#pos">pos</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">root</cell>
+                     <cell style="border: 1px solid black"><ref target="#roots">root</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">synRoot</cell>
+                     <cell style="border: 1px solid black"><ref target="#roots">synRoot</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">valency</cell>
+                     <cell style="border: 1px solid black"><ref target="#transitivity">valency</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
