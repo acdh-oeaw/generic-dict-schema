@@ -8,17 +8,88 @@
   </xs:attribute>
   <xs:attribute name="lang">
     <xs:simpleType>
-      <xs:union memberTypes="xs:language">
-        <xs:simpleType>
-          <xs:restriction base="xs:token">
-            <xs:enumeration value="">
-              <xs:annotation>
-                <xs:documentation/>
-              </xs:annotation>
-            </xs:enumeration>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:union>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="ar">
+          <xs:annotation>
+            <xs:documentation/>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="ar-acm-x-shawi-vicav">
+          <xs:annotation>
+            <xs:documentation/>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="ar-arz-x-cairo-vicav">
+          <xs:annotation>
+            <xs:documentation/>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="ar-Latn">
+          <xs:annotation>
+            <xs:documentation>Any Arabic variety written in Latin transcription</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="cop">
+          <xs:annotation>
+            <xs:documentation>Coptic</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="en">
+          <xs:annotation>
+            <xs:documentation>English</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="de">
+          <xs:annotation>
+            <xs:documentation>German</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="es">
+          <xs:annotation>
+            <xs:documentation>Spanish</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="fa">
+          <xs:annotation>
+            <xs:documentation>Modern Persian</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="fr">
+          <xs:annotation>
+            <xs:documentation>French</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="gr">
+          <xs:annotation>
+            <xs:documentation>Greek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="it">
+          <xs:annotation>
+            <xs:documentation>Italian</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="ku">
+          <xs:annotation>
+            <xs:documentation>Kurdish</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="la">
+          <xs:annotation>
+            <xs:documentation>Latin; used for scientific names</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="ota">
+          <xs:annotation>
+            <xs:documentation>Ottoman</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="tr">
+          <xs:annotation>
+            <xs:documentation>Turkish</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
     </xs:simpleType>
   </xs:attribute>
   <xs:attribute name="base">

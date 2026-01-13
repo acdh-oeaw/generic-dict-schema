@@ -299,7 +299,7 @@
                as default values. </p>
             
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
+<entry xml:lang="ar-arz-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
    … 
 </entry>
 </egXML>
@@ -1725,51 +1725,7 @@
                      <memberOf key="model.lexicalPhrase" mode="delete"/>
                   </classes>
                </classSpec>
-               <elementSpec ident="xr" mode="change">
-                  <classes mode="change">
-                     <memberOf key="model.quoteLike" mode="delete"/>
-                  </classes>
-               </elementSpec>
-               <elementSpec ident="lbl" mode="change">
-                  <classes mode="change">
-                     <memberOf key="model.emphLike" mode="delete"/>
-                  </classes>
-               </elementSpec>
-               <elementSpec ident="publicationStmt" mode="change">
-                  <content>
-                     <sequence>
-                        <classRef key="model.publicationStmtPart.agency" minOccurs="1"
-                           maxOccurs="unbounded"/>
-                        <!-- elements model.publicationStmtPart.detail, except for availability, which is required in Lex-0 -->
-                        <alternate minOccurs="0" maxOccurs="unbounded">
-                           <classRef key="model.ptrLike"/>
-                           <elementRef key="date"/>
-                           <elementRef key="pubPlace"/>
-                           <elementRef key="idno"/>
-                        </alternate>
-                        <elementRef key="availability"/>
-                     </sequence>
-                  </content>
-               </elementSpec>
-
-               <elementSpec ident="list" mode="change">
-                  <content>
-                     <sequence>
-                        <classRef key="model.divTop" minOccurs="0"/>
-                        <sequence minOccurs="1" maxOccurs="unbounded">
-                           <elementRef key="label" minOccurs="0"/>
-                           <elementRef key="item" minOccurs="1" maxOccurs="1"/>
-                        </sequence>
-                     </sequence>
-                  </content>
-               </elementSpec>
-               <!-- end of ambiguity-fixing adjustments -->
-
-               <!-- Additionally needed elements -->
-               <moduleRef key="iso-fs" include="fs f symbol"
-                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-
-             
+               
                <elementSpec ident="change" mode="change">
                   <content>
                      <alternate minOccurs="1" maxOccurs="1">
@@ -1798,6 +1754,79 @@
                         time (<att>when</att>).</p>
                   </remarks>
                </elementSpec>
+               
+               <elementSpec ident="gramGrp" mode="change" module="dictionaries">
+                  
+                  <!--
+                  <constraintSpec ident="gram-roots" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:gramGrp">
+                           <s:assert test="not(tei:gram[@type='synRoot']) = not(tei:gram[@type='diaRoot'])">if there is a gram type 'diaRoot', there has to be a gram type 'synRoot' in the same gramGrp, and vice versa</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  -->
+                  <constraintSpec ident="gramGrpChildrenOrder" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:gramGrp">
+                           <s:assert test="count(tei:gram[@type='arguments']) &lt; 2 or not(tei:gram[@type='arguments'][1]/following-sibling::*[not(self::tei:gram[@type='arguments'])]/following-sibling::tei:gram[@type='arguments'])">All gramGrp elements with type arguments must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='diaRoot']) &lt; 2 or not(tei:gram[@type='diaRoot'][1]/following-sibling::*[not(self::tei:gram[@type='diaRoot'])]/following-sibling::tei:gram[@type='diaRoot'])">All gramGrp elements with type diaRoot must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='morphPattern']) &lt; 2 or not(tei:gram[@type='morphPattern'][1]/following-sibling::*[not(self::tei:gram[@type='morphPattern'])]/following-sibling::tei:gram[@type='morphPattern'])">All gramGrp elements with type morphPattern must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='pos']) &lt; 2 or not(tei:gram[@type='pos'][1]/following-sibling::*[not(self::tei:gram[@type='pos'])]/following-sibling::tei:gram[@type='pos'])">All gramGrp elements with type pos must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='synRoot']) &lt; 2 or not(tei:gram[@type='synRoot'][1]/following-sibling::*[not(self::tei:gram[@type='synRoot'])]/following-sibling::tei:gram[@type='synRoot'])">All gramGrp elements with type synRoot must occur consecutively without any other elements between them.</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               
+               <elementSpec ident="lbl" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.emphLike" mode="delete"/>
+                  </classes>
+               </elementSpec>
+               
+               <elementSpec ident="publicationStmt" mode="change">
+                  <!-- 
+                  <elementSpec ident="list" mode="change">
+                  <content>
+                     <sequence>
+                        <classRef key="model.divTop" minOccurs="0"/>
+                        <sequence minOccurs="1" maxOccurs="unbounded">
+                           <elementRef key="label" minOccurs="0"/>
+                           <elementRef key="item" minOccurs="1" maxOccurs="1"/>
+                        </sequence>
+                     </sequence>
+                  </content>
+               </elementSpec>
+                -->
+                  <content>
+                     <sequence>
+                        <classRef key="model.publicationStmtPart.agency" minOccurs="1"
+                           maxOccurs="unbounded"/>
+                        <!-- elements model.publicationStmtPart.detail, except for availability, which is required in Lex-0 -->
+                        <alternate minOccurs="0" maxOccurs="unbounded">
+                           <classRef key="model.ptrLike"/>
+                           <elementRef key="date"/>
+                           <elementRef key="pubPlace"/>
+                           <elementRef key="idno"/>
+                        </alternate>
+                        <elementRef key="availability"/>
+                     </sequence>
+                  </content>
+               </elementSpec>
+               <elementSpec ident="xr" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.quoteLike" mode="delete"/>
+                  </classes>
+               </elementSpec>
+
+               <!-- end of ambiguity-fixing adjustments -->
+
+               <!-- Additionally needed elements -->
+               <moduleRef key="iso-fs" include="fs f symbol"
+                  source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
+
+             
 
                <elementSpec ident="measure"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add"
@@ -1902,6 +1931,24 @@
                </elementSpec>
 
                <elementSpec ident="gram" mode="change" module="dictionaries">
+                  <constraintSpec ident="gram-constraints" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:gram[@type = 'morphPattern']">
+                           <s:assert test="parent::tei:gramGrp/parent::tei:form[@type]">a
+                              gram type morphPattern must be a direct child of a gramGrp
+                              and a direct grandchild of a form with a type
+                              attribute</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:gram[@type = 'polarity']">
+                           <s:assert test="normalize-space(.) = 'negative'">'gram' elements with type 'polarity' can only have the value 'negative'</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:gram[@type = 'degree']">
+                           <s:assert test="normalize-space(.) = 'elative'">'gram' elements with type 'degree' can only have the value 'elative'</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>    
+
                   <attList>
                      <attDef ident="type" mode="change" usage="req">
                         <!-- extending gram/types of TEI Lex-0-->
@@ -1966,19 +2013,52 @@
                      <desc>assert that @xml:lang is added to elements with object language</desc>
                      <constraint>
                         <s:rule
-                           context="tei:cit[@type = ('etymon','translation','example','translationEquivalent')]|tei:entry|tei:gram[@type=('arguments','diaRoot','government','root','synRoot')]">
+                           context="tei:entry|
+                                    tei:cit[@type='example']/tei:quote|
+                                    tei:orth|
+                           tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
                            <s:assert test="exists(@xml:lang)">Elements containing object language
                               must have an @xml:lang attribute.</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
+                  <constraintSpec ident="order-of-langs" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:orth|tei:quote">
+                           <s:assert test="@xml:lang">Needs to have a lang attribute</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:form">
+                           <s:assert test="tei:orth[@xml:lang='ar-Latn']/following-sibling::*=tei:orth[@xml:lang='ar']|exists(tei:orth[@xml:lang='en'])">ar-Latn has to be before ar</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  <attList>
+                     <attDef ident="xml:lang" mode="change">
+                        <valList type="closed" mode="replace">                           
+                           <valItem ident="ar"/>
+                           <valItem ident="ar-acm-x-shawi-vicav"/>
+                           <valItem ident="ar-arz-x-cairo-vicav"/>
+                           <valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem>
+                           <valItem ident="cop"><desc>Coptic</desc></valItem>
+                           <valItem ident="en"><desc>English</desc></valItem>
+                           <valItem ident="de"><desc>German</desc></valItem>
+                           <valItem ident="es"><desc>Spanish</desc></valItem>
+                           <valItem ident="fa"><desc>Modern Persian</desc></valItem>
+                           <valItem ident="fr"><desc>French</desc></valItem>
+                           <valItem ident="gr"><desc>Greek</desc></valItem>
+                           <valItem ident="it"><desc>Italian</desc></valItem>
+                           <valItem ident="ku"><desc>Kurdish</desc></valItem>
+                           <valItem ident="la"><desc>Latin; used for scientific names</desc></valItem>
+                           <valItem ident="ota"><desc>Ottoman</desc></valItem>
+                           <valItem ident="tr"><desc>Turkish</desc></valItem>
+                        </valList>
+                     </attDef>
+                  </attList>
                </classSpec>
 
                <!-- DS 2024-05-27: allowing placeName inside of usg as found in SHAWI dictionaries - 
                CHECKME: Do we want to include this here or is it specific to SHAWI ? -->
                <!-- changed placeName to name -->
-
-
                
                <elementSpec ident="usg" mode="change" module="dictionaries">
                   <content>
@@ -2047,6 +2127,7 @@
                         <elementRef key="fs" minOccurs="0" maxOccurs="unbounded"/>
                      </sequence>
                   </content>
+                  
                   <constraintSpec ident="cit-context" scheme="schematron">
                      <desc>assert correct context of cit types</desc>
                      <constraint>
@@ -2073,6 +2154,7 @@
                         </s:rule>
                      </constraint>
                   </constraintSpec>
+                  
                   <attList>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
