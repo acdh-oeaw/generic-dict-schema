@@ -470,10 +470,10 @@
                <p>In the Persian dictionary an additional form/@type="stem" is used which is not part of 
                   the Lex-0 proposed types. Stems in this context are not inflectional forms but the 
                   inflectional basis of a verb. The lexicographic description of the verbs requires 
-                  two subtypes of stem which are specified by means of gram elements. To form the complete paradigm of 
-                  a verb, two inflectional bases are required: (1) for inflectual basis for all 
-                  past forms can regularly be derived from the infinitive, (2) for the present 
-                  tense forms, an inflectional basis is needed which in many cases is irregular.</p>
+                  two subtypes of stem which are specified by means of gram elements. To form the complete 
+                  paradigm of a verb, two inflectional bases are required: (1) all past forms can regularly 
+                  be derived from the infinitive, (2) for the present 
+                  tense forms, an inflectional basis is needed which in many cases is not predictable.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <form type="stem">
@@ -1769,6 +1769,10 @@
                   <constraintSpec ident="gramGrpChildrenOrder" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:gramGrp">
+                           <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:gramGrp">
                            <s:assert test="count(tei:gram[@type='arguments']) &lt; 2 or not(tei:gram[@type='arguments'][1]/following-sibling::*[not(self::tei:gram[@type='arguments'])]/following-sibling::tei:gram[@type='arguments'])">All gramGrp elements with type arguments must occur consecutively without any other elements between them.</s:assert>
                            <s:assert test="count(tei:gram[@type='diaRoot']) &lt; 2 or not(tei:gram[@type='diaRoot'][1]/following-sibling::*[not(self::tei:gram[@type='diaRoot'])]/following-sibling::tei:gram[@type='diaRoot'])">All gramGrp elements with type diaRoot must occur consecutively without any other elements between them.</s:assert>
                            <s:assert test="count(tei:gram[@type='morphPattern']) &lt; 2 or not(tei:gram[@type='morphPattern'][1]/following-sibling::*[not(self::tei:gram[@type='morphPattern'])]/following-sibling::tei:gram[@type='morphPattern'])">All gramGrp elements with type morphPattern must occur consecutively without any other elements between them.</s:assert>
@@ -2024,11 +2028,14 @@
                   </constraintSpec>
                   <constraintSpec ident="order-of-langs" scheme="schematron">
                      <constraint>
+                        <s:rule context="tei:cit[@type='example']">
+                           <s:assert test="not(@xml:lang)">cit must not have @xml:lang</s:assert>
+                        </s:rule>
                         <s:rule context="tei:orth|tei:quote">
                            <s:assert test="@xml:lang">Needs to have a lang attribute</s:assert>
                         </s:rule>
-                        <s:rule context="tei:form">
-                           <s:assert test="tei:orth[@xml:lang='ar-Latn']/following-sibling::*=tei:orth[@xml:lang='ar']|exists(tei:orth[@xml:lang='en'])">ar-Latn has to be before ar</s:assert>
+                        <s:rule context="tei:form[@type]">
+                           <s:assert test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]">ar-Latn has to be before ar</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
