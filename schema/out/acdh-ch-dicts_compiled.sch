@@ -1,4 +1,4 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:saxon="http://saxon.sf.net/" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:rna="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:saxon="http://saxon.sf.net/" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:sch1x="http://www.ascc.net/xml/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
     the preferred method for meta-stylesheets to use where possible. -->
    <xsl:param name="archiveDirParameter"/>
    <xsl:param name="archiveNameParameter"/>
@@ -143,6 +143,11 @@
 		 <xsl:value-of select="$fileDirParameter"/>
          </xsl:comment>
          <svrl:ns-prefix-in-attribute-values uri="http://www.tei-c.org/ns/1.0" prefix="tei"/>
+         <svrl:ns-prefix-in-attribute-values uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
+         <svrl:ns-prefix-in-attribute-values uri="http://relaxng.org/ns/structure/1.0" prefix="rng"/>
+         <svrl:ns-prefix-in-attribute-values uri="http://relaxng.org/ns/compatibility/annotations/1.0" prefix="rna"/>
+         <svrl:ns-prefix-in-attribute-values uri="http://purl.oclc.org/dsdl/schematron" prefix="sch"/>
+         <svrl:ns-prefix-in-attribute-values uri="http://www.ascc.net/xml/schematron" prefix="sch1x"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -151,7 +156,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.cmc-generatedBy-CMC_generatedBy_within_post-constraint-rule-1</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M1"/>
+         <xsl:apply-templates select="/" mode="M6"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -160,7 +165,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.datable.w3c-att-datable-w3c-when-constraint-rule-2</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M2"/>
+         <xsl:apply-templates select="/" mode="M7"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -169,7 +174,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.datable.w3c-att-datable-w3c-from-constraint-rule-3</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M3"/>
+         <xsl:apply-templates select="/" mode="M8"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -178,7 +183,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.datable.w3c-att-datable-w3c-to-constraint-rule-4</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M4"/>
+         <xsl:apply-templates select="/" mode="M9"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -187,7 +192,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.global.source-source-only_1_ODD_source-constraint-rule-5</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M5"/>
+         <xsl:apply-templates select="/" mode="M10"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -196,7 +201,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.pointing-targetLang-targetLang-constraint-rule-6</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M6"/>
+         <xsl:apply-templates select="/" mode="M11"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -205,7 +210,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-7</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M7"/>
+         <xsl:apply-templates select="/" mode="M12"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -214,7 +219,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.typed-subtypeTyped-constraint-rule-8</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M8"/>
+         <xsl:apply-templates select="/" mode="M13"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -223,7 +228,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.global-xml-lang-on-object-lang-elts-constraint-rule-9</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M9"/>
+         <xsl:apply-templates select="/" mode="M14"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -232,7 +237,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.global-order-of-langs-constraint-rule-10</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M10"/>
+         <xsl:apply-templates select="/" mode="M15"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -241,7 +246,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-13</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M11"/>
+         <xsl:apply-templates select="/" mode="M16"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -250,7 +255,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-14</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M12"/>
+         <xsl:apply-templates select="/" mode="M17"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -259,7 +264,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-15</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M13"/>
+         <xsl:apply-templates select="/" mode="M18"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -268,7 +273,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-cit-cit-context-constraint-rule-16</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M14"/>
+         <xsl:apply-templates select="/" mode="M19"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -277,7 +282,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-ref-ref-constraint-rule-19</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M15"/>
+         <xsl:apply-templates select="/" mode="M20"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -286,7 +291,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-ref-refAtts-constraint-rule-20</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M16"/>
+         <xsl:apply-templates select="/" mode="M21"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -295,7 +300,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-21</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M17"/>
+         <xsl:apply-templates select="/" mode="M22"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -304,7 +309,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-22</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M18"/>
+         <xsl:apply-templates select="/" mode="M23"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -313,7 +318,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-form-form-type-constraint-rule-23</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M19"/>
+         <xsl:apply-templates select="/" mode="M24"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -322,7 +327,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-gram-gram-constraints-constraint-rule-27</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M20"/>
+         <xsl:apply-templates select="/" mode="M25"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -331,7 +336,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-30</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M21"/>
+         <xsl:apply-templates select="/" mode="M26"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -340,7 +345,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-usg-name-in-usg-constraint-rule-32</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M22"/>
+         <xsl:apply-templates select="/" mode="M27"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -349,7 +354,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-seg-seg-context-constraint-rule-33</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M23"/>
+         <xsl:apply-templates select="/" mode="M28"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -358,7 +363,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-body-body-children-constraint-rule-34</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M24"/>
+         <xsl:apply-templates select="/" mode="M29"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -367,7 +372,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-div-div-example-children-constraint-rule-35</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M25"/>
+         <xsl:apply-templates select="/" mode="M30"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -376,7 +381,7 @@
             <xsl:attribute name="name">acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-37</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M26"/>
+         <xsl:apply-templates select="/" mode="M31"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
@@ -385,13 +390,13 @@
             <xsl:attribute name="name">acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-38</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
-         <xsl:apply-templates select="/" mode="M27"/>
+         <xsl:apply-templates select="/" mode="M32"/>
       </svrl:schematron-output>
    </xsl:template>
    <!--SCHEMATRON PATTERNS-->
    <!--PATTERN acdh-ch-dicts-att.cmc-generatedBy-CMC_generatedBy_within_post-constraint-rule-1-->
    <!--RULE -->
-   <xsl:template match="tei:*[@generatedBy]" priority="1000" mode="M1">
+   <xsl:template match="tei:*[@generatedBy]" priority="1000" mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@generatedBy]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -405,15 +410,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M1"/>
+      <xsl:apply-templates select="*" mode="M6"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M1"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M1">
-      <xsl:apply-templates select="*" mode="M1"/>
+   <xsl:template match="text()" priority="-1" mode="M6"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M6">
+      <xsl:apply-templates select="*" mode="M6"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.datable.w3c-att-datable-w3c-when-constraint-rule-2-->
    <!--RULE -->
-   <xsl:template match="tei:*[@when]" priority="1000" mode="M2">
+   <xsl:template match="tei:*[@when]" priority="1000" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@when]"/>
       <!--REPORT nonfatal-->
       <xsl:if test="@notBefore|@notAfter|@from|@to">
@@ -425,15 +430,15 @@
             <svrl:text>The @when attribute cannot be used with any other att.datable.w3c attributes.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M2"/>
+      <xsl:apply-templates select="*" mode="M7"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M2"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M2">
-      <xsl:apply-templates select="*" mode="M2"/>
+   <xsl:template match="text()" priority="-1" mode="M7"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M7">
+      <xsl:apply-templates select="*" mode="M7"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.datable.w3c-att-datable-w3c-from-constraint-rule-3-->
    <!--RULE -->
-   <xsl:template match="tei:*[@from]" priority="1000" mode="M3">
+   <xsl:template match="tei:*[@from]" priority="1000" mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@from]"/>
       <!--REPORT nonfatal-->
       <xsl:if test="@notBefore">
@@ -445,15 +450,15 @@
             <svrl:text>The @from and @notBefore attributes cannot be used together.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M3"/>
+      <xsl:apply-templates select="*" mode="M8"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M3"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M3">
-      <xsl:apply-templates select="*" mode="M3"/>
+   <xsl:template match="text()" priority="-1" mode="M8"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M8">
+      <xsl:apply-templates select="*" mode="M8"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.datable.w3c-att-datable-w3c-to-constraint-rule-4-->
    <!--RULE -->
-   <xsl:template match="tei:*[@to]" priority="1000" mode="M4">
+   <xsl:template match="tei:*[@to]" priority="1000" mode="M9">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@to]"/>
       <!--REPORT nonfatal-->
       <xsl:if test="@notAfter">
@@ -465,15 +470,15 @@
             <svrl:text>The @to and @notAfter attributes cannot be used together.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M4"/>
+      <xsl:apply-templates select="*" mode="M9"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M4"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M4">
-      <xsl:apply-templates select="*" mode="M4"/>
+   <xsl:template match="text()" priority="-1" mode="M9"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M9">
+      <xsl:apply-templates select="*" mode="M9"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.global.source-source-only_1_ODD_source-constraint-rule-5-->
    <!--RULE -->
-   <xsl:template match="tei:*[@source]" priority="1000" mode="M5">
+   <xsl:template match="tei:*[@source]" priority="1000" mode="M10">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@source]"/>
       <xsl:variable name="srcs" select="tokenize( normalize-space(@source),' ')"/>
       <!--REPORT -->
@@ -493,15 +498,15 @@
             </svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M5"/>
+      <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M5"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M5">
-      <xsl:apply-templates select="*" mode="M5"/>
+   <xsl:template match="text()" priority="-1" mode="M10"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M10">
+      <xsl:apply-templates select="*" mode="M10"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.pointing-targetLang-targetLang-constraint-rule-6-->
    <!--RULE -->
-   <xsl:template match="tei:*[not(self::tei:schemaSpec)][@targetLang]" priority="1000" mode="M6">
+   <xsl:template match="tei:*[not(self::tei:schemaSpec)][@targetLang]" priority="1000" mode="M11">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[not(self::tei:schemaSpec)][@targetLang]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -517,15 +522,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M6"/>
+      <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M6"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M6">
-      <xsl:apply-templates select="*" mode="M6"/>
+   <xsl:template match="text()" priority="-1" mode="M11"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M11">
+      <xsl:apply-templates select="*" mode="M11"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-7-->
    <!--RULE -->
-   <xsl:template match="tei:*[@schemeVersion]" priority="1000" mode="M7">
+   <xsl:template match="tei:*[@schemeVersion]" priority="1000" mode="M12">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@schemeVersion]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -541,15 +546,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M7"/>
+      <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M7"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M7">
-      <xsl:apply-templates select="*" mode="M7"/>
+   <xsl:template match="text()" priority="-1" mode="M12"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M12">
+      <xsl:apply-templates select="*" mode="M12"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.typed-subtypeTyped-constraint-rule-8-->
    <!--RULE -->
-   <xsl:template match="tei:*[@subtype]" priority="1000" mode="M8">
+   <xsl:template match="tei:*[@subtype]" priority="1000" mode="M13">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@subtype]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -565,15 +570,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M8"/>
+      <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M8"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M8">
-      <xsl:apply-templates select="*" mode="M8"/>
+   <xsl:template match="text()" priority="-1" mode="M13"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M13">
+      <xsl:apply-templates select="*" mode="M13"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.global-xml-lang-on-object-lang-elts-constraint-rule-9-->
    <!--RULE -->
-   <xsl:template match="tei:entry|                                     tei:cit[@type='example']/tei:quote|                                     tei:orth|                            tei:gram[@type=('arguments','diaRoot','root','synRoot')]" priority="1000" mode="M9">
+   <xsl:template match="tei:entry|                                     tei:cit[@type='example']/tei:quote|                                     tei:orth|                            tei:gram[@type=('arguments','diaRoot','root','synRoot')]" priority="1000" mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:entry|                                     tei:cit[@type='example']/tei:quote|                                     tei:orth|                            tei:gram[@type=('arguments','diaRoot','root','synRoot')]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -588,15 +593,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M9"/>
+      <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M9"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M9">
-      <xsl:apply-templates select="*" mode="M9"/>
+   <xsl:template match="text()" priority="-1" mode="M14"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M14">
+      <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.global-order-of-langs-constraint-rule-10-->
    <!--RULE -->
-   <xsl:template match="tei:cit[@type='example']" priority="1002" mode="M10">
+   <xsl:template match="tei:cit[@type='example']" priority="1002" mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type='example']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -610,10 +615,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M10"/>
+      <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:orth|tei:quote" priority="1001" mode="M10">
+   <xsl:template match="tei:orth|tei:quote" priority="1001" mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:orth|tei:quote"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -627,11 +632,11 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M10"/>
+      <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:form[@type]" priority="1000" mode="M10">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@type]"/>
+   <xsl:template match="tei:form[@type][tei:orth[@xml:lang='ar-Latn'] and tei:orth[@xml:lang='ar']]" priority="1000" mode="M15">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@type][tei:orth[@xml:lang='ar-Latn'] and tei:orth[@xml:lang='ar']]"/>
       <!--ASSERT -->
       <xsl:choose>
          <xsl:when test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]"/>
@@ -644,15 +649,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M10"/>
+      <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M10"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M10">
-      <xsl:apply-templates select="*" mode="M10"/>
+   <xsl:template match="text()" priority="-1" mode="M15"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M15">
+      <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-13-->
    <!--RULE -->
-   <xsl:template match="tei:*[@calendar]" priority="1000" mode="M11">
+   <xsl:template match="tei:*[@calendar]" priority="1000" mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@calendar]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -670,15 +675,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M11"/>
+      <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M11"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M11">
-      <xsl:apply-templates select="*" mode="M11"/>
+   <xsl:template match="text()" priority="-1" mode="M16"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M16">
+      <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-14-->
    <!--RULE -->
-   <xsl:template match="tei:p" priority="1000" mode="M12">
+   <xsl:template match="tei:p" priority="1000" mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:p"/>
       <!--REPORT -->
       <xsl:if test="(ancestor::tei:ab or ancestor::tei:p) and                        not( ancestor::tei:floatingText                           | parent::tei:exemplum                           | parent::tei:item                           | parent::tei:note                           | parent::tei:q                           | parent::tei:quote                           | parent::tei:remarks                           | parent::tei:said                           | parent::tei:sp                           | parent::tei:stage                           | parent::tei:cell                           | parent::tei:figure )">
@@ -691,15 +696,15 @@
         </svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M12"/>
+      <xsl:apply-templates select="*" mode="M17"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M12"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M12">
-      <xsl:apply-templates select="*" mode="M12"/>
+   <xsl:template match="text()" priority="-1" mode="M17"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M17">
+      <xsl:apply-templates select="*" mode="M17"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-15-->
    <!--RULE -->
-   <xsl:template match="tei:l//tei:p" priority="1000" mode="M13">
+   <xsl:template match="tei:l//tei:p" priority="1000" mode="M18">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:l//tei:p"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -715,15 +720,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M13"/>
+      <xsl:apply-templates select="*" mode="M18"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M13"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M13">
-      <xsl:apply-templates select="*" mode="M13"/>
+   <xsl:template match="text()" priority="-1" mode="M18"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M18">
+      <xsl:apply-templates select="*" mode="M18"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-cit-cit-context-constraint-rule-16-->
    <!--RULE -->
-   <xsl:template match="tei:cit[@type = 'translationEquivalent']" priority="1002" mode="M14">
+   <xsl:template match="tei:cit[@type = 'translationEquivalent']" priority="1002" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type = 'translationEquivalent']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -751,10 +756,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M14"/>
+      <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:cit[@type = 'translation']" priority="1001" mode="M14">
+   <xsl:template match="tei:cit[@type = 'translation']" priority="1001" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type = 'translation']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -792,10 +797,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M14"/>
+      <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:cit[@subtype = 'proverb']" priority="1000" mode="M14">
+   <xsl:template match="tei:cit[@subtype = 'proverb']" priority="1000" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@subtype = 'proverb']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -812,15 +817,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M14"/>
+      <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M14"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M14">
-      <xsl:apply-templates select="*" mode="M14"/>
+   <xsl:template match="text()" priority="-1" mode="M19"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M19">
+      <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-ref-ref-constraint-rule-19-->
    <!--RULE -->
-   <xsl:template match="tei:ref[@type = 'example']" priority="1000" mode="M15">
+   <xsl:template match="tei:ref[@type = 'example']" priority="1000" mode="M20">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ref[@type = 'example']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -837,15 +842,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M15"/>
+      <xsl:apply-templates select="*" mode="M20"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M15"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M15">
-      <xsl:apply-templates select="*" mode="M15"/>
+   <xsl:template match="text()" priority="-1" mode="M20"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M20">
+      <xsl:apply-templates select="*" mode="M20"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-ref-refAtts-constraint-rule-20-->
    <!--RULE -->
-   <xsl:template match="tei:ref" priority="1000" mode="M16">
+   <xsl:template match="tei:ref" priority="1000" mode="M21">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ref"/>
       <!--REPORT -->
       <xsl:if test="@target and @cRef">
@@ -858,15 +863,15 @@
                <xsl:text/>.</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M16"/>
+      <xsl:apply-templates select="*" mode="M21"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M16"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M16">
-      <xsl:apply-templates select="*" mode="M16"/>
+   <xsl:template match="text()" priority="-1" mode="M21"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M21">
+      <xsl:apply-templates select="*" mode="M21"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-21-->
    <!--RULE -->
-   <xsl:template match="tei:list[@type='gloss']" priority="1000" mode="M17">
+   <xsl:template match="tei:list[@type='gloss']" priority="1000" mode="M22">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:list[@type='gloss']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -880,15 +885,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M17"/>
+      <xsl:apply-templates select="*" mode="M22"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M17"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M17">
-      <xsl:apply-templates select="*" mode="M17"/>
+   <xsl:template match="text()" priority="-1" mode="M22"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M22">
+      <xsl:apply-templates select="*" mode="M22"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-22-->
    <!--RULE -->
-   <xsl:template match="tei:listBibl[ancestor::tei:body]" priority="1000" mode="M18">
+   <xsl:template match="tei:listBibl[ancestor::tei:body]" priority="1000" mode="M23">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:listBibl[ancestor::tei:body]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -916,15 +921,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M18"/>
+      <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M18"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M18">
-      <xsl:apply-templates select="*" mode="M18"/>
+   <xsl:template match="text()" priority="-1" mode="M23"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M23">
+      <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-form-form-type-constraint-rule-23-->
    <!--RULE -->
-   <xsl:template match="tei:form[not(parent::tei:cit)]" priority="1003" mode="M19">
+   <xsl:template match="tei:form[not(parent::tei:cit)]" priority="1003" mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[not(parent::tei:cit)]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -939,10 +944,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M19"/>
+      <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:form[@type = 'variant']" priority="1002" mode="M19">
+   <xsl:template match="tei:form[@type = 'variant']" priority="1002" mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@type = 'variant']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -957,10 +962,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M19"/>
+      <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:form[@type = ('lemma', 'inflected')]" priority="1001" mode="M19">
+   <xsl:template match="tei:form[@type = ('lemma', 'inflected')]" priority="1001" mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@type = ('lemma', 'inflected')]"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -975,10 +980,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M19"/>
+      <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:form[@subtype='compound']" priority="1000" mode="M19">
+   <xsl:template match="tei:form[@subtype='compound']" priority="1000" mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@subtype='compound']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -993,15 +998,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M19"/>
+      <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M19"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M19">
-      <xsl:apply-templates select="*" mode="M19"/>
+   <xsl:template match="text()" priority="-1" mode="M24"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M24">
+      <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-gram-gram-constraints-constraint-rule-27-->
    <!--RULE -->
-   <xsl:template match="tei:gram[@type = 'morphPattern']" priority="1002" mode="M20">
+   <xsl:template match="tei:gram[@type = 'morphPattern']" priority="1002" mode="M25">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gram[@type = 'morphPattern']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1018,10 +1023,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M20"/>
+      <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:gram[@type = 'polarity']" priority="1001" mode="M20">
+   <xsl:template match="tei:gram[@type = 'polarity']" priority="1001" mode="M25">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gram[@type = 'polarity']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1035,10 +1040,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M20"/>
+      <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:gram[@type = 'degree']" priority="1000" mode="M20">
+   <xsl:template match="tei:gram[@type = 'degree']" priority="1000" mode="M25">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gram[@type = 'degree']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1052,15 +1057,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M20"/>
+      <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M20"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M20">
-      <xsl:apply-templates select="*" mode="M20"/>
+   <xsl:template match="text()" priority="-1" mode="M25"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M25">
+      <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-30-->
    <!--RULE -->
-   <xsl:template match="tei:gramGrp" priority="1001" mode="M21">
+   <xsl:template match="tei:gramGrp" priority="1001" mode="M26">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gramGrp"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1074,10 +1079,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M21"/>
+      <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:gramGrp" priority="1000" mode="M21">
+   <xsl:template match="tei:gramGrp" priority="1000" mode="M26">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gramGrp"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1139,15 +1144,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M21"/>
+      <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M21"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M21">
-      <xsl:apply-templates select="*" mode="M21"/>
+   <xsl:template match="text()" priority="-1" mode="M26"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M26">
+      <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-usg-name-in-usg-constraint-rule-32-->
    <!--RULE -->
-   <xsl:template match="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]" priority="1000" mode="M22">
+   <xsl:template match="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]" priority="1000" mode="M27">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]"/>
       <!--REPORT -->
       <xsl:if test="exists(tei:name)">
@@ -1160,15 +1165,15 @@
                               @type="socioCultural".</svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M22"/>
+      <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M22"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M22">
-      <xsl:apply-templates select="*" mode="M22"/>
+   <xsl:template match="text()" priority="-1" mode="M27"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M27">
+      <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-seg-seg-context-constraint-rule-33-->
    <!--RULE -->
-   <xsl:template match="tei:seg[@type = 'hint']" priority="1000" mode="M23">
+   <xsl:template match="tei:seg[@type = 'hint']" priority="1000" mode="M28">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:seg[@type = 'hint']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1183,15 +1188,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M23"/>
+      <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M23"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M23">
-      <xsl:apply-templates select="*" mode="M23"/>
+   <xsl:template match="text()" priority="-1" mode="M28"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M28">
+      <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-body-body-children-constraint-rule-34-->
    <!--RULE -->
-   <xsl:template match="tei:body" priority="1000" mode="M24">
+   <xsl:template match="tei:body" priority="1000" mode="M29">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:body"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1206,15 +1211,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M24"/>
+      <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M24"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M24">
-      <xsl:apply-templates select="*" mode="M24"/>
+   <xsl:template match="text()" priority="-1" mode="M29"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M29">
+      <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-div-div-example-children-constraint-rule-35-->
    <!--RULE -->
-   <xsl:template match="tei:div[@type = 'examples']" priority="1001" mode="M25">
+   <xsl:template match="tei:div[@type = 'examples']" priority="1001" mode="M30">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div[@type = 'examples']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1229,10 +1234,10 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M25"/>
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:div[@type = 'entries']" priority="1000" mode="M25">
+   <xsl:template match="tei:div[@type = 'entries']" priority="1000" mode="M30">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div[@type = 'entries']"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1247,15 +1252,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M25"/>
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M25"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M25">
-      <xsl:apply-templates select="*" mode="M25"/>
+   <xsl:template match="text()" priority="-1" mode="M30"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M30">
+      <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-37-->
    <!--RULE -->
-   <xsl:template match="tei:l//tei:div" priority="1000" mode="M26">
+   <xsl:template match="tei:l//tei:div" priority="1000" mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:l//tei:div"/>
       <!--ASSERT -->
       <xsl:choose>
@@ -1271,15 +1276,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*" mode="M26"/>
+      <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M26"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M26">
-      <xsl:apply-templates select="*" mode="M26"/>
+   <xsl:template match="text()" priority="-1" mode="M31"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M31">
+      <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-38-->
    <!--RULE -->
-   <xsl:template match="tei:div" priority="1000" mode="M27">
+   <xsl:template match="tei:div" priority="1000" mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div"/>
       <!--REPORT -->
       <xsl:if test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
@@ -1292,10 +1297,10 @@
         </svrl:text>
          </svrl:successful-report>
       </xsl:if>
-      <xsl:apply-templates select="*" mode="M27"/>
+      <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
-   <xsl:template match="text()" priority="-1" mode="M27"/>
-   <xsl:template match="@*|node()" priority="-2" mode="M27">
-      <xsl:apply-templates select="*" mode="M27"/>
+   <xsl:template match="text()" priority="-1" mode="M32"/>
+   <xsl:template match="@*|node()" priority="-2" mode="M32">
+      <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
 </xsl:stylesheet>

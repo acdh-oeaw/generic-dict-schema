@@ -1,5 +1,10 @@
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:rng="http://relaxng.org/ns/structure/1.0" queryBinding="xslt2">
-   <sch:ns xmlns="http://relaxng.org/ns/structure/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="rng" uri="http://relaxng.org/ns/structure/1.0"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="rna" uri="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
+   <sch:ns xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" prefix="sch1x" uri="http://www.ascc.net/xml/schematron"/>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-att.cmc-generatedBy-CMC_generatedBy_within_post-constraint-rule-1">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:*[@generatedBy]">
          <sch:assert test="ancestor-or-self::tei:post">The @generatedBy attribute is for use within a &lt;post&gt; element.</sch:assert>
@@ -60,7 +65,7 @@
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:orth|tei:quote">
          <s:assert test="@xml:lang">Needs to have a lang attribute</s:assert>
       </s:rule>
-      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:form[@type]">
+      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:form[@type][tei:orth[@xml:lang='ar-Latn'] and tei:orth[@xml:lang='ar']]">
          <s:assert test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]">ar-Latn has to be before ar</s:assert>
       </s:rule>
    </pattern>
@@ -121,12 +126,6 @@
          <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
       </sch:rule>
    </pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:bibl"/>
-   </sch:pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:biblStruct"/>
-   </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-22">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:listBibl[ancestor::tei:body]">
          <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an
@@ -135,9 +134,6 @@
                               example is composed of bibl elements</s:assert>
       </s:rule>
    </pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:listBibl"/>
-   </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-form-form-type-constraint-rule-23">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:form[not(parent::tei:cit)]">
          <s:assert test="exists(@type)">@type is reqired on all forms except
@@ -189,24 +185,6 @@
                               @type="socioCultural".</s:report>
       </s:rule>
    </pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:availability"/>
-   </sch:pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:seriesStmt"/>
-   </sch:pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:sourceDesc"/>
-   </sch:pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:projectDesc"/>
-   </sch:pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:editorialDecl"/>
-   </sch:pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:langUsage"/>
-   </sch:pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-seg-seg-context-constraint-rule-33">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:seg[@type = 'hint']">
          <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a
@@ -243,8 +221,5 @@
         </sch:report>
       </sch:rule>
    </pattern>
-   <sch:pattern xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" is-a="declarable">
-      <sch:param name="tde" value="tei:interpretation"/>
-   </sch:pattern>
    <sch:diagnostics/>
 </sch:schema>
