@@ -114,13 +114,13 @@
                </row>
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Machine-readable Dictionary of Baghdad Arabic</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDBA</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">BaDict</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
                </row>
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Digital Dictionary of Damascene Arabic</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDDA</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DamaDict</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
                </row>
@@ -147,7 +147,7 @@
                   <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
             <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
                dictionaries basically look like this:</p>
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" source="#abcdict">
    <TEI version="5.0">
       <teiHeader> … </teiHeader>
       <text>
@@ -284,8 +284,11 @@
                   elements in etymologies and translation equivalents.</item>
                <item>All <tag>quote</tag> elements in examples</item>
                <item>All <tag>gram</tag> elements that contain data both in the object and working
-                  languages (e.g. <val>collocate</val>, <val>diaRoot</val>, <val>governmant</val>,
-                     <val>root</val>, <val>synRoot</val>).</item>
+                  languages (e.g. <val>collocate</val>, 
+                                  <val>diaRoot</val>, 
+                                  <val>governmant</val>,
+                                  <val>root</val>, 
+                                  <val>synRoot</val>).</item>
             </list>
 
             <p>In the Arabic dictionaries, we provide the entries with language identifiers made up
@@ -658,7 +661,7 @@
 <gramGrp>
    <gram type="pos">verb</gram>
    <gram type="derivedVerbClass">III</gram>
-   <gram type="root">ktb</gram>
+   <gram type="root" xml:lang="arLatn">ktb</gram>
 </gramGrp>
                      
 …</egXML>
@@ -798,7 +801,7 @@
 
 <gramGrp>
    <gram type="pos">noun</gram>
-   <gram type="root">ktb</gram>
+   <gram type="root" xml:lang="arLatn">ktb</gram>
 </gramGrp>
                      
 …</egXML>
@@ -1039,7 +1042,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#arVerbForms">aspect</ref></cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">perfective, imperfective</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1066,7 +1069,7 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">construction</cell>
+                     <cell style="border: 1px solid black"><ref target="#tokensInConstructions">construction</ref></cell>
                      <cell style="border: 1px solid black"/>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"/>
@@ -1074,14 +1077,14 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">degree</cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">elative</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#derVerbClasses">derivedVerbClass</ref></cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">I-X</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"/>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1095,7 +1098,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">gender</cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">masculine, feminine</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1109,7 +1112,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">inflectionType</cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">diptotic</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1130,7 +1133,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">msd (morphosyntactic description) </cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">activeParticiple, passiveParticiple</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"/>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1144,21 +1147,21 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#constructState">nominalState</ref></cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">construct</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"/>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#arVerbForms">number</ref></cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">singular, dual, plural</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#arVerbForms">person</ref></cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">1, 2, 3</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1200,7 +1203,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">voice</cell>
-                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">active, passive</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1498,7 +1501,7 @@
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             </div>
 
-            <div>
+            <div xml:id="tokensInConstructions">
                <head>Tokens in constructions</head>
                <p>By ‘construction’ we mean a unit encoding a specific syntactic template, following
                   the approach outlined in the previous chapter. A construction may comprise (1) a
@@ -1625,6 +1628,7 @@
                   relevant any more and override them, if necessary, in your new ODD.</item>
             </list>
          </div>
+         
          <div>
             <head>Part 2: Formal Specification</head>
 
@@ -4286,7 +4290,7 @@ sub-classification for the element additional to that provided by its
                         <s:rule context="tei:orth|tei:quote">
                            <s:assert test="@xml:lang">Needs to have a lang attribute</s:assert>
                         </s:rule>
-                        <s:rule context="tei:form[@type]">
+                        <s:rule context="tei:form[@type][tei:orth[@xml:lang='ar-Latn'] and tei:orth[@xml:lang='ar']]">
                            <s:assert test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]">ar-Latn has to be before ar</s:assert>
                         </s:rule>
                      </constraint>
@@ -14736,22 +14740,23 @@ elements of  <gi>profileDesc</gi> unless these are documenting multiple texts.</
                            </valItem>
                         </valList>
                      </attDef></attList><exemplum>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <TEI version="5.0">
-                           <teiHeader> … </teiHeader>
-                           <text>
-                              <body>
-                                 <div type="entries">
-                                    <entry>…</entry>
-                                    <entry>…</entry>
-                                 </div>
-                                 <div type="examples">
-                                    <cit type="example">…</cit>
-                                    <cit type="example">…</cit>
-                                 </div>
-                              </body>
-                           </text>
-                        </TEI>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<TEI version="5.0">
+   <teiHeader> … </teiHeader>
+   <text>
+      <body>
+         <div type="entries">
+            <entry>…</entry>
+            <entry>…</entry>
+         </div>
+         
+         <div type="examples">
+            <cit type="example">…</cit>
+            <cit type="example">…</cit>
+         </div>
+      </body>
+   </text>
+</TEI>
                      </egXML>
                   </exemplum><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSDIV">4.1. Divisions of the Body</ref>
@@ -15393,6 +15398,21 @@ may be specified in a feature declaration.</desc>
                      <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
                   </content></elementSpec><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="CMC" ident="cmc"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="PH" xml:id="DPH" ident="transcr"/></schemaSpec>
          </div>
+         
+         <div type="bibliography" xml:id="bibliography">
+            <listBibl>
+               <biblStruct xml:id="abcdict">
+                  <monogr>
+                     <title>ABC-Dict</title>
+                     <imprint>
+                       <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+            </listBibl>
+         </div>
+         
+         
       </body>
    </text>
 </TEI>
