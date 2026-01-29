@@ -295,7 +295,7 @@
                as default values. </p>
             
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<entry xml:lang="ar-arz-Latn-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
+<entry xml:lang="ar-arz-x-cairo-vicav" xml:id="VDEA.baqa_002"> 
    … 
 </entry>
 </egXML>
@@ -466,10 +466,10 @@
                <p>In the Persian dictionary an additional form/@type="stem" is used which is not part of 
                   the Lex-0 proposed types. Stems in this context are not inflectional forms but the 
                   inflectional basis of a verb. The lexicographic description of the verbs requires 
-                  two subtypes of stem which are specified by means of gram elements. To form the complete paradigm of 
-                  a verb, two inflectional bases are required: (1) for inflectual basis for all 
-                  past forms can regularly be derived from the infinitive, (2) for the present 
-                  tense forms, an inflectional basis is needed which in many cases is irregular.</p>
+                  two subtypes of stem which are specified by means of gram elements. To form the complete 
+                  paradigm of a verb, two inflectional bases are required: (1) all past forms can regularly 
+                  be derived from the infinitive, (2) for the present 
+                  tense forms, an inflectional basis is needed which in many cases is not predictable.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <form type="stem">
@@ -4273,9 +4273,21 @@ sub-classification for the element additional to that provided by its
     elementi dello schema di codifica TEI</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">stellt gemeinsame Attribute für alle Elemente im TEI-Kodierungsschema bereit.</desc><classes><memberOf key="att.global.analytic"/><memberOf key="att.global.change"/><memberOf key="att.global.facs"/><memberOf key="att.global.linking"/><memberOf key="att.global.rendition"/><memberOf key="att.global.responsibility"/><memberOf key="att.global.source"/></classes><constraintSpec ident="xml-lang-on-object-lang-elts" scheme="schematron" mode="add" xml:id="xml-lang-on-object-lang-elts">
                      <desc>assert that @xml:lang is added to elements with object language</desc>
                      <constraint>
-                        <s:rule context="tei:cit[@type = ('etymon','translation','example','translationEquivalent')]|tei:entry|tei:gram[@type=('arguments','diaRoot','government','root','synRoot')]">
+                        <s:rule context="tei:entry|                                     tei:cit[@type='example']/tei:quote|                                     tei:orth|                            tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
                            <s:assert test="exists(@xml:lang)">Elements containing object language
                               must have an @xml:lang attribute.</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec><constraintSpec ident="order-of-langs" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:cit[@type='example']">
+                           <s:assert test="not(@xml:lang)">cit must not have @xml:lang</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:orth|tei:quote">
+                           <s:assert test="@xml:lang">Needs to have a lang attribute</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:form[@type]">
+                           <s:assert test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]">ar-Latn has to be before ar</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xml:id" usage="opt">
@@ -4350,31 +4362,14 @@ sub-classification for the element additional to that provided by its
           en la especificación de un sistema de referencia estándar para el texto.</p>
       </remarks>
       <remarks versionDate="2019-06-08" xml:lang="ja"><p>この属性の値は、もし空白やその他の区切り符号があったとしても、つねにひとまとまりのトークンとして解釈され、また数字のみで構成される必要はない。この属性は典型的には章や節、リスト等の構成要素の付番に用いられる。テキストの標準的な参照体系の仕様に含めることができる。</p></remarks>
-    </attDef><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xml:lang" usage="opt">
-      <gloss versionDate="2007-07-02" xml:lang="en">language</gloss>
-      <gloss versionDate="2007-12-20" xml:lang="ko">언어</gloss>
-      <gloss versionDate="2008-04-06" xml:lang="es">lengua</gloss>
-      <gloss versionDate="2008-03-30" xml:lang="fr">langue</gloss>
-      <gloss versionDate="2007-11-06" xml:lang="it">lingua</gloss>
-      <gloss versionDate="2019-06-08" xml:lang="ja">言語</gloss>
-      <gloss versionDate="2025-02-06" xml:lang="de">Sprache</gloss>
-      <desc versionDate="2013-01-07" xml:lang="en">indicates the language of the element content using a <soCalled>tag</soCalled> generated
-        according to <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko"><ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>에 따라 생성된
-        <soCalled>tag</soCalled>를 사용하는 요소 내용의 언어를 나타낸다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">使用<ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC3066</ref>的代碼，指出該元素內容的使用語言</desc>
-      <desc versionDate="2019-06-08" xml:lang="ja"><ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>に従って生成された<soCalled>タグ</soCalled>を用いて要素の内容の言語を示す。</desc>
-      <desc versionDate="2007-06-12" xml:lang="fr">indique la langue du contenu de l'élément en
-        utilisant les codes du <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>.</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">indica la lengua del contenido del elemento
+    </attDef><attDef ident="xml:lang" usage="opt"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-07-02" xml:lang="en">language</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">언어</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-06" xml:lang="es">lengua</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-03-30" xml:lang="fr">langue</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-11-06" xml:lang="it">lingua</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2019-06-08" xml:lang="ja">言語</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">Sprache</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2013-01-07" xml:lang="en">indicates the language of the element content using a <soCalled>tag</soCalled> generated
+        according to <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko"><ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>에 따라 생성된
+        <soCalled>tag</soCalled>를 사용하는 요소 내용의 언어를 나타낸다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">使用<ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC3066</ref>的代碼，指出該元素內容的使用語言</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2019-06-08" xml:lang="ja"><ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>に従って生成された<soCalled>タグ</soCalled>を用いて要素の内容の言語を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">indique la langue du contenu de l'élément en
+        utilisant les codes du <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">indica la lengua del contenido del elemento
         utilizando los códigos extraídos de <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC
-          3066</ref></desc>
-      <desc versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto dell'elemento
+          3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto dell'elemento
         utilizzando i codici tratti da <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC
-        3066</ref></desc>
-      <desc versionDate="2025-02-06" xml:lang="de">gibt die Sprache des Elementinhalts durch ein <soCalled>Tag</soCalled> an, das nach <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref> festgelegt wird.</desc>
-      <datatype><dataRef key="teidata.language"/></datatype>
-      <exemplum xml:lang="en">
+        3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">gibt die Sprache des Elementinhalts durch ein <soCalled>Tag</soCalled> an, das nach <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref> festgelegt wird.</desc><datatype xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><dataRef key="teidata.language"/></datatype><valList type="closed"><valItem ident="ar"/><valItem ident="ar-acm-x-shawi-vicav"/><valItem ident="ar-arz-x-cairo-vicav"/><valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem><valItem ident="cop"><desc>Coptic</desc></valItem><valItem ident="en"><desc>English</desc></valItem><valItem ident="de"><desc>German</desc></valItem><valItem ident="es"><desc>Spanish</desc></valItem><valItem ident="fa"><desc>Modern Persian</desc></valItem><valItem ident="fr"><desc>French</desc></valItem><valItem ident="gr"><desc>Greek</desc></valItem><valItem ident="it"><desc>Italian</desc></valItem><valItem ident="ku"><desc>Kurdish</desc></valItem><valItem ident="la"><desc>Latin; used for scientific names</desc></valItem><valItem ident="ota"><desc>Ottoman</desc></valItem><valItem ident="tr"><desc>Turkish</desc></valItem></valList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="GLOBAL-egXML-op" xml:lang="en">
           <p> … The consequences of
 	  this rapid depopulation were the loss of the last
@@ -4382,8 +4377,7 @@ sub-classification for the element additional to that provided by its
 	  (Routledge 1920:205,210) and their connections to
 	  ancestral territorial organization.</p>
         </egXML>
-      </exemplum>
-      <remarks versionDate="2019-11-14" xml:lang="en">
+      </exemplum><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2019-11-14" xml:lang="en">
         <p>The <att>xml:lang</att> value will be inherited from the immediately
           enclosing element, or from its parent, and so on up the document hierarchy.
           It is generally good practice to specify <att>xml:lang</att> at the highest
@@ -4406,8 +4400,7 @@ sub-classification for the element additional to that provided by its
           these must remain consistent with their
           <choice><abbr>IETF</abbr><expan>Internet Engineering Task
           Force</expan></choice> definitions.</p>
-      </remarks>
-      <remarks versionDate="2007-06-12" xml:lang="fr">
+      </remarks><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">
         <p> Si aucune valeur n'est indiquée pour <att>xml:lang</att>, la valeur de
             l'attribut<att>xml:lang</att> de l'élément immédiatement supérieur est héritée ; c'est
           pour cette raison qu'une valeur devrait toujours être attribuée à l'élément du plus haut
@@ -4415,13 +4408,10 @@ sub-classification for the element additional to that provided by its
 <p>La valeur doit être conforme au BCP 47. Si la
         valeur est un code d'usage privé (c'est-à-dire commence par <code>x-</code> ou contient
       <code>-x-</code>),  il devrait correspondre à la valeur d'un attribut <att>ident</att> d'un élément <gi>language</gi> fourni dans l'en-tête TEI du document courant.</p>
-      </remarks>
-      <remarks versionDate="2008-04-06" xml:lang="es">
+      </remarks><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-06" xml:lang="es">
         <p>Si no se especifica ningún valor para <att>xml:lang</att>, el valor de <att>xml:lang</att> para el elemento inmediatamente englobado, se hereda; por esta razón, un valor
           se debe especificar siempre en el elemento exterior (<gi>TEI</gi>).</p>
-      </remarks>
-      <remarks versionDate="2019-06-16" xml:lang="ja"><p>xml:lang の値は、直接の親要素、そのまた親要素からというように、文書の上位階層から継承されてくる。できるだけ高い適切な階層に xml:lang を指定するのが一般には望ましいが、teiHeader には関連するリソース要素と異なるデフォルト値が必要となったり、一つのTEI文書が多くの言語のテキストを含みうることには注意されたい。登録された言語タグの正式なリストはIANAが管理しており、<ptr target="https://www.iana.org/assignments/language-subtag-registry"/> から確認できる。言語タグの構造についての良い概説は <ptr target="https://www.w3.org/International/articles/language-tags/"/> を、手順を追った実用的なガイドは <ptr target="https://www.w3.org/International/questions/qa-choosing-language-tags.en.php"/> を参照されたい。利用する値は、BCP 47 に準拠しなければならない。もし値が私用コード（<val>x-</val> から始まったり <val>-x-</val> を含む）ならば、その <att>ident</att> 属性と一致する値を持つ <gi>language</gi> 要素をTEIヘッダ内に追加して内容を説明すべきである。この説明は私用コード以外にも任意で追加できるが、<choice><abbr>IETF</abbr><expan>Internet Engineering Task Force</expan></choice> による定義と整合していなければならない。</p></remarks>
-    </attDef><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xml:base" usage="opt">
+      </remarks><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2019-06-16" xml:lang="ja"><p>xml:lang の値は、直接の親要素、そのまた親要素からというように、文書の上位階層から継承されてくる。できるだけ高い適切な階層に xml:lang を指定するのが一般には望ましいが、teiHeader には関連するリソース要素と異なるデフォルト値が必要となったり、一つのTEI文書が多くの言語のテキストを含みうることには注意されたい。登録された言語タグの正式なリストはIANAが管理しており、<ptr target="https://www.iana.org/assignments/language-subtag-registry"/> から確認できる。言語タグの構造についての良い概説は <ptr target="https://www.w3.org/International/articles/language-tags/"/> を、手順を追った実用的なガイドは <ptr target="https://www.w3.org/International/questions/qa-choosing-language-tags.en.php"/> を参照されたい。利用する値は、BCP 47 に準拠しなければならない。もし値が私用コード（<val>x-</val> から始まったり <val>-x-</val> を含む）ならば、その <att>ident</att> 属性と一致する値を持つ <gi>language</gi> 要素をTEIヘッダ内に追加して内容を説明すべきである。この説明は私用コード以外にも任意で追加できるが、<choice><abbr>IETF</abbr><expan>Internet Engineering Task Force</expan></choice> による定義と整合していなければならない。</p></remarks></attDef><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xml:base" usage="opt">
       <desc versionDate="2005-10-10" xml:lang="en">provides a base URI reference with which applications can resolve relative URI
         references into absolute URI references.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">애플리케이션이 상대 URI 참조를 절대 URI 참조로 해결할 수 있게 해 주는 기본 URI
@@ -7473,7 +7463,15 @@ one initial.</desc>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPT">17.1. Links</ref>
   </listRef></elementSpec><elementSpec rend="add" module="core" xml:id="gi-list" ident="list"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="en">list</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">liste</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">Liste</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains any sequence of items organized as a list.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">목록의 형태로 정리된 항목을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含以列表方式呈現的任何連續項目。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">リストのような、項目列を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">contient une suite d'items ordonnés dans une liste.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene cualquier secuencia de ítems o elementos
     organizados en una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una qualsiasi sequenza di voci organizzate in
-    una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">enthält eine Reihe von Listenpunkten, die als Liste organisiert sind.</desc><classes><memberOf key="att.global"/><memberOf key="att.cmc"/><memberOf key="att.sortable"/><memberOf key="att.typed"/><memberOf key="model.listLike"/></classes><content><sequence minOccurs="1" maxOccurs="1"><classRef key="model.divTop" minOccurs="0"/><sequence minOccurs="1" maxOccurs="unbounded"><elementRef key="label" minOccurs="0"/><elementRef key="item" minOccurs="1" maxOccurs="1"/></sequence></sequence></content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="gloss-list-must-have-labels" scheme="schematron" xml:lang="en">
+    una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">enthält eine Reihe von Listenpunkten, die als Liste organisiert sind.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.sortable"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="model.listLike"/>
+  </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <sequence minOccurs="1" maxOccurs="1"><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.divTop"/><classRef key="model.global"/><elementRef key="desc" minOccurs="0" maxOccurs="unbounded"/></alternate><alternate minOccurs="1" maxOccurs="1"><sequence minOccurs="1" maxOccurs="unbounded"><elementRef key="item"/><classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence><sequence minOccurs="1" maxOccurs="1"><elementRef key="headLabel" minOccurs="0"/><elementRef key="headItem" minOccurs="0"/><sequence minOccurs="1" maxOccurs="unbounded"><elementRef key="label"/><classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/><elementRef key="item"/><classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence></sequence></alternate><sequence minOccurs="0" maxOccurs="unbounded"><classRef key="model.divBottom"/><classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/></sequence></sequence>
+  </content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="gloss-list-must-have-labels" scheme="schematron" xml:lang="en">
     <constraint>
       <sch:rule context="tei:list[@type='gloss']">
 	<sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
@@ -10126,7 +10124,23 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
     terme, un mot ou une forme dans une entrée de dictionnaire ou dans un fichier de données
     terminologiques.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">dentro de una entrada de un diccionario, o en un archivo
     de datos terminológicos, contiene información gramatical relativa al término, palabra o forma.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">all'interno di una voce in un dizionario o di un file
-    terminologico, contiene informazioni relative a un termine, una parola o una forma.</desc><classes><memberOf key="att.global"/><memberOf key="att.lexicographic"/><memberOf key="att.typed"/><memberOf key="model.morphLike"/></classes><content><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><attList><attDef ident="type" mode="replace" rend="replace" usage="req"><valList type="closed" mode="change"><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pos">
+    terminologico, contiene informazioni relative a un termine, una parola o una forma.</desc><classes><memberOf key="att.global"/><memberOf key="att.lexicographic"/><memberOf key="att.typed"/><memberOf key="model.morphLike"/></classes><content><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.lexicalParaContent"/></content><constraintSpec ident="gram-constraints" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:gram[@type = 'morphPattern']">
+                           <s:assert test="parent::tei:gramGrp/parent::tei:form[@type]">a
+                              gram type morphPattern must be a direct child of a gramGrp
+                              and a direct grandchild of a form with a type
+                              attribute</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:gram[@type = 'polarity']">
+                           <s:assert test="normalize-space(.) = 'negative'">'gram' elements with type 'polarity' can only have the value 'negative'</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:gram[@type = 'degree']">
+                           <s:assert test="normalize-space(.) = 'elative'">'gram' elements with type 'degree' can only have the value 'elative'</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec><attList><attDef ident="type" mode="replace" rend="replace" usage="req"><valList type="closed" mode="change"><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pos">
                             <equiv name="pos" uri="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pos.html"/>
                         </valItem><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="aspect"/><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="case">
                             <equiv name="case" uri="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-case.html"/>
@@ -10221,7 +10235,21 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
 			un item lexical, par exemple Partie du discours <gi>pos</gi>, Genre <gi>gen</gi>, Nombre
 				<gi>number</gi>, Cas <gi>case</gi>, ou Classe flexionnelle <gi>iType</gi>.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">agrupa la información morfosintáctica sobre un elemento léxico, p.ej. <gi>pos</gi>,
             <gi>gen</gi>, <gi>number</gi>, <gi>case</gi>, o <gi>iType</gi> (categoría no flexiva).</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">raggruppa le informazioni morfo-sintattiche di un'unità lessicale, ad esempio <gi>pos</gi>,
-            <gi>gen</gi>, <gi>number</gi>, <gi>case</gi>, or <gi>iType</gi> (tipologie flessive).</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.lexicographic"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.lexicalRefinement"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.gLike"/><classRef key="model.lexicalPhrase"/><classRef key="model.lexicalInter"/><classRef key="model.gramPart"/><classRef key="model.global"/></alternate></content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+            <gi>gen</gi>, <gi>number</gi>, <gi>case</gi>, or <gi>iType</gi> (tipologie flessive).</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.lexicographic"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/><memberOf key="model.lexicalRefinement"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.gLike"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalPhrase"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalInter"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.gramPart"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global"/></alternate></content><constraintSpec ident="gramGrpChildrenOrder" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:gramGrp">
+                           <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:gramGrp">
+                           <s:assert test="count(tei:gram[@type='arguments']) &lt; 2 or not(tei:gram[@type='arguments'][1]/following-sibling::*[not(self::tei:gram[@type='arguments'])]/following-sibling::tei:gram[@type='arguments'])">All gramGrp elements with type arguments must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='diaRoot']) &lt; 2 or not(tei:gram[@type='diaRoot'][1]/following-sibling::*[not(self::tei:gram[@type='diaRoot'])]/following-sibling::tei:gram[@type='diaRoot'])">All gramGrp elements with type diaRoot must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='morphPattern']) &lt; 2 or not(tei:gram[@type='morphPattern'][1]/following-sibling::*[not(self::tei:gram[@type='morphPattern'])]/following-sibling::tei:gram[@type='morphPattern'])">All gramGrp elements with type morphPattern must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='pos']) &lt; 2 or not(tei:gram[@type='pos'][1]/following-sibling::*[not(self::tei:gram[@type='pos'])]/following-sibling::tei:gram[@type='pos'])">All gramGrp elements with type pos must occur consecutively without any other elements between them.</s:assert>
+                           <s:assert test="count(tei:gram[@type='synRoot']) &lt; 2 or not(tei:gram[@type='synRoot'][1]/following-sibling::*[not(self::tei:gram[@type='synRoot'])]/following-sibling::tei:gram[@type='synRoot'])">All gramGrp elements with type synRoot must occur consecutively without any other elements between them.</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-gramGrp-egXML-ee">
       <entry>
         <form>
