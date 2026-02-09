@@ -2137,6 +2137,7 @@
                            <valItem ident="fa"><desc>Modern Persian</desc></valItem>
                            <valItem ident="fr"><desc>French</desc></valItem>
                            <valItem ident="gr"><desc>Greek</desc></valItem>
+                           <valItem ident="gr-Latn"><desc>romanised Greek</desc></valItem>
                            <valItem ident="it"><desc>Italian</desc></valItem>
                            <valItem ident="ku"><desc>Kurdish</desc></valItem>
                            <valItem ident="la"><desc>Latin; used for scientific names</desc></valItem>
