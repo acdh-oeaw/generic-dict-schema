@@ -5,5 +5,4 @@
 [submodule "TEI-Stylesheets"]
 	path = TEI-Stylesheets
 	url = https://github.com/TEIC/Stylesheets.git
-	branch = released
 	update = merge
