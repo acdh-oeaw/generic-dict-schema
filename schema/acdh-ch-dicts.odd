@@ -848,6 +848,21 @@
    
 …</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+                  
+                  <p xml:id="diptoticNominals">Another application of this attribute is the indication of diptotic nouns. This is a class of nouns or adjectives which only have two case endings, unlike regular nouns that have three case endings. </p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <gramGrp>
+      <gram type="gender">feminine</gram>
+      <gram type="inflectionType">diptotic</gram>
+   </gramGrp>
+   <orth xml:lang="ar-Latn">ḥamrāʔ</orth>
+   <orth xml:lang="ar">حمراء</orth>
+</form>
+                     
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
                </div>
             </div>
                                          
@@ -901,7 +916,7 @@
   
 …
 </egXML>
-                  <p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
+<p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
                </div>
 
                <div>
@@ -1156,7 +1171,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">inflectionType</cell>
-                     <cell style="border: 1px solid black">diptotic, <ref target="#inflectionType">invariable</ref></cell>
+                     <cell style="border: 1px solid black"><ref target="#diptoticNominals">diptotic</ref>, <ref target="#inflectionType">invariable</ref></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
