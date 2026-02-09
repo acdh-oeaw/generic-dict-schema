@@ -1,9 +1,9 @@
 [submodule "lexicalresources"]
 	path = lexicalresources
-	url = git@github.com:DARIAH-ERIC/lexicalresources.git
+	url = https://github.com/DARIAH-ERIC/lexicalresources.git
 	update = merge
 [submodule "TEI-Stylesheets"]
 	path = TEI-Stylesheets
-	url = git@github.com:TEIC/Stylesheets.git
+	url = https://github.com/TEIC/Stylesheets.git
 	branch = released
 	update = merge
