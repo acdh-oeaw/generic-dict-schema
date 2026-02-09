@@ -255,8 +255,8 @@
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ḏ̣</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&#x1E0F;&#x323;</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">&#7695;&#803;</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ShawiDict</cell>
@@ -787,6 +787,7 @@
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                   
                </div>
+               
                <div>
                   <head xml:id="roots">Roots</head>
                   <p>In Semitic languages, roots are abstract, foundational morphemes consisting of a sequence of consonants (radicals) 
@@ -827,6 +828,27 @@
                   <p rendition="#exampleSource">(Source: Concise isiZulu-English Internet Dictionary)</p>
                </div>
 
+               <div>
+                  <head xml:id="inflectionType">Inflection type</head>
+                  <p>The inflectionType attribute is used to describe particular types of inflectional behaviour of the lemma.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma">
+   <orth xml:lang="ar-Latn">alisṭa</orth>
+   <orth xml:lang="ar">السطة</orth>
+   <orth xml:lang="ar">السطه</orth>
+   …
+</form>
+   
+<gramGrp>
+   <gram type="pos">adjective</gram>
+   <gram type="root" xml:lang="ar-Latn">ʔlsṭ</gram>
+   <gram type="inflectionType">invariable</gram>
+</gramGrp>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               </div>
             </div>
                                          
             <div>
@@ -859,6 +881,27 @@
 …
 </egXML>
 <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               </div>
+               
+               <div>
+                  <head xml:id="determinedNounForms">Determined noun forms (MSA)</head>
+                  <p></p>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <orth xml:lang="ar-Latn">ʕālī</orth>
+   <orth xml:lang="ar">عالي</orth>
+   <gramGrp>
+      <gram type="morphPattern">1ā2ī</gram>
+      <gram type="number">singular</gram>
+      <gram type="msd">determined</gram>
+   </gramGrp>
+</form>
+  
+…
+</egXML>
+                  <p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
                </div>
 
                <div>
@@ -1113,7 +1156,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">inflectionType</cell>
-                     <cell style="border: 1px solid black">diptotic</cell>
+                     <cell style="border: 1px solid black">diptotic, <ref target="#inflectionType">invariable</ref></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1133,8 +1176,8 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">msd (morphosyntactic description) </cell>
-                     <cell style="border: 1px solid black">activeParticiple, passiveParticiple</cell>
+                     <cell style="border: 1px solid black">msd (morphosyntactic description)</cell>
+                     <cell style="border: 1px solid black">activeParticiple, passiveParticiple, <ref target="#determinedNounForms">determined</ref></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1481,7 +1524,7 @@
          <div>
             <head>Tokens</head>
             <p>We need to annotate tokens (wordforms) in two contexts: (1) examples, and (2) gram
-               tags that describe grammatical constructions.</p>
+               tags that describe grammatical constructions. It is important to set  the attribute <att>xml:space</att> to <val>preserve</val>.</p>
 
             <div>
                <head>Tokens in examples</head>
@@ -1494,7 +1537,7 @@
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <cit xml:id="VDEA.il_kutub_di_001" type="example">
-   <quote xml:lang="ar-Latn">il-
+   <quote xml:lang="ar-Latn" xml:space="preserve">il-
       <seg type="exPart" corresp="#VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote> 
    … 
 </cit>
@@ -1515,7 +1558,7 @@
                   attributes.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<gram type="construction">
+<gram type="construction" xml:space="preserve">
    <ref type="oRef"/> ​<seg type="constrPart" valueDatcat="#pronSuffix"/>
 </gram>
                   
@@ -1525,7 +1568,7 @@
                   inside of <tag>ref[@type="oRef"]</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg type="constrPart" 
+<gram type="construction" xml:space="preserve"><ref type="oRef">baʔā</ref>-li-<seg type="constrPart" 
       valueDatcat="#pronSuffix"/> <seg type="constrPart" valueDatcat="#timeExpression"/></gram>
                   
 …</egXML>
@@ -1534,7 +1577,7 @@
                   select sprecific forms.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg
+<gram type="construction" xml:space="preserve"><ref type="oRef" valueDatcat="#imperative"/>-<seg
       type="constrPart" valueDatcat="#persSuffix"/> <seg type="constrPart" valueDatcat="#imperfectiveVerb"/></gram>
                   
 …</egXML>
@@ -1544,7 +1587,7 @@
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <gramGrp>
-   <gram type="construction" xml:lang="ar-Latn">
+   <gram type="construction" xml:lang="ar-Latn" xml:space="preserve">
       <ref type="oRef"/> ʕan</gram>
    
    <gram type="construction" xml:lang="ar-Latn">
@@ -1833,7 +1876,6 @@
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
 
              
-
                <elementSpec ident="measure"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add"
                   module="core">
@@ -1936,6 +1978,33 @@
                   </attList>
                </elementSpec>
 
+               <elementSpec ident="sense" mode="change" module="dictionaries">
+                  <classes mode="change">
+                     <memberOf key="model.sensePart" mode="delete"/>
+                        
+                     
+                  </classes>
+                        
+               </elementSpec>
+               
+               <elementSpec ident="quote" mode="change" module="core">
+                  <constraintSpec ident="quote-constraints" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:quote[tei:seg]">
+                           <s:assert test="exists(@xml:space)">a quote with seg's needs to have xml:space="preserve"</s:assert>
+                        </s:rule>                        
+                     </constraint>
+                  </constraintSpec>    
+                  <attList>
+                     <attDef ident="space" ns="http://www.w3.org/XML/1998/namespace" usage="opt">
+                        <desc>Allow xml:space on quote to preserve whitespace.</desc>
+                        <valList type="closed">
+                           <valItem ident="preserve"/>
+                        </valList>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
                <elementSpec ident="gram" mode="change" module="dictionaries">
                   <constraintSpec ident="gram-constraints" scheme="schematron">
                      <constraint>
@@ -1952,10 +2021,20 @@
                         <s:rule context="tei:gram[@type = 'degree']">
                            <s:assert test="normalize-space(.) = 'elative'">'gram' elements with type 'degree' can only have the value 'elative'</s:assert>
                         </s:rule>
+                        <s:rule context="tei:gram[@type='construction']">
+                           <s:assert test="exists(@xml:space)">Constructions need to have xml:space="preserve"</s:assert>
+                        </s:rule>
                      </constraint>
                   </constraintSpec>    
 
                   <attList>
+                     <attDef ident="space" ns="http://www.w3.org/XML/1998/namespace" usage="opt">
+                        <desc>Allow xml:space on gram to preserve whitespace.</desc>
+                        <valList type="closed">
+                           <valItem ident="preserve"/>
+                        </valList>
+                     </attDef>
+                     
                      <attDef ident="type" mode="change" usage="req">
                         <!-- extending gram/types of TEI Lex-0-->
                         <valList type="closed" mode="change">
@@ -1967,6 +2046,12 @@
                            </valItem>
                            <valItem ident="construction" mode="add">
                               <desc>constructions (see above)</desc>
+                           </valItem>
+                           <valItem ident="derivationType" mode="add">
+                              <desc>derivation type</desc>
+                              <remarks>
+                                 <p>Possible values: diminutive</p>
+                              </remarks>
                            </valItem>
                            <valItem ident="derivedVerbClass" mode="add">
                               <desc>derived verb class</desc>
@@ -1986,7 +2071,7 @@
                            <valItem ident="msd" mode="add">
                               <desc>The abbreviation stands for morphosyntactic description. The
                                  value of this gram-type can be
-                                 "activeParticiple|passiveParticiple"</desc>
+                                 "activeParticiple|passiveParticiple|determined"</desc>
                            </valItem>
                            <valItem ident="nominalState" mode="add">
                               <desc>Used for "status constructus"</desc>
