@@ -625,7 +625,7 @@
                </div>
                
                <div>
-                  <head>Derivation type</head>
+                  <head xml:id="derivationType">Derivation type</head>
                   <p>Categories such as diminutives and augmentatives are identified making use of gram[@type="derivationType"] elements.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -2048,10 +2048,7 @@
                               <desc>constructions (see above)</desc>
                            </valItem>
                            <valItem ident="derivationType" mode="add">
-                              <desc>derivation type</desc>
-                              <remarks>
-                                 <p>Possible values: diminutive</p>
-                              </remarks>
+                              <desc>Possible values: <ref target="#derivationType">diminutive</ref></desc>
                            </valItem>
                            <valItem ident="derivedVerbClass" mode="add">
                               <desc>derived verb class</desc>
