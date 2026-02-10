@@ -1820,20 +1820,17 @@
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
                         <textNode/>
-                        <classRef key="model.gLike"/>
-                        <classRef key="model.global"/>
-                        <classRef key="model.lexInter"/>
-                        <classRef key="model.lexPhrase"/>
-                        <classRef key="model.descLike"/>
-                        <elementRef key="def"/>
-                        <!-- etym should not nest -->
-                        <!--<elementRef key="etym"/>-->
-                        <elementRef key="gramGrp"/>
-                        <elementRef key="lbl"/>
-                        <elementRef key="usg"/>
-                        <elementRef key="xr"/>
+                        <elementRef key="etym"/>
+                        <elementRef key="cit"/>
                      </alternate>
                   </content>
+                  <constraintSpec ident="etymon" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:etym/tei:cit">
+                           <s:assert test="exists(@type[.='etymon'])">In the context of etym cit/@type must be "etymon"</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
                
                
