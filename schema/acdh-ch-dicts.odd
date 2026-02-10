@@ -1825,13 +1825,9 @@
                         <classRef key="model.lexInter"/>
                         <classRef key="model.lexPhrase"/>
                         <classRef key="model.descLike"/>
-                        <elementRef key="def"/>
-                        <!-- etym should not nest -->
-                        <!--<elementRef key="etym"/>-->
-                        <elementRef key="gramGrp"/>
-                        <elementRef key="lbl"/>
-                        <elementRef key="usg"/>
-                        <elementRef key="xr"/>
+
+                        <elementRef key="cit"/>
+                        <elementRef key="etym"/>
                      </alternate>
                   </content>
                </elementSpec>
