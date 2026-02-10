@@ -254,8 +254,8 @@
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ḏ̣</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ḏ̣</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ḏ̣</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ShawiDict</cell>
@@ -624,7 +624,7 @@
                </div>
                
                <div>
-                  <head>Derivation type</head>
+                  <head xml:id="derivationType">Derivation type</head>
                   <p>Categories such as diminutives and augmentatives are identified making use of gram[@type="derivationType"] elements.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -786,6 +786,7 @@
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                   
                </div>
+               
                <div>
                   <head xml:id="roots">Roots</head>
                   <p>In Semitic languages, roots are abstract, foundational morphemes consisting of a sequence of consonants (radicals) 
@@ -826,6 +827,42 @@
                   <p rendition="#exampleSource">(Source: Concise isiZulu-English Internet Dictionary)</p>
                </div>
 
+               <div>
+                  <head xml:id="inflectionType">Inflection type</head>
+                  <p>The inflectionType attribute is used to describe particular types of inflectional behaviour of the lemma.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="lemma">
+   <orth xml:lang="ar-Latn">alisṭa</orth>
+   <orth xml:lang="ar">السطة</orth>
+   <orth xml:lang="ar">السطه</orth>
+   …
+</form>
+   
+<gramGrp>
+   <gram type="pos">adjective</gram>
+   <gram type="root" xml:lang="ar-Latn">ʔlsṭ</gram>
+   <gram type="inflectionType">invariable</gram>
+</gramGrp>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+                  
+                  <p xml:id="diptoticNominals">Another application of this attribute is the indication of diptotic nouns. This is a class of nouns or adjectives which only have two case endings, unlike regular nouns that have three case endings. </p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <gramGrp>
+      <gram type="gender">feminine</gram>
+      <gram type="inflectionType">diptotic</gram>
+   </gramGrp>
+   <orth xml:lang="ar-Latn">ḥamrāʔ</orth>
+   <orth xml:lang="ar">حمراء</orth>
+</form>
+                     
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
+               </div>
             </div>
                                          
             <div>
@@ -858,6 +895,27 @@
 …
 </egXML>
 <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               </div>
+               
+               <div>
+                  <head xml:id="determinedNounForms">Determined noun forms (MSA)</head>
+                  <p/>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <orth xml:lang="ar-Latn">ʕālī</orth>
+   <orth xml:lang="ar">عالي</orth>
+   <gramGrp>
+      <gram type="morphPattern">1ā2ī</gram>
+      <gram type="number">singular</gram>
+      <gram type="msd">determined</gram>
+   </gramGrp>
+</form>
+  
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
                </div>
 
                <div>
@@ -1112,7 +1170,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black">inflectionType</cell>
-                     <cell style="border: 1px solid black">diptotic</cell>
+                     <cell style="border: 1px solid black"><ref target="#diptoticNominals">diptotic</ref>, <ref target="#inflectionType">invariable</ref></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1132,8 +1190,8 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">msd (morphosyntactic description) </cell>
-                     <cell style="border: 1px solid black">activeParticiple, passiveParticiple</cell>
+                     <cell style="border: 1px solid black">msd (morphosyntactic description)</cell>
+                     <cell style="border: 1px solid black">activeParticiple, passiveParticiple, <ref target="#determinedNounForms">determined</ref></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"/>
                      <cell style="border: 1px solid black">EgyDict</cell>
@@ -1479,7 +1537,7 @@
          <div>
             <head>Tokens</head>
             <p>We need to annotate tokens (wordforms) in two contexts: (1) examples, and (2) gram
-               tags that describe grammatical constructions.</p>
+               tags that describe grammatical constructions. It is important to set  the attribute <att>xml:space</att> to <val>preserve</val>.</p>
 
             <div>
                <head>Tokens in examples</head>
@@ -1492,7 +1550,7 @@
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <cit xml:id="VDEA.il_kutub_di_001" type="example">
-   <quote xml:lang="ar-Latn">il-
+   <quote xml:lang="ar-Latn" xml:space="preserve">il-
       <seg type="exPart" corresp="#VDEA.kitaab_000">kutub</seg> di miš baṭṭāla.</quote> 
    … 
 </cit>
@@ -1513,7 +1571,7 @@
                   attributes.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<gram type="construction">
+<gram type="construction" xml:space="preserve">
    <ref type="oRef"/> ​<seg type="constrPart" valueDatcat="#pronSuffix"/>
 </gram>
                   
@@ -1523,7 +1581,7 @@
                   inside of <tag>ref[@type="oRef"]</tag>.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<gram type="construction"><ref type="oRef">baʔā</ref>-li-<seg type="constrPart" valueDatcat="#pronSuffix"/> <seg type="constrPart" valueDatcat="#timeExpression"/></gram>
+<gram type="construction" xml:space="preserve"><ref type="oRef">baʔā</ref>-li-<seg type="constrPart" valueDatcat="#pronSuffix"/> <seg type="constrPart" valueDatcat="#timeExpression"/></gram>
                   
 …</egXML>
 
@@ -1531,7 +1589,7 @@
                   select sprecific forms.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<gram type="construction"><ref type="oRef" valueDatcat="#imperative"/>-<seg type="constrPart" valueDatcat="#persSuffix"/> <seg type="constrPart" valueDatcat="#imperfectiveVerb"/></gram>
+<gram type="construction" xml:space="preserve"><ref type="oRef" valueDatcat="#imperative"/>-<seg type="constrPart" valueDatcat="#persSuffix"/> <seg type="constrPart" valueDatcat="#imperfectiveVerb"/></gram>
                   
 …</egXML>
 
@@ -1540,7 +1598,7 @@
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <gramGrp>
-   <gram type="construction" xml:lang="ar-Latn">
+   <gram type="construction" xml:lang="ar-Latn" xml:space="preserve">
       <ref type="oRef"/> ʕan</gram>
    
    <gram type="construction" xml:lang="ar-Latn">
@@ -4373,7 +4431,7 @@ sub-classification for the element additional to that provided by its
         utilizando los códigos extraídos de <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC
           3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto dell'elemento
         utilizzando i codici tratti da <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC
-        3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">gibt die Sprache des Elementinhalts durch ein <soCalled>Tag</soCalled> an, das nach <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref> festgelegt wird.</desc><datatype xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><dataRef key="teidata.language"/></datatype><valList type="closed"><valItem ident="ar"/><valItem ident="ar-acm-x-shawi-vicav"/><valItem ident="ar-arz-x-cairo-vicav"/><valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem><valItem ident="cop"><desc>Coptic</desc></valItem><valItem ident="en"><desc>English</desc></valItem><valItem ident="de"><desc>German</desc></valItem><valItem ident="es"><desc>Spanish</desc></valItem><valItem ident="fa"><desc>Modern Persian</desc></valItem><valItem ident="fr"><desc>French</desc></valItem><valItem ident="gr"><desc>Greek</desc></valItem><valItem ident="it"><desc>Italian</desc></valItem><valItem ident="ku"><desc>Kurdish</desc></valItem><valItem ident="la"><desc>Latin; used for scientific names</desc></valItem><valItem ident="ota"><desc>Ottoman</desc></valItem><valItem ident="tr"><desc>Turkish</desc></valItem></valList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+        3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">gibt die Sprache des Elementinhalts durch ein <soCalled>Tag</soCalled> an, das nach <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref> festgelegt wird.</desc><datatype xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><dataRef key="teidata.language"/></datatype><valList type="closed"><valItem ident="ar"/><valItem ident="ar-acm-x-shawi-vicav"/><valItem ident="ar-arz-x-cairo-vicav"/><valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem><valItem ident="cop"><desc>Coptic</desc></valItem><valItem ident="en"><desc>English</desc></valItem><valItem ident="de"><desc>German</desc></valItem><valItem ident="es"><desc>Spanish</desc></valItem><valItem ident="fa"><desc>Modern Persian</desc></valItem><valItem ident="fr"><desc>French</desc></valItem><valItem ident="gr"><desc>Greek</desc></valItem><valItem ident="gr-Latn"><desc>romanised Greek</desc></valItem><valItem ident="it"><desc>Italian</desc></valItem><valItem ident="ku"><desc>Kurdish</desc></valItem><valItem ident="la"><desc>Latin; used for scientific names</desc></valItem><valItem ident="ota"><desc>Ottoman</desc></valItem><valItem ident="tr"><desc>Turkish</desc></valItem></valList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="GLOBAL-egXML-op" xml:lang="en">
           <p> … The consequences of
 	  this rapid depopulation were the loss of the last
@@ -6771,17 +6829,18 @@ one initial.</desc>
   </exemplum><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA">3.1. Paragraphs</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRPAL">7.2.5. Speech Contents</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="core" xml:id="gi-quote" ident="quote"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">quotation</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">인용</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">引文</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">citation</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">cita</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">citazione</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains a phrase or passage attributed by the narrator or author to some agency external to the text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko"> 해설자 또는 저자에 의해, 텍스트의 외부 주체에 의해 생성된 것이라 밝혀진 구 또는 단락을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含敘述者或作者引用自文本以外來源的字 (句) 詞或段落。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">語り手や著者が、当該テキスト外にあるものに向けた、一節を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">contient une expression ou un passage que le narrateur ou l'auteur attribue à une origine extérieure au texte.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene una frase o pasaje atribuido por el narrador o autor a un agente externo al texto.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una frase o un brano attribuito dall'autore o dal narratore a soggetti esterni al testo</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <memberOf key="att.global"/>
-    <memberOf key="att.cmc"/>
-    
-    <memberOf key="att.notated"/>
-    <memberOf key="att.typed"/>
-    <memberOf key="model.biblPart"/>
-    <memberOf key="model.quoteLike"/>
-  </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <macroRef key="macro.specialPara"/>
-  </content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+  </listRef></elementSpec><elementSpec rend="add" module="core" xml:id="gi-quote" ident="quote"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">quotation</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">인용</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">引文</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">citation</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">cita</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">citazione</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains a phrase or passage attributed by the narrator or author to some agency external to the text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko"> 해설자 또는 저자에 의해, 텍스트의 외부 주체에 의해 생성된 것이라 밝혀진 구 또는 단락을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含敘述者或作者引用自文本以外來源的字 (句) 詞或段落。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">語り手や著者が、当該テキスト外にあるものに向けた、一節を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">contient une expression ou un passage que le narrateur ou l'auteur attribue à une origine extérieure au texte.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene una frase o pasaje atribuido por el narrador o autor a un agente externo al texto.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una frase o un brano attribuito dall'autore o dal narratore a soggetti esterni al testo</desc><classes><memberOf key="att.global"/><memberOf key="att.cmc"/><memberOf key="att.notated"/><memberOf key="att.typed"/><memberOf key="model.biblPart"/><memberOf key="model.quoteLike"/></classes><content><macroRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="macro.specialPara"/></content><constraintSpec ident="quote-constraints" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:quote[tei:seg]">
+                           <s:assert test="exists(@xml:space)">a quote with seg's needs to have xml:space="preserve"</s:assert>
+                        </s:rule>                        
+                     </constraint>
+                  </constraintSpec><attList><attDef ident="space" ns="http://www.w3.org/XML/1998/namespace" usage="opt">
+                        <desc>Allow xml:space on quote to preserve whitespace.</desc>
+                        <valList type="closed">
+                           <valItem ident="preserve"/>
+                        </valList>
+                     </attDef></attList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-quote-egXML-am" source="#COHQQ-eg-29">Lexicography has shown little sign of being affected by the
       work of followers of J.R. Firth, probably best summarized in his
       slogan, <quote>You shall know a word by the company it
@@ -9861,7 +9920,7 @@ l'original apparaît comme une forme fusionnée.</desc>
     d’un mot dans une entrée de dictionnaire (définitions, exemples, équivalents linguistiques,
     etc.).</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">agrupa toda la información relativa al significado de una
     palabra en una entrada de diccionario (definiciones, ejemplos, sinónimos, etc.)</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">raggruppa tutte le informazioni attinenti al senso di una
-    parola in una voce di dizionario (definizioni, esempi, equivalente traduttivo, ecc.)</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.lexicographic"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.gLike"/><classRef key="model.sensePart"/><classRef key="model.lexicalPhrase"/><classRef key="model.global"/></alternate></content><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xml:id" mode="change" usage="req"/><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="level" mode="delete"/></attList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="mul">
+    parola in una voce di dizionario (definizioni, esempi, equivalente traduttivo, ecc.)</desc><classes><memberOf key="att.global"/><memberOf key="att.lexicographic"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.gLike"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.sensePart"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.lexicalPhrase"/><classRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" key="model.global"/></alternate></content><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xml:id" mode="change" usage="req"/><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="level" mode="delete"/></attList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="mul">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-sense-egXML-hu">
       <sense n="2">
         <usg type="time">Vx.</usg>
@@ -10143,8 +10202,16 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
                         <s:rule context="tei:gram[@type = 'degree']">
                            <s:assert test="normalize-space(.) = 'elative'">'gram' elements with type 'degree' can only have the value 'elative'</s:assert>
                         </s:rule>
+                        <s:rule context="tei:gram[@type='construction']">
+                           <s:assert test="exists(@xml:space)">Constructions need to have xml:space="preserve"</s:assert>
+                        </s:rule>
                      </constraint>
-                  </constraintSpec><attList><attDef ident="type" mode="replace" rend="replace" usage="req"><valList type="closed" mode="change"><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pos">
+                  </constraintSpec><attList><attDef ident="space" ns="http://www.w3.org/XML/1998/namespace" usage="opt">
+                        <desc>Allow xml:space on gram to preserve whitespace.</desc>
+                        <valList type="closed">
+                           <valItem ident="preserve"/>
+                        </valList>
+                     </attDef><attDef ident="type" mode="replace" rend="replace" usage="req"><valList type="closed" mode="change"><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="pos">
                             <equiv name="pos" uri="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pos.html"/>
                         </valItem><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="aspect"/><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="case">
                             <equiv name="case" uri="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-case.html"/>
@@ -10166,6 +10233,8 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
                               <desc>constraints</desc>
                            </valItem><valItem ident="construction" mode="add">
                               <desc>constructions (see above)</desc>
+                           </valItem><valItem ident="derivationType" mode="add">
+                              <desc>Possible values: <ref target="#derivationType">diminutive</ref></desc>
                            </valItem><valItem ident="derivedVerbClass" mode="add">
                               <desc>derived verb class</desc>
                               <remarks>
@@ -10181,7 +10250,7 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
                            </valItem><valItem ident="msd" mode="add">
                               <desc>The abbreviation stands for morphosyntactic description. The
                                  value of this gram-type can be
-                                 "activeParticiple|passiveParticiple"</desc>
+                                 "activeParticiple|passiveParticiple|determined"</desc>
                            </valItem><valItem ident="nominalState" mode="add">
                               <desc>Used for "status constructus"</desc>
                            </valItem><valItem ident="person" mode="add"/><valItem ident="polarity" mode="add">
