@@ -46,7 +46,8 @@ The content of this repository is licensed under CC BY 4.0. Please check the inc
 Here are some examples of dictionaries which use or extend/restrict this schema: 
 
 * [VICAV dictionaries](https://vicav.acdh.oeaw.ac.at/#map=[biblMarkers,_vicavDicts_,]&1=[textQuery,vicavMission,MISSION,closed]&3=[textQuery,vicavDictionariesTechnicalities,DICTIONARIES%20(TECHNICALITIES),open]&4=[textQuery,vicavDictionariesTechnicalities,DICTIONARIES%20(TECHNICALITIES),open]&5=[crossDictQueryLauncher,open])
-* [Zulu Dictionary](https://zuludict.acdh-dev.oeaw.ac.at/)
+* [isiZulu-English Dictionary](https://zuludict.acdh.oeaw.ac.at/zuludict/)
+* [Persian-English Dictionary](https://farsi-dict.acdh.oeaw.ac.at/fadict/)
 
 ## Want to know more? 
 
