@@ -1830,6 +1830,13 @@
                         <elementRef key="etym"/>
                      </alternate>
                   </content>
+                  <constraintSpec ident="etymon" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:etym/tei:cit">
+                           <s:assert test="exists(@type[.='etymon'])">In the context of etym cit/@type must be "etymon"</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
                
                
