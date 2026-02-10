@@ -15,15 +15,15 @@
                                 <field name="scenarioIds">
                                     <list>
                                         <String>compile ODD</String>
-                                        <String>4/tei/teip5odd.framework/TEI ODD/TEI ODD XHTML</String>
                                         <String>4/tei/teip5odd.framework/TEI ODD/TEI ODD to RelaxNG XML</String>
+                                        <String>4/tei/teip5odd.framework/TEI ODD/TEI ODD XHTML</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XSL</String>
-                                        <String>XSL</String>
                                         <String>ANT</String>
+                                        <String>XSL</String>
                                     </list>
                                 </field>
                                 <field name="scenarioStorageLocations">
@@ -231,7 +231,7 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputResource">
-                                    <String>${cfn}.compiled.odd</String>
+                                    <String>tmp/${cfn}.compiled.odd</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
