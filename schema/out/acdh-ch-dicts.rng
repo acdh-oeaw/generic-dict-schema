@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-02-09T16:59:21Z. . 
+Schema generated from ODD source 2026-02-10T13:04:29Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -4086,11 +4086,8 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
                <text/>
                <ref name="model.gLike"/>
                <ref name="model.global"/>
-               <ref name="model.lexicalInter"/>
-               <ref name="model.lexicalPhrase"/>
                <ref name="model.descLike"/>
                <ref name="def"/>
-               <ref name="etym"/>
                <ref name="gramGrp"/>
                <ref name="usg"/>
                <ref name="xr"/>

@@ -1815,8 +1815,34 @@
                   </remarks>
                </elementSpec>
                
+               
+               <elementSpec ident="etym" mode="change" module="dictionaries">
+                  <content>
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <textNode/>
+                        <classRef key="model.gLike"/>
+                        <classRef key="model.global"/>
+                        <classRef key="model.lexInter"/>
+                        <classRef key="model.lexPhrase"/>
+                        <classRef key="model.descLike"/>
+                        <elementRef key="def"/>
+                        <!-- etym should not nest -->
+                        <!--<elementRef key="etym"/>-->
+                        <elementRef key="gramGrp"/>
+                        <elementRef key="lbl"/>
+                        <elementRef key="usg"/>
+                        <elementRef key="xr"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
+               
+               
+               
                <elementSpec ident="gramGrp" mode="change" module="dictionaries">
-                  
+                  <!-- gramGrp should not nest -->
+                  <classes mode="change">
+                     <memberOf key="model.gramPart" mode="delete"/>
+                  </classes>
                   <!--
                   <constraintSpec ident="gram-roots" scheme="schematron">
                      <constraint>
@@ -1996,10 +2022,7 @@
                <elementSpec ident="sense" mode="change" module="dictionaries">
                   <classes mode="change">
                      <memberOf key="model.sensePart" mode="delete"/>
-                        
-                     
                   </classes>
-                        
                </elementSpec>
                
                <elementSpec ident="quote" mode="change" module="core">

@@ -1,0 +1,10 @@
+add a new valItem to existing list:
+
+<attDef ident="type" mode="change" usage="req">
+                     <valList type="closed" mode="change">
+                       <valItem ident="literalTranslation" mode="add">
+
+
+Descriptive vs. Prescriptive
+
+

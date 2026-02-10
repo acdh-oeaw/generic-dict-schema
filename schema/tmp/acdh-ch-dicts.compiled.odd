@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:base="file:/C:/Users/mrauschsupola/generic-dict-schema/generic-dict-schema/schema/acdh-ch-dicts.odd"><?TEIVERSION?>
-   <teiHeader>
-      <fileDesc>
+<?xml version="1.0" encoding="utf-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:base="file:/home/danielschopper/data/generic-dict-schema/schema/acdh-ch-dicts.odd"><?TEIVERSION?>
+   <teiHeader><fileDesc>
          <titleStmt>
             <title>ACDH Dictionary Schema</title>
             <author>
@@ -35,15 +34,20 @@
             <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries
                produced at ACDH.</p>
          </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
+      </fileDesc><tei:encodingDesc xmlns:tei="http://www.tei-c.org/ns/1.0">
          <tagsDecl> 
             <!-- Define reusable CSS rules --> 
             <rendition xml:id="exampleSource" scheme="css">position:relative; top:-10px; font-size: smaller; font-style: italic; font-weight:bold; color:rgb(39, 79, 140); padding-left:30px;</rendition>
             <rendition xml:id="tbTable" scheme="css">border-collapse: collapse; </rendition>                       
          </tagsDecl>
-      </encodingDesc>
-      <revisionDesc>
+      <tei:constraintDecl scheme="schematron" queryBinding="xslt2">
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" prefix="rng" uri="http://relaxng.org/ns/structure/1.0"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" prefix="rna" uri="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
+        <sch:ns xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" prefix="sch1x" uri="http://www.ascc.net/xml/schematron"/>
+      </tei:constraintDecl></tei:encodingDesc><revisionDesc>
          <change status="draft" when="2021-12-02">set up ODD, git repo and processing structure;
             incorporating most definitions from the VICAV dicts ODD, except for the prose part and
             the fvLib – TODO discuss if that is general enough to be included here or if it should
@@ -54,8 +58,7 @@
             Language Identifiers and 6. Forms </change>
          <change status="draft" when="2025-10-26" who="#CM">added chapters 7. Etymologies, 8.
             Linking, 9. Bibliographic information</change>
-      </revisionDesc>
-   </teiHeader>
+      </revisionDesc></teiHeader>
    <text>
       <front>
          <argument>
@@ -10407,7 +10410,7 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/DI.html#DITPDE">10.3.3.1. Definitions</ref>
   </listRef></elementSpec><elementSpec rend="change" module="dictionaries" xml:id="gi-etym" ident="etym"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">etymology</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">어원</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">詞源</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">étymologie</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">etimología</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">etimologia</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">encloses the etymological information in a dictionary entry.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">사전 표제 항목의 어원 정보를 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含詞源學資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">辞書項目の語源情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-02-23" xml:lang="fr">contient les informations sur l'étymologie de l'entrée.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">engloba la información etimológica en una entrada de
     diccionario.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">comprende informazioni etimologiche in una voce di
-    dizionario.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.lexicographic"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/></classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.gLike"/><classRef key="model.global"/><classRef key="model.lexicalInter"/><classRef key="model.lexicalPhrase"/><classRef key="model.descLike"/><elementRef key="def"/><elementRef key="etym"/><elementRef key="gramGrp"/><elementRef key="lbl"/><elementRef key="usg"/><elementRef key="xr"/></alternate></content><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="type" mode="replace" usage="rec">
+    dizionario.</desc><classes><memberOf key="model.sensePart"/><memberOf key="att.global"/><memberOf key="att.lexicographic"/><memberOf key="att.typed"/><memberOf key="model.entryPart.top"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.gLike"/><classRef key="model.global"/><classRef key="model.lexInter"/><classRef key="model.lexPhrase"/><classRef key="model.descLike"/><elementRef key="def"/><elementRef key="gramGrp"/><elementRef key="lbl"/><elementRef key="usg"/><elementRef key="xr"/></alternate></content><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="type" mode="replace" usage="rec">
                     <valList type="closed" mode="change">
                         <valItem ident="borrowing"/>
                         <valItem ident="inheritance"/>
