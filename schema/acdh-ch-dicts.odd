@@ -121,8 +121,8 @@
                </row>
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Digital Dictionary of Damascene Arabic</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDDA</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DamaDict</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DDDA</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DamasDict</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
                </row>
                <row>
@@ -1473,7 +1473,7 @@
 
             <div>
                <head>Literal translations</head>
-               <p>When it is necessary to indicate that a translation is literal, @subtype="literal"
+               <p>When it is necessary to indicate that a translation or a translation equivalent is literal, @subtype="literal"
                   can be used on <tag>cit[@type="example"]</tag> element.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -2056,14 +2056,17 @@
                               attribute</s:assert>
                         </s:rule>
                         
-                        <s:rule context="tei:gram[@type = 'polarity']">
-                           <s:assert test="normalize-space(.) = 'negative'">'gram' elements with type 'polarity' can only have the value 'negative'</s:assert>
+                        <s:rule context="tei:gram[@type = 'pos']">
+                           <s:assert test=".=('noun', 'verb', 'adjective')">This is not a valid pos value.</s:assert>
                         </s:rule>
                         <s:rule context="tei:gram[@type = 'degree']">
                            <s:assert test="normalize-space(.) = 'elative'">'gram' elements with type 'degree' can only have the value 'elative'</s:assert>
                         </s:rule>
                         <s:rule context="tei:gram[@type='construction']">
                            <s:assert test="exists(@xml:space)">Constructions need to have xml:space="preserve"</s:assert>
+                        </s:rule>
+                        <s:rule context="tei:gram[@type='construction']">                           
+                           <s:assert test="exists(@xml:lang)">Constructions need to have xml:lang</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>    

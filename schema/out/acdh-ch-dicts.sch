@@ -164,7 +164,7 @@
                               and a direct grandchild of a form with a type
                               attribute</s:assert>
       </s:rule>
-      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type = 'polarity']">
+      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type = 'construction']">
          <s:assert test="normalize-space(.) = 'negative'">'gram' elements with type 'polarity' can only have the value 'negative'</s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type = 'degree']">
@@ -173,8 +173,11 @@
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type='construction']">
          <s:assert test="exists(@xml:space)">Constructions need to have xml:space="preserve"</s:assert>
       </s:rule>
+      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type='construction']">
+         <s:assert test="exists(@xml:lang)">Constructions need to have xml:lang</s:assert>
+      </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-32">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-33">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gramGrp">
          <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
       </s:rule>
@@ -186,26 +189,31 @@
          <s:assert test="count(tei:gram[@type='synRoot']) &lt; 2 or not(tei:gram[@type='synRoot'][1]/following-sibling::*[not(self::tei:gram[@type='synRoot'])]/following-sibling::tei:gram[@type='synRoot'])">All gramGrp elements with type synRoot must occur consecutively without any other elements between them.</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-34">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-etym-etymon-constraint-rule-35">
+      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:etym/tei:cit">
+         <s:assert test="exists(@type[.='etymon'])">In the context of etym cit/@type must be "etymon"</s:assert>
+      </s:rule>
+   </pattern>
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-36">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]">
          <s:report test="exists(tei:name)">the name element must only occur inside
                               of usg elements with @type="geographic" or
                               @type="socioCultural".</s:report>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-seg-seg-context-constraint-rule-35">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-seg-seg-context-constraint-rule-37">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:seg[@type = 'hint']">
          <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a
                               hint segment must be inside a translation equivalent</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-body-body-children-constraint-rule-36">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-body-body-children-constraint-rule-38">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:body">
          <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a
                               div of type "entries".</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-div-example-children-constraint-rule-37">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-div-example-children-constraint-rule-39">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:div[@type = 'examples']">
          <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div
                               type="examples" may only contain cit type="example"</s:assert>
@@ -215,14 +223,14 @@
                               type="entries" may only contain entry elements</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-39">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-41">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:l//tei:div">
          <sch:assert test="ancestor::tei:floatingText">
           Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
         </sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-40">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-42">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:div">
          <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
           Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
