@@ -1066,17 +1066,17 @@
       <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:gram[@type = 'construction']" priority="1003" mode="M26">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gram[@type = 'construction']"/>
+   <xsl:template match="tei:gram[@type = 'pos']" priority="1003" mode="M26">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gram[@type = 'pos']"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="normalize-space(.) = 'negative'"/>
+         <xsl:when test=".=('activeParticiple','adjective','adjectivePhrase','adverb','article','collectiveNoun','complementizerParticle',                               'conjunction','demonstrativeParticle','demonstrativePronounDistal','demonstrativePronounProximal','discourseParticle','elative',                               'existential','fraction','genitiveParticle','indefinitePronoun','interjection','interrogative','interrogativeAdverb','interrogativePronoun',                               'negationParticle','nomenVicis','nominalLinker','noun','nounPhrase','numeral','ordinalNumber','particle','personalName',                               'preposition','prepositionalPhrase','presentativeParticleDistal','presentativeParticleProximal','pronoun','pronounSuffix','properName',                               'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','responseParticle','unitNoun','verb','verbalNnoun','verbalNoun'                               )"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="normalize-space(.) = 'negative'">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test=".=('activeParticiple','adjective','adjectivePhrase','adverb','article','collectiveNoun','complementizerParticle', 'conjunction','demonstrativeParticle','demonstrativePronounDistal','demonstrativePronounProximal','discourseParticle','elative', 'existential','fraction','genitiveParticle','indefinitePronoun','interjection','interrogative','interrogativeAdverb','interrogativePronoun', 'negationParticle','nomenVicis','nominalLinker','noun','nounPhrase','numeral','ordinalNumber','particle','personalName', 'preposition','prepositionalPhrase','presentativeParticleDistal','presentativeParticleProximal','pronoun','pronounSuffix','properName', 'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','responseParticle','unitNoun','verb','verbalNnoun','verbalNoun' )">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>'gram' elements with type 'polarity' can only have the value 'negative'</svrl:text>
+               <svrl:text>Value of @pos is not valid.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

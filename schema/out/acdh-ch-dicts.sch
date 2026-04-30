@@ -164,8 +164,8 @@
                               and a direct grandchild of a form with a type
                               attribute</s:assert>
       </s:rule>
-      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type = 'construction']">
-         <s:assert test="normalize-space(.) = 'negative'">'gram' elements with type 'polarity' can only have the value 'negative'</s:assert>
+      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type = 'pos']">
+         <s:assert test=".=('activeParticiple','adjective','adjectivePhrase','adverb','article','collectiveNoun','complementizerParticle',                               'conjunction','demonstrativeParticle','demonstrativePronounDistal','demonstrativePronounProximal','discourseParticle','elative',                               'existential','fraction','genitiveParticle','indefinitePronoun','interjection','interrogative','interrogativeAdverb','interrogativePronoun',                               'negationParticle','nomenVicis','nominalLinker','noun','nounPhrase','numeral','ordinalNumber','particle','personalName',                               'preposition','prepositionalPhrase','presentativeParticleDistal','presentativeParticleProximal','pronoun','pronounSuffix','properName',                               'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','responseParticle','unitNoun','verb','verbalNnoun','verbalNoun'                               )">Value of @pos is not valid.</s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type = 'degree']">
          <s:assert test="normalize-space(.) = 'elative'">'gram' elements with type 'degree' can only have the value 'elative'</s:assert>
