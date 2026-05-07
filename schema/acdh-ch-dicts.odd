@@ -697,26 +697,22 @@
                      
 …</egXML>
                   
-                  <p>The list of possible values in our dictionaries currently contains:</p>
-                  <table rendition="#tbTable">
+                  <p>The list of possible values in our dictionaries currently contains the following items. To allow discussing the various systems, this version contains to 
+                  additional cells, one containing Leipzig Glossing Rule values and one possible Universal Dependencies equivalents. Values with brackets in these 
+                  cells are not actually existing in the respective system and made-up values.</p>
+<table rendition="#tbTable">
   <row>
     <cell style="background:rgb(67, 95, 206); color:white;">Term</cell>
     <cell style="background:rgb(67, 95, 206); color:white;">LGR</cell>
+    <cell style="background:rgb(67, 95, 206); color:white;">UnDep</cell>
     <cell style="background:rgb(67, 95, 206); color:white;">ShawiDict</cell>
     <cell style="background:rgb(67, 95, 206); color:white;">EgyDict</cell>
-     <cell style="background:rgb(67, 95, 206); color:white;">MSADict</cell>
-        <cell style="background:rgb(67, 95, 206); color:white;">DamasDict</cell>
-  </row>
-  <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">activeParticiple</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">AP</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="background:rgb(67, 95, 206); color:white;">MSADict</cell>
+    <cell style="background:rgb(67, 95, 206); color:white;">DamasDict</cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">adjective</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ADJ</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ADJ</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -726,6 +722,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">adjectivePhrase</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(ADJPHR)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(ADJPHR)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X (sallāy l-milīḥ)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -733,6 +730,7 @@
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">adverb</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ADV</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ADV</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -742,29 +740,33 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">adverbialPhrase</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(ADVPHR)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(ADVPHR)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
-                     <row>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">defArticle</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(DEFART)</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                     </row>
-                     <row>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">indefArticle</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INDART)</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                     </row>
-                     <row>
+  <row>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">defArticle</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(DEFART)</cell>
+     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DET + Definite=Def</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+  </row>
+  <row>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">indefArticle</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INDART)</cell>
+     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DET + Definite=Ind</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+  </row>
+  <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">auxiliary</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">AUX</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">AUX</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -773,7 +775,8 @@
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">collectiveNoun</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">COLL (??? collective)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(COLLN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">NOUN + Number=Coll</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -782,14 +785,16 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">complexPreposition</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(CPRP)</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">MWE + (???)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X (bi-faḍl, bi-xuṣūṣ, ʕalašān xāṭir-, li-ġāyit)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">conjunction</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">CONJ</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(CONJ)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">x</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -798,6 +803,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">copula</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">COP</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">cop [lower case!!!]</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -806,6 +812,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">demonstrative</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DEM</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PRON + PronType=Dem</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -814,6 +821,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">demonstrativeParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(DEMPRT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PART + PronType=Dem)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -822,30 +830,16 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">demonstrativePronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(DEMPRN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRON + PronType=Dem)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-  </row>
-  <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">demonstrativePronounDistal</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-  </row>
-  <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">demonstrativePronounProximal</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">discourseParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(DISPRT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -854,6 +848,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">existential</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(EXS)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -863,6 +858,7 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">existentialMarker</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -870,6 +866,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">fraction</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(FRC)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -878,6 +875,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">genitiveParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">GENPRT</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PART + Case=Gen</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -890,26 +888,30 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">genitiveMarker</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
-                     <row>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">indefinite</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(IND)</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                     </row>
-                     <row>
+  <row>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">indefinite</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(IND)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+  </row>
+  <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">indefinitePronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INDPRN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PRON + PronType=Ind</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -919,6 +921,7 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">instanceNoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(IN)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -926,6 +929,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">interjection</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INJ)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">INTJ</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -934,6 +938,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">interrogative</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -942,6 +947,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">interrogativeAdverb</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INTADV)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ADV + PronType=Int</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -952,12 +958,14 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INTPRT)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X (hal)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">interrogativePronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(INTPRN)</cell>
+     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PRON + PronType=Int</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -966,6 +974,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">modal</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(MOD)</cell>
+     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PART + PartType=Mod (???)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -974,6 +983,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">modalVerb</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(MODV)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">AUX</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -982,6 +992,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">negation</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">NEG</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PART + Polarity=Neg</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -990,6 +1001,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">negationParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(NEGPRT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PART + Polarity=Neg</cell>     
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -998,6 +1010,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">nomenVicis</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(NV)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1006,6 +1019,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">nominalLinker</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(NOMLNK)</cell>
+     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">nmod [lower case!!!]</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1014,6 +1028,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">noun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(N)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">NOUN</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1022,6 +1037,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">nounPhrase</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(NP)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1030,6 +1046,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">numeral</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(NUM)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1038,6 +1055,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ordinalNumber</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(ORDNUM)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1046,46 +1064,25 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ordinalNumeral</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-  </row>
-  <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">participle</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PAR)</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">particle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRT)</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-  </row>
-  <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">passiveParticiple</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PP)</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-  </row>
-  <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">personalName</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PN)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">personalPronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRSPRN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PRON + PronType=Prs</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1095,6 +1092,7 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">phrase</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PHR)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X (ahl-an wa-sahl-an; la ba's)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1103,6 +1101,7 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">prefix</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PREF)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1110,6 +1109,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">preposition</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRP)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1118,46 +1118,34 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">prepositionalPhrase (??? phrasal preposition, compound preposition, multi-word preposition)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRPPHR)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X (liyye)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
-                     <row>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">presentative</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRS)</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                     </row>
-                     <row>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">presentativeParticle</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRSPRT)</cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-                        <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-                     </row>
-                     <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">presentativeParticleDistal</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRSPRT)</cell>
+  <row>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">presentative</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRS)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">presentativeParticleProximal</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">presentativeParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRSPRT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
-    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">pronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1166,6 +1154,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">pronounSuffix (??? personalSuffix, pronominalSuffix)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PRNSUF)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1174,6 +1163,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">properNoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PNOUN</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1182,6 +1172,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">pseudoVerb</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(PV)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1190,6 +1181,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">quantifier</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(QU)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1198,6 +1190,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">reflexivePronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(REFPRN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1206,6 +1199,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">relativeParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(RELPRN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1215,6 +1209,7 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">relativePronoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(RELPRN)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1222,6 +1217,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">responseParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(RSPPRT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1230,6 +1226,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">unitNoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(UN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1238,6 +1235,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">verb</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(V)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VERB</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1246,6 +1244,7 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">verbalNoun</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(VN)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
@@ -1255,6 +1254,7 @@
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">verbPhrase</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(VP)</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
@@ -1262,13 +1262,13 @@
   <row>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">vocativeParticle</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">(VOCPRT)</cell>
+    <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">PART + case:voc</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">X</cell>
     <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
   </row>
-</table>
-                  
+</table>                  
                   <p>For pragmatic reasons, in particular to avoid subtyping, there are also items describing subcategories of particular word classes, such as 
                      collectiveNoun, instanceNoun, modalVerb, ordinalNumeral, properNoun, verbalNoun or unitNoun.</p>
                   
@@ -1277,7 +1277,77 @@
 
                   <div>
                      <head xml:id="particples">Participles</head>
-                     <p></p>
+                     <p>Semitic languages are rich in participles which serve various functions. Lexicalised participles are always 
+                        dealt with as nouns …</p>
+                     
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<form type="lemma">
+   <orth xml:lang="ar-Latn">mʕallem</orth>
+</form>
+
+<gramGrp>
+   <gram type="pos">noun</gram>
+   <gram type="msd">activeParticiple</gram>
+   <gram type="root" xml:lang="ar-Latn">ʕlm</gram>
+</gramGrp>
+   
+…
+
+<sense xml:id="senid_d1e18819">
+   <cit type="translationEquivalent">
+      <form><orth xml:lang="en">teacher</orth></form>
+   </cit>
+   
+   …
+</sense>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: A Digital Dictionary of Damascene Arabic)</p>
+                     
+<p>… or adjectives.</p>                     
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<form type="lemma">
+   <orth xml:lang="ar-Latn">mǝtʔaxxer</orth>
+</form>
+
+<gramGrp>
+   <gram type="pos">adjective</gram>
+   <gram type="msd">activeParticiple</gram>
+   <gram type="root" xml:lang="ar-Latn">ʔxr</gram>
+</gramGrp>
+   
+…
+
+<sense xml:id="senid_d1e18819">
+   <cit type="translationEquivalent">
+      <form><orth xml:lang="en">delayed</orth></form>
+   </cit>
+   
+   …
+</sense>
+   
+…</egXML>
+<p rendition="#exampleSource">(Source: A Digital Dictionary of Damascene Arabic)</p>
+   
+<p>@msd="activeParticiple|passiveParticiple" is also used in inflected word forms:</p>
+                     
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<form type="inflected">
+   <gramGrp>
+      <gram type="aspect">resultative</gram>
+      <gram type="msd">activeParticiple</gram>
+      <gram type="number">singular</gram>
+      <gram type="person">masculine</gram>
+   </gramGrp>
+   
+   <orth xml:lang="ar-Latn">ʕāzim</orth>
+</form>
+
+…</egXML>
+<p rendition="#exampleSource">(Source: The SHAWI Dictionary)</p>
                   </div>
                   
                   <div>
@@ -1303,7 +1373,7 @@
                   <div>
                      <head xml:id="prepPhrases">Prepositional phrases</head>
                      <p>Prepositional phrases that are used adverbially are generally labelled as adverbs.
-                     The phrase below means 'in the evening'</p>
+                     The phrase below means 'in the evening'.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <form type="lemma" subtype="compound">
@@ -1323,7 +1393,7 @@
                   <head xml:id="roots">Roots</head>
                   <p>In Semitic languages, roots are abstract, foundational morphemes consisting of a sequence of consonants (radicals) 
                      that carry the basic lexical meaning of a word. Most Arabic roots consist of 
-                     three consonants.</p>
+                     three consonants. They are encoded as gram[@type="root"] elements.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…                     
 
 <form type="lemma">
@@ -1342,7 +1412,7 @@
                </div>
                <div>
                   <head xml:id="stems">Stems</head>
-                  <p>The isiZulu Dictionary has a gram/@type="stem" element, 
+                  <p>The isiZulu Dictionary has a gram[@type="stem"] element, 
                      the stem being the base form of a word to which derivational and inflectional endings are added.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -1380,7 +1450,9 @@
 …</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                   
-                  <p xml:id="diptoticNominals">Another application of this attribute is the indication of diptotic nouns. This is a class of nouns or adjectives which only have two case endings, unlike regular nouns that have three case endings. </p>
+                  <p xml:id="diptoticNominals">Another application of this attribute is the indication of 
+                     diptotic nouns in Arabic, a class of nouns or adjectives which only have two case 
+                     endings, unlike regular nouns that have three case endings. </p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
 <form type="inflected">
@@ -1394,7 +1466,25 @@
                      
 …</egXML>
 <p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>
+               </div>              
+               
+               <div>
+                  <head xml:id="deixis">Deixis</head>
+                  <p>To encode proximial and distal deixis we introduced @type="deixis".</p>
+                  
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<gramGrp>
+   <gram type="pos">demonstrative</gram>
+   <gram type="deixis">distal</gram>
+</gramGrp>
+  
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Arabic-English Dictionary)</p>                  
                </div>
+               
+               
             </div>
                                          
             <div>
@@ -1543,7 +1633,7 @@
                <div>
                   <head xml:id="collocates">Collocates</head>
                   <p>In the Lex-0 specification, collocates are prepositions used together with particular verbs. 
-                     They are indicated in senses like this:</p>
+                     They are indicated in sense elements like this:</p>
                   
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -1682,6 +1772,14 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
+                     <cell style="border: 1px solid black"><ref target="#deixis">deixis</ref></cell>
+                     <cell style="border: 1px solid black">proximal, medial, distal</cell>
+                     <cell style="border: 1px solid black">prox., med., dis.</cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">EgyDict, ShawiDict, zuluDict</cell>
+                  </row>
+                  <row>
                      <cell style="border: 1px solid black"><ref target="#derVerbClasses">derivedVerbClass</ref></cell>
                      <cell style="border: 1px solid black">I-X</cell>
                      <cell style="border: 1px solid black"></cell>
@@ -1803,7 +1901,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#roots">synRoot</ref></cell>
-                     <cell style="border: 1px solid black">sRoot</cell>
+                     <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
@@ -1837,7 +1935,7 @@
             <div>
                <head>Domain labels</head>
                <p>We attempt to indicate the specific field of knowledge a word is primarily used
-                  in. They terms used are documented in a taxonomy in the <tag>encodingDesc</tag> of
+                  in. The applied terms are documented in a taxonomy in the <tag>encodingDesc</tag> of
                   the header. In accordance with Lex-0, the attribute <att>valueDatcat</att> is used 
                   to refer to the taxonomy in the header.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
@@ -1862,8 +1960,7 @@
                      <term>city</term>, <term>harbour</term> etc. placing them in particular
                   semantic categories. This kind of information is put in <att>ana</att> attributes
                   the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of
-                  the header. These are then used in <att>ana</att> attributes on the
-                     <tag>sense</tag> elements.</p>
+                  the header.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
@@ -1905,7 +2002,7 @@
             
             <div>
                <head>Glosses</head>
-               <p>Translation equivalents often need specifications to specify what exactly is meant by 
+               <p>Translation equivalents often need specifications to indicate what exactly is meant by 
                   the used term. These are put in gloss elements.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
@@ -1924,9 +2021,9 @@
 
          <div>
             <head>Usage labels</head>
-            <p>According to Lex-0 the <tag>usg</tag> has to be typefied. There is one type not
-               provided by Lex-0 which is <att>pragmatics</att> which is mainly used to indicate in
-               which situations a lexical item is being used.</p>
+            <p>According to Lex-0 the element <tag>usg</tag> has to be typefied. A type not
+               mentioned in the Lex-0 specification is <att>pragmatics</att> which we use to specify in
+               which situations a particular lexical item is being used.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <usg type="pragmatics" xml:lang="en">to express prohibitions</usg>
@@ -2615,12 +2712,13 @@
                         </s:rule>
                         
                         <s:rule context="tei:gram[@type = 'pos']">
-                           <s:assert test=".=('activeParticiple','adjective','adjectivePhrase','adverb','article','collectiveNoun','complementizerParticle',
-                              'conjunction','demonstrativeParticle','demonstrativePronounDistal','demonstrativePronounProximal','discourseParticle','elative',
-                              'existential','fraction','genitiveParticle','indefinitePronoun','interjection','interrogative','interrogativeAdverb','interrogativePronoun',
-                              'negationParticle','nomenVicis','nominalLinker','noun','nounPhrase','numeral','ordinalNumber','particle','personalName',
-                              'preposition','prepositionalPhrase','presentativeParticleDistal','presentativeParticleProximal','pronoun','pronounSuffix','properName',
-                              'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','responseParticle','unitNoun','verb','verbalNnoun','verbalNoun'
+                           <s:assert test=".=('adjective','adjectivePhrase','adverb','defArticle','collectiveNoun',
+                              'conjunction','demonstrativeParticle','discourseParticle','elative',
+                              'existential','fraction','genitiveParticle','indefArticle', 'indefinite', 'indefinitePronoun','interjection','interrogative',
+                              'interrogativeAdverb','interrogativePronoun','negationParticle','nomenVicis','nominalLinker','noun','nounPhrase',
+                              'numeral','ordinalNumber','particle','personalName',
+                              'personalPronoun','preposition','prepositionalPhrase', 'presentativeParticle', 'pronoun','pronounSuffix','properName',
+                              'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','responseParticle','unitNoun','verb','verbalNoun'
                               )">Value of @pos is not valid.</s:assert>
                            <!--
                               <s:assert test=".=('activeParticiple','adjective','adjectivePhrase','adverb','article','collectiveNoun','complementizerParticle',
@@ -2715,16 +2813,25 @@
                      mode="add" xml:id="xml-lang-on-object-lang-elts">
                      <desc>assert that @xml:lang is added to elements with object language</desc>
                      <constraint>
-                        <s:rule
-                           context="tei:entry|
-                                    tei:cit[@type='example']/tei:quote|
-                                    tei:orth|
-                           tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
-                           <s:assert test="exists(@xml:lang)">Elements containing object language
-                              must have an @xml:lang attribute.</s:assert>
+                        
+                        <s:rule context="tei:orth">
+                           <s:assert test="@xml:lang=('ar', 'ar-Latn', 'en', 'fr', 'de', 'es')">orth with incorrect @xml:lang</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:entry">
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')">entry needs to have a correct @xml:lang</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:cit[@type='example']/tei:quote">
+                           <s:assert test="@xml:lang=('ar', 'ar-Latn')">cit needs to have a correct @xml:lang</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
+                           <s:assert test="@xml:lang=('ar', 'ar-Latn', 'en', 'fr', 'de')">gram with incorrect @xml:lang</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
+                  
                   <constraintSpec ident="order-of-langs" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:cit[@type='example']">
@@ -2736,6 +2843,7 @@
                         <s:rule context="tei:form[@type][tei:orth[@xml:lang='ar-Latn'] and tei:orth[@xml:lang='ar']]">
                            <s:assert test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]">ar-Latn has to be before ar</s:assert>
                         </s:rule>
+                        
                      </constraint>
                   </constraintSpec>
                   <attList>
@@ -2744,6 +2852,7 @@
                            <valItem ident="ar"/>
                            <valItem ident="ar-acm-x-shawi-vicav"/>
                            <valItem ident="ar-arz-x-cairo-vicav"/>
+                           <valItem ident="ar-apc-x-damascus-vicav"/>
                            <valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem>
                            <valItem ident="cop"><desc>Coptic</desc></valItem>
                            <valItem ident="en"><desc>English</desc></valItem>
