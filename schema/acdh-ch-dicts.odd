@@ -96,6 +96,12 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Lex-0</cell>
                </row>
                <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Digital Dictionary of Damascene Arabic</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DDDA</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DamasDict</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Lex-0</cell>
+               </row>
+               <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The Concise isiZulu-English Internet Dictionary</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">CIEID</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">isiZuluDict</cell>
@@ -117,12 +123,6 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Machine-readable Dictionary of Baghdad Arabic</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDBA</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">BaDict</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
-               </row>
-               <row>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Digital Dictionary of Damascene Arabic</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DDDA</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DamasDict</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
                </row>
                <row>
@@ -149,7 +149,7 @@
             <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
                dictionaries basically look like this:</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" source="#abcdict">
-   <TEI version="5.0">
+   <TEI type="lex-0">
       <teiHeader> … </teiHeader>
       <text>
          <body>
@@ -1777,7 +1777,7 @@
                      <cell style="border: 1px solid black">prox., med., dis.</cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
-                     <cell style="border: 1px solid black">EgyDict, ShawiDict, zuluDict</cell>
+                     <cell style="border: 1px solid black">EgyDict, ShawiDict, isiZuluDict</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#derVerbClasses">derivedVerbClass</ref></cell>
@@ -2277,11 +2277,16 @@
 
          <div>
             <head xml:id="biblInfo">Bibliographic information</head>
-            <p>Bibliographical references are listed in a <tag>listBibl</tag> element at the end of
-               each entry. This sollution allows to provide exact information with respect to page
-               numbers or other such information.</p>
-
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+            <p>There are still two systems in use in the VICAV dictionaries: (1) one working with bibl elements that are referenced via @source attributes,
+               and (2) the canonical lex-0 approach with xr[type="related"]/ref[type="bibliography"].</p>
+            
+            <div>
+               <head xml:id="shawiBibls">The Shawi approach</head>
+               <p>Bibliographical references are listed in a <tag>listBibl</tag> element at the end of
+                  each entry. This sollution allows to provide exact information with respect to page
+                  numbers or other such information.</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <listBibl type="literature">
    <bibl xml:id="d1e112726">
@@ -2296,18 +2301,24 @@
 </listBibl>
                
 …</egXML>
-            <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
-            
-            <p>This information is referenced in <att>source</att> attributes which can flexibly be
-               applied in <tag>form</tag> but also other elements.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+               <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               
+               <p>This information is referenced in <att>source</att> attributes which can flexibly be
+                  applied in <tag>form</tag> but also other elements.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <form source="#d1e112915" type="lemma">
    <orth xml:lang="ar-Latn">kitab</orth>
 </form>
                
 …</egXML>
-<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               <p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+            </div>
+            
+            <div>
+               <head xml:id="simpleBibls">The "simple" solution</head>
+               <p>Currently The main reason</p>
+            </div>
          </div>
 
          <div>
@@ -2469,8 +2480,7 @@
                         time (<att>when</att>).</p>
                   </remarks>
                </elementSpec>
-               
-               
+                              
                <elementSpec ident="etym" mode="change" module="dictionaries">
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
@@ -2485,6 +2495,7 @@
                         <elementRef key="etym"/>
                      </alternate>
                   </content>
+                  
                   <constraintSpec ident="etymon" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:etym/tei:cit">
@@ -2493,7 +2504,6 @@
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
                
                
                <elementSpec ident="gramGrp" mode="change" module="dictionaries">
@@ -2513,15 +2523,27 @@
                   <constraintSpec ident="gramGrpChildrenOrder" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:gramGrp">
-                           <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
-                        </s:rule>
-                        
-                        <s:rule context="tei:gramGrp">
                            <s:assert test="count(tei:gram[@type='arguments']) &lt; 2 or not(tei:gram[@type='arguments'][1]/following-sibling::*[not(self::tei:gram[@type='arguments'])]/following-sibling::tei:gram[@type='arguments'])">All gramGrp elements with type arguments must occur consecutively without any other elements between them.</s:assert>
                            <s:assert test="count(tei:gram[@type='diaRoot']) &lt; 2 or not(tei:gram[@type='diaRoot'][1]/following-sibling::*[not(self::tei:gram[@type='diaRoot'])]/following-sibling::tei:gram[@type='diaRoot'])">All gramGrp elements with type diaRoot must occur consecutively without any other elements between them.</s:assert>
                            <s:assert test="count(tei:gram[@type='morphPattern']) &lt; 2 or not(tei:gram[@type='morphPattern'][1]/following-sibling::*[not(self::tei:gram[@type='morphPattern'])]/following-sibling::tei:gram[@type='morphPattern'])">All gramGrp elements with type morphPattern must occur consecutively without any other elements between them.</s:assert>
                            <s:assert test="count(tei:gram[@type='pos']) &lt; 2 or not(tei:gram[@type='pos'][1]/following-sibling::*[not(self::tei:gram[@type='pos'])]/following-sibling::tei:gram[@type='pos'])">All gramGrp elements with type pos must occur consecutively without any other elements between them.</s:assert>
                            <s:assert test="count(tei:gram[@type='synRoot']) &lt; 2 or not(tei:gram[@type='synRoot'][1]/following-sibling::*[not(self::tei:gram[@type='synRoot'])]/following-sibling::tei:gram[@type='synRoot'])">All gramGrp elements with type synRoot must occur consecutively without any other elements between them.</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+                  
+                  <constraintSpec ident="gramGrpPosNumber" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:gramGrp">
+                           <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+
+                  <constraintSpec ident="gramGrpPosition" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:entry/tei:gramGrp">
+                           <s:assert test="following-sibling::*[1][self::tei:sense] or following-sibling::*[1][self::tei:etym]">gramGrp is in the wrong place.</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -2566,6 +2588,15 @@
                   <classes mode="change">
                      <memberOf key="model.quoteLike" mode="delete"/>
                   </classes>
+                  
+                   <constraintSpec ident="xrPosition" scheme="schematron">
+                     <constraint>
+                        <s:rule context="tei:xr">
+                           <s:assert test="not(preceding-sibling::*[1]=tei:sense) and 
+                                           not(preceding-sibling::*[1]=tei:cit)">xr in wrong place</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
                </elementSpec>
 
                <!-- end of ambiguity-fixing adjustments -->
@@ -2573,8 +2604,7 @@
                <!-- Additionally needed elements -->
                <moduleRef key="iso-fs" include="fs f symbol"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
-
-             
+           
                <elementSpec ident="measure"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add"
                   module="core">
@@ -2704,13 +2734,17 @@
                <elementSpec ident="gram" mode="change" module="dictionaries">
                   <constraintSpec ident="gram-constraints" scheme="schematron">
                      <constraint>
+                        <s:rule context="tei:gram">
+                           <s:assert test="parent::tei:gramGrp">gram must be a direct child of gramGrp</s:assert>
+                        </s:rule>
+                        <!--
                         <s:rule context="tei:gram[@type = 'morphPattern']">
                            <s:assert test="parent::tei:gramGrp/parent::tei:form[@type]">a
                               gram type morphPattern must be a direct child of a gramGrp
                               and a direct grandchild of a form with a type
                               attribute</s:assert>
                         </s:rule>
-                        
+                        -->
                         <s:rule context="tei:gram[@type = 'pos']">
                            <s:assert test=".=('adjective','adjectivePhrase','adverb','defArticle','collectiveNoun',
                               'conjunction','demonstrativeParticle','discourseParticle','elative',
@@ -2718,7 +2752,7 @@
                               'interrogativeAdverb','interrogativePronoun','negationParticle','nomenVicis','nominalLinker','noun','nounPhrase',
                               'numeral','ordinalNumber','particle','personalName',
                               'personalPronoun','preposition','prepositionalPhrase', 'presentativeParticle', 'pronoun','pronounSuffix','properName',
-                              'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','responseParticle','unitNoun','verb','verbalNoun'
+                              'properNoun','pseudoVerb','quantifier','reflexivePronoun','relativeParticle','relativePronoun','responseParticle','unitNoun','verb','verbalNoun'
                               )">Value of @pos is not valid.</s:assert>
                            <!--
                               <s:assert test=".=('activeParticiple','adjective','adjectivePhrase','adverb','article','collectiveNoun','complementizerParticle',
@@ -2815,9 +2849,8 @@
                      <constraint>
                         
                         <s:rule context="tei:orth">
-                           <s:assert test="@xml:lang=('ar', 'ar-Latn', 'en', 'fr', 'de', 'es')">orth with incorrect @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('undefined', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'ota', 'tr')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
-                        
                         <s:rule context="tei:entry">
                            <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
@@ -2867,6 +2900,7 @@
                            <valItem ident="la"><desc>Latin; used for scientific names</desc></valItem>
                            <valItem ident="ota"><desc>Ottoman</desc></valItem>
                            <valItem ident="tr"><desc>Turkish</desc></valItem>
+                           <valItem ident="undefined"><desc>Temporary work-around, to be removed in final version</desc></valItem>
                         </valList>
                      </attDef>
                   </attList>
@@ -2889,8 +2923,7 @@
                         <s:rule
                            context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]">
                            <s:report test="exists(tei:name)">the name element must only occur inside
-                              of usg elements with @type="geographic" or
-                              @type="socioCultural".</s:report>
+                              of usg elements with @type="geographic" or @type="socioCultural".</s:report>
                         </s:rule>
                      </constraint>
                     
@@ -2934,6 +2967,7 @@
                            <elementRef key="cit" minOccurs="0" maxOccurs="unbounded"/>
                            <!--                           <elementRef key="usg"/>-->
                            <elementRef key="note"/>
+                           <elementRef key="xr"/>
                            <elementRef key="gloss"/>
                            <!-- ADDED DS 2024-05-26 -->
                            <!--we should align the content more closely to the content in Lex0-->
@@ -2954,15 +2988,16 @@
                               >translationEquivalent must contain a form without a type attribute
                            </s:assert>
                         </s:rule>
+                        
                         <s:rule context="tei:cit[@type = 'translation']">
-                           <s:assert test="parent::tei:cit[@type = 'example']"
-                              >cit/type="translation" must be part of an example</s:assert>
+                           <s:assert test="parent::tei:cit[@type = 'example']">cit/type="translation" must be part of an example</s:assert>
                            <s:report test="* except (tei:quote|tei:usg)">a cit type translation may
                               only contain 1) the translated text in a quote element, 2) the context
                               of the translation in a tei:usg element</s:report>
                            <s:assert test="not(@subtype) or @subtype='literal'">only "literal"
                               translations expected</s:assert>
                         </s:rule>
+                        
                         <s:rule context="tei:cit[@subtype = 'proverb']">
                            <s:assert test="@type = 'example'">unexpected value "<s:value-of
                                  select="current()/@type"/>" in @type – a proverb must be encoded as
@@ -3077,24 +3112,29 @@
                <elementSpec ident="form" mode="change" module="dictionaries">
                   <constraintSpec ident="form-type" scheme="schematron">
                      <desc>assert content of correct context of @type values</desc>
-                     <constraint>
-                        <s:rule context="tei:form[not(parent::tei:cit)]">
-                           <s:assert test="exists(@type)">@type is reqired on all forms except
-                              examples or translations.</s:assert>
+                     <constraint>                        
+                        <s:rule context="tei:form[@type='derivative']">
+                           <s:assert test="tei:gramGrp">a derived word needs a pos</s:assert>
                         </s:rule>
+                        
                         <s:rule context="tei:form[@type = 'variant']">
                            <s:assert
-                              test="parent::tei:form[@type = ('lemma','multiWordUnit', 'inflected')]"
-                              >a variant must be a direct child of the main form (type = "lemma",
-                              "multiWordUnit" or "inflected").</s:assert>
+                              test="parent::tei:form[@type = ('lemma',inflected', 'derivative')]">a variant must be a direct child of the main form (type = "lemma", "derivative" or "inflected").</s:assert>
                         </s:rule>
+                        
                         <s:rule context="tei:form[@type = ('lemma', 'inflected')]">
                            <s:assert test="parent::tei:entry">a headword or inflected form must be a
                               direct child of an entry element. </s:assert>
                         </s:rule>
+                        
                         <s:rule context="tei:form[@subtype='compound']">
                            <s:assert test="@type='lemma'">The subtype "compound" must be accompanied
                               by the type attribute "lemma".</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:form[not(parent::tei:cit)]">
+                           <s:assert test="exists(@type)">@type is reqired on all forms except
+                              examples or translations.</s:assert>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -3117,7 +3157,7 @@
                            -->
                            
                            <valItem ident="stem" mode="add">
-                              <desc>This type is used in FarsiDict only.</desc>
+                              <desc>This type is used in isiZuluDict and FarsiDict only.</desc>
                            </valItem>
                            
                         </valList>
