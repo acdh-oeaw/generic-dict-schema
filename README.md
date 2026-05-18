@@ -6,7 +6,7 @@ Charly Mörth, Daniel Schopper
 This repository contains a TEI customization used as the base model for several dictionaries produced at ACDH. The most important files are:
 
 * the [acdh-ch-dicts Schema Defintion (ODD)](schema/acdh-ch-dicts.odd) itself
-* a [HTML documentation](https://acdh-oeaw.github.io/generic-dict-schema/https://acdh-oeaw.github.io/generic-dict-schema/)
+* a [HTML documentation](https://acdh-oeaw.github.io/generic-dict-schema/)
 * the [RNG Schema, Schematron rules included](schema/out/acdh-ch-dicts.rng) derived from the ODD
 * and the [XML Schema](schema/out/acdh-ch-dicts.xsd)
 
