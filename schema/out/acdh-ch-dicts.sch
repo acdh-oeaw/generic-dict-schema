@@ -152,8 +152,7 @@
          <s:assert test="tei:gramGrp">a derived word needs a pos</s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:form[@type = 'variant']">
-         <s:assert test="parent::tei:form[@type = ('lemma','multiWordUnit','inflected')]">a variant must be a direct child of the main form (type = "lemma",
-                              "multiWordUnit" or "inflected").</s:assert>
+         <s:assert test="parent::tei:form[@type = ('lemma', 'inflected', 'derivative')]">a variant must be a direct child of the main form (type = "lemma", "derivative" or "inflected").</s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:form[@type = ('lemma', 'inflected')]">
          <s:assert test="parent::tei:entry">a headword or inflected form must be a

@@ -1067,14 +1067,13 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@type = 'variant']"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="parent::tei:form[@type = ('lemma','multiWordUnit','inflected')]"/>
+         <xsl:when test="parent::tei:form[@type = ('lemma', 'inflected', 'derivative')]"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="parent::tei:form[@type = ('lemma','multiWordUnit','inflected')]">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="parent::tei:form[@type = ('lemma', 'inflected', 'derivative')]">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>a variant must be a direct child of the main form (type = "lemma",
-                              "multiWordUnit" or "inflected").</svrl:text>
+               <svrl:text>a variant must be a direct child of the main form (type = "lemma", "derivative" or "inflected").</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

@@ -3119,7 +3119,7 @@
                         
                         <s:rule context="tei:form[@type = 'variant']">
                            <s:assert
-                              test="parent::tei:form[@type = ('lemma',inflected', 'derivative')]">a variant must be a direct child of the main form (type = "lemma", "derivative" or "inflected").</s:assert>
+                              test="parent::tei:form[@type = ('lemma', 'inflected', 'derivative')]">a variant must be a direct child of the main form (type = "lemma", "derivative" or "inflected").</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:form[@type = ('lemma', 'inflected')]">
