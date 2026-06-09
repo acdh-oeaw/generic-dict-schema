@@ -69,7 +69,7 @@
                dictionaries should source and extend by their own rules, in order to define 
                a schema which can be used for finer-grained validation.</p>
 
-            <p>The list of relevant dictionaries currently contains eight items:</p> 
+            <p>The list of relevant dictionaries currently contains eight items, six of which have been converted to TEI Lex-0.</p> 
             <table rendition="#tbTable">
                <row>
                   <cell style="background:rgb(67, 95, 206); color:white;">Dictionary</cell>
