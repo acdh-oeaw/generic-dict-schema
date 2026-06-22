@@ -54,19 +54,22 @@
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-att.global-xml-lang-on-object-lang-elts-constraint-rule-9">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:orth">
-         <s:assert test="@xml:lang=('undefined', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'ota', 'tr')">orth with incorrect @xml:lang</s:assert>
+         <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:entry">
-         <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')">entry needs to have a correct @xml:lang</s:assert>
+         <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')">entry needs to have a correct @xml:lang</s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:cit[@type='example']/tei:quote">
-         <s:assert test="@xml:lang=('ar', 'ar-Latn')">cit needs to have a correct @xml:lang</s:assert>
+         <s:assert test="@xml:lang=('ar', 'ar-Latn', 'zu')">cit needs to have a correct @xml:lang</s:assert>
+      </s:rule>
+      <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:cit[@type='example']/@xml:lang">
+         <s:report test="true()">cit must not have an @xml:lang attribute</s:report>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
          <s:assert test="@xml:lang=('ar', 'ar-Latn', 'en', 'fr', 'de')">gram with incorrect @xml:lang</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-att.global-order-of-langs-constraint-rule-13">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-att.global-order-of-langs-constraint-rule-14">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:cit[@type='example']">
          <s:assert test="not(@xml:lang)">cit must not have @xml:lang</s:assert>
       </s:rule>
@@ -77,33 +80,33 @@
          <s:assert test="tei:orth[@xml:lang='ar-Latn'][following-sibling::tei:orth[@xml:lang='ar']]">ar-Latn has to be before ar</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-16">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-17">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:*[@calendar]">
          <sch:assert test="string-length( normalize-space(.) ) gt 0"> @calendar indicates one or more
               systems or calendars to which the date represented by the content of this element belongs,
               but this <sch:name/> element has no textual content.</sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-17">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-18">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:p">
          <sch:report test="(ancestor::tei:ab or ancestor::tei:p) and                        not( ancestor::tei:floatingText                           | parent::tei:exemplum                           | parent::tei:item                           | parent::tei:note                           | parent::tei:q                           | parent::tei:quote                           | parent::tei:remarks                           | parent::tei:said                           | parent::tei:sp                           | parent::tei:stage                           | parent::tei:cell                           | parent::tei:figure )">
           Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
         </sch:report>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-18">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-19">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:l//tei:p">
          <sch:assert test="ancestor::tei:floatingText | parent::tei:figure | parent::tei:note">
           Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
         </sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-quote-quote-constraints-constraint-rule-19">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-quote-quote-constraints-constraint-rule-20">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:quote[tei:seg]">
          <s:assert test="exists(@xml:space)">a quote with seg's needs to have xml:space="preserve"</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-cit-cit-context-constraint-rule-20">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-cit-cit-context-constraint-rule-21">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:cit[@type = 'translationEquivalent']">
          <s:assert test="parent::tei:sense">translationEquivalent: must be a
                               direct child of a sense element</s:assert>
@@ -123,23 +126,23 @@
                               cit type="example" subtype="proverb"</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-ref-ref-constraint-rule-23">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-ref-ref-constraint-rule-24">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:ref[@type = 'example']">
          <s:assert test="exists(substring-after(.,':'))">Example with id
                                  "<s:value-of select="exists(//tei:cit[@type='example'][@xml:id=substring-after(current()/@target,'#')])"/>" not found</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-ref-refAtts-constraint-rule-24">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-ref-refAtts-constraint-rule-25">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:ref">
          <sch:report test="@target and @cRef">Only one of the attributes @target and @cRef may be supplied on <sch:name/>.</sch:report>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-25">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-26">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:list[@type='gloss']">
          <sch:assert test="tei:label">The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element</sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-26">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-27">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:listBibl[ancestor::tei:body]">
          <s:assert test="parent::tei:entry or parent::tei:cit[@type = 'example']">a listBibl is expected to be a direct child of an entry or an
                               example</s:assert>
@@ -147,7 +150,7 @@
                               example is composed of bibl elements</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-form-form-type-constraint-rule-27">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-form-form-type-constraint-rule-28">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:form[@type='derivative']">
          <s:assert test="tei:gramGrp">a derived word needs a pos</s:assert>
       </s:rule>
@@ -167,7 +170,7 @@
                               examples or translations.</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gram-gram-constraints-constraint-rule-32">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gram-gram-constraints-constraint-rule-33">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gram">
          <s:assert test="parent::tei:gramGrp">gram must be a direct child of gramGrp</s:assert>
       </s:rule>
@@ -184,7 +187,7 @@
          <s:assert test="exists(@xml:lang)">Constructions need to have xml:lang</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-37">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-38">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gramGrp">
          <s:assert test="count(tei:gram[@type='arguments']) &lt; 2 or not(tei:gram[@type='arguments'][1]/following-sibling::*[not(self::tei:gram[@type='arguments'])]/following-sibling::tei:gram[@type='arguments'])">All gramGrp elements with type arguments must occur consecutively without any other elements between them.</s:assert>
          <s:assert test="count(tei:gram[@type='diaRoot']) &lt; 2 or not(tei:gram[@type='diaRoot'][1]/following-sibling::*[not(self::tei:gram[@type='diaRoot'])]/following-sibling::tei:gram[@type='diaRoot'])">All gramGrp elements with type diaRoot must occur consecutively without any other elements between them.</s:assert>
@@ -193,45 +196,45 @@
          <s:assert test="count(tei:gram[@type='synRoot']) &lt; 2 or not(tei:gram[@type='synRoot'][1]/following-sibling::*[not(self::tei:gram[@type='synRoot'])]/following-sibling::tei:gram[@type='synRoot'])">All gramGrp elements with type synRoot must occur consecutively without any other elements between them.</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-38">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-39">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:gramGrp">
          <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-39">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-40">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:entry/tei:gramGrp">
          <s:assert test="following-sibling::*[1][self::tei:sense] or following-sibling::*[1][self::tei:etym]">gramGrp is in the wrong place.</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-etym-etymon-constraint-rule-40">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-etym-etymon-constraint-rule-41">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:etym/tei:cit">
          <s:assert test="exists(@type[.='etymon'])">In the context of etym cit/@type must be "etymon"</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-41">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-42">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]">
          <s:report test="exists(tei:name)">the name element must only occur inside
                               of usg elements with @type="geographic" or @type="socioCultural".</s:report>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-xr-xrPosition-constraint-rule-42">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-xr-xrPosition-constraint-rule-43">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:xr">
          <s:assert test="not(preceding-sibling::*[1]=tei:sense) and                                             not(preceding-sibling::*[1]=tei:cit)">xr in wrong place</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-seg-seg-context-constraint-rule-43">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-seg-seg-context-constraint-rule-44">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:seg[@type = 'hint']">
          <s:assert test="parent::tei:quote[parent::tei:cit[@type = 'translation']]">a
                               hint segment must be inside a translation equivalent</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-body-body-children-constraint-rule-44">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-body-body-children-constraint-rule-45">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:body">
          <s:assert test="exists(tei:div[@type = 'entries'])">body must contain a
                               div of type "entries".</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-div-example-children-constraint-rule-45">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-div-example-children-constraint-rule-46">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:div[@type = 'examples']">
          <s:assert test="every $e in * satisfies $e/self::tei:cit[@type = 'example']">div
                               type="examples" may only contain cit type="example"</s:assert>
@@ -241,14 +244,14 @@
                               type="entries" may only contain entry elements</s:assert>
       </s:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-47">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-48">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:l//tei:div">
          <sch:assert test="ancestor::tei:floatingText">
           Abstract model violation: Metrical lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
         </sch:assert>
       </sch:rule>
    </pattern>
-   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-48">
+   <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-49">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" context="tei:div">
          <sch:report test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
           Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.

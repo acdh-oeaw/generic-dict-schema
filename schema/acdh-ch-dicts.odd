@@ -77,6 +77,7 @@
                   <cell style="background:rgb(67, 95, 206); color:white;">Vulgo</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;">Status</cell>
                </row>
+               
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Digital Dictionary of Cairo Arabic|The VICAV Dictionary of Egyptian Arabic</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDEA</cell>
@@ -269,6 +270,19 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"></cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr, EgyDict, VDEA</cell>
+               </row>
+            </table>
+            
+            <p>Each dictionary application makes use of a virtual keyboard.</p>
+            <table rendition="#tbTable">
+               <row corresp="DDDA">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DDDA (DamasDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ā č ḍ ḏ ē ǝ ᵊ ġ ǧ ḥ ī ñ š ṭ ū ž ẓ ʔ ʕ</cell>
+               </row>
+               <row corresp="VDEA">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDEA (EgyDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">ˀ ā ḍ ḏ ē ǧ ḥ ī ō ṛ š ṣ ṭ ū ž ẓ ʔ ʕ α ἐ ί κ ο π ρ σ χ ء ا أ آ ب ة ت ج خ د ذ ر ز س ش ص ض ع ف ق ك ل م ن ه و ؤ ٶ ى ي ئ</cell>
+                                    
                </row>
             </table>
          </div>
@@ -649,8 +663,8 @@
                      There are ten commonly used stems (I to X), each with specific vowel patterns and/or affixes (prefixes, 
                      infixes, or gemination) that predictably alter the meaning of the root in ways such as making 
                      it causative, reflexive, or intensive.</p>
-                  <p>In the VICAV Dictionary of Egyptian Arabic, the system adopted by Woidich (2006) is applied. 
-                    Otherwise, the traditional system of Roman numers is used.</p>
+                  <p>In the VICAV Dictionary of Egyptian Arabic, the system proposed by Woidich (2006) is applied. 
+                    Otherwise, the traditional Roman numers are used.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <form type="lemma">
@@ -1542,7 +1556,7 @@
 
                <div>
                   <head xml:id="morphPattern">Morphological patterns (Arabic)</head>
-                  <p>The value morphPattern stands for morphological pattern which are used in form elements to 
+                  <p>The value "morphPattern" stands for morphological pattern. These are used in form elements to 
                      identify particular templates being used to create wordforms in Semitic languages. 
                      In the VICAV system, the root consonants are symbolised by numbers.</p>
                      
@@ -1796,6 +1810,14 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
+                     <cell style="border: 1px solid black">function</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">ShawiDict, isiZuluDict</cell>
+                  </row>
+                  <row>
                      <cell style="border: 1px solid black">gender</cell>
                      <cell style="border: 1px solid black">masculine, feminine</cell>
                      <cell style="border: 1px solid black">m., f.</cell>
@@ -1834,6 +1856,14 @@
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">morphStruct</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">isiZuluDiuct</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black">msd (morphosyntactic description)</cell>
@@ -2360,7 +2390,12 @@
          <div>
             <head>Part 2: Formal Specification</head>
 
-            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">            
+            <!--
+               <schemaSpec ident="acdh-ch-dicts" source="file:/C:/Users/KMoerth/ch_data/_projects/generic-dict-schema/schema/out/acdh-ch-dicts_compiled.sch">
+               <schemaSpec ident="acdh-ch-dicts" source="file:/C:\Users\KMoerth\ch_data\_projects\tei_lex0/TEILex0.compiled.odd">
+               -->
+            <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd">
+               
                <moduleRef key="derived-module-TEILex0"/>
 
                <!-- We copy all modules from TEI Lex0 and exclude   -->
@@ -2369,7 +2404,8 @@
                <moduleRef key="dictionaries" except="dictScrap hyph lbl syll stress"/>
                <moduleRef key="figures" except="figure"/>
                <moduleRef key="gaiji"/>
-               <moduleRef key="header" except="xenoData"/>
+               <!--<moduleRef key="header" except="xenoData"/>-->
+               <moduleRef key="header"/>
                <moduleRef key="linking"/>
                <moduleRef key="namesdates"/>
                <moduleRef key="tei"/>
@@ -2785,6 +2821,9 @@
                      <attDef ident="type" mode="change" usage="req">
                         <!-- extending gram/types of TEI Lex-0-->
                         <valList type="closed" mode="change">
+                           <valItem ident="agreement" mode="add">
+                              <desc></desc>
+                           </valItem>
                            <valItem ident="arguments" mode="add">
                               <desc>arguments to a verb (see above)</desc>
                            </valItem>
@@ -2809,26 +2848,41 @@
                            <valItem ident="diaRoot" mode="add">
                               <desc>diachronic root</desc>
                            </valItem>
+                           <valItem ident="function" mode="add">
+                              <desc>possible values: copulative (ShawiDict, isiZuluDict)</desc>
+                           </valItem>
                            <valItem ident="morphPattern" mode="add">
-                              <desc>morphological pattern</desc>
+                              <desc>morphological pattern: for semitic languages</desc>
+                           </valItem>
+                           <valItem ident="morphStruct" mode="add">
+                              <desc>This is used to indicate the distinct morphemes a word is made up of. It is used in isiZuluDict.</desc>
                            </valItem>
                            <valItem ident="msd" mode="add">
                               <desc>The abbreviation stands for morphosyntactic description. The
                                  value of this gram-type can be
                                  "activeParticiple|passiveParticiple|determined"</desc>
                            </valItem>
+                           <valItem ident="nomClass" mode="add">
+                              <desc>Used for "nominal class" in isiZuluDict.</desc>
+                           </valItem>
                            <valItem ident="nominalState" mode="add">
                               <desc>Used for "status constructus"</desc>
                            </valItem>
                            <valItem ident="person" mode="add"/>
                            <valItem ident="polarity" mode="add">
-                              <desc/>
+                              <desc>possible value: negative</desc>
                            </valItem>
                            <valItem ident="root" mode="add">
                               <desc>synchronous root</desc>
                            </valItem>
+                           <valItem ident="semType" mode="add">
+                              <desc>values: inchoative</desc>
+                           </valItem>
                            <valItem ident="state" mode="add">
                               <desc>construct</desc>
+                           </valItem>
+                           <valItem ident="stem" mode="add">
+                              <desc>Used in isiZuluDict and farsiDict </desc>
                            </valItem>
                            <valItem ident="synRoot" mode="add">
                               <desc>synchronous root</desc>
@@ -2849,14 +2903,18 @@
                      <constraint>
                         
                         <s:rule context="tei:orth">
-                           <s:assert test="@xml:lang=('undefined', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'ota', 'tr')">orth with incorrect @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
                         <s:rule context="tei:entry">
-                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')">entry needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:cit[@type='example']/tei:quote">
-                           <s:assert test="@xml:lang=('ar', 'ar-Latn')">cit needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar', 'ar-Latn', 'zu')">cit needs to have a correct @xml:lang</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:cit[@type='example']/@xml:lang">
+                           <s:report test="true()">cit must not have an @xml:lang attribute</s:report>
                         </s:rule>
                         
                         <s:rule context="tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
@@ -2882,14 +2940,15 @@
                   <attList>
                      <attDef ident="xml:lang" mode="change">
                         <valList type="closed" mode="replace">                           
-                           <valItem ident="ar"/>
+                           <valItem ident="af"><desc>Afrikaans</desc></valItem>
+                           <valItem ident="ar"><desc>Any form of Arabic, including spoken varieties and dialects</desc></valItem>
                            <valItem ident="ar-acm-x-shawi-vicav"/>
-                           <valItem ident="ar-arz-x-cairo-vicav"/>
-                           <valItem ident="ar-apc-x-damascus-vicav"/>
+                           <valItem ident="ar-arz-x-cairo-vicav"><desc>Eygyptian Arabic</desc></valItem>
+                           <valItem ident="ar-apc-x-damascus-vicav"><desc>Damascus Arabic</desc></valItem>
                            <valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem>
                            <valItem ident="cop"><desc>Coptic</desc></valItem>
-                           <valItem ident="en"><desc>English</desc></valItem>
                            <valItem ident="de"><desc>German</desc></valItem>
+                           <valItem ident="en"><desc>English</desc></valItem>
                            <valItem ident="es"><desc>Spanish</desc></valItem>
                            <valItem ident="fa"><desc>Modern Persian</desc></valItem>
                            <valItem ident="fr"><desc>French</desc></valItem>
@@ -2898,8 +2957,19 @@
                            <valItem ident="it"><desc>Italian</desc></valItem>
                            <valItem ident="ku"><desc>Kurdish</desc></valItem>
                            <valItem ident="la"><desc>Latin; used for scientific names</desc></valItem>
+                           <valItem ident="nr"><desc></desc></valItem>
+                           <valItem ident="nso"><desc></desc></valItem>
                            <valItem ident="ota"><desc>Ottoman</desc></valItem>
+                           <valItem ident="ra"><desc></desc></valItem>
+                           <valItem ident="ru"><desc>Russian</desc></valItem>
+                           <valItem ident="ss"><desc>seSotho</desc></valItem>
+                           <valItem ident="sw"><desc>siSwati</desc></valItem>
+                           <valItem ident="tn"><desc></desc></valItem>
                            <valItem ident="tr"><desc>Turkish</desc></valItem>
+                           <valItem ident="ts"><desc>seTswana</desc></valItem>
+                           <valItem ident="ve"><desc>Venda</desc></valItem>
+                           <valItem ident="xh"><desc>isiXhosa</desc></valItem>
+                           <valItem ident="zu"><desc>isiZulu</desc></valItem>
                            <valItem ident="undefined"><desc>Temporary work-around, to be removed in final version</desc></valItem>
                         </valList>
                      </attDef>
@@ -3181,7 +3251,6 @@
                      <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
                   </content>
                </elementSpec>
-
             </schemaSpec>
          </div>
          

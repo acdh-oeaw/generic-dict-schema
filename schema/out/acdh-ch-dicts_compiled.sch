@@ -233,8 +233,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-att.global-order-of-langs-constraint-rule-13</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-att.global-order-of-langs-constraint-rule-13</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-att.global-order-of-langs-constraint-rule-14</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-att.global-order-of-langs-constraint-rule-14</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M15"/>
@@ -242,8 +242,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-16</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-16</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-17</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-17</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M16"/>
@@ -251,8 +251,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-17</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-17</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-18</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-18</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M17"/>
@@ -260,8 +260,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-18</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-18</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-19</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-19</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M18"/>
@@ -269,8 +269,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-quote-quote-constraints-constraint-rule-19</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-quote-quote-constraints-constraint-rule-19</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-quote-quote-constraints-constraint-rule-20</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-quote-quote-constraints-constraint-rule-20</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M19"/>
@@ -278,8 +278,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-cit-cit-context-constraint-rule-20</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-cit-cit-context-constraint-rule-20</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-cit-cit-context-constraint-rule-21</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-cit-cit-context-constraint-rule-21</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M20"/>
@@ -287,8 +287,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-ref-ref-constraint-rule-23</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-ref-ref-constraint-rule-23</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-ref-ref-constraint-rule-24</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-ref-ref-constraint-rule-24</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M21"/>
@@ -296,8 +296,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-ref-refAtts-constraint-rule-24</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-ref-refAtts-constraint-rule-24</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-ref-refAtts-constraint-rule-25</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-ref-refAtts-constraint-rule-25</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M22"/>
@@ -305,8 +305,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-25</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-25</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-26</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-26</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M23"/>
@@ -314,8 +314,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-26</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-26</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-27</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-27</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M24"/>
@@ -323,8 +323,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-form-form-type-constraint-rule-27</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-form-form-type-constraint-rule-27</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-form-form-type-constraint-rule-28</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-form-form-type-constraint-rule-28</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M25"/>
@@ -332,8 +332,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-gram-gram-constraints-constraint-rule-32</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-gram-gram-constraints-constraint-rule-32</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-gram-gram-constraints-constraint-rule-33</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-gram-gram-constraints-constraint-rule-33</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M26"/>
@@ -341,8 +341,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-37</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-37</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-38</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-38</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M27"/>
@@ -350,8 +350,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-38</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-38</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-39</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-39</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M28"/>
@@ -359,8 +359,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-39</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-39</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-40</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-40</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M29"/>
@@ -368,8 +368,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-etym-etymon-constraint-rule-40</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-etym-etymon-constraint-rule-40</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-etym-etymon-constraint-rule-41</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-etym-etymon-constraint-rule-41</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M30"/>
@@ -377,8 +377,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-usg-name-in-usg-constraint-rule-41</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-usg-name-in-usg-constraint-rule-41</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-usg-name-in-usg-constraint-rule-42</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-usg-name-in-usg-constraint-rule-42</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M31"/>
@@ -386,8 +386,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-xr-xrPosition-constraint-rule-42</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-xr-xrPosition-constraint-rule-42</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-xr-xrPosition-constraint-rule-43</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-xr-xrPosition-constraint-rule-43</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M32"/>
@@ -395,8 +395,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-seg-seg-context-constraint-rule-43</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-seg-seg-context-constraint-rule-43</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-seg-seg-context-constraint-rule-44</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-seg-seg-context-constraint-rule-44</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M33"/>
@@ -404,8 +404,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-body-body-children-constraint-rule-44</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-body-body-children-constraint-rule-44</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-body-body-children-constraint-rule-45</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-body-body-children-constraint-rule-45</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M34"/>
@@ -413,8 +413,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-div-div-example-children-constraint-rule-45</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-div-div-example-children-constraint-rule-45</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-div-div-example-children-constraint-rule-46</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-div-div-example-children-constraint-rule-46</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M35"/>
@@ -422,8 +422,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-47</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-47</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-48</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-48</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M36"/>
@@ -431,8 +431,8 @@
             <xsl:attribute name="document">
                <xsl:value-of select="document-uri(/)"/>
             </xsl:attribute>
-            <xsl:attribute name="id">acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-48</xsl:attribute>
-            <xsl:attribute name="name">acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-48</xsl:attribute>
+            <xsl:attribute name="id">acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-49</xsl:attribute>
+            <xsl:attribute name="name">acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-49</xsl:attribute>
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M37"/>
@@ -623,13 +623,13 @@
    </xsl:template>
    <!--PATTERN acdh-ch-dicts-att.global-xml-lang-on-object-lang-elts-constraint-rule-9-->
    <!--RULE -->
-   <xsl:template match="tei:orth" priority="1003" mode="M14">
+   <xsl:template match="tei:orth" priority="1004" mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:orth"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@xml:lang=('undefined', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'ota', 'tr')"/>
+         <xsl:when test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('undefined', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'ota', 'tr')">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -640,13 +640,13 @@
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:entry" priority="1002" mode="M14">
+   <xsl:template match="tei:entry" priority="1003" mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:entry"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')"/>
+         <xsl:when test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -657,13 +657,13 @@
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
    <!--RULE -->
-   <xsl:template match="tei:cit[@type='example']/tei:quote" priority="1001" mode="M14">
+   <xsl:template match="tei:cit[@type='example']/tei:quote" priority="1002" mode="M14">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type='example']/tei:quote"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@xml:lang=('ar', 'ar-Latn')"/>
+         <xsl:when test="@xml:lang=('ar', 'ar-Latn', 'zu')"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('ar', 'ar-Latn')">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('ar', 'ar-Latn', 'zu')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
@@ -671,6 +671,20 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="*" mode="M14"/>
+   </xsl:template>
+   <!--RULE -->
+   <xsl:template match="tei:cit[@type='example']/@xml:lang" priority="1001" mode="M14">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type='example']/@xml:lang"/>
+      <!--REPORT -->
+      <xsl:if test="true()">
+         <svrl:successful-report xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="true()">
+            <xsl:attribute name="location">
+               <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+            </xsl:attribute>
+            <svrl:text>cit must not have an @xml:lang attribute</svrl:text>
+         </svrl:successful-report>
+      </xsl:if>
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
    <!--RULE -->
@@ -694,7 +708,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M14">
       <xsl:apply-templates select="*" mode="M14"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-att.global-order-of-langs-constraint-rule-13-->
+   <!--PATTERN acdh-ch-dicts-att.global-order-of-langs-constraint-rule-14-->
    <!--RULE -->
    <xsl:template match="tei:cit[@type='example']" priority="1002" mode="M15">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type='example']"/>
@@ -750,7 +764,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M15">
       <xsl:apply-templates select="*" mode="M15"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-16-->
+   <!--PATTERN acdh-ch-dicts-att.calendarSystem-calendar-calendar_attr_on_empty_element-constraint-rule-17-->
    <!--RULE -->
    <xsl:template match="tei:*[@calendar]" priority="1000" mode="M16">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:*[@calendar]"/>
@@ -776,7 +790,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M16">
       <xsl:apply-templates select="*" mode="M16"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-17-->
+   <!--PATTERN acdh-ch-dicts-p-abstractModel-structure-p-in-ab-or-p-constraint-rule-18-->
    <!--RULE -->
    <xsl:template match="tei:p" priority="1000" mode="M17">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:p"/>
@@ -797,7 +811,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M17">
       <xsl:apply-templates select="*" mode="M17"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-18-->
+   <!--PATTERN acdh-ch-dicts-p-abstractModel-structure-p-in-l-constraint-rule-19-->
    <!--RULE -->
    <xsl:template match="tei:l//tei:p" priority="1000" mode="M18">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:l//tei:p"/>
@@ -821,7 +835,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M18">
       <xsl:apply-templates select="*" mode="M18"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-quote-quote-constraints-constraint-rule-19-->
+   <!--PATTERN acdh-ch-dicts-quote-quote-constraints-constraint-rule-20-->
    <!--RULE -->
    <xsl:template match="tei:quote[tei:seg]" priority="1000" mode="M19">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:quote[tei:seg]"/>
@@ -843,7 +857,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M19">
       <xsl:apply-templates select="*" mode="M19"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-cit-cit-context-constraint-rule-20-->
+   <!--PATTERN acdh-ch-dicts-cit-cit-context-constraint-rule-21-->
    <!--RULE -->
    <xsl:template match="tei:cit[@type = 'translationEquivalent']" priority="1002" mode="M20">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:cit[@type = 'translationEquivalent']"/>
@@ -940,7 +954,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M20">
       <xsl:apply-templates select="*" mode="M20"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-ref-ref-constraint-rule-23-->
+   <!--PATTERN acdh-ch-dicts-ref-ref-constraint-rule-24-->
    <!--RULE -->
    <xsl:template match="tei:ref[@type = 'example']" priority="1000" mode="M21">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ref[@type = 'example']"/>
@@ -965,7 +979,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M21">
       <xsl:apply-templates select="*" mode="M21"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-ref-refAtts-constraint-rule-24-->
+   <!--PATTERN acdh-ch-dicts-ref-refAtts-constraint-rule-25-->
    <!--RULE -->
    <xsl:template match="tei:ref" priority="1000" mode="M22">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:ref"/>
@@ -986,7 +1000,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M22">
       <xsl:apply-templates select="*" mode="M22"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-25-->
+   <!--PATTERN acdh-ch-dicts-list-gloss-list-must-have-labels-constraint-rule-26-->
    <!--RULE -->
    <xsl:template match="tei:list[@type='gloss']" priority="1000" mode="M23">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:list[@type='gloss']"/>
@@ -1008,7 +1022,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M23">
       <xsl:apply-templates select="*" mode="M23"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-26-->
+   <!--PATTERN acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-27-->
    <!--RULE -->
    <xsl:template match="tei:listBibl[ancestor::tei:body]" priority="1000" mode="M24">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:listBibl[ancestor::tei:body]"/>
@@ -1044,7 +1058,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M24">
       <xsl:apply-templates select="*" mode="M24"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-form-form-type-constraint-rule-27-->
+   <!--PATTERN acdh-ch-dicts-form-form-type-constraint-rule-28-->
    <!--RULE -->
    <xsl:template match="tei:form[@type='derivative']" priority="1004" mode="M25">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:form[@type='derivative']"/>
@@ -1137,7 +1151,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M25">
       <xsl:apply-templates select="*" mode="M25"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-gram-gram-constraints-constraint-rule-32-->
+   <!--PATTERN acdh-ch-dicts-gram-gram-constraints-constraint-rule-33-->
    <!--RULE -->
    <xsl:template match="tei:gram" priority="1004" mode="M26">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gram"/>
@@ -1227,7 +1241,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M26">
       <xsl:apply-templates select="*" mode="M26"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-37-->
+   <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-38-->
    <!--RULE -->
    <xsl:template match="tei:gramGrp" priority="1000" mode="M27">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gramGrp"/>
@@ -1297,7 +1311,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M27">
       <xsl:apply-templates select="*" mode="M27"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-38-->
+   <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-39-->
    <!--RULE -->
    <xsl:template match="tei:gramGrp" priority="1000" mode="M28">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:gramGrp"/>
@@ -1319,7 +1333,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M28">
       <xsl:apply-templates select="*" mode="M28"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-39-->
+   <!--PATTERN acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-40-->
    <!--RULE -->
    <xsl:template match="tei:entry/tei:gramGrp" priority="1000" mode="M29">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:entry/tei:gramGrp"/>
@@ -1341,7 +1355,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M29">
       <xsl:apply-templates select="*" mode="M29"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-etym-etymon-constraint-rule-40-->
+   <!--PATTERN acdh-ch-dicts-etym-etymon-constraint-rule-41-->
    <!--RULE -->
    <xsl:template match="tei:etym/tei:cit" priority="1000" mode="M30">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:etym/tei:cit"/>
@@ -1363,7 +1377,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M30">
       <xsl:apply-templates select="*" mode="M30"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-usg-name-in-usg-constraint-rule-41-->
+   <!--PATTERN acdh-ch-dicts-usg-name-in-usg-constraint-rule-42-->
    <!--RULE -->
    <xsl:template match="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]" priority="1000" mode="M31">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]"/>
@@ -1383,7 +1397,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M31">
       <xsl:apply-templates select="*" mode="M31"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-xr-xrPosition-constraint-rule-42-->
+   <!--PATTERN acdh-ch-dicts-xr-xrPosition-constraint-rule-43-->
    <!--RULE -->
    <xsl:template match="tei:xr" priority="1000" mode="M32">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:xr"/>
@@ -1405,7 +1419,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M32">
       <xsl:apply-templates select="*" mode="M32"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-seg-seg-context-constraint-rule-43-->
+   <!--PATTERN acdh-ch-dicts-seg-seg-context-constraint-rule-44-->
    <!--RULE -->
    <xsl:template match="tei:seg[@type = 'hint']" priority="1000" mode="M33">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:seg[@type = 'hint']"/>
@@ -1428,7 +1442,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M33">
       <xsl:apply-templates select="*" mode="M33"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-body-body-children-constraint-rule-44-->
+   <!--PATTERN acdh-ch-dicts-body-body-children-constraint-rule-45-->
    <!--RULE -->
    <xsl:template match="tei:body" priority="1000" mode="M34">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:body"/>
@@ -1451,7 +1465,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M34">
       <xsl:apply-templates select="*" mode="M34"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-div-div-example-children-constraint-rule-45-->
+   <!--PATTERN acdh-ch-dicts-div-div-example-children-constraint-rule-46-->
    <!--RULE -->
    <xsl:template match="tei:div[@type = 'examples']" priority="1001" mode="M35">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div[@type = 'examples']"/>
@@ -1492,7 +1506,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M35">
       <xsl:apply-templates select="*" mode="M35"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-47-->
+   <!--PATTERN acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-48-->
    <!--RULE -->
    <xsl:template match="tei:l//tei:div" priority="1000" mode="M36">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:l//tei:div"/>
@@ -1516,7 +1530,7 @@
    <xsl:template match="@*|node()" priority="-2" mode="M36">
       <xsl:apply-templates select="*" mode="M36"/>
    </xsl:template>
-   <!--PATTERN acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-48-->
+   <!--PATTERN acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-49-->
    <!--RULE -->
    <xsl:template match="tei:div" priority="1000" mode="M37">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:div"/>
