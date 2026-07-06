@@ -274,7 +274,7 @@
             </table>
             
             <p>The Arabic dictionary applications make use of virtual keyboards to ease input of unicode characters usually not 
-               being represented in standard keyboards. We only list characters 
+               being represented on standard keyboards. We only list characters 
                being used in the object language. The characters are ordered according to their base forms without diacritics. 
                Shwas are treated as a special form of e. Characters contained in translation equivalents and the etymons of etymologies 
                are not represented.</p>
@@ -432,7 +432,7 @@
 <encodingDesc>
    <editorialDecl>
       <p>
-        <list>
+        <list type="keyboardCharacters">
           <item>
               <c>ā</c>
               <c>ḅ</c>
@@ -837,7 +837,7 @@
       <gram type="gender">feminine</gram>
    </gramGrp>
    …
-   <orth>gṣayra</orth>
+   <orth xml:lang="ar-Latn">gṣayra</orth>
 </form>
    
 …</egXML>
@@ -1712,7 +1712,7 @@
    <gramGrp>
       <gram type="nominalState">construct</gram>
    </gramGrp>
-   <orth>abu</orth>
+   <orth xml:lang="ar-Latn">abu</orth>
 </form>
   
 …
@@ -1803,7 +1803,7 @@
    <usg type="geographic">
       <name type="place">Harran-Urfa</name>
    </usg>
-   <orth>yḥami</orth>
+   <orth xml:lang="ar-Latn">yḥami</orth>
 </form>
 
 …</egXML>
