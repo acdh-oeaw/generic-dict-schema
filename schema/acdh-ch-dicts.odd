@@ -323,7 +323,6 @@
                         <item style="display: inline; margin-right:5px" n="00289">ġ</item>
                         <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
                         <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
-                        <item style="display: inline; margin-right:5px" n="07722">Ḫ</item>
                         <item style="display: inline; margin-right:5px" n="00299">ī</item>
                         <item style="display: inline; margin-right:5px" n="00345">ř</item>
                         <item style="display: inline; margin-right:5px" n="00353">š</item>
@@ -335,7 +334,6 @@
                         <item style="display: inline; margin-right:5px" n="07829">ẕ</item>
                         <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
                         <item style="display: inline; margin-right:5px" n="00661">ʕ</item>
-                        <item style="display: inline; margin-right:5px" n="00701">ʽ</item>
                         <item style="display: inline; margin-right:5px" n="00705">ˁ</item>
                      </list>
                   </cell>
@@ -344,41 +342,31 @@
                   <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr (ShawiDict)</cell>
                   <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
                      <list>
-                        <item style="display: inline; margin-right:5px" n="00256">Ā</item>
                         <item style="display: inline; margin-right:5px" n="00257">ā</item>
                         <item style="display: inline; margin-right:5px" n="07491">ᵃ</item>
                         <item style="display: inline; margin-right:5px" n="00479">ǟ</item>
                         <item style="display: inline; margin-right:5px" n="07685">ḅ</item>
-                        <item style="display: inline; margin-right:5px" n="00268">Č</item>
                         <item style="display: inline; margin-right:5px" n="00269">č</item>
                         <item style="display: inline; margin-right:5px" n="07693">ḍ</item>
-                        <item style="display: inline; margin-right:5px" n="07694">Ḏ</item>
                         <item style="display: inline; margin-right:5px" n="07695">ḏ</item>
                         <item style="display: inline; margin-right:5px" n="07699">ḓ</item>
                         <item style="display: inline; margin-right:5px">ḏ̣</item>                        
                         <item style="display: inline; margin-right:5px" n="00240">ð</item>
-                        <item style="display: inline; margin-right:5px" n="00274">Ē</item>
                         <item style="display: inline; margin-right:5px" n="00275">ē</item>
                         <item style="display: inline; margin-right:5px" n="00477">ǝ</item>
                         <item style="display: inline; margin-right:5px" n="00601">ə</item>
                         <item style="display: inline; margin-right:5px" n="07498">ᵊ</item>
                         <item style="display: inline; margin-right:5px" n="00289">ġ</item>
-                        <item style="display: inline; margin-right:5px" n="00486">Ǧ</item>
                         <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
-                        <item style="display: inline; margin-right:5px" n="07716">Ḥ</item>
                         <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
-                        <item style="display: inline; margin-right:5px" n="00298">Ī</item>
                         <item style="display: inline; margin-right:5px" n="00299">ī</item>
                         <item style="display: inline; margin-right:5px" n="07735">ḷ</item>
                         <item style="display: inline; margin-right:5px" n="07747">ṃ</item>
                         <item style="display: inline; margin-right:5px" n="00333">ō</item>
                         <item style="display: inline; margin-right:5px" n="00555">ȫ</item>
                         <item style="display: inline; margin-right:5px" n="07771">ṛ</item>
-                        <item style="display: inline; margin-right:5px" n="07778">Ṣ</item>
                         <item style="display: inline; margin-right:5px" n="07779">ṣ</item>
-                        <item style="display: inline; margin-right:5px" n="00352">Š</item>
                         <item style="display: inline; margin-right:5px" n="00353">š</item>
-                        <item style="display: inline; margin-right:5px" n="07788">Ṭ</item>
                         <item style="display: inline; margin-right:5px" n="07789">ṭ</item>
                         <item style="display: inline; margin-right:5px" n="07791">ṯ</item>
                         <item style="display: inline; margin-right:5px" n="00363">ū</item>
@@ -388,7 +376,6 @@
                         <item style="display: inline; margin-right:5px" n="00382">ž</item>
                         <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
                         <item style="display: inline; margin-right:5px" n="00661">ʕ</item>
-                        <item style="display: inline; margin-right:5px" n="00705">ˁ</item>
                      </list>                     
                   </cell>
                </row>
