@@ -470,8 +470,8 @@
 </egXML>
             <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
-            <p>Encoding alternatives considered were p/table and the TEI/P5 element charDecl. 
-               The latter one was discarded as it was intended to be used to define "non-standard characters, glyphs, or ligatures that are missing from the standard Unicode character set".</p>
+            <p>Encoding alternatives considered were p/table and the TEI/P5 element charDecl. The element table does not exist anywhere else in Lex-0 and charDecl   
+               was discarded as its defintion restricts it to "non-standard characters, glyphs, or ligatures that are missing from the standard Unicode character set".</p>
          </div>
          
          <div>
