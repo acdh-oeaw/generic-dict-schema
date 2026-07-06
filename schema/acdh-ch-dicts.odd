@@ -29,7 +29,7 @@
 
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
-            <date>2021ff.</date>
+            <date>2026</date>
          </publicationStmt>
 
          <sourceDesc>
@@ -3529,7 +3529,8 @@
                </elementSpec>
             </schemaSpec>
          </div>
-         
+
+<!-- 
          <div type="bibliography" xml:id="bibliography">
             <listBibl>
                <biblStruct xml:id="abcdict">
@@ -3542,7 +3543,7 @@
                </biblStruct>
             </listBibl>
          </div>
-         
+      -->    
          
       </body>
    </text>
