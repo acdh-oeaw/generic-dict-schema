@@ -1758,7 +1758,7 @@
 </form>
    
 …</egXML>
-                  <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                   
                   <p>These constructs are particularly used with wordforms of Arabic origin. When
                      foreign loans are well-integrated in the morphological system, they may be
@@ -1883,16 +1883,35 @@
             </div>          
             
             <div>
-               <head>Other gram types</head>
+               <head>Other types referring to grammatical information</head>
                
+<!-- 
                <div>
                   <head xml:id="constraints">Constraints</head>
                   <p>Tbd: other values considered were type="restriction" or type="distribution" </p>
                </div>
+               -->
                
                <div>
                   <head xml:id="pragmatics">pragmatics</head>
-                  <p>Ttbd</p>
+                  <p>This @type value is used in usg elements.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<sense xml:id="VDEA.s_abla_001_0">
+   <usg type="pragmatics" xml:lang="en">used to respectfully address an older woman, such as e.g. teachers etc.</usg>
+   
+   <cit type="translationEquivalent">
+      <form><orth xml:lang="en">Miss</orth></form>
+   </cit>
+   
+   <cit type="translationEquivalent">
+      <form><orth xml:lang="en">Madam</orth></form>
+   </cit>
+ …
+</sense>
+
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                </div>
             </div>
             
@@ -2237,7 +2256,7 @@
          </div>
 
          <div>
-            <head>Usage labels</head>
+            <head>Usage labels (synopsis)</head>
             <p>According to Lex-0 the element <tag>usg</tag> has to be typefied. A type not
                mentioned in the Lex-0 specification is <att>pragmatics</att> which we use to specify in
                which situations a particular lexical item is being used.</p>
@@ -2260,7 +2279,12 @@
                   <cell style="border: 1px solid black">FarsiDict</cell>
                </row>
                <row>
-                  <cell style="border: 1px solid black">socioCultural</cell>
+                  <cell style="border: 1px solid black"><ref target="#pragmatics">pragmatics</ref></cell>
+                  <cell style="border: 1px solid black">(prose)</cell>
+                  <cell style="border: 1px solid black">EgyDict</cell>
+               </row>
+               <row>
+                  <cell style="border: 1px solid black"><ref target="#socioCulturalInformation">socioCultural</ref></cell>
                   <cell style="border: 1px solid black">informal</cell>
                   <cell style="border: 1px solid black">FarsiDict</cell>
                </row>
@@ -2310,7 +2334,7 @@
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <div>
-               <head>Usage</head>
+               <head xml:id="socioCulturalInformation">Sociocultural information</head>
                <p>Examples often have usage labels.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -2534,7 +2558,7 @@
             
             <div>
                <head xml:id="simpleBibls">The "simple" solution</head>
-               <p>Currently The main reason</p>
+               <p>Except for ShawiDict, the canonical Lex-0 solution is applied.</p>
             </div>
          </div>
 
