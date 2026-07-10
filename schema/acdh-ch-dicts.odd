@@ -349,9 +349,7 @@
                         <item style="display: inline; margin-right:5px" n="00269">č</item>
                         <item style="display: inline; margin-right:5px" n="07693">ḍ</item>
                         <item style="display: inline; margin-right:5px" n="07695">ḏ</item>
-                        <item style="display: inline; margin-right:5px" n="07699">ḓ</item>
                         <item style="display: inline; margin-right:5px">ḏ̣</item>                        
-                        <item style="display: inline; margin-right:5px" n="00240">ð</item>
                         <item style="display: inline; margin-right:5px" n="00275">ē</item>
                         <item style="display: inline; margin-right:5px" n="00477">ǝ</item>
                         <item style="display: inline; margin-right:5px" n="00601">ə</item>
@@ -433,34 +431,32 @@
    <editorialDecl>
       <p>
         <list type="keyboardCharacters">
-          <item>
-              <c>ā</c>
-              <c>ḅ</c>
-              <c>ḍ</c>
-              <c>ḏ</c>
-              <c>ē</c>
-              <c>ǧ</c>
-              <c>ġ</c>
-              <c>ḥ</c>
-              <c>ḫ</c>
-              <c>ī</c>
-              <c>ᴵ</c>
-              <c>ḷ</c>
-              <c>ṃ</c>
-              <c>ō</c>
-              <c>ṛ</c>
-              <c>ṣ</c>
-              <c>š</c>
-              <c>ṭ</c>
-              <c>ṯ</c>
-              <c>ū</c>
-              <c>ẓ</c>
-              <c>ẕ</c>
-              <c>ž</c>
-              <c>ʔ</c>
-              <c>ʕ</c>
-              <c>ˀ</c>
-          </item>
+          <item><c>ā</c></item>
+          <item><c>ḅ</c></item>
+          <item><c>ḍ</c></item>
+          <item><c>ḏ</c></item>
+          <item><c>ē</c></item>
+          <item><c>ǧ</c></item>
+          <item><c>ġ</c></item>
+          <item><c>ḥ</c></item>
+          <item><c>ḫ</c></item>
+          <item><c>ī</c></item>
+          <item><c>ᴵ</c></item>
+          <item><c>ḷ</c></item>
+          <item><c>ṃ</c></item>
+          <item><c>ō</c></item>
+          <item><c>ṛ</c></item>
+          <item><c>ṣ</c></item>
+          <item><c>š</c></item>
+          <item><c>ṭ</c></item>
+          <item><c>ṯ</c></item>
+          <item><c>ū</c></item>
+          <item><c>ẓ</c></item>
+          <item><c>ẕ</c></item>
+          <item><c>ž</c></item>
+          <item><c>ʔ</c></item>
+          <item><c>ʕ</c></item>
+          <item><c>ˀ</c></item>
         </list>
       </p>
    </editorialDecl>
@@ -488,8 +484,9 @@
                <item>All <tag>gram</tag> elements that contain data both in the object and working
                   languages (e.g. <val>collocate</val>, 
                                   <val>diaRoot</val>, 
-                                  <val>governmant</val>,
-                                  <val>root</val>, 
+                  <val>morphPattern</val>,
+                  <val>government</val>,
+                  <val>root</val>, 
                                   <val>synRoot</val>).</item>
             </list>
 
@@ -1730,7 +1727,7 @@
    <orth xml:lang="ar-Latn">ʕālī</orth>
    <orth xml:lang="ar">عالي</orth>
    <gramGrp>
-      <gram type="morphPattern">1ā2ī</gram>
+      <gram type="morphPattern" xml:lang="ar-Latn">1ā2ī</gram>
       <gram type="number">singular</gram>
       <gram type="msd">determined</gram>
    </gramGrp>
@@ -1753,7 +1750,7 @@
    <orth xml:lang="ar-Latn">kātib</orth>
    <orth xml:lang="ar">كاتب</orth>
    <gramGrp>
-      <gram type="morphPattern">1ā2i3</gram>
+      <gram type="morphPattern" xml:lang="ar-Latn">1ā2i3</gram>
    </gramGrp>
 </form>
    
@@ -2169,21 +2166,34 @@
                and information specifying usage domains and or semantic categories.</p>
 
             <div>
-               <head>Domain labels</head>
+               <head xml:id="domainLabels">Domain labels</head>
                <p>We attempt to indicate the specific field of knowledge a word is primarily used
-                  in. The applied terms are documented in a taxonomy in the <tag>encodingDesc</tag> of
-                  the header. In accordance with Lex-0, the attribute <att>valueDatcat</att> is used 
+                  in. The applied terms are documented in a taxonomy in the vocabs.xml document. 
+                  In accordance with Lex-0, the attribute <att>valueDatcat</att> is used 
                   to refer to the taxonomy in the header.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
                   
 <sense xml:id="VDEA.s_disk_001_0">
-   <usg type="domain" valueDatcat="#domains.medicine">medicine</usg>
+   <usg type="domain" valueDatcat="voc:domains.medicine">medicine</usg>
    <cit type="translationEquivalent">
       <form>
          <orth xml:lang="en">slipped disk</orth>
       </form>
    </cit>
 </sense>
+                  
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               
+               <p>The header of the dictionary contains the path to the vocabs.xml document.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+                  
+<encodingDesc>
+   <listPrefixDef xml:id="listPrefixDef">
+      <prefixDef ident="voc" matchPattern="^(.+)$" replacementPattern="file:///../vicav-library/vicav_vocabs/vocabs.xml#$1"/>
+   </listPrefixDef>
+</encodingDesc>
                   
 …
 </egXML>
@@ -2195,11 +2205,10 @@
                <p>Some VICAV dictionaries contain labels such as <term>kinship term</term>,
                      <term>city</term>, <term>harbour</term> etc. placing them in particular
                   semantic categories. This kind of information is put in <att>ana</att> attributes
-                  the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of
-                  the header.</p>
+                  the values of which are defined in a taxonomy in the vocabs.xml document (cf. <ref target="#domainLabels">Domain labels</ref>).</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
+<sense xml:id="VDEA.s_il_macaadii_001_0" ana="voc:semCats.geoPlaces.cityPart">
    <cit type="translationEquivalent">
       <form>
          <orth xml:lang="en">el-Ma’adi</orth>
@@ -3128,7 +3137,7 @@
                               <desc>possible values: copulative (ShawiDict, isiZuluDict)</desc>
                            </valItem>
                            <valItem ident="morphPattern" mode="add">
-                              <desc>morphological pattern: for semitic languages</desc>
+                              <desc>morphological pattern: for Semitic languages</desc>
                            </valItem>
                            <valItem ident="morphStruct" mode="add">
                               <desc>This is used to indicate the distinct morphemes a word is made up of. It is used in isiZuluDict.</desc>
@@ -3529,7 +3538,7 @@
                </elementSpec>
             </schemaSpec>
          </div>
-
+         
 <!-- 
          <div type="bibliography" xml:id="bibliography">
             <listBibl>
@@ -3546,5 +3555,9 @@
       -->    
          
       </body>
+      <back>
+         <p>_____________________________________________________</p>
+          <p><ref target="https://oeaw.ac.at/en/oeaw/imprint">Imprint</ref></p>
+      </back>   
    </text>
 </TEI>
