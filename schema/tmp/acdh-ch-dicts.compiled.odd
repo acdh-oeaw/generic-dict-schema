@@ -28,7 +28,7 @@
 
          <publicationStmt>
             <publisher>Austrian Centre for Digital Humanities and Cultural Heritage</publisher>
-            <date>2021ff.</date>
+            <date>2026</date>
          </publicationStmt>
 
          <sourceDesc>
@@ -68,7 +68,7 @@
                dictionaries should source and extend by their own rules, in order to define 
                a schema which can be used for finer-grained validation.</p>
 
-            <p>The list of relevant dictionaries currently contains eight items:</p> 
+            <p>The list of relevant dictionaries currently contains eight items, six of which have been converted to TEI Lex-0.</p> 
             <table rendition="#tbTable">
                <row>
                   <cell style="background:rgb(67, 95, 206); color:white;">Dictionary</cell>
@@ -76,6 +76,7 @@
                   <cell style="background:rgb(67, 95, 206); color:white;">Vulgo</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;">Status</cell>
                </row>
+               
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Digital Dictionary of Cairo Arabic|The VICAV Dictionary of Egyptian Arabic</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDEA</cell>
@@ -126,7 +127,7 @@
                </row>
                <row>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The TUNICO Dictionary</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black"/>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TUDA</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TuDict</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
                </row>
@@ -270,6 +271,202 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr, EgyDict, VDEA</cell>
                </row>
             </table>
+            
+            <p>The Arabic dictionary applications make use of virtual keyboards to ease input of unicode characters usually not 
+               being represented on standard keyboards. We only list characters 
+               being used in the object language. The characters are ordered according to their base forms without diacritics. 
+               Shwas are treated as a special form of e. Characters contained in translation equivalents and the etymons of etymologies 
+               are not represented.</p>
+            <table rendition="#tbTable">
+               <row corresp="VDEA">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDEA (EgyDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
+                     <list>
+                        <item style="display: inline; margin-right:5px">ā</item>
+                        <item style="display: inline; margin-right:5px">ḅ</item>
+                        <item style="display: inline; margin-right:5px">ḍ</item>
+                        <item style="display: inline; margin-right:5px">ḏ</item>
+                        <item style="display: inline; margin-right:5px">ē</item>
+                        <item style="display: inline; margin-right:5px">ǧ</item>
+                        <item style="display: inline; margin-right:5px">ġ</item>
+                        <item style="display: inline; margin-right:5px">ḥ</item>
+                        <item style="display: inline; margin-right:5px">ḫ</item>
+                        <item style="display: inline; margin-right:5px">ī</item>
+                        <item style="display: inline; margin-right:5px">ᴵ</item>
+                        <item style="display: inline; margin-right:5px">ḷ</item>
+                        <item style="display: inline; margin-right:5px">ṃ</item>
+                        <item style="display: inline; margin-right:5px">ō</item>
+                        <item style="display: inline; margin-right:5px">ṛ</item>
+                        <item style="display: inline; margin-right:5px">ṣ</item>
+                        <item style="display: inline; margin-right:5px">š</item>
+                        <item style="display: inline; margin-right:5px">ṭ</item>
+                        <item style="display: inline; margin-right:5px">ṯ</item>
+                        <item style="display: inline; margin-right:5px">ū</item>
+                        <item style="display: inline; margin-right:5px">ẓ</item>
+                        <item style="display: inline; margin-right:5px">ẕ</item>
+                        <item style="display: inline; margin-right:5px">ž</item>
+                        <item style="display: inline; margin-right:5px">ʔ</item>
+                        <item style="display: inline; margin-right:5px">ʕ</item>
+                        <item style="display: inline; margin-right:5px">ˀ</item>
+                     </list>
+                  </cell>
+               </row>
+               <row corresp="VAED">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VAED (MSADict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
+                     <list>
+                        <item style="display: inline; margin-right:5px" n="00257">ā</item>
+                        <item style="display: inline; margin-right:5px" n="07693">ḍ</item>
+                        <item style="display: inline; margin-right:5px" n="07695">ḏ</item>
+                        <item style="display: inline; margin-right:5px" n="00275">ē</item>
+                        <item style="display: inline; margin-right:5px" n="00289">ġ</item>
+                        <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
+                        <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
+                        <item style="display: inline; margin-right:5px" n="00299">ī</item>
+                        <item style="display: inline; margin-right:5px" n="00345">ř</item>
+                        <item style="display: inline; margin-right:5px" n="00353">š</item>
+                        <item style="display: inline; margin-right:5px" n="07779">ṣ</item>
+                        <item style="display: inline; margin-right:5px" n="07789">ṭ</item>
+                        <item style="display: inline; margin-right:5px" n="07791">ṯ</item>
+                        <item style="display: inline; margin-right:5px" n="00363">ū</item>
+                        <item style="display: inline; margin-right:5px" n="07827">ẓ</item>
+                        <item style="display: inline; margin-right:5px" n="07829">ẕ</item>
+                        <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
+                        <item style="display: inline; margin-right:5px" n="00661">ʕ</item>
+                        <item style="display: inline; margin-right:5px" n="00705">ˁ</item>
+                     </list>
+                  </cell>
+               </row>
+               <row corresp="DShaAr">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DShaAr (ShawiDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
+                     <list>
+                        <item style="display: inline; margin-right:5px" n="00257">ā</item>
+                        <item style="display: inline; margin-right:5px" n="07491">ᵃ</item>
+                        <item style="display: inline; margin-right:5px" n="00479">ǟ</item>
+                        <item style="display: inline; margin-right:5px" n="07685">ḅ</item>
+                        <item style="display: inline; margin-right:5px" n="00269">č</item>
+                        <item style="display: inline; margin-right:5px" n="07693">ḍ</item>
+                        <item style="display: inline; margin-right:5px" n="07695">ḏ</item>
+                        <item style="display: inline; margin-right:5px">ḏ̣</item>                        
+                        <item style="display: inline; margin-right:5px" n="00275">ē</item>
+                        <item style="display: inline; margin-right:5px" n="00477">ǝ</item>
+                        <item style="display: inline; margin-right:5px" n="00601">ə</item>
+                        <item style="display: inline; margin-right:5px" n="07498">ᵊ</item>
+                        <item style="display: inline; margin-right:5px" n="00289">ġ</item>
+                        <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
+                        <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
+                        <item style="display: inline; margin-right:5px" n="00299">ī</item>
+                        <item style="display: inline; margin-right:5px" n="07735">ḷ</item>
+                        <item style="display: inline; margin-right:5px" n="07747">ṃ</item>
+                        <item style="display: inline; margin-right:5px" n="00333">ō</item>
+                        <item style="display: inline; margin-right:5px" n="00555">ȫ</item>
+                        <item style="display: inline; margin-right:5px" n="07771">ṛ</item>
+                        <item style="display: inline; margin-right:5px" n="07779">ṣ</item>
+                        <item style="display: inline; margin-right:5px" n="00353">š</item>
+                        <item style="display: inline; margin-right:5px" n="07789">ṭ</item>
+                        <item style="display: inline; margin-right:5px" n="07791">ṯ</item>
+                        <item style="display: inline; margin-right:5px" n="00363">ū</item>
+                        <item style="display: inline; margin-right:5px" n="07512">ᵘ</item>
+                        <item style="display: inline; margin-right:5px" n="00695">ʷ</item>
+                        <item style="display: inline; margin-right:5px" n="07827">ẓ</item>                       
+                        <item style="display: inline; margin-right:5px" n="00382">ž</item>
+                        <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
+                        <item style="display: inline; margin-right:5px" n="00661">ʕ</item>
+                     </list>                     
+                  </cell>
+               </row>
+               <row corresp="DDDA">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">DDDA (DamasDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
+                     <list>
+                        <item style="display: inline; margin-right:5px" n="00257">ā</item>
+                        <item style="display: inline; margin-right:5px" n="00269">č</item>
+                        <item style="display: inline; margin-right:5px" n="07693">ḍ</item>
+                        <item style="display: inline; margin-right:5px" n="07695">ḏ</item>
+                        <item style="display: inline; margin-right:5px" n="00948">δ</item>
+                        <item style="display: inline; margin-right:5px" n="00275">ē</item>
+                        <item style="display: inline; margin-right:5px" n="00601">ə</item>
+                        <item style="display: inline; margin-right:5px" n="01241">ә</item>
+                        <item style="display: inline; margin-right:5px" n="00477">ǝ</item>
+                        <item style="display: inline; margin-right:5px" n="07498">ᵊ</item>
+                        <item style="display: inline; margin-right:5px" n="00289">ġ</item>
+                        <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
+                        <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
+                        <item style="display: inline; margin-right:5px" n="00299">ī</item>
+                        <item style="display: inline; margin-right:5px" n="07735">ḷ</item>
+                        <item style="display: inline; margin-right:5px" n="00333">ō</item>
+                        <item style="display: inline; margin-right:5px" n="07771">ṛ</item>
+                        <item style="display: inline; margin-right:5px" n="07779">ṣ</item>
+                        <item style="display: inline; margin-right:5px" n="00353">š</item>
+                        <item style="display: inline; margin-right:5px" n="07789">ṭ</item>
+                        <item style="display: inline; margin-right:5px" n="07791">ṯ</item>
+                        <item style="display: inline; margin-right:5px" n="00363">ū</item>
+                        <item style="display: inline; margin-right:5px" n="07827">ẓ</item>
+                        <item style="display: inline; margin-right:5px" n="00382">ž</item>
+                        <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
+                        <item style="display: inline; margin-right:5px" n="00661">ʕ</item>                       
+                     </list>                     
+                  </cell>
+               </row>
+               <row corresp="VDBA">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDBA (BaDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
+                     
+                  </cell>
+               </row>
+               <row corresp="TUDA">
+                  <cell role="dictName" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TUDA (TuDict)</cell>
+                  <cell role="keyBoardCharacters" style="padding-left: 5px; padding-right: 5px; border: 1px solid black">
+                     
+                  </cell>
+               </row>
+            </table>
+            
+            <p>The items contained in the virtual keyboards are encoded in the editorialDecl of the header. They currently look like this:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<encodingDesc>
+   <editorialDecl>
+      <p>
+        <list type="keyboardCharacters">
+          <item><c>ā</c></item>
+          <item><c>ḅ</c></item>
+          <item><c>ḍ</c></item>
+          <item><c>ḏ</c></item>
+          <item><c>ē</c></item>
+          <item><c>ǧ</c></item>
+          <item><c>ġ</c></item>
+          <item><c>ḥ</c></item>
+          <item><c>ḫ</c></item>
+          <item><c>ī</c></item>
+          <item><c>ᴵ</c></item>
+          <item><c>ḷ</c></item>
+          <item><c>ṃ</c></item>
+          <item><c>ō</c></item>
+          <item><c>ṛ</c></item>
+          <item><c>ṣ</c></item>
+          <item><c>š</c></item>
+          <item><c>ṭ</c></item>
+          <item><c>ṯ</c></item>
+          <item><c>ū</c></item>
+          <item><c>ẓ</c></item>
+          <item><c>ẕ</c></item>
+          <item><c>ž</c></item>
+          <item><c>ʔ</c></item>
+          <item><c>ʕ</c></item>
+          <item><c>ˀ</c></item>
+        </list>
+      </p>
+   </editorialDecl>
+   …
+</encodingDesc>
+…
+</egXML>
+            <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+            
+            <p>Encoding alternatives considered were p/table and the TEI/P5 element charDecl. The element table does not exist anywhere else in Lex-0 and charDecl   
+               was discarded as its defintion restricts it to "non-standard characters, glyphs, or ligatures that are missing from the standard Unicode character set".</p>
          </div>
          
          <div>
@@ -286,8 +483,9 @@
                <item>All <tag>gram</tag> elements that contain data both in the object and working
                   languages (e.g. <val>collocate</val>, 
                                   <val>diaRoot</val>, 
-                                  <val>governmant</val>,
-                                  <val>root</val>, 
+                  <val>morphPattern</val>,
+                  <val>government</val>,
+                  <val>root</val>, 
                                   <val>synRoot</val>).</item>
             </list>
 
@@ -505,7 +703,7 @@
 </form>
    
 …</egXML>
-               <p rendition="#exampleSource">(Source: Small Dictionary of Contemporary Persian)</p>
+<p rendition="#exampleSource">(Source: Small Dictionary of Contemporary Persian)</p>
             </div>            
          </div>
 
@@ -635,7 +833,7 @@
       <gram type="gender">feminine</gram>
    </gramGrp>
    …
-   <orth>gṣayra</orth>
+   <orth xml:lang="ar-Latn">gṣayra</orth>
 </form>
    
 …</egXML>
@@ -648,8 +846,8 @@
                      There are ten commonly used stems (I to X), each with specific vowel patterns and/or affixes (prefixes, 
                      infixes, or gemination) that predictably alter the meaning of the root in ways such as making 
                      it causative, reflexive, or intensive.</p>
-                  <p>In the VICAV Dictionary of Egyptian Arabic, the system adopted by Woidich (2006) is applied. 
-                    Otherwise, the traditional system of Roman numers is used.</p>
+                  <p>In the VICAV Dictionary of Egyptian Arabic, the system proposed by Woidich (2006) is applied. 
+                    Otherwise, the traditional Roman numers are used.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <form type="lemma">
@@ -1510,7 +1708,7 @@
    <gramGrp>
       <gram type="nominalState">construct</gram>
    </gramGrp>
-   <orth>abu</orth>
+   <orth xml:lang="ar-Latn">abu</orth>
 </form>
   
 …
@@ -1528,7 +1726,7 @@
    <orth xml:lang="ar-Latn">ʕālī</orth>
    <orth xml:lang="ar">عالي</orth>
    <gramGrp>
-      <gram type="morphPattern">1ā2ī</gram>
+      <gram type="morphPattern" xml:lang="ar-Latn">1ā2ī</gram>
       <gram type="number">singular</gram>
       <gram type="msd">determined</gram>
    </gramGrp>
@@ -1541,7 +1739,7 @@
 
                <div>
                   <head xml:id="morphPattern">Morphological patterns (Arabic)</head>
-                  <p>The value morphPattern stands for morphological pattern which are used in form elements to 
+                  <p>The value "morphPattern" stands for morphological pattern. These are used in form elements to 
                      identify particular templates being used to create wordforms in Semitic languages. 
                      In the VICAV system, the root consonants are symbolised by numbers.</p>
                      
@@ -1551,12 +1749,12 @@
    <orth xml:lang="ar-Latn">kātib</orth>
    <orth xml:lang="ar">كاتب</orth>
    <gramGrp>
-      <gram type="morphPattern">1ā2i3</gram>
+      <gram type="morphPattern" xml:lang="ar-Latn">1ā2i3</gram>
    </gramGrp>
 </form>
    
 …</egXML>
-                  <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                   
                   <p>These constructs are particularly used with wordforms of Arabic origin. When
                      foreign loans are well-integrated in the morphological system, they may be
@@ -1601,7 +1799,7 @@
    <usg type="geographic">
       <name type="place">Harran-Urfa</name>
    </usg>
-   <orth>yḥami</orth>
+   <orth xml:lang="ar-Latn">yḥami</orth>
 </form>
 
 …</egXML>
@@ -1681,16 +1879,35 @@
             </div>          
             
             <div>
-               <head>Other gram types</head>
+               <head>Other types referring to grammatical information</head>
                
+<!-- 
                <div>
                   <head xml:id="constraints">Constraints</head>
                   <p>Tbd: other values considered were type="restriction" or type="distribution" </p>
                </div>
+               -->
                
                <div>
                   <head xml:id="pragmatics">pragmatics</head>
-                  <p>Ttbd</p>
+                  <p>This @type value is used in usg elements.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<sense xml:id="VDEA.s_abla_001_0">
+   <usg type="pragmatics" xml:lang="en">used to respectfully address an older woman, such as e.g. teachers etc.</usg>
+   
+   <cit type="translationEquivalent">
+      <form><orth xml:lang="en">Miss</orth></form>
+   </cit>
+   
+   <cit type="translationEquivalent">
+      <form><orth xml:lang="en">Madam</orth></form>
+   </cit>
+ …
+</sense>
+
+…</egXML>
+<p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                </div>
             </div>
             
@@ -1795,6 +2012,14 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
+                     <cell style="border: 1px solid black">function</cell>
+                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">ShawiDict, isiZuluDict</cell>
+                  </row>
+                  <row>
                      <cell style="border: 1px solid black">gender</cell>
                      <cell style="border: 1px solid black">masculine, feminine</cell>
                      <cell style="border: 1px solid black">m., f.</cell>
@@ -1833,6 +2058,14 @@
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"/>
                      <cell style="border: 1px solid black">EgyDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">morphStruct</cell>
+                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"/>
+                     <cell style="border: 1px solid black">isiZuluDiuct</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black">msd (morphosyntactic description)</cell>
@@ -1932,21 +2165,34 @@
                and information specifying usage domains and or semantic categories.</p>
 
             <div>
-               <head>Domain labels</head>
+               <head xml:id="domainLabels">Domain labels</head>
                <p>We attempt to indicate the specific field of knowledge a word is primarily used
-                  in. The applied terms are documented in a taxonomy in the <tag>encodingDesc</tag> of
-                  the header. In accordance with Lex-0, the attribute <att>valueDatcat</att> is used 
+                  in. The applied terms are documented in a taxonomy in the vocabs.xml document. 
+                  In accordance with Lex-0, the attribute <att>valueDatcat</att> is used 
                   to refer to the taxonomy in the header.</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
                   
 <sense xml:id="VDEA.s_disk_001_0">
-   <usg type="domain" valueDatcat="#domains.medicine">medicine</usg>
+   <usg type="domain" valueDatcat="voc:domains.medicine">medicine</usg>
    <cit type="translationEquivalent">
       <form>
          <orth xml:lang="en">slipped disk</orth>
       </form>
    </cit>
 </sense>
+                  
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The SHAWI Dictionary )</p>
+               
+               <p>The header of the dictionary contains the path to the vocabs.xml document.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+                  
+<encodingDesc>
+   <listPrefixDef xml:id="listPrefixDef">
+      <prefixDef ident="voc" matchPattern="^(.+)$" replacementPattern="file:///../vicav-library/vicav_vocabs/vocabs.xml#$1"/>
+   </listPrefixDef>
+</encodingDesc>
                   
 …
 </egXML>
@@ -1958,11 +2204,10 @@
                <p>Some VICAV dictionaries contain labels such as <term>kinship term</term>,
                      <term>city</term>, <term>harbour</term> etc. placing them in particular
                   semantic categories. This kind of information is put in <att>ana</att> attributes
-                  the values of which are defined in a taxonomy in the <tag>encodingDesc</tag> of
-                  the header.</p>
+                  the values of which are defined in a taxonomy in the vocabs.xml document (cf. <ref target="#domainLabels">Domain labels</ref>).</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<sense xml:id="VDEA.s_il_macaadii_001_0" ana="#semCats.geoPlaces.cityPart">
+<sense xml:id="VDEA.s_il_macaadii_001_0" ana="voc:semCats.geoPlaces.cityPart">
    <cit type="translationEquivalent">
       <form>
          <orth xml:lang="en">el-Ma’adi</orth>
@@ -2019,7 +2264,7 @@
          </div>
 
          <div>
-            <head>Usage labels</head>
+            <head>Usage labels (synopsis)</head>
             <p>According to Lex-0 the element <tag>usg</tag> has to be typefied. A type not
                mentioned in the Lex-0 specification is <att>pragmatics</att> which we use to specify in
                which situations a particular lexical item is being used.</p>
@@ -2042,7 +2287,12 @@
                   <cell style="border: 1px solid black">FarsiDict</cell>
                </row>
                <row>
-                  <cell style="border: 1px solid black">socioCultural</cell>
+                  <cell style="border: 1px solid black"><ref target="#pragmatics">pragmatics</ref></cell>
+                  <cell style="border: 1px solid black">(prose)</cell>
+                  <cell style="border: 1px solid black">EgyDict</cell>
+               </row>
+               <row>
+                  <cell style="border: 1px solid black"><ref target="#socioCulturalInformation">socioCultural</ref></cell>
                   <cell style="border: 1px solid black">informal</cell>
                   <cell style="border: 1px solid black">FarsiDict</cell>
                </row>
@@ -2092,7 +2342,7 @@
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
             
             <div>
-               <head>Usage</head>
+               <head xml:id="socioCulturalInformation">Sociocultural information</head>
                <p>Examples often have usage labels.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -2103,6 +2353,7 @@
 </cit>
    
 …</egXML>
+<p rendition="#exampleSource">(Source: Small Dictionary of Contemporary Persian)</p>
             </div>
             
             <div>
@@ -2313,7 +2564,7 @@
             
             <div>
                <head xml:id="simpleBibls">The "simple" solution</head>
-               <p>Currently The main reason</p>
+               <p>Except for ShawiDict, the canonical Lex-0 solution is applied.</p>
             </div>
          </div>
 
@@ -2356,6 +2607,10 @@
          <div>
             <head>Part 2: Formal Specification</head>
 
+            <!--
+               <schemaSpec ident="acdh-ch-dicts" source="file:/C:/Users/KMoerth/ch_data/_projects/generic-dict-schema/schema/out/acdh-ch-dicts_compiled.sch">
+               <schemaSpec ident="acdh-ch-dicts" source="file:/C:\Users\KMoerth\ch_data\_projects\tei_lex0/TEILex0.compiled.odd">
+               -->
             <schemaSpec ident="acdh-ch-dicts" source="https://raw.githubusercontent.com/acdh-oeaw/generic-dict-schema/main/schema/tmp/TEILex0.compiled.odd"><classSpec rend="add" module="tei" type="atts" xml:id="class-attr-anchoring" ident="att.anchoring">
   <gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">anchoring</gloss>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2021-01-28" xml:lang="en">provides attributes for use on annotations, e.g. notes and groups of notes
@@ -5003,14 +5258,18 @@ sub-classification for the element additional to that provided by its
                      <constraint>
                         
                         <s:rule context="tei:orth">
-                           <s:assert test="@xml:lang=('undefined', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'ota', 'tr')">orth with incorrect @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
                         <s:rule context="tei:entry">
-                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav')">entry needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:cit[@type='example']/tei:quote">
-                           <s:assert test="@xml:lang=('ar', 'ar-Latn')">cit needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar', 'ar-Latn', 'zu')">cit needs to have a correct @xml:lang</s:assert>
+                        </s:rule>
+                        
+                        <s:rule context="tei:cit[@type='example']/@xml:lang">
+                           <s:report test="true()">cit must not have an @xml:lang attribute</s:report>
                         </s:rule>
                         
                         <s:rule context="tei:gram[@type=('arguments','diaRoot','root','synRoot')]">
@@ -5109,7 +5368,7 @@ sub-classification for the element additional to that provided by its
         utilizando los códigos extraídos de <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC
           3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto dell'elemento
         utilizzando i codici tratti da <ref target="https://www.ietf.org/rfc/rfc3066.txt">RFC
-        3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">gibt die Sprache des Elementinhalts durch ein <soCalled>Tag</soCalled> an, das nach <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref> festgelegt wird.</desc><datatype xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><dataRef key="teidata.language"/></datatype><valList type="closed"><valItem ident="ar"/><valItem ident="ar-acm-x-shawi-vicav"/><valItem ident="ar-arz-x-cairo-vicav"/><valItem ident="ar-apc-x-damascus-vicav"/><valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem><valItem ident="cop"><desc>Coptic</desc></valItem><valItem ident="en"><desc>English</desc></valItem><valItem ident="de"><desc>German</desc></valItem><valItem ident="es"><desc>Spanish</desc></valItem><valItem ident="fa"><desc>Modern Persian</desc></valItem><valItem ident="fr"><desc>French</desc></valItem><valItem ident="gr"><desc>Greek</desc></valItem><valItem ident="gr-Latn"><desc>romanised Greek</desc></valItem><valItem ident="it"><desc>Italian</desc></valItem><valItem ident="ku"><desc>Kurdish</desc></valItem><valItem ident="la"><desc>Latin; used for scientific names</desc></valItem><valItem ident="ota"><desc>Ottoman</desc></valItem><valItem ident="tr"><desc>Turkish</desc></valItem><valItem ident="undefined"><desc>Temporary work-around, to be removed in final version</desc></valItem></valList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+        3066</ref></desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2025-02-06" xml:lang="de">gibt die Sprache des Elementinhalts durch ein <soCalled>Tag</soCalled> an, das nach <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref> festgelegt wird.</desc><datatype xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"><dataRef key="teidata.language"/></datatype><valList type="closed"><valItem ident="af"><desc>Afrikaans</desc></valItem><valItem ident="ar"><desc>Any form of Arabic, including spoken varieties and dialects</desc></valItem><valItem ident="ar-acm-x-shawi-vicav"/><valItem ident="ar-arz-x-cairo-vicav"><desc>Eygyptian Arabic</desc></valItem><valItem ident="ar-apc-x-damascus-vicav"><desc>Damascus Arabic</desc></valItem><valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem><valItem ident="cop"><desc>Coptic</desc></valItem><valItem ident="de"><desc>German</desc></valItem><valItem ident="en"><desc>English</desc></valItem><valItem ident="es"><desc>Spanish</desc></valItem><valItem ident="fa"><desc>Modern Persian</desc></valItem><valItem ident="fr"><desc>French</desc></valItem><valItem ident="gr"><desc>Greek</desc></valItem><valItem ident="gr-Latn"><desc>romanised Greek</desc></valItem><valItem ident="it"><desc>Italian</desc></valItem><valItem ident="ku"><desc>Kurdish</desc></valItem><valItem ident="la"><desc>Latin; used for scientific names</desc></valItem><valItem ident="nr"><desc/></valItem><valItem ident="nso"><desc/></valItem><valItem ident="ota"><desc>Ottoman</desc></valItem><valItem ident="ra"><desc/></valItem><valItem ident="ru"><desc>Russian</desc></valItem><valItem ident="ss"><desc>seSotho</desc></valItem><valItem ident="sw"><desc>siSwati</desc></valItem><valItem ident="tn"><desc/></valItem><valItem ident="tr"><desc>Turkish</desc></valItem><valItem ident="ts"><desc>seTswana</desc></valItem><valItem ident="ve"><desc>Venda</desc></valItem><valItem ident="xh"><desc>isiXhosa</desc></valItem><valItem ident="zu"><desc>isiZulu</desc></valItem><valItem ident="undefined"><desc>Temporary work-around, to be removed in final version</desc></valItem></valList><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="GLOBAL-egXML-op" xml:lang="en">
           <p> … The consequences of
 	  this rapid depopulation were the loss of the last
@@ -8531,12 +8790,7 @@ one initial.</desc>
           sodass dann für jeden Teil spezielle Überschriften (<gi>headLabel</gi>, <gi>headItem</gi>) verwendet werden können.</p>
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COLI">3.8. Lists</ref>
-  </listRef></elementSpec><elementSpec rend="add" module="core" xml:id="gi-item" ident="item"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="en">item</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="de">Listenpunkt</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains one component of a list.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">목록에서 하나의 성분을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含列表中的一個項目。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">リストのいち項目を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">contient un composant d'une liste.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene un componente de una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene un componente di una lista</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="de">enthält einen Listenpunkt.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <memberOf key="att.global"/>
-    <memberOf key="att.sortable"/>
-  </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <macroRef key="macro.specialPara"/>
-  </content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+  </listRef></elementSpec><elementSpec rend="add" module="core" xml:id="gi-item" ident="item"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="en">item</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="de">Listenpunkt</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">contains one component of a list.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">목록에서 하나의 성분을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含列表中的一個項目。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">リストのいち項目を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-06" xml:lang="fr">contient un composant d'une liste.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene un componente de una lista.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene un componente di una lista</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-06-04" xml:lang="de">enthält einen Listenpunkt.</desc><classes><memberOf key="att.global"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><macroRef key="macro.specialPara"/><elementRef key="c" minOccurs="1" maxOccurs="unbounded"/><elementRef key="desc" minOccurs="1" maxOccurs="unbounded"/></alternate></content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-item-egXML-gh" source="#DS-eg-01">
       <list rend="numbered">
         <head>Here begin the chapter headings of Book IV</head>
@@ -10158,7 +10412,54 @@ contexts.</p>
     </attDef>
   </attList>
   
-</classSpec><classSpec rend="add" module="dictionaries" xml:id="COMPDICT" type="model" ident="model.entryLike" predeclare="true">
+</classSpec><elementSpec rend="add" module="analysis" xml:id="gi-c" ident="c"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">character</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">문자(글자)</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">文字符號</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">caractère</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">carácter</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">carattere</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2023-09-27" xml:lang="ja">文字</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">represents a character.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">문자(글자)를 표시한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">表示一個文字符號。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">文字を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">représente un caractère.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">representa un carácter gráfico.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">rappresenta il carattere</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.notated"/>
+    <memberOf key="att.segLike"/>
+    <memberOf key="att.typed"/>
+    
+    <memberOf key="model.segLike"/>
+  </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <macroRef key="macro.xtext"/>
+  </content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-c-egXML-bv" source="#TwN">
+      <phr>
+        <c>M</c>
+        <c>O</c>
+        <c>A</c>
+        <c>I</c>
+        <w>doth</w>
+        <w>sway</w>
+        <w>my</w>
+        <w>life</w>
+      </phr>
+    </egXML>
+  </exemplum><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-c-egXML-bt">
+      <c type="punctuation">?</c>
+    </egXML>
+  </exemplum><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-c-egXML-sd">
+      <c type="標點符號">?</c>
+    </egXML>
+  </exemplum><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-10-25" xml:lang="en">
+    <p>Contains a single character, a <gi>g</gi> element, or a
+    sequence of graphemes to be treated as a single character. The
+    <att>type</att> attribute is used to indicate the function of this
+    segmentation, taking values such as <val>letter</val>,
+    <val>punctuation</val>, or <val>digit</val> etc. </p>
+  </remarks><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">
+    <p rend="dataDesc">Contient un seul caractère, un élément <gi>g</gi> ou une suite de graphèmes à traiter comme
+                un seul caractère. L'attribut <att>type</att> est utilisé pour indiquer la fonction de cette segmentation, avec des valeurs telles que <val>letter</val>,
+    <val>punctuation</val>, ou <val>digit</val>, etc.</p>
+  </remarks><remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">
+    <p>
+      一つの文字、一つの<gi>g</gi>、あるいは一つの文字として扱われるべき一連の文字素を含む。<att>type</att>属性は、その役割を示す。たとえば<val>letter</val>、<val>punctuation</val>、あるいは<val>digit</val>。
+    </p>
+  </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILC">18.1. Linguistic Segment Categories</ref>
+  </listRef></elementSpec><classSpec rend="add" module="dictionaries" xml:id="COMPDICT" type="model" ident="model.entryLike" predeclare="true">
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-10-03" xml:lang="en">groups elements structurally analogous to paragraphs within dictionaries.</desc>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">사전 내에서 문단과 구조적으로 유사한 요소들을 모아 놓는다.</desc>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">匯集字典的基礎標籤組所獨有的元件層次元素。</desc>
@@ -10915,7 +11216,9 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
                             <equiv name="tns" uri="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tns.html"/>
                         </valItem><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="valency"/><valItem xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="collocate">
                             <equiv name="colloc" uri="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-colloc.html"/>
-                        </valItem><valItem ident="arguments" mode="add">
+                        </valItem><valItem ident="agreement" mode="add">
+                              <desc/>
+                           </valItem><valItem ident="arguments" mode="add">
                               <desc>arguments to a verb (see above)</desc>
                            </valItem><valItem ident="constraint" mode="add">
                               <desc>constraints</desc>
@@ -10933,20 +11236,30 @@ list of values. Typical values might be <mentioned>IPA</mentioned>,
                               </remarks>
                            </valItem><valItem ident="diaRoot" mode="add">
                               <desc>diachronic root</desc>
+                           </valItem><valItem ident="function" mode="add">
+                              <desc>possible values: copulative (ShawiDict, isiZuluDict)</desc>
                            </valItem><valItem ident="morphPattern" mode="add">
-                              <desc>morphological pattern</desc>
+                              <desc>morphological pattern: for Semitic languages</desc>
+                           </valItem><valItem ident="morphStruct" mode="add">
+                              <desc>This is used to indicate the distinct morphemes a word is made up of. It is used in isiZuluDict.</desc>
                            </valItem><valItem ident="msd" mode="add">
                               <desc>The abbreviation stands for morphosyntactic description. The
                                  value of this gram-type can be
                                  "activeParticiple|passiveParticiple|determined"</desc>
+                           </valItem><valItem ident="nomClass" mode="add">
+                              <desc>Used for "nominal class" in isiZuluDict.</desc>
                            </valItem><valItem ident="nominalState" mode="add">
                               <desc>Used for "status constructus"</desc>
                            </valItem><valItem ident="person" mode="add"/><valItem ident="polarity" mode="add">
-                              <desc/>
+                              <desc>possible value: negative</desc>
                            </valItem><valItem ident="root" mode="add">
                               <desc>synchronous root</desc>
+                           </valItem><valItem ident="semType" mode="add">
+                              <desc>values: inchoative</desc>
                            </valItem><valItem ident="state" mode="add">
                               <desc>construct</desc>
+                           </valItem><valItem ident="stem" mode="add">
+                              <desc>Used in isiZuluDict and farsiDict </desc>
                            </valItem><valItem ident="synRoot" mode="add">
                               <desc>synchronous root</desc>
                            </valItem><valItem ident="voice" mode="add">
@@ -14110,6 +14423,253 @@ elements of  <gi>profileDesc</gi> unless these are documenting multiple texts.</
   </remarks><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD4">2.4. The Profile Description</ref>
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD11">2.1.1. The TEI Header and Its Components</ref>
+  </listRef></elementSpec><elementSpec rend="add" module="header" xml:id="gi-xenoData" ident="xenoData"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2015-05-30" xml:lang="en">non-TEI metadata</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2015-05-30" xml:lang="en">provides a container
+  element into which metadata in non-TEI formats may be
+  placed.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <memberOf key="att.global"/>
+    <memberOf key="att.declarable"/>
+    <memberOf key="att.typed"/>
+    
+    
+  </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <alternate minOccurs="1" maxOccurs="1"><textNode/><anyElement minOccurs="1" maxOccurs="unbounded"/></alternate>
+  </content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="xenoData-is-declarable" scheme="schematron" xml:lang="en">
+    <constraint>
+      <sch:pattern is-a="declarable">
+        <sch:param name="tde" value="tei:xenoData"/>
+      </sch:pattern>
+    </constraint>
+  </constraintSpec><exemplum xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2017-05-11" xml:lang="en">
+    <p>This example presumes that the prefix <code>dc</code> has been bound to the namespace
+        <code>http://purl.org/dc/elements/1.1/</code> and the prefix <code>rdf</code> is bound to
+      the namespace <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>. Note: The
+        <att>about</att> attribute on the <gi>rdf:Description</gi> in this example gives a URI
+      indicating the resource to which the metadata contained therein refer. The
+        <gi>rdf:Description</gi> in the second <gi>xenoData</gi> block has a blank
+        <att>about</att>, meaning it is pointing at the <hi rend="italic">current</hi> document, so
+      the RDF is about the document within which it is contained, i.e. the TEI document containing
+      the <gi>xenoData</gi> block. Similarly, any kind of relative URI may be used, including
+      fragment identifiers (see <ptr target="#SG-id"/>). Do note, however, that if the contents of
+      the <gi>xenoData</gi> block are to be extracted and used elsewhere, any relative URIs will
+      have to be resolved accordingly.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-xenoData-egXML-im" valid="feasible">
+      <xenoData>
+        <rdf:RDF><rdf:Description rdf:about="http://www.worldcat.org/oclc/606621663"><dc:title>The description of a new world, called the blazing-world</dc:title>
+                <dc:creator>The Duchess of Newcastle</dc:creator>
+                <dc:date>1667</dc:date>
+                <dc:identifier>British Library, 8407.h.10</dc:identifier>
+                <dc:subject>utopian fiction</dc:subject></rdf:Description></rdf:RDF>
+      </xenoData>
+      <xenoData>
+                <rdf:RDF><rdf:Description rdf:about=""><dc:title>The Description of a New World, Called the Blazing-World, 1668</dc:title>
+                <dc:creator>Cavendish, Margaret (Lucas), Duchess of Newcastle</dc:creator>
+                <dc:publisher>Women Writers Project</dc:publisher>
+                <dc:date>2002-02-12</dc:date>
+                <dc:subject>utopian fiction</dc:subject></rdf:Description></rdf:RDF>
+      </xenoData>
+    </egXML>
+  </exemplum><exemplum xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2015-05-30" xml:lang="en">
+    <p>In this example, the prefix
+    <code>rdf</code> is bound to the namespace <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>, the prefix
+    <code>dc</code> is bound to the namespace <code>http://purl.org/dc/elements/1.1/</code>, and the prefix
+    <code>cc</code> is bound to the namespace <code>http://web.resource.org/cc/</code>.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-xenoData-egXML-id" valid="feasible"><xenoData>
+        <rdf:RDF>
+          <cc:Work rdf:about="">
+            <dc:title>Applied Software Project Management  - review</dc:title>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text"/>
+            <dc:license rdf:resource="http://creativecommons.org/licenses/by-sa/2.0/uk/"/>
+          </cc:Work>
+          <cc:License rdf:about="http://creativecommons.org/licenses/by-sa/2.0/uk/">
+            <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+            <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+            <cc:requires rdf:resource="http://web.resource.org/cc/Notice"/>
+            <cc:requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+            <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+            <cc:requires rdf:resource="http://web.resource.org/cc/ShareAlike"/>
+          </cc:License>
+        </rdf:RDF>
+</xenoData></egXML>
+  </exemplum><exemplum xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2015-07-11" xml:lang="en">
+    <p>In this example, the prefix
+    <code>dc</code> is again bound to the namespace
+    <code>http://www.openarchives.org/OAI/2.0/oai_dc/</code>, and the prefix
+    <code>oai_dc</code> is bound to the namespace <code>http://www.openarchives.org/OAI/2.0/oai_dc/</code>.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-xenoData-egXML-uw" valid="feasible"> <xenoData>
+      <oai_dc:dc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <dc:title>The colonial despatches of Vancouver Island and British
+        Columbia 1846-1871: 11566, CO 60/2, p. 291; received 13 November.
+        Trevelyan to Merivale (Permanent Under-Secretary)</dc:title>
+        <dc:date>1858-11-12</dc:date>
+        <dc:creator>Trevelyan</dc:creator>
+        <dc:publisher>University of Victoria Humanities Computing and Media
+        Centre, and UVic Libraries</dc:publisher>
+        <dc:type>InteractiveResource</dc:type>
+        <dc:format>application/xhtml+xml</dc:format>
+        <dc:type>text</dc:type>
+        <dc:identifier>http://bcgenesis.uvic.ca/getDoc.htm?id=B585TE13.scx</dc:identifier>
+        <dc:rights>This document is licensed under a Creative Commons …</dc:rights>
+        <dc:language>(SCHEME=ISO639) en</dc:language>
+        <dc:source>Transcribed from microfilm and/or original documents, and
+        marked up in TEI P5 XML. The interactive XHTML resource is generated
+        from the XHTML using XQuery and XSLT.</dc:source>
+        <dc:source>repository: CO</dc:source>
+        <dc:source>coNumber: 60</dc:source>
+        <dc:source>coVol: 2</dc:source>
+        <dc:source>page: 291</dc:source>
+        <dc:source>coRegistration: 11566</dc:source>
+        <dc:source>received: received 13 November</dc:source>
+        <dc:subject>Trevelyan, Sir Charles Edward</dc:subject>
+        <dc:subject>Merivale, Herman</dc:subject>
+        <dc:subject>Elliot, T. Frederick</dc:subject>
+        <dc:subject>Moody, Colonel Richard Clement</dc:subject>
+        <dc:subject>Lytton, Sir Edward George Earle Bulwer</dc:subject>
+        <dc:subject>Jadis, Vane</dc:subject>
+        <dc:subject>Carnarvon, Earl</dc:subject>
+        <dc:subject>British Columbia</dc:subject>
+        <dc:description>British Columbia correspondence: Public Offices
+        document (normally correspondence between government
+        departments)</dc:description>
+      </oai_dc:dc>
+    </xenoData>
+    </egXML>
+  </exemplum><exemplum xmlns:mods="http://www.loc.gov/mods/v3" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2015-06-25" xml:lang="en">
+    <p>In this example, the prefix <code>mods</code> is bound to the
+    namespace <code>http://www.loc.gov/mods/v3</code>.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-xenoData-egXML-gp" valid="feasible">
+      <xenoData>
+        <mods:mods>
+          <mods:titleInfo>
+            <mods:title>Academic adaptation and cross-cultural
+            learning experiences of Chinese students at American
+            universities</mods:title>
+            <mods:subTitle>a narrative inquiry</mods:subTitle>
+          </mods:titleInfo>
+          <mods:name type="personal" authority="local">
+            <mods:namePart/>
+            <mods:role>
+              <mods:roleTerm authority="marcrelator" type="text">Author</mods:roleTerm>
+            </mods:role>
+            <mods:affiliation>Northeastern University</mods:affiliation>
+            <mods:namePart type="given">Hong</mods:namePart>
+            <mods:namePart type="family">Zhang</mods:namePart>
+          </mods:name>
+          <mods:name type="personal" authority="local">
+            <mods:namePart/>
+            <mods:role>
+              <mods:roleTerm authority="local" type="text">Advisor</mods:roleTerm>
+            </mods:role>
+            <mods:namePart type="given">Liliana</mods:namePart>
+            <mods:namePart type="family">Meneses</mods:namePart>
+          </mods:name>
+          <!-- ... -->
+          <mods:typeOfResource>text</mods:typeOfResource>
+          <mods:genre>doctoral theses</mods:genre>
+          <mods:originInfo>
+            <mods:place>
+              <mods:placeTerm type="text">Boston (Mass.)</mods:placeTerm>
+            </mods:place>
+            <mods:publisher>Northeastern University</mods:publisher>
+            <mods:copyrightDate encoding="w3cdtf" keyDate="yes">2013</mods:copyrightDate>
+          </mods:originInfo>
+          <mods:language>
+            <mods:languageTerm authority="iso639-2b" type="code">eng</mods:languageTerm>
+          </mods:language>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:digitalOrigin>born digital</mods:digitalOrigin>
+          </mods:physicalDescription>
+          <!-- ... -->
+        </mods:mods>
+      </xenoData>
+    </egXML>
+  </exemplum><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+    <p>This example shows <ref target="https://tools.ietf.org/html/rfc7946">GeoJSON</ref> embedded
+      in <tag>xenoData</tag>. Note that JSON does not permit newlines inside string values. These
+      must be escaped as <code>\n</code>. To avoid the accidental insertion of newlines by software,
+      the use of <att>xml:space</att> is recommended. Blocks of JSON should be wrapped in CDATA
+      sections, as they may contain characters illegal in XML.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-xenoData-egXML-ii" xml:space="preserve"><xenoData xml:space="preserve">
+&lt;![CDATA[
+{
+    "features": [
+        {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    68.388483,
+                    33.498616
+                ]
+            },
+            "type": "Feature",
+            "id": "darmc-location-19727",
+            "properties": {
+                "snippet": "Unknown; 330 BC - AD 300",
+                "link": "https://pleiades.stoa.org/places/59694/darmc-location-19727",
+                "description": "5M scale point location",
+                "location_precision": "precise",
+                "title": "DARMC location 19727"
+            }
+        }
+    ],
+    "id": "59694",
+    "subject": [
+        "dare:ancient=1",
+        "dare:feature=settlement",
+        "dare:major=0"
+    ],
+    "title": "Arachosiorum Oppidum/Alexandria",
+    "provenance": "Barrington Atlas: BAtlas 6 B3 Arachosiorum Oppidum/Alexandria",
+    "placeTypeURIs": [
+        "https://pleiades.stoa.org/vocabularies/place-types/settlement"
+    ],
+    "details": "&lt;p&gt;The Barrington Atlas Directory notes: Kalat-e-Ghilzai? AFG&lt;/p&gt;",
+    "@context": {
+        "snippet": "dcterms:abstract",
+        "rights": "dcterms:rights",
+        "description": "dcterms:description",
+        "title": "dcterms:title",
+        "dcterms": "http://purl.org/dc/terms/",
+        "subject": "dcterms:subject",
+        "uri": "@id",
+        "created": "dcterms:created"
+    },
+    "review_state": "published",
+    "type": "FeatureCollection",
+    "description": "An ancient place, cited: BAtlas 6 B3 Arachosiorum Oppidum/Alexandria",
+    "reprPoint": [
+        68.388483,
+        33.498616
+    ],
+    "placeTypes": [
+        "settlement"
+    ],
+    "bbox": [
+        68.388483,
+        33.498616,
+        68.388483,
+        33.498616
+    ],
+    "rights": "Copyright © The Contributors. Sharing and remixing permitted under CC-BY.",
+    "created": "2010-09-23T04:31:55Z",
+    "uri": "https://pleiades.stoa.org/places/59694",
+    "creators": [
+        {
+            "username": null,
+            "name": "M.U. Erdosy"
+        }
+    ],
+    "@type": "Place"
+}
+]]&gt;
+</xenoData></egXML>
+    <p>Note: the example above has been trimmed for legibility. The original may be found linked
+      from <ref target="https://pleiades.stoa.org/places/59694">Arachosiorum
+        Oppidum/Alexandria</ref>. The contributors, listed per the license terms, are R. Talbert,
+      Jeffrey Becker, W. Röllig, Tom Elliott, H. Kopp, DARMC, Sean Gillies, B. Siewert-Mayer,
+      Francis Deblauwe, and Eric Kansa.</p>
+  </exemplum><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD9">2.5. Non-TEI Metadata</ref>
   </listRef></elementSpec><elementSpec rend="add" module="header" xml:id="gi-revisionDesc" ident="revisionDesc"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">revision description</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">descriptif des révisions</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">수정 기술</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">修訂描述</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">Beschreibung der Dateihistorie</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">descripción de la revisión</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">descirzione della revisione</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">summarizes the revision history for a file.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">fournit un résumé de l’historique des révisions d’un fichier.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">하나의 파일에 대한 수정 이력을 요약한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">概述檔案的修訂歷史。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">ファイルの改訂履歴を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-25" xml:lang="de">dokumentiert die Änderungen, die an der Datei vorgenommen wurden.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">resume el historial de la revisión de un archivo.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">sintetizza la storia delle revisioni di un file</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
     <memberOf key="att.docStatus"/>
@@ -16170,25 +16730,34 @@ may be specified in a feature declaration.</desc>
     rasgos en estructuras de rasgos</desc>
   <desc versionDate="2007-01-21" xml:lang="it">raggruppa tutti gli elementi che rappresentano valori di
     tratti in strutture di tratti</desc>
-</classSpec><elementSpec rend="add" ident="listChange" mode="add" module="header"><content>
+</classSpec><elementSpec rend="add" module="derived-module-acdh-ch-dicts" ident="desc" mode="add" source="tei:4.8.0"><desc>Contains an individual character.</desc><classes>
+                     <memberOf key="att.global"/>
+                  </classes><content>
+                     <textNode/>
+                  </content></elementSpec><elementSpec rend="add" ident="listChange" mode="add" module="header"><content>
                      <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
                   </content></elementSpec><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="CMC" ident="cmc"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="PH" xml:id="DPH" ident="transcr"/></schemaSpec>
          </div>
          
+<!-- 
          <div type="bibliography" xml:id="bibliography">
             <listBibl>
                <biblStruct xml:id="abcdict">
                   <monogr>
                      <title>ABC-Dict</title>
                      <imprint>
-                       <pubPlace/>
+                       <pubPlace></pubPlace>
                      </imprint>
                   </monogr>
                </biblStruct>
             </listBibl>
          </div>
-         
+      -->    
          
       </body>
+      <back>
+         <p>_____________________________________________________</p>
+          <p><ref target="https://oeaw.ac.at/en/oeaw/imprint">Imprint</ref></p>
+      </back>   
    </text>
 </TEI>
