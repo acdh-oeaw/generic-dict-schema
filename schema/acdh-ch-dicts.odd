@@ -219,7 +219,7 @@
                <row>
                   <cell style="background:rgb(67, 95, 206); color:white;">Arabic/Persian</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;">Glyph</cell>
-                  <cell style="background:rgb(67, 95, 206); color:white;">Hex-calue</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Hex-value</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;">Dec-value</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;"></cell>
                   <cell style="background:rgb(67, 95, 206); color:white;"></cell>
@@ -324,7 +324,6 @@
                         <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
                         <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
                         <item style="display: inline; margin-right:5px" n="00299">ī</item>
-                        <item style="display: inline; margin-right:5px" n="00345">ř</item>
                         <item style="display: inline; margin-right:5px" n="00353">š</item>
                         <item style="display: inline; margin-right:5px" n="07779">ṣ</item>
                         <item style="display: inline; margin-right:5px" n="07789">ṭ</item>
@@ -334,7 +333,6 @@
                         <item style="display: inline; margin-right:5px" n="07829">ẕ</item>
                         <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
                         <item style="display: inline; margin-right:5px" n="00661">ʕ</item>
-                        <item style="display: inline; margin-right:5px" n="00705">ˁ</item>
                      </list>
                   </cell>
                </row>
@@ -870,7 +868,7 @@
                   
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<form type="derived">
+<form type="derivative">
    <orth xml:lang="zu">-bhukela</orth>
    <gramGrp>
       <gram type="derivedVerbClass">applicative</gram>
@@ -3191,7 +3189,7 @@
                            <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
                         <s:rule context="tei:entry">
-                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')">entry needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:cit[@type='example']/tei:quote">
@@ -3297,6 +3295,53 @@
                         </valList>
                      </attDef>
                   </attList>
+               </elementSpec>
+
+               <!-- 1. Das Element prefixDef deklarieren bzw. einschließen -->
+               <elementSpec ident="prefixDef" module="header" mode="add">
+                  <classes>
+                     <memberOf key="att.global"/>
+                  </classes>
+                  <attList>
+                     <!-- Die drei benötigten Attribute explizit erzwingen -->
+                     <attDef ident="ident" mode="add" usage="req">
+                        <datatype><dataRef key="teidata.word"/></datatype>
+                     </attDef>
+                     <attDef ident="matchPattern" mode="add" usage="req">
+                        <datatype><dataRef key="teidata.pattern"/></datatype>
+                     </attDef>
+                     <attDef ident="replacementPattern" mode="add" usage="req">
+                        <datatype><dataRef key="teidata.pointer"/></datatype>
+                     </attDef>
+                  </attList>
+               </elementSpec>
+               
+               <!-- 2. listPrefixDef modifizieren, um prefixDef und optional p zu erlauben -->
+               <elementSpec ident="listPrefixDef" module="header" mode="add">
+                  <content>
+                     <!-- Erlaubt eine Kombination aus Dokumentationsabsätzen (p) und prefixDef-Einträgen -->
+                     <alternate minOccurs="1" maxOccurs="unbounded">
+                        <elementRef key="prefixDef"/>
+                        <elementRef key="p"/>
+                     </alternate>
+                  </content>
+               </elementSpec>
+                            
+               
+               <!-- 3. encodingDesc modifizieren, um listPrefixDef zu erlauben -->
+               <elementSpec ident="encodingDesc" module="header" mode="change">
+                  <content>
+                     <!-- Hier erlauben wir die von Lex-0 standardmäßig erlaubten Elemente (z.B. classDecl, editorialDecl, p) 
+           UND fügen listPrefixDef hinzu -->
+                     <alternate minOccurs="0" maxOccurs="unbounded">
+                        <elementRef key="p"/>
+                        <elementRef key="classDecl"/>
+                        <elementRef key="editorialDecl"/>
+                        <elementRef key="tagsDecl"/>
+                        <!-- Das neue Element hier erlauben: -->
+                        <elementRef key="listPrefixDef"/>
+                     </alternate>
+                  </content>
                </elementSpec>
 
                <elementSpec ident="cit" mode="change" module="core">
