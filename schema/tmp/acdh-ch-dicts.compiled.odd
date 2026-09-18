@@ -218,7 +218,7 @@
                <row>
                   <cell style="background:rgb(67, 95, 206); color:white;">Arabic/Persian</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;">Glyph</cell>
-                  <cell style="background:rgb(67, 95, 206); color:white;">Hex-calue</cell>
+                  <cell style="background:rgb(67, 95, 206); color:white;">Hex-value</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;">Dec-value</cell>
                   <cell style="background:rgb(67, 95, 206); color:white;"/>
                   <cell style="background:rgb(67, 95, 206); color:white;"/>
@@ -323,7 +323,6 @@
                         <item style="display: inline; margin-right:5px" n="00487">ǧ</item>
                         <item style="display: inline; margin-right:5px" n="07717">ḥ</item>
                         <item style="display: inline; margin-right:5px" n="00299">ī</item>
-                        <item style="display: inline; margin-right:5px" n="00345">ř</item>
                         <item style="display: inline; margin-right:5px" n="00353">š</item>
                         <item style="display: inline; margin-right:5px" n="07779">ṣ</item>
                         <item style="display: inline; margin-right:5px" n="07789">ṭ</item>
@@ -333,7 +332,6 @@
                         <item style="display: inline; margin-right:5px" n="07829">ẕ</item>
                         <item style="display: inline; margin-right:5px" n="00660">ʔ</item>
                         <item style="display: inline; margin-right:5px" n="00661">ʕ</item>
-                        <item style="display: inline; margin-right:5px" n="00705">ˁ</item>
                      </list>
                   </cell>
                </row>
@@ -869,7 +867,7 @@
                   
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
-<form type="derived">
+<form type="derivative">
    <orth xml:lang="zu">-bhukela</orth>
    <gramGrp>
       <gram type="derivedVerbClass">applicative</gram>
@@ -5261,7 +5259,7 @@ sub-classification for the element additional to that provided by its
                            <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
                         <s:rule context="tei:entry">
-                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'zu')">entry needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:cit[@type='example']/tei:quote">
@@ -6496,21 +6494,6 @@ fin d'une division de texte.</desc>
     l'en-tête TEI d'un document des informations d'applications spécifiques.</desc>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-11-06" xml:lang="it">raggruppa elementi utilizzati per registrare informazioni
     specifiche di un'applicazione e relative a un documento nell'intestazione corrispondente</desc>
-</classSpec><classSpec rend="add" predeclare="true" module="tei" type="model" ident="model.encodingDescPart">
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-11-08" xml:lang="en">groups elements which may be used inside <gi>encodingDesc</gi> and appear multiple times.</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">regroupe des éléments
-  qui peuvent apparaître plusieurs fois dans
-    l'élément <gi>encodingDesc</gi>.</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">
-      <gi>encodingDesc</gi> 내부에 사용되어 여러 번 출현될 수 있는 요소들을 모아 놓는다.</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">匯集可在<gi>encodingDesc</gi>中使用並且可多次出現的元素</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">要素<gi>encodingDesc</gi>内で使われ、複数回出現可能な要素をまとめる。</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2018-07-18" xml:lang="de"> umfasst Elemente, die innerhalb des <gi>encodingDesc</gi>-Elements verwendet
-    werden und mehrfach auftreten können.</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">agrupa elementos que pueden aparecer al interno de
-      <gi>encodingDesc</gi> (Descripción de la codificación) y que aparecen en diversas ocasiones.</desc>
-  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">raggruppa gli elementi utilizzati all'interno di
-      <gi>encodingDesc</gi> e che appaiono più volte.</desc>
 </classSpec><classSpec rend="add" predeclare="true" module="tei" type="model" ident="model.editorialDeclPart">
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-10-18" xml:lang="en">groups elements which may be used inside <gi>editorialDecl</gi> and appear multiple times.</desc>
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">regroupe des éléments qui peuvent être employés dans
@@ -7224,6 +7207,66 @@ value.</desc>
         <ref target="https://www.w3.org/TR/css-values-3/">CSS3 working draft</ref>.</p>
   </remarks>
   
+</dataSpec><dataSpec rend="add" module="tei" ident="teidata.pattern">
+  
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-10-18" xml:lang="en">defines attribute values which
+    are expressed as a regular expression.</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">정규표현으로 표시된 속성 값을 정의한다.</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">定義的屬性值範圍以固定方法表示</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">正規表現を属性値として定義する。</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-06-12" xml:lang="fr">définit la gamme des valeurs
+    d'attributs exprimant une expression régulière.</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">define una gama de valores de
+    atributos expresados como una expresión regular.</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">definisce una gamma di valori di
+    attributi rappresentati come espressione regolare</desc>
+  <content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <dataRef name="token"/>
+  </content>
+  <remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2013-03-18" xml:lang="en">
+    <p>
+      <cit rend="display">
+        <quote>A regular expression, often called a <term>pattern</term>, is an
+          expression that describes a set of strings. They are usually used to
+          give a concise description of a set, without having to list all
+          elements. For example, the set containing the three strings
+            <mentioned>Handel</mentioned>, <mentioned>Händel</mentioned>, and
+            <mentioned>Haendel</mentioned> can be described by the pattern
+            <code>H(ä|ae?)ndel</code> (or alternatively, it is said that the
+          pattern <code>H(ä|ae?)ndel</code>
+          <term>matches</term> each of the three strings)</quote>
+        <ref target="http://en.wikipedia.org/wiki/Regular_expression#Basic_concepts">Wikipedia </ref>
+      </cit>
+    </p>
+    <p>This TEI datatype is mapped to the XSD token datatype, and may therefore
+      contain any string of characters. However, it is recommended that the
+      value used conform to the particular flavour of regular expression syntax
+      supported by XSD Schema. </p>
+    
+  </remarks>
+  <remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="ja" versionDate="2024-08-08">
+    <p>
+      <cit rend="display"><quote>正規表現は、よく<term>パタン/パターン</term>ともいわれるもので、文字列の集合を記述するための表現方法である。一般には、簡潔な表現で、 すべての要素を列挙することなく集合を表現するために使用される。例えば、三つの文字列<mentioned>Handel</mentioned>, <mentioned>Händel</mentioned>, <mentioned>Haendel</mentioned>〔訳注：これらはすべて「ヘンデル」の異表記〕を、一つのパタン<code>H(ä|ae?)ndel</code>で記述することができる（あるいは、<code>H(ä|ae?)ndel</code>は、三つの文字列のいずれにも<term>マッチする</term>といわれる）。</quote><ref target="http://en.wikipedia.org/wiki/Regular_expression#Basic_concepts">wikipedia</ref></cit>
+    </p>
+  </remarks>
+  <remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-05-25" xml:lang="fr">
+    <p>
+      <cit>
+        <quote>Une expression régulière, souvent appelée <term>modèle</term>,
+          est une expression qui décrit un jeu de chaînes de caractères. Elles
+          sont généralement utilisées pour donner une brève description d'un
+          jeu, sans avoir à en lister tous les éléments. Par exemple, le jeu
+          contenant les trois chaînes de caractères
+            <mentioned>Handel</mentioned>, <mentioned>Händel</mentioned>, et
+            <mentioned>Haendel</mentioned> peut être décrit comme le modèle
+            <code>H(ä|ae?)ndel</code> (ou on peut dire que
+            <code>H(ä|ae?)ndel</code>
+          <term>équivaut à</term> chacune des trois chaînes)</quote>
+        <ref target="http://fr.wikipedia.org/wiki/Expression_rationnelle">wikipedia</ref>
+        <ref target="http://en.wikipedia.org/wiki/Regular_expression#Basic_concepts">wikipedia</ref>
+      </cit>
+    </p>
+  </remarks>
 </dataSpec><dataSpec rend="add" module="tei" ident="teidata.pointer">
   <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2013-01-19" xml:lang="en">defines the range of attribute values used to provide a single
   URI, absolute or relative, pointing to some other
@@ -7301,6 +7344,15 @@ resource, either within the current document or elsewhere.</desc>
     <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2024-09-02" xml:lang="ja">バージョン番号に使用される属性値の範囲を定義する。</desc>
   <content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
       <dataRef name="token" restriction="[\d]+[a-z]*[\d]*(\.[\d]+[a-z]*[\d]*){0,3}"/>
+   </content>
+  <remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2013-04-14" xml:lang="en">
+      <p/>
+  </remarks>
+</dataSpec><dataSpec rend="add" module="tei" ident="teidata.replacement">
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2013-04-14" xml:lang="en">defines attribute values which contain a replacement template.</desc>
+  <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2024-08-08" xml:lang="ja">置換テンプレートを含む属性値を定義する。</desc>
+  <content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <textNode/>
    </content>
   <remarks xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2013-04-14" xml:lang="en">
       <p/>
@@ -11975,7 +12027,7 @@ purposes.</p>
     o pictogramas.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">fornisce informazioni descrittive su un caratteri o
     glifi.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
-    <memberOf key="model.encodingDescPart"/>
+    
   </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     
     <sequence minOccurs="1" maxOccurs="1"><elementRef key="desc" minOccurs="0"/><alternate minOccurs="1" maxOccurs="unbounded"><elementRef key="char"/><elementRef key="glyph"/></alternate></sequence>
@@ -13532,12 +13584,7 @@ distribution of a text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1
             </exemplum><listRef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3">2.2.7. The Source Description</ref>
   </listRef></elementSpec><elementSpec rend="add" module="header" xml:id="gi-encodingDesc" ident="encodingDesc"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-07-04" xml:lang="en">encoding description</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">description de l'encodage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">부호화 기술</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">編碼描述</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2006-10-18" xml:lang="de">Beschreibung der Kodierung</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">Descripción de la codificación</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">descrizione della codifica</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">documents the relationship between an electronic text and the
-source or sources from which it was derived.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">documente la relation d'un texte électronique avec sa ou ses sources.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">전자 텍스트와 그것의 원전 텍스트 혹은 텍스트들 사이의 관련성을 기록한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">記錄電子文件和其ㄧ個或多個文件來源之間的關係。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">電子テキストとその元資料との関係を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-17" xml:lang="de">dokumentiert das Verhältnis zwischen dem elektronischen Text und seiner Quelle oder den Quellen, von denen er sich ableitet.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">documenta la relación entre un texto electrónico y la fuente o fuentes de las que este deriva.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">documenta la relazione fra un documento elettronico e la o le fonti da cui è derivato.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <memberOf key="att.global"/>
-    
-  </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <alternate minOccurs="1" maxOccurs="unbounded"><classRef key="model.encodingDescPart"/><classRef key="model.pLike"/></alternate>
-  </content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
+source or sources from which it was derived.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">documente la relation d'un texte électronique avec sa ou ses sources.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">전자 텍스트와 그것의 원전 텍스트 혹은 텍스트들 사이의 관련성을 기록한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">記錄電子文件和其ㄧ個或多個文件來源之間的關係。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">電子テキストとその元資料との関係を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-17" xml:lang="de">dokumentiert das Verhältnis zwischen dem elektronischen Text und seiner Quelle oder den Quellen, von denen er sich ableitet.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">documenta la relación entre un texto electrónico y la fuente o fuentes de las que este deriva.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">documenta la relazione fra un documento elettronico e la o le fonti da cui è derivato.</desc><classes><memberOf key="att.global"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><elementRef key="p"/><elementRef key="classDecl"/><elementRef key="editorialDecl"/><elementRef key="tagsDecl"/><elementRef key="listPrefixDef"/></alternate></content><exemplum xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-encodingDesc-egXML-vi">
       <encodingDesc>
         <p>Basic encoding, capturing lexical information only. All
@@ -13574,7 +13621,7 @@ source or sources from which it was derived.</desc><desc xmlns:rng="http://relax
     procedure di raccolta.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
     <memberOf key="att.declarable"/>
-    <memberOf key="model.encodingDescPart"/>
+    
   </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <classRef key="model.pLike" minOccurs="1" maxOccurs="unbounded"/>
   </content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="projectDesc-is-declarable" scheme="schematron" xml:lang="en">
@@ -13625,7 +13672,7 @@ source or sources from which it was derived.</desc><desc xmlns:rng="http://relax
 during the encoding of a text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">donne des précisions sur les pratiques et  les principes éditoriaux appliqués au cours de l’encodage du texte.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 부호화에서 적용된 편집 원리 및 기준의 상세 항목을 제시한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">提供文件編碼時使用的編輯原則與實行方法的細節。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">テキストを符号化する際に適用される編集方針や編集方法の詳細を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2006-10-18" xml:lang="de">beschreibt die Details der Editionsprinzipien und Verfahren, die bei der Kodierung des Textes angewandt wurden.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">proporciona detalles de principios editoriales y prácticas aplicadas en la codificación de un texto.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">fornisce dettagli su principi e pratiche editoriali seguite nella codifica di un testo.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
     <memberOf key="att.declarable"/>
-    <memberOf key="model.encodingDescPart"/>
+    
   </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <alternate minOccurs="1" maxOccurs="unbounded"><classRef key="model.pLike"/><classRef key="model.editorialDeclPart"/></alternate>
   </content><constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="editorialDecl-is-declarable" scheme="schematron" xml:lang="en">
@@ -13679,7 +13726,7 @@ during the encoding of a text.</desc><desc xmlns:rng="http://relaxng.org/ns/stru
   </listRef></elementSpec><elementSpec rend="add" module="header" xml:id="gi-tagsDecl" ident="tagsDecl"><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2005-01-14" xml:lang="en">tagging declaration</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">déclaration de balisage</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">태깅 선언</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">標誌宣告</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2006-10-18" xml:lang="de">Beschreibung des Tag-Gebrauchs</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">declaración del etiquetado</gloss><gloss xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">dighiarazione sulla marcatura</gloss><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-04-27" xml:lang="en">provides detailed information about the tagging applied to a document.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">donne l’information détaillée sur le balisage appliqué à un document .</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">문서에 적용된 태깅에 관한 정보를 상세하게 제공한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">提供關於應用在XML文件中的標誌的詳細資訊。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">タグ付けに関する詳細な情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2018-07-18" xml:lang="de">liefert detaillierte
   Angaben zum Gebrauch von Tags, die in einem Dokument verwendet werden.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">proporciona información pormenorizada sobre el etiquetado aplicado a un documento.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">fornisce informazioni dettagliate sulla mercatura applicata ad un documento SGML o XML.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
-    <memberOf key="model.encodingDescPart"/>
+    
   </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <sequence minOccurs="1" maxOccurs="1"><elementRef key="rendition" minOccurs="0" maxOccurs="unbounded"/><elementRef key="namespace" minOccurs="0" maxOccurs="unbounded"/></sequence>
   </content><attList><attDef xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" ident="partial" usage="rec">
@@ -13938,7 +13985,7 @@ the target element</desc>
 codes used elsewhere in the text.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2009-01-05" xml:lang="fr">contient une ou plusieurs taxinomies définissant les codes de classification utilisés n’importe où dans le texte.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">텍스트 내 어디서든 사용될 수 있는 분류 부호를 정의하는 분류법을 포함한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-02" xml:lang="zh-TW">包含一個或多個分類法，用來定義在文件中他處所使用之任何分類碼。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">当該テキスト中で使用されている分類コードを定義する、
     ひとつ以上の分類法を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2016-11-17" xml:lang="de">enthält eine oder mehrere Taxonomien, die im Text verwendete Klassifikationscodes definieren.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-05-04" xml:lang="es">contiene una o más taxonomías que definen cualquier código usado en algún punto del texto.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-01-21" xml:lang="it">contiene una o più tassonomie che definiscono un qualsiasi codice classificatorio usato in un'altra porzione del testo.</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
-    <memberOf key="model.encodingDescPart"/>
+    
   </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     
       <elementRef key="taxonomy" minOccurs="1" maxOccurs="unbounded"/>
@@ -14312,7 +14359,7 @@ codes used elsewhere in the text.</desc><desc xmlns:rng="http://relaxng.org/ns/s
   edited the TEI file.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-12-20" xml:lang="ko">TEI 파일을 편집한 애플리케이션에 관한 정보를 기록한다.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-06" xml:lang="es">recoge información sobre la aplicación que ha editado el fichero de TEI.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-04-05" xml:lang="ja">TEIファイルを編集したソフトウェアに関する情報を示す。</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2008-12-09" xml:lang="fr">enregistre des informations sur l'application qui a
 été utilisée pour traiter le fichier TEI.</desc><desc xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" versionDate="2007-11-06" xml:lang="it">registra informazioni relative a un'applicazione che ha modificato il contenuto del file TEI</desc><classes xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <memberOf key="att.global"/>
-    <memberOf key="model.encodingDescPart"/>
+    
   </classes><content xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude">
     
       <classRef key="model.applicationLike" minOccurs="1" maxOccurs="unbounded"/>
@@ -16181,7 +16228,7 @@ structural unit.</desc>
       <desc versionDate="2008-04-05" xml:lang="ja">当該素性構造の種類を示す。</desc>
       <desc versionDate="2007-06-12" xml:lang="fr">spécifie le type de la structure de traits.</desc>
       <desc versionDate="2007-05-04" xml:lang="es">especifica el tipo de estructura de rasgo.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">specifica il tipo di struttura dei tratti</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">specifica il tipo di struttura dei tratti.</desc>
       <datatype><dataRef key="teidata.enumerated"/></datatype>
     </attDef>
     <attDef ident="feats" usage="opt">
@@ -16200,16 +16247,16 @@ structural unit.</desc>
 rasgo.</desc>
       <desc versionDate="2007-01-21" xml:lang="it">indica le specifiche del valore dei tratti che formano questa struttura.</desc>
       <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
-      <remarks versionDate="2005-01-14" xml:lang="en">
+      <remarks ident="fs-attr.feats-remarks" versionDate="2005-01-14" xml:lang="en">
         <p>May be used either instead of having features as content, or in
   addition. In the latter case, the features referenced and contained
   are unified. </p>
       </remarks>
-      <remarks versionDate="2007-06-12" xml:lang="fr">
+      <remarks ident="fs-attr.feats-remarks" versionDate="2007-06-12" xml:lang="fr">
         <p>Peut être utilisé soit à la place de traits pris comme contenu, soit en plus.
                         Dans ce dernier cas, les traits référencés et contenus sont unifiés. </p>
       </remarks>
-      <remarks versionDate="2008-04-05" xml:lang="ja">
+      <remarks ident="fs-attr.feats-remarks" versionDate="2008-04-05" xml:lang="ja">
         <p>
 	素性を内容として含まない、または追加する際に使われるかもしれな
 	い。後者の場合、参照された素性と既存の素性は統合される。
@@ -16299,14 +16346,14 @@ rasgo.</desc>
       <desc versionDate="2007-05-04" xml:lang="es">indica cualquier elemento que puede ser usado para representar el valor de un rasgo.</desc>
       <desc versionDate="2007-01-21" xml:lang="it">indica un qualsiasi elemento che può essere usato come valore di un tratto.</desc>
       <datatype><dataRef key="teidata.pointer"/></datatype>
-      <remarks versionDate="2005-01-14" xml:lang="en">
+      <remarks ident="f-attr.fVal-remarks" versionDate="2005-01-14" xml:lang="en">
         <p>If this attribute is supplied as well as content, the value referenced is to be unified with  that contained.</p>
       </remarks>
-      <remarks versionDate="2007-06-12" xml:lang="fr">
+      <remarks ident="f-attr.fVal-remarks" versionDate="2007-06-12" xml:lang="fr">
         <p>Si cet attribut est fourni en plus d'un contenu, la valeur référencée doit
                         être unifiée avec ce contenu.</p>
       </remarks>
-      <remarks versionDate="2008-04-05" xml:lang="ja">
+      <remarks ident="f-attr.fVal-remarks" versionDate="2008-04-05" xml:lang="ja">
         <p>
 	当該属性の値は、参照された要素内容とされる。
 	</p>
@@ -16335,17 +16382,17 @@ rasgo.</desc>
       </fs>
     </egXML>
   </exemplum>
-  <remarks versionDate="2012-04-20" xml:lang="en">
+  <remarks ident="f-remarks" versionDate="2012-04-20" xml:lang="en">
     <p>The content of <gi>f</gi> may be textual, with the assumption
     that the data type of the feature value is determined by the
     schema—this is the approach used in many
     language-technology-oriented projects and recommendations.</p>
   </remarks>
-  <remarks versionDate="2007-06-12" xml:lang="fr">
+  <remarks ident="f-remarks" versionDate="2007-06-12" xml:lang="fr">
     <p>Si l'élément est vide, une valeur doit être fournie pour l'attribut
             <att>fVal</att>.</p>
   </remarks>
-  <remarks versionDate="2008-04-05" xml:lang="ja">
+  <remarks ident="f-remarks" versionDate="2008-04-05" xml:lang="ja">
     <p>
     参照先の要素が空要素の場合、属性<att>fVal</att>が示す対象となる値
     が用意されていなければならない。
@@ -16381,7 +16428,192 @@ may be specified in a feature declaration.</desc>
     </egXML>
   </exemplum><listRef>
     <ptr target="#FSSY" type="div3"/>
-  </listRef></elementSpec><elementSpec rend="add" ident="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add" module="core"><classes mode="replace">
+  </listRef></elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" module="header" xml:id="gi-listPrefixDef" ident="listPrefixDef">
+  <gloss versionDate="2012-11-22" xml:lang="en">list of prefix definitions</gloss>
+  <desc versionDate="2012-11-23" xml:lang="en">contains a list of definitions of prefixing schemes used in <ident type="datatype">teidata.pointer</ident> values, showing how abbreviated URIs using each scheme may be expanded into full URIs.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    
+  </classes>
+  <content>
+    <sequence>
+      <elementRef key="desc" minOccurs="0" maxOccurs="unbounded"/>
+        <alternate minOccurs="1" maxOccurs="unbounded">
+          <elementRef key="prefixDef"/>
+          <elementRef key="listPrefixDef"/>
+        </alternate>
+    </sequence>
+   </content>
+  <exemplum versionDate="2012-11-22" xml:lang="en">
+    <p>In this example, two private URI scheme prefixes are defined and patterns are provided 
+    for dereferencing them. Each prefix is also supplied with a human-readable explanation in a
+    <gi>p</gi> element.</p>
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-listPrefixDef-egXML-dd">
+      <listPrefixDef>
+        <prefixDef ident="psn" matchPattern="([A-Z]+)" replacementPattern="personography.xml#$1">
+          <p>
+            Private URIs using the <code>psn</code> 
+            prefix are pointers to <gi>person</gi> 
+            elements in the personography.xml file. 
+            For example, <code>psn:MDH</code> 
+            dereferences to <code>personography.xml#MDH</code>.
+          </p>
+        </prefixDef>
+        <prefixDef ident="bibl" matchPattern="([a-z]+[a-z0-9]*)" replacementPattern="http://www.example.com/getBibl.xql?id=$1">
+          <p>
+            Private URIs using the <code>bibl</code> prefix can be 
+            expanded to form URIs which retrieve the relevant 
+            bibliographical reference from www.example.com.
+          </p>
+        </prefixDef>
+      </listPrefixDef>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ptr target="#SAPU"/>
+  </listRef>
+</elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" module="header" xml:id="gi-prefixDef" ident="prefixDef">
+  <gloss versionDate="2012-11-22" xml:lang="en">prefix definition</gloss>
+  <desc versionDate="2012-12-26" xml:lang="en">defines a prefixing scheme used in <ident type="datatype">teidata.pointer</ident> values,
+  showing how abbreviated URIs using the scheme may be expanded into full URIs.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.patternReplacement"/>
+  </classes>
+  <content>
+      <classRef key="model.pLike" minOccurs="0" maxOccurs="unbounded"/>
+  </content>
+  <attList>
+    <attDef ident="ident" usage="req">
+      <desc versionDate="2012-11-22" xml:lang="en">supplies a name which functions as the prefix for an abbreviated
+          pointing scheme such as a private URI scheme. The prefix constitutes the 
+        text preceding the first colon.</desc>
+	<datatype>
+	  <dataRef key="teidata.prefix"/>
+	</datatype>
+	<remarks ident="prefixDef-attr.ident-remarks" versionDate="2017-05-25" xml:lang="en">
+	  <p>The value is limited to <ident type="datatype">teidata.prefix</ident> so that it may be
+	  mapped directly to a URI prefix.</p>
+	</remarks>
+    </attDef>
+  </attList>
+  <exemplum versionDate="2012-11-22" xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-prefixDef-egXML-fm">
+      <prefixDef ident="ref" matchPattern="([a-z]+)" replacementPattern="../../references/references.xml#$1">
+        <p>
+          In the context of this project, private URIs with 
+          the prefix "ref" point to <gi>div</gi> elements in 
+          the project's global references.xml file.
+        </p>
+      </prefixDef>
+    </egXML>
+  </exemplum>
+  <remarks ident="prefixDef-remarks" versionDate="2026-04-16" xml:lang="en">
+    <p>Note that we used the term <q>prefix</q> in a general sense; in the context 
+      of a <ident type="datatype">teidata.pointer</ident> attribute, the prefix 
+      functions as a private URI scheme name as defined in 
+      <ref target="https://datatracker.ietf.org/doc/html/rfc7595">RFC 7595</ref>.
+    </p>
+    <p>The abbreviated pointer may be dereferenced to produce either
+    an absolute or a relative URI reference. In the latter case it is
+    combined with the value of <att>xml:base</att> in force at the
+    place where the pointing attribute occurs to form an absolute URI
+    in the usual manner as prescribed by <ref target="https://www.w3.org/TR/xmlbase/">XML Base</ref>.</p>
+  </remarks>
+  <listRef>
+    <ptr target="#SAPU"/>
+  </listRef>
+</elementSpec><classSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:xi="http://www.w3.org/2001/XInclude" module="header" type="atts" ident="att.patternReplacement">
+  <desc versionDate="2012-11-22" xml:lang="en">provides attributes for regular-expression matching and replacement.</desc>
+  <desc versionDate="2023-08-24" xml:lang="ja">正規表現のマッチと置換のための属性を提供する。</desc>
+  <attList>
+    <attDef ident="matchPattern" usage="req">
+      <desc versionDate="2012-11-22" xml:lang="en">specifies a regular expression against which the values of other attributes
+        can be matched.</desc>
+      
+      
+      <datatype><dataRef key="teidata.pattern"/></datatype>
+      <remarks ident="att.patternReplacement-attr.matchPattern-remarks" versionDate="2013-12-08" xml:lang="en">
+        <p>The syntax used should follow that defined by <ref target="https://www.w3.org/TR/xpath-functions/#regex-syntax">W3C XPath syntax</ref>. Note that parenthesized groups are used not only for establishing order of precedence and atoms for
+          quantification, but also for creating subpatterns to be referenced by the
+          <att>replacementPattern</att> attribute.</p>
+      </remarks>
+      <remarks ident="att.patternReplacement-attr.matchPattern-remarks" versionDate="2007-06-12" xml:lang="fr">
+        <p>Les groupes parenthésés ne sont pas seulement utilisés pour établir un ordre de priorité
+          et des unités de quantification, mais aussi pour créer des sous-modèles référencés par
+          l'attribut <att>replacementPattern</att>.</p>
+      </remarks>
+      <remarks ident="att.patternReplacement-attr.matchPattern-remarks" versionDate="2008-04-06" xml:lang="es">
+        <p>Utilizan a los grupos de Parenthesised no sólo para establecer el orden de la precedencia
+          y los átomos para la cuantificación, sino también para crear los subpatterns que se
+          referirán por el atributo <att>replacementPattern</att>.</p>
+      </remarks>
+      <remarks ident="att.patternReplacement-attr.matchPattern-remarks" versionDate="2023-08-24" xml:lang="ja">
+        <p> 使用される構文は、<ref target="http://www.w3.org/TR/xpath-functions/#regex-syntax">W3C XPath syntax</ref>で定義されているものに従うべきである。カッコで囲まれたグループは、出現順序や量化単位の他、属性 <att>replacementPattern</att>で参照される下位パターンの作成にも使用されることに注意する。 </p>
+      </remarks>
+    </attDef>
+    <attDef ident="replacementPattern" usage="req">
+      <desc versionDate="2013-12-08" xml:lang="en">specifies a <soCalled>replacement pattern</soCalled>, that is, the skeleton of a relative or absolute URI containing references to groups in
+        the <att>matchPattern</att> which, once subpattern substitution
+        has been performed, complete the URI.</desc>
+      <desc versionDate="2009-01-05" xml:lang="fr">spécifie une <soCalled>règle de
+        remplacement</soCalled> qui, après avoir opéré les substitutions prévues à chaque nœud,
+        génère une URI.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">하위 유형 대치가 실행되면, URI를 제공하는 <soCalled>replacement
+        pattern</soCalled>를 명시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">標明一個<soCalled>取代模式</soCalled>，一旦進行次要模式的替換，會自動提供統一資源識別符 (URI) 。</desc>
+      <desc versionDate="2023-08-24" xml:lang="ja"><soCalled>replacement pattern</soCalled>を指定する。つまり、<att>matchPattern</att>内のグループへの参照を含む相対URIまたは絶対URIのスケルトンで、サブパターンの置換が実行されることで、URIを完成させるものである。</desc>
+      <desc versionDate="2018-07-18" xml:lang="de">beschreibt ein <soCalled>replacement pattern
+        (Ersetzungsmuster)</soCalled>, das heißt das Grundgerüst einer relativen oder absoluten URI, die Referenzen auf Gruppen im <att>matchPattern</att>-Attribut enthalten und die URI komplettieren, sobald die  
+        Ersetzung der untergeordneten Muster durchgeführt wurde.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica un <soCalled>replacement pattern (patrón
+        de remplazamiento)</soCalled>, el cual, una vez se ha ejecutado el subpatrón de
+        sustitución, proporciona un URI.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">specifica un <soCalled>replacement pattern</soCalled>
+        che, una volta applicato un sub-pattern di sostituzione, fornisce un URI.</desc>
+      <datatype><dataRef key="teidata.replacement"/></datatype>
+      <remarks ident="att.patternReplacement-attr.replacementPattern-remarks" versionDate="2012-11-22" xml:lang="en">
+        <p>The strings <mentioned>$1</mentioned>, <mentioned>$2</mentioned> etc.  are references to the corresponding group in the
+          regular expression specified by <att>matchPattern</att> (counting open parenthesis, left
+          to right). Processors are expected to replace them with whatever matched the corresponding
+          group in the regular expression.</p>
+        <p>If a digit preceded by a dollar sign is needed in the actual replacement pattern (as
+          opposed to being used as a back reference), the dollar sign must be written as
+          <code>%24</code>.</p>
+      </remarks>
+      <remarks ident="att.patternReplacement-attr.replacementPattern-remarks" versionDate="2007-06-12" xml:lang="fr">
+        <p>Les chaînes <q>$1</q> à <q>$9</q> sont des références au groupe correspondant dans
+          l'expression régulière spécifiée par l'attribut <att>matchPattern</att> (en incluant la parenthèse
+          ouvrante, de gauche à droite). Les processeurs devraient remplacer ces groupes par les
+          valeurs correspondant aux groupes dans l'expression régulière.</p>
+        <p>Si un chiffre précédé par un dollar est nécessaire dans le modèle de remplacement actuel
+          (en opposition à ce qui a été utilisé comme référence antérieure), le signe dollar doit
+          être encodé <code>%24</code>.</p>
+      </remarks>
+      <remarks ident="att.patternReplacement-attr.replacementPattern-remarks" versionDate="2008-04-06" xml:lang="es">
+        <p>Las series <q>$1</q>a través <q>$9</q> son referencias al grupo correspondiente en la
+          expresión regular especificada por el <att>matchPattern</att> (contando paréntesis
+          abiertos, de izquierda a derecha). Se espera que los procesadores las substituyan por el
+          grupo correspondiente en la expresión regular.</p>
+        <p>Si un dígito precedido por el signo del dólar se necesita en el modelo actual de
+          substitución (en contraposición a ser utilizado como una referencia posterior), el signo
+          de dólar se debe escribir como <code>%24</code>.</p>
+      </remarks>
+      <remarks ident="att.patternReplacement-attr.replacementPattern-remarks" versionDate="2008-04-05" xml:lang="ja">
+        <p>
+          文字列<mentioned>$1</mentioned>、<mentioned>$2</mentioned>などは、属性<att>matchPattern</att>にある正規表現に該当するグループに(開き括弧を左から右の順番で数えて)対応するものである。処理ソフトウェアは、当該正規表現に対応するグループに置換することが期待されている。</p>
+        <p>ドル記号に続く数値が(後方参照として用いられるのではなく)置換パターンとして必要な場合には、そのドル記号は<code>%24</code>と書かれなければならない。
+        </p>
+      </remarks>
+    </attDef>
+  </attList>
+  <listRef>
+    <ptr target="#SAPU"/>
+    <ptr target="#HD54M"/>
+    <ptr target="#HD54"/>
+    <ptr target="#HD54S"/>
+  </listRef>
+</classSpec><elementSpec rend="add" ident="measure" source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml" mode="add" module="core"><classes mode="replace">
                      
                   </classes><exemplum>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -16495,6 +16727,7 @@ may be specified in a feature declaration.</desc>
     <memberOf key="att.global"/>
     
     <memberOf key="att.cmc"/>
+    <memberOf key="att.typed"/>
     <memberOf key="model.common"/>
     <memberOf key="model.hiLike"/>
   </classes>
@@ -16502,7 +16735,7 @@ may be specified in a feature declaration.</desc>
     <macroRef key="macro.specialPara"/>
   </content>
   <attList>
-    <attDef ident="type" usage="opt">
+    <attDef ident="type" usage="opt" mode="replace">
       <gloss versionDate="2016-11-25" xml:lang="en">type</gloss>
       <gloss versionDate="2016-11-25" xml:lang="de">Typ</gloss>
       <desc versionDate="2007-07-18" xml:lang="en">may be used to indicate whether the offset passage is spoken or thought, or to
@@ -16570,7 +16803,7 @@ may be specified in a feature declaration.</desc>
           <desc versionDate="2008-04-06" xml:lang="es">distancia autorial</desc>
           <desc versionDate="2008-04-05" xml:lang="ja">著者による区別。</desc>
           <desc versionDate="2008-12-09" xml:lang="fr">distance prise par rapport à l'auteur</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">distanza dell'autore</desc>
+          <desc versionDate="2007-11-06" xml:lang="it">distanza dell'autore.</desc>
           <desc versionDate="2016-11-25" xml:lang="de">Distanzierung des Autors</desc>
         </valItem>
         <valItem ident="foreign">
@@ -16579,7 +16812,7 @@ may be specified in a feature declaration.</desc>
           <desc versionDate="2023-01-13" xml:lang="en">foreign words</desc>
           <desc versionDate="2008-04-06" xml:lang="es">palabras extranjeras</desc>
           <desc versionDate="2008-03-30" xml:lang="fr">mots étrangers</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">parole straniere</desc>
+          <desc versionDate="2007-11-06" xml:lang="it">parole straniere.</desc>
         </valItem>
         <valItem ident="distinct">
           <gloss versionDate="2016-11-25" xml:lang="en">distinct</gloss>
@@ -16587,14 +16820,14 @@ may be specified in a feature declaration.</desc>
           <desc versionDate="2013-03-18" xml:lang="en">linguistically distinct</desc>
           <desc versionDate="2008-04-06" xml:lang="es">lingüisticamente distinto</desc>
           <desc versionDate="2008-03-30" xml:lang="fr">linguistiquement distinct</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">linguisticamente distinto</desc>
+          <desc versionDate="2007-11-06" xml:lang="it">linguisticamente distinto.</desc>
           <desc versionDate="2016-11-25" xml:lang="de">linguistisch hervorgehoben</desc>
         </valItem>
         <valItem ident="term">
           <desc versionDate="2013-03-18" xml:lang="en">technical term</desc>
           <desc versionDate="2008-04-06" xml:lang="es">término técnico</desc>
           <desc versionDate="2008-03-30" xml:lang="fr">terme technique</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">termine tecnico</desc>
+          <desc versionDate="2007-11-06" xml:lang="it">termine tecnico.</desc>
           <desc versionDate="2016-11-25" xml:lang="de">Fachbegriff</desc>
         </valItem>
         <valItem ident="emph">
@@ -16603,7 +16836,7 @@ may be specified in a feature declaration.</desc>
           <desc versionDate="2013-03-18" xml:lang="en">rhetorically emphasized</desc>
           <desc versionDate="2008-04-06" xml:lang="es">énfasis retórico</desc>
           <desc versionDate="2008-12-09" xml:lang="fr">mis en valeur par un procédé rhétorique.</desc>
-          <desc versionDate="2007-11-06" xml:lang="it">retoricamente marcato</desc>
+          <desc versionDate="2007-11-06" xml:lang="it">retoricamente marcato.</desc>
           <desc versionDate="2016-11-25" xml:lang="de">rhetorische Emphase</desc>
         </valItem>
         <valItem ident="mentioned">
@@ -16646,31 +16879,31 @@ may be specified in a feature declaration.</desc>
     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-q-egXML-ya"> 三個魚字疊作 <q>鱻</q>， — 欲拼出此<q>鱻</q>字，可以<q>漢語拼音</q>
         輸入<q>xin</q>即可。</egXML>
   </exemplum>
-  <remarks versionDate="2012-03-26" xml:lang="en">
+  <remarks ident="q-remarks" versionDate="2012-03-26" xml:lang="en">
     <p>May be used to indicate that a passage is distinguished from the surrounding text for reasons concerning which no claim is made. When used in this manner,
       <gi>q</gi> may be thought of as syntactic sugar for <gi>hi</gi> with a value of
       <att>rend</att> that indicates the use of such mechanisms as quotation marks.</p>
   </remarks>
-  <remarks versionDate="2007-06-12" xml:lang="fr">
+  <remarks ident="q-remarks" versionDate="2007-06-12" xml:lang="fr">
     <p>Peut être utilisé pour indiquer qu'un passage est distingué du texte environnant par des
       guillemets, pour des raisons non explicitées. Lorsqu'il est utilisé ainsi, <gi>q</gi> peut
       être considéré comme un encodage plus lisible (sucre syntaxique) pour <gi>hi</gi> avec une
       valeur de <att>rend</att> indiquant la fonction des guillemets.</p>
   </remarks>
-  <remarks versionDate="2008-04-06" xml:lang="es">
+  <remarks ident="q-remarks" versionDate="2008-04-06" xml:lang="es">
     <p>Puede ser utilizado para indicar que un pasaje es distinguido del texto circundante mediante
       las comillas por las razones que sean sobre las cuales no se hace ninguna declaración. Cuando
       se utiliza de este modo, <gi>q</gi> puede ser considerado como una marca sintáctica para
         <gi>hi</gi> con un valor de <att>rend</att>, lo que indica el uso de las comillas.</p>
   </remarks>
-  <remarks versionDate="2016-11-25" xml:lang="de">
+  <remarks ident="q-remarks" versionDate="2016-11-25" xml:lang="de">
     <p>Das Element kann benutzt werden, um anzuzeigen, dass eine Textpassage sich vom umgebenden Text 
       unterscheidet - aus Gründen, die nicht näher spezifiziert werden. Wenn das Element in dieser 
       Weise benutzt wird, kann das <gi>q</gi>-Element als <soCalled>syntactic sugar</soCalled> 
       (d.h. vereinfachte Schreibweise) für das <gi>hi</gi>-Element mit einem entsprechenden 
       Wert im <att>rend</att>-Attribut gedacht werden.</p>
   </remarks>
-  <remarks versionDate="2008-04-05" xml:lang="ja">
+  <remarks ident="q-remarks" versionDate="2008-04-05" xml:lang="ja">
     <p> ある一節が、引用符などで周りのテキストから区別されていることを示す ために使われるかもしれない。この場合、要素<gi>q</gi>は、引用を示
         す属性<att>rend</att>を伴う要素<gi>hi</gi>の糖衣構文になる。 </p>
   </remarks>
@@ -16691,7 +16924,7 @@ may be specified in a feature declaration.</desc>
   <desc versionDate="2008-04-05" xml:lang="ja">属性値をひとつ示す。</desc>
   <desc versionDate="2007-06-12" xml:lang="fr">contient une seule valeur d'attribut.</desc>
   <desc versionDate="2007-05-04" xml:lang="es">contiene el valor de un atributo.</desc>
-  <desc versionDate="2007-01-21" xml:lang="it">contiene un unico valore di attributo</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene un unico valore di attributo.</desc>
   <desc versionDate="2017-05-31" xml:lang="de">enthält einen einzelnen Attributwert.</desc>
   <classes>
     <memberOf key="att.global"/>
@@ -16734,6 +16967,17 @@ may be specified in a feature declaration.</desc>
                      <memberOf key="att.global"/>
                   </classes><content>
                      <textNode/>
+                  </content></elementSpec><elementSpec rend="add" ident="prefixDef" module="header" mode="add"><classes>
+                     <memberOf key="att.global"/>
+                  </classes><attList><attDef ident="ident" mode="add" usage="req">
+                        <datatype><dataRef key="teidata.word"/></datatype>
+                     </attDef><attDef ident="matchPattern" mode="add" usage="req">
+                        <datatype><dataRef key="teidata.pattern"/></datatype>
+                     </attDef><attDef ident="replacementPattern" mode="add" usage="req">
+                        <datatype><dataRef key="teidata.pointer"/></datatype>
+                     </attDef></attList></elementSpec><elementSpec rend="add" ident="listPrefixDef" module="header" mode="add"><content>
+                     
+                     <alternate minOccurs="1" maxOccurs="unbounded"><elementRef key="prefixDef"/><elementRef key="p"/></alternate>
                   </content></elementSpec><elementSpec rend="add" ident="listChange" mode="add" module="header"><content>
                      <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
                   </content></elementSpec><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="CMC" ident="cmc"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="DI" xml:id="DDIBO" ident="dictionaries"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude" n="PH" xml:id="DPH" ident="transcr"/></schemaSpec>

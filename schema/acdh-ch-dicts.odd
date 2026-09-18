@@ -2632,6 +2632,10 @@
 
                <moduleRef key="transcr" except="metamark"/>
 
+               <elementRef key="listPrefixDef" source="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml" />
+               <elementRef key="prefixDef" source="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml" />
+               <classRef key="att.patternReplacement" source="http://www.tei-c.org/release/xml/tei/odd/p5subset.xml" />
+               
                <elementSpec ident="body" mode="change" module="textstructure">
                   <desc>contains the main content of the dictionary. It MUST include a <tag>div
                         type="entries"</tag> and MAY include a <tag>div
