@@ -1473,7 +1473,7 @@
 
                   <div>
                      <head xml:id="particples">Participles</head>
-                     <p>Semitic languages are rich in participles which serve various functions. Lexicalised participles are always 
+                     <p>Semitic languages are rich in participles which serve various functions. Lexicalised participles are  
                         dealt with as nouns …</p>
                      
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
@@ -1779,9 +1779,24 @@
 </form>   
 …
 </egXML>
-                     <p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
+<p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
                 </div>
                               
+               <div>
+                  <head xml:id="morphStruct">Morphological structure (isiZuluDict)</head>
+                  <p>This grammatical type is used to analyse morphologically compound wordforms.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<gramGrp>
+   <gram type="pos">adverb</gram>
+   <gram type="morphStruct" xml:lang="zu">e-uku-gcina-eni</gram>
+   <gram type="stem" xml:lang="zu">gcina</gram>
+</gramGrp>
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
+               </div>
+               
                <div>
                   <head xml:id="arVerbForms">Arabic verb forms</head>
                   <p>All entries of verbs are furnished with at least one verb form, the 3rd person, singular imperfective 
@@ -1851,7 +1866,7 @@
                
                <div>
                   <head xml:id="government">Government</head>
-                  <p>If a verb requires complementation through verb forms in a aparticular mood or tense, the
+                  <p>If a verb requires complementation through objects or verb forms in a particular mood or tense, the
                      value <val>government</val> can be used.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
@@ -1916,7 +1931,7 @@
                <table rendition="#tbTable">
                   <row>
                      <cell style="background:rgb(67, 95, 206); color:white;">@type</cell>
-                     <cell style="background:rgb(67, 95, 206); color:white;">Values</cell>
+                     <cell style="background:rgb(67, 95, 206); color:white;">Possible values</cell>
                      <cell style="background:rgb(67, 95, 206); color:white;">Abbr. form</cell>
                      <cell style="background:rgb(67, 95, 206); color:white;">Generic-dict</cell>
                      <cell style="background:rgb(67, 95, 206); color:white;">Lex-0</cell>
@@ -2028,7 +2043,7 @@
                   </row>
                   <row>
                      <cell style="border: 1px solid black"><ref target="#government">government</ref></cell>
-                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">directObject, subjunctive, imperfect</cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black">✓</cell>
@@ -2059,12 +2074,20 @@
                      <cell style="border: 1px solid black">EgyDict</cell>
                   </row>
                   <row>
-                     <cell style="border: 1px solid black">morphStruct</cell>
+                     <cell style="border: 1px solid black"><ref target="#morphStruct">morphStruct</ref></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black"></cell>
                      <cell style="border: 1px solid black">✓</cell>
                      <cell style="border: 1px solid black"></cell>
-                     <cell style="border: 1px solid black">isiZuluDiuct</cell>
+                     <cell style="border: 1px solid black">isiZuluDict</cell>
+                  </row>
+                  <row>
+                     <cell style="border: 1px solid black">morphType</cell>
+                     <cell style="border: 1px solid black">latentI</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">✓</cell>
+                     <cell style="border: 1px solid black"></cell>
+                     <cell style="border: 1px solid black">isiZuluDict</cell>
                   </row>
                   <row>
                      <cell style="border: 1px solid black">msd (morphosyntactic description)</cell>
@@ -2218,6 +2241,25 @@
 … 
 </egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
+               
+               <p>A more refined system of names can also be applied through this mechanism.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<gramGrp>
+   <gram type="pos">properNoun</gram>
+   <gram type="gender">masculine</gram>
+</gramGrp>
+   
+
+<sense xml:id="CIEID.s_CIEID.usipho_001_0" ana="voc:semCats.names.firstName">
+   <cit type="translationEquivalent">
+      <form> <orth xml:lang="en">Sipho</orth> </form>
+   </cit>     
+</sense>
+   
+… 
+</egXML>
+<p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
             </div>
             
             <div>
@@ -2790,7 +2832,8 @@
                   <constraintSpec ident="gramGrpPosNumber" scheme="schematron">
                      <constraint>
                         <s:rule context="tei:gramGrp">
-                           <s:assert test="count(tei:gram[@type='pos'])&lt;2">Only one pos allowed</s:assert>
+ <!--                          <s:assert test="count(tei:gram[@type='pos'])&gt;1">Only one pos allowed here</s:assert>-->
+                           <s:report test="count(tei:gram[@type='pos']) &gt; 1">Only one pos allowed here.</s:report>
                         </s:rule>
                      </constraint>
                   </constraintSpec>
@@ -3140,6 +3183,9 @@
                            <valItem ident="morphStruct" mode="add">
                               <desc>This is used to indicate the distinct morphemes a word is made up of. It is used in isiZuluDict.</desc>
                            </valItem>
+                           <valItem ident="morphType" mode="add">
+                              <desc>Possible value: latentI It is used in isiZuluDict.</desc>
+                           </valItem>
                            <valItem ident="msd" mode="add">
                               <desc>The abbreviation stands for morphosyntactic description. The
                                  value of this gram-type can be
@@ -3186,10 +3232,10 @@
                      <constraint>
                         
                         <s:rule context="tei:orth">
-                           <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'sr', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
                         <s:rule context="tei:entry">
-                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:cit[@type='example']/tei:quote">
@@ -3226,6 +3272,7 @@
                            <valItem ident="af"><desc>Afrikaans</desc></valItem>
                            <valItem ident="ar"><desc>Any form of Arabic, including spoken varieties and dialects</desc></valItem>
                            <valItem ident="ar-acm-x-shawi-vicav"/>
+                           <valItem ident="ar-aeb-x-tunis-vicav"><desc>Tunis Arabic</desc></valItem>
                            <valItem ident="ar-arz-x-cairo-vicav"><desc>Eygyptian Arabic</desc></valItem>
                            <valItem ident="ar-apc-x-damascus-vicav"><desc>Damascus Arabic</desc></valItem>
                            <valItem ident="ar-Latn"><desc>Any Arabic variety written in Latin transcription</desc></valItem>
@@ -3296,7 +3343,7 @@
                      </attDef>
                   </attList>
                </elementSpec>
-
+               
                <!-- 1. Das Element prefixDef deklarieren bzw. einschließen -->
                <elementSpec ident="prefixDef" module="header" mode="add">
                   <classes>
@@ -3350,6 +3397,7 @@
                         <elementRef key="usg" minOccurs="0" maxOccurs="unbounded"/>
                         <alternate minOccurs="1" maxOccurs="1">
                            <elementRef key="form"/>
+                           <elementRef key="usg"/>
                            <sequence>
                               <elementRef key="quote" minOccurs="1" maxOccurs="1"/>
                               <elementRef key="quote" minOccurs="0" maxOccurs="1"/>
@@ -3368,6 +3416,7 @@
                            <!--                           <elementRef key="usg"/>-->
                            <elementRef key="note"/>
                            <elementRef key="xr"/>
+                           <elementRef key="bibl"/>
                            <elementRef key="gloss"/>
                            <!-- ADDED DS 2024-05-26 -->
                            <!--we should align the content more closely to the content in Lex0-->
@@ -3514,7 +3563,7 @@
                      <desc>assert content of correct context of @type values</desc>
                      <constraint>                        
                         <s:rule context="tei:form[@type='derivative']">
-                           <s:assert test="tei:gramGrp">a derived word needs a pos</s:assert>
+                           <s:assert test="tei:gramGrp">a derived word needs a gramGrp information</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:form[@type = 'variant']">
