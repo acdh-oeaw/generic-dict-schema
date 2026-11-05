@@ -33,8 +33,7 @@
          </publicationStmt>
 
          <sourceDesc>
-            <p>This ODD is a customization of TEI Lex-0, adapted for the needs of the dictionaries
-               produced at ACDH.</p>
+            <p>This ODD is a customization of TEI Lex-0, adapted for the needs of various dictionaries produced at ACDH-ÖAW.</p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -61,15 +60,13 @@
       <front>
          <argument>
             
-            <p>This TEI customization is a catch-all schema for a number of dictionaries encoded at
-               the ACDH. It serves two purposes: (1) It should define a
-               compatibility layer between TEI Lex-0 – which it is based on – and legacy
-               dictionaries (esp. VICAV), clearly defining where these dictionaries differ from
-               Lex-0; (2) in the future, it should define the baseline ODD which specific 
-               dictionaries should source and extend by their own rules, in order to define 
-               a schema which can be used for finer-grained validation.</p>
+            <p>This TEI customization is a catch-all schema for several dictionaries encoded at the ACDH-ÖAW. 
+               It serves two purposes: (1) it establishes a compatibility layer between legacy dictionaries 
+               (especially VICAV) and TEI Lex-0—the schema on which it is based—by clearly mapping their divergences; 
+               (2) it provides a baseline ODD that specific dictionaries can source and extend with their own 
+               rules for finer-grained validation.</p>
 
-            <p>The list of relevant dictionaries currently contains eight items, six of which have been converted to TEI Lex-0.</p> 
+            <p>To date, seven out of the eight relevant dictionaries have been successfully converted to TEI Lex-0.</p> 
             <table rendition="#tbTable">
                <row>
                   <cell style="background:rgb(67, 95, 206); color:white;">Dictionary</cell>
@@ -115,6 +112,12 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Lex-0</cell>
                </row>
                <row>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The TUNICO Dictionary</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TUDA</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TuDict</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Lex-0</cell>
+               </row>
+               <row>
                   <cell style="background:rgb(67, 95, 206); color:white;"></cell>
                   <cell style="background:rgb(67, 95, 206); color:white;"></cell>
                   <cell style="background:rgb(67, 95, 206); color:white;"></cell>
@@ -126,16 +129,10 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">BaDict</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
                </row>
-               <row>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">The TUNICO Dictionary</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TUDA</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TuDict</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
-               </row>
                
             </table>
             
-            <p>Derived from TEI Lex‑0, this ODD documents its divergences from the canonical TEI Lex‑0 ODD and defines project‑specific practices.</p>
+            <p>This ODD document outlines deviations from the canonical TEI Lex‑0 ODD and establishes project‑specific practices.</p>
          </argument>
       </front>
 
@@ -1762,6 +1759,21 @@
                </div>
                
                <div>
+                  <head xml:id="morphStruct">Morphological structure (isiZuluDict)</head>
+                  <p>This grammatical type can be used to analyse morphologically complex wordforms.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+   
+<gramGrp>
+   <gram type="pos">adverb</gram>
+   <gram type="morphStruct" xml:lang="zu">e-uku-gcina-eni</gram>
+   <gram type="stem" xml:lang="zu">gcina</gram>
+</gramGrp>
+…
+</egXML>
+<p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
+               </div>
+               
+               <div>
                   <head xml:id="nomClass">Nominal classes (isiZuluDict)</head>
                   <p>Nominal classes are a characteristic grammatical feature of the southern Niger-Congo languages. 
                         The system classifies nouns into various categories, which in turn govern agreement rules across 
@@ -1782,23 +1794,9 @@
 <p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
                 </div>
                               
-               <div>
-                  <head xml:id="morphStruct">Morphological structure (isiZuluDict)</head>
-                  <p>This grammatical type is used to analyse morphologically compound wordforms.</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
-   
-<gramGrp>
-   <gram type="pos">adverb</gram>
-   <gram type="morphStruct" xml:lang="zu">e-uku-gcina-eni</gram>
-   <gram type="stem" xml:lang="zu">gcina</gram>
-</gramGrp>
-…
-</egXML>
-<p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
-               </div>
                
                <div>
-                  <head xml:id="arVerbForms">Arabic verb forms</head>
+                  <head xml:id="arVerbForms">Verb forms Arabic)</head>
                   <p>All entries of verbs are furnished with at least one verb form, the 3rd person, singular imperfective 
                      which is encoded in the following manner.</p>
                   
@@ -1843,8 +1841,7 @@
                
                <div>
                   <head xml:id="collocates">Collocates</head>
-                  <p>In the Lex-0 specification, collocates are prepositions used together with particular verbs. 
-                     They are indicated in sense elements like this:</p>
+                  <p>In the Lex-0 specification, collocates are prepositions used with specific verbs or adjectives, and are specified within <tag>sense</tag> elements.</p>
                   
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
    
