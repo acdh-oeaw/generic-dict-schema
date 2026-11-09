@@ -140,11 +140,11 @@
          <head>Documentation</head>
          <div>
             <head>Macrostructure</head>
-            <p>The dictionaries covered by this schema are encoded according to the Guidelines of
-               the Text Encoding Initiative (P5). They are conceptualised as a specific type of text
+            <p>The dictionaries covered by this schema are encoded according to the <ref target="https://tei-c.org/guidelines/p5/">Guidelines of
+               the Text Encoding Initiative (P5)</ref>. They are conceptualised as a specific type of text
                and are therefore encoded with <gi>text</gi> elements. Each dictionary starts with a
                   <gi>teiHeader</gi> element which contains the metadata of the dictionary.</p>
-            <p>The lexicographic data are placed in typed <gi>div</gi> elements. Thus, our TEI
+            <p>Lexicographic data is placed in typed <gi>div</gi> elements. Thus, our TEI
                dictionaries basically look like this:</p>
 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve" source="#abcdict">
    <TEI type="lex-0">
