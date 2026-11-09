@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-11-09T09:29:07Z. . 
+Schema generated from ODD source 2026-11-09T12:39:54Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -3230,6 +3230,17 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
       <element name="author">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(author) in a bibliographic reference, contains the name(s) of an author, personal or corporate, of a work; for example in the same form as that provided by a recognized bibliographic name authority. [3.12.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement]</a:documentation>
          <ref name="macro.phraseSeq"/>
+         <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
+                  xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                  id="acdh-ch-dicts-author-author_requires_persName-constraint-rule-27">
+            <s:rule xmlns="http://www.tei-c.org/ns/1.0"
+                    xmlns:s="http://purl.oclc.org/dsdl/schematron"
+                    context="tei:author">
+               <s:assert test="tei:persName">
+                              An author element must contain at least one persName element.
+                           </s:assert>
+            </s:rule>
+         </pattern>
          <ref name="att.global.attributes"/>
          <ref name="att.datable.attributes"/>
          <ref name="att.naming.attributes"/>
@@ -3448,7 +3459,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
          </oneOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-27">
+                  id="acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-28">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:listBibl[ancestor::tei:body]">
@@ -3917,7 +3928,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-form-form-type-constraint-rule-28">
+                  id="acdh-ch-dicts-form-form-type-constraint-rule-29">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:form[@type='derivative']">
@@ -4055,7 +4066,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          <ref name="macro.lexicalParaContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-gram-gram-constraints-constraint-rule-33">
+                  id="acdh-ch-dicts-gram-gram-constraints-constraint-rule-34">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:gram">
@@ -4193,7 +4204,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-38">
+                  id="acdh-ch-dicts-gramGrp-gramGrpChildrenOrder-constraint-rule-39">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:gramGrp">
@@ -4206,7 +4217,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-39">
+                  id="acdh-ch-dicts-gramGrp-gramGrpPosNumber-constraint-rule-40">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:gramGrp">
@@ -4215,7 +4226,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-40">
+                  id="acdh-ch-dicts-gramGrp-gramGrpPosition-constraint-rule-41">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:entry/tei:gramGrp">
@@ -4252,7 +4263,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-etym-etymon-constraint-rule-41">
+                  id="acdh-ch-dicts-etym-etymon-constraint-rule-42">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:etym/tei:cit">
@@ -4306,7 +4317,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </choice>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-42">
+                  id="acdh-ch-dicts-usg-name-in-usg-constraint-rule-43">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:usg[not(@type = 'geographic') and not(@type='socioCultural') and not(@type='pragmatics')]">
@@ -4361,7 +4372,7 @@ Suggested values include: 1] mainEntry; 2] wordFamily; 3] homonymicEntry; 4] rel
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-xr-xrPosition-constraint-rule-43">
+                  id="acdh-ch-dicts-xr-xrPosition-constraint-rule-44">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:xr">
@@ -6025,7 +6036,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</a:do
          <ref name="macro.lexicalParaContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-seg-seg-context-constraint-rule-44">
+                  id="acdh-ch-dicts-seg-seg-context-constraint-rule-45">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:seg[@type = 'hint']">
@@ -6458,7 +6469,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-body-body-children-constraint-rule-45">
+                  id="acdh-ch-dicts-body-body-children-constraint-rule-46">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:body">
@@ -6521,7 +6532,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-div-div-example-children-constraint-rule-46">
+                  id="acdh-ch-dicts-div-div-example-children-constraint-rule-47">
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:div[@type = 'examples']">
@@ -6537,7 +6548,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-48">
+                  id="acdh-ch-dicts-div-abstractModel-structure-div-in-l-constraint-rule-49">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -6550,7 +6561,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</a:doc
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                  id="acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-49">
+                  id="acdh-ch-dicts-div-abstractModel-structure-div-in-ab-or-p-constraint-rule-50">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                       xmlns:s="http://purl.oclc.org/dsdl/schematron"
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
@@ -6793,6 +6804,8 @@ Suggested values include: 1] spoken (spoken); 2] thought (thought); 3] written (
                <ref name="p"/>
             </choice>
          </oneOrMore>
+         <ref name="att.global.attributes"/>
+         <empty/>
       </element>
    </define>
    <define name="listChange">

@@ -2775,6 +2775,17 @@
                   </remarks>
                </elementSpec>
                               
+               <elementSpec ident="author" mode="change">
+                  <constraintSpec ident="author_requires_persName" scheme="schematron">
+                     <desc>Ensures that the author element contains a persName element.</desc>
+                     <constraint>
+                        <s:rule context="tei:author">
+                           <s:assert test="tei:persName">An author element must contain at least one persName element.</s:assert>
+                        </s:rule>
+                     </constraint>
+                  </constraintSpec>
+               </elementSpec>
+               
                <elementSpec ident="etym" mode="change" module="dictionaries">
                   <content>
                      <alternate minOccurs="0" maxOccurs="unbounded">
@@ -3362,6 +3373,9 @@
                
                <!-- 2. listPrefixDef modifizieren, um prefixDef und optional p zu erlauben -->
                <elementSpec ident="listPrefixDef" module="header" mode="add">
+                  <classes>
+                     <memberOf key="att.global"/>
+                  </classes>
                   <content>
                      <!-- Erlaubt eine Kombination aus Dokumentationsabsätzen (p) und prefixDef-Einträgen -->
                      <alternate minOccurs="1" maxOccurs="unbounded">
@@ -3369,14 +3383,13 @@
                         <elementRef key="p"/>
                      </alternate>
                   </content>
-               </elementSpec>
-                            
+               </elementSpec>                          
                
                <!-- 3. encodingDesc modifizieren, um listPrefixDef zu erlauben -->
                <elementSpec ident="encodingDesc" module="header" mode="change">
                   <content>
                      <!-- Hier erlauben wir die von Lex-0 standardmäßig erlaubten Elemente (z.B. classDecl, editorialDecl, p) 
-           UND fügen listPrefixDef hinzu -->
+                      UND fügen listPrefixDef hinzu -->
                      <alternate minOccurs="0" maxOccurs="unbounded">
                         <elementRef key="p"/>
                         <elementRef key="classDecl"/>
