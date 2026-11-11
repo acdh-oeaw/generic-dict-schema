@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-11-09T12:39:54Z. . 
+Schema generated from ODD source 2026-11-11T11:26:59Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -2809,7 +2809,8 @@ Suggested values include: 1] full (full form); 2] pref (prefix); 3] suff (suffix
                     context="tei:cit[@type = 'translationEquivalent']">
                <s:assert test="parent::tei:sense">translationEquivalent: must be a
                               direct child of a sense element</s:assert>
-               <s:assert test="exists(child::tei:form[not(@type)])">translationEquivalent must contain a form without a type attribute
+               <s:assert test="not(child::tei:form[@type])">
+                              form inside translationEquivalent must not have a type attribute
                            </s:assert>
             </s:rule>
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
@@ -2842,8 +2843,6 @@ Suggested values include: 1] full (full form); 2] pref (prefix); 3] suff (suffix
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                <value>etymon</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               <value>literalTranslation</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">literal translation</a:documentation>
             </choice>
          </attribute>
          <optional>
@@ -3236,9 +3235,7 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
             <s:rule xmlns="http://www.tei-c.org/ns/1.0"
                     xmlns:s="http://purl.oclc.org/dsdl/schematron"
                     context="tei:author">
-               <s:assert test="tei:persName">
-                              An author element must contain at least one persName element.
-                           </s:assert>
+               <s:assert test="tei:persName">An author element must contain at least one persName element.</s:assert>
             </s:rule>
          </pattern>
          <ref name="att.global.attributes"/>

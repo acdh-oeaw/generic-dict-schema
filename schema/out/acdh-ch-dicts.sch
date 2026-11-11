@@ -110,7 +110,8 @@
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:cit[@type = 'translationEquivalent']">
          <s:assert test="parent::tei:sense">translationEquivalent: must be a
                               direct child of a sense element</s:assert>
-         <s:assert test="exists(child::tei:form[not(@type)])">translationEquivalent must contain a form without a type attribute
+         <s:assert test="not(child::tei:form[@type])">
+                              form inside translationEquivalent must not have a type attribute
                            </s:assert>
       </s:rule>
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:cit[@type = 'translation']">
@@ -144,9 +145,7 @@
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-author-author_requires_persName-constraint-rule-27">
       <s:rule xmlns:s="http://purl.oclc.org/dsdl/schematron" xmlns="http://www.tei-c.org/ns/1.0" context="tei:author">
-         <s:assert test="tei:persName">
-                              An author element must contain at least one persName element.
-                           </s:assert>
+         <s:assert test="tei:persName">An author element must contain at least one persName element.</s:assert>
       </s:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:teix="http://www.tei-c.org/ns/Examples" xmlns:xlink="http://www.w3.org/1999/xlink" id="acdh-ch-dicts-listBibl-listBibl-context-constraint-rule-28">

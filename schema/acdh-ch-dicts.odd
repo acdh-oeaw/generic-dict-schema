@@ -2239,7 +2239,7 @@
 </egXML>
 <p rendition="#exampleSource">(Source: The VICAV Dictionary of Egyptian Arabic)</p>
                
-               <p>A more refined system of names can also be applied through this mechanism.</p>
+               <p>A more refined system of names can be applied through this mechanism.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
 
 <gramGrp>
@@ -2257,6 +2257,26 @@
 … 
 </egXML>
 <p rendition="#exampleSource">(Source: The Concise isiZulu-English Internet Dictionary)</p>
+               
+               <p>Over time, the value "toponym" in gram[@type="pos"] has been replaced by these labels. Note that the 
+               ana attribute can have several values.</p>   
+               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">…
+
+<gramGrp>
+   <gram type="pos">properNoun</gram>
+</gramGrp>
+   
+<sense xml:id="TUDA.senid_d1e1377454" ana="voc:semCats.geoPlaces.market voc:semCats.geoPlaces.cityPart">
+   <def xml:lang="en">the former horsemarket in Tunis</def>
+   <cit type="translationEquivalent">
+      <form>
+         <orth xml:lang="en">El Morkadh</orth>
+      </form>
+   </cit>
+</sense>
+… 
+</egXML>
+<p rendition="#exampleSource">(Source: The TUNICO Dictionary)</p>
             </div>
             
             <div>
@@ -3443,8 +3463,13 @@
                         <s:rule context="tei:cit[@type = 'translationEquivalent']">
                            <s:assert test="parent::tei:sense">translationEquivalent: must be a
                               direct child of a sense element</s:assert>
+                           <!-- 
                            <s:assert test="exists(child::tei:form[not(@type)])"
                               >translationEquivalent must contain a form without a type attribute
+                           </s:assert>
+                            -->
+                           <s:assert test="not(child::tei:form[@type])">
+                              form inside translationEquivalent must not have a type attribute
                            </s:assert>
                         </s:rule>
                         
@@ -3468,12 +3493,14 @@
                   <attList>
                      <attDef ident="type" mode="change" usage="req">
                         <valList type="closed" mode="change">
+                           <!-- 
                            <valItem ident="literalTranslation" mode="add" validUntil="2026-12-31">
                               <desc>literal translation</desc>
                               <desc type="deprecationInfo">cit[@type='literalTranslation'] is only
                                  allowed for backwards compatibility and should be replaced with
                                  cit[@type='translationEquivalent'][@subtype='literal']</desc>
                            </valItem>
+                            -->
                            <!-- CHECKME These are not deleted -->
                            <valItem ident="cognate" mode="delete"/>
                            <valItem ident="cognateSet" mode="delete"/>

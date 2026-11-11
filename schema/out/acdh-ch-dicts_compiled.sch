@@ -885,13 +885,14 @@
       </xsl:choose>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="exists(child::tei:form[not(@type)])"/>
+         <xsl:when test="not(child::tei:form[@type])"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="exists(child::tei:form[not(@type)])">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="not(child::tei:form[@type])">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>translationEquivalent must contain a form without a type attribute
+               <svrl:text>
+                              form inside translationEquivalent must not have a type attribute
                            </svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -1043,9 +1044,7 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>
-                              An author element must contain at least one persName element.
-                           </svrl:text>
+               <svrl:text>An author element must contain at least one persName element.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
