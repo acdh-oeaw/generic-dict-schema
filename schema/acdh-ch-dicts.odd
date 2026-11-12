@@ -62,7 +62,7 @@
             
             <p>This TEI customization is a catch-all schema for several dictionaries encoded at the ACDH-ÖAW. 
                It serves two purposes: (1) it establishes a compatibility layer between legacy dictionaries 
-               (especially VICAV) and TEI Lex-0—the schema on which it is based—by clearly mapping their divergences; 
+               (especially VICAV) and TEI Lex-0—the schema on which it is based—by clearly mapping the used elements; 
                (2) it provides a baseline ODD that specific dictionaries can source and extend with their own 
                rules for finer-grained validation.</p>
 
@@ -118,16 +118,10 @@
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Lex-0</cell>
                </row>
                <row>
-                  <cell style="background:rgb(67, 95, 206); color:white;"></cell>
-                  <cell style="background:rgb(67, 95, 206); color:white;"></cell>
-                  <cell style="background:rgb(67, 95, 206); color:white;"></cell>
-                  <cell style="background:rgb(67, 95, 206); color:white;"></cell>
-               </row>
-               <row>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">A Machine-readable Dictionary of Baghdad Arabic</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VICAV Dictionary of Baghdad Arabic</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">VDBA</cell>
                   <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">BaDict</cell>
-                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">TEI (P5)</cell>
+                  <cell style="padding-left: 5px; padding-right: 5px; border: 1px solid black">Lex-0</cell>
                </row>
                
             </table>
@@ -2829,8 +2823,7 @@
                      </constraint>
                   </constraintSpec>
                </elementSpec>
-               
-               
+                              
                <elementSpec ident="gramGrp" mode="change" module="dictionaries">
                   <!-- gramGrp should not nest -->
                   <classes mode="change">
@@ -3263,7 +3256,7 @@
                            <s:assert test="@xml:lang=('undefined', 'af', 'ar', 'ar-Latn', 'cop', 'de', 'en', 'es', 'fa', 'fr', 'gr', 'it', 'la', 'nr', 'nso', 'ota', 'ra', 'ru', 'sr', 'ss', 'sw', 'tn', 'tr', 'ts', 've', 'xh', 'zu')">orth with incorrect @xml:lang</s:assert>
                         </s:rule>
                         <s:rule context="tei:entry">
-                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
+                           <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-acm-x-baghdad-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
                         </s:rule>
                         
                         <s:rule context="tei:cit[@type='example']/tei:quote">
@@ -3299,7 +3292,8 @@
                         <valList type="closed" mode="replace">                           
                            <valItem ident="af"><desc>Afrikaans</desc></valItem>
                            <valItem ident="ar"><desc>Any form of Arabic, including spoken varieties and dialects</desc></valItem>
-                           <valItem ident="ar-acm-x-shawi-vicav"/>
+                           <valItem ident="ar-acm-x-baghdad-vicav"><desc>Bagdad Arabic</desc></valItem>
+                           <valItem ident="ar-acm-x-shawi-vicav"><desc>Shawi Arabic</desc></valItem>
                            <valItem ident="ar-aeb-x-tunis-vicav"><desc>Tunis Arabic</desc></valItem>
                            <valItem ident="ar-arz-x-cairo-vicav"><desc>Eygyptian Arabic</desc></valItem>
                            <valItem ident="ar-apc-x-damascus-vicav"><desc>Damascus Arabic</desc></valItem>

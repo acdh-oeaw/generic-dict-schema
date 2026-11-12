@@ -653,9 +653,9 @@
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="tei:entry"/>
       <!--ASSERT -->
       <xsl:choose>
-         <xsl:when test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')"/>
+         <xsl:when test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-acm-x-baghdad-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-acm-x-baghdad-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>

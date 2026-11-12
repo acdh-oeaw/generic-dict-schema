@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2026-11-11T11:26:59Z. . 
+Schema generated from ODD source 2026-11-12T07:02:58Z. . 
 TEI Edition:  
 TEI Edition Location: https://www.tei-c.org/Vault/P5// 
   
@@ -1156,8 +1156,10 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Afrikaans</a:documentation>
                <value>ar</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any form of Arabic, including spoken varieties and dialects</a:documentation>
+               <value>ar-acm-x-baghdad-vicav</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bagdad Arabic</a:documentation>
                <value>ar-acm-x-shawi-vicav</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Shawi Arabic</a:documentation>
                <value>ar-aeb-x-tunis-vicav</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Tunis Arabic</a:documentation>
                <value>ar-arz-x-cairo-vicav</value>
@@ -1240,7 +1242,7 @@ Sample values include: 1] all; 2] most; 3] range</a:documentation>
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
               context="tei:entry">
-         <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
+         <s:assert test="@xml:lang=('ar-acm-x-shawi-vicav', 'ar-acm-x-baghdad-vicav', 'ar-aeb-x-tunis-vicav', 'ar-arz-x-cairo-vicav', 'ar-apc-x-damascus-vicav', 'ar-Latn', 'zu')">entry needs to have a correct @xml:lang</s:assert>
       </s:rule>
       <s:rule xmlns="http://www.tei-c.org/ns/1.0"
               xmlns:s="http://purl.oclc.org/dsdl/schematron"
@@ -3787,8 +3789,10 @@ Suggested values include: 1] gloss (gloss); 2] index (index); 3] instructions (i
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Afrikaans</a:documentation>
                <value>ar</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Any form of Arabic, including spoken varieties and dialects</a:documentation>
+               <value>ar-acm-x-baghdad-vicav</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Bagdad Arabic</a:documentation>
                <value>ar-acm-x-shawi-vicav</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Shawi Arabic</a:documentation>
                <value>ar-aeb-x-tunis-vicav</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Tunis Arabic</a:documentation>
                <value>ar-arz-x-cairo-vicav</value>
