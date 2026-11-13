@@ -2921,7 +2921,7 @@
                <!-- end of ambiguity-fixing adjustments -->
 
                <!-- Additionally needed elements -->
-               <moduleRef key="iso-fs" include="fs f symbol"
+               <moduleRef key="iso-fs" include="fs f symbol string"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
            
                <elementSpec ident="measure"
@@ -2961,6 +2961,11 @@
                <classRef key="model.featureVal"
                   source="https://www.tei-c.org/release/xml/tei/odd/p5subset.xml"/>
                <elementSpec ident="symbol" mode="change">
+                  <classes mode="change">
+                     <memberOf key="model.featureVal"/>
+                  </classes>
+               </elementSpec>
+               <elementSpec ident="string" mode="change">
                   <classes mode="change">
                      <memberOf key="model.featureVal"/>
                   </classes>
